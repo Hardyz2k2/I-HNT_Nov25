@@ -1,0 +1,1126 @@
+2025-11-30 20:07:40 | INFO     | ======================================================================
+2025-11-30 20:07:40 | INFO     | MOB HUNTER v3.0 - FULL VERSION
+2025-11-30 20:07:40 | INFO     | ======================================================================
+2025-11-30 20:07:40 | INFO     | Log directory: logs/session_20251130_200740
+2025-11-30 20:07:40 | INFO     | Screen: 1920x1080
+2025-11-30 20:07:40 | INFO     | Overlay: ENABLED
+2025-11-30 20:07:40 | INFO     | ======================================================================
+2025-11-30 20:07:40 | INFO     | 
+🚀 Bot started! Press Ctrl+C to stop.
+
+2025-11-30 20:07:40 | INFO     | 
+======================================================================
+2025-11-30 20:07:40 | INFO     | CYCLE #1
+2025-11-30 20:07:40 | INFO     | ======================================================================
+2025-11-30 20:07:40 | INFO     | Detected: 26 floating names
+2025-11-30 20:07:40 | INFO     |   ✓ Target #1 at (377, 756)
+2025-11-30 20:07:40 | DEBUG    |   Region near center, might be player
+2025-11-30 20:07:40 | DEBUG    |   Name #3: Player zone
+2025-11-30 20:07:40 | DEBUG    |   Name #4: Cached
+2025-11-30 20:07:40 | DEBUG    |   Name #5: Player zone
+2025-11-30 20:07:40 | DEBUG    |   Name #6: Player zone
+2025-11-30 20:07:40 | DEBUG    |   Name #7: Cached
+2025-11-30 20:07:40 | DEBUG    |   Region near center, might be player
+2025-11-30 20:07:40 | INFO     |   ✓ Target #9 at (723, 259)
+2025-11-30 20:07:40 | DEBUG    |   Region near center, might be player
+2025-11-30 20:07:40 | DEBUG    |   Region near center, might be player
+2025-11-30 20:07:40 | INFO     |   ✓ Target #12 at (1625, 379)
+2025-11-30 20:07:40 | INFO     |   ✓ Target #13 at (1666, 343)
+2025-11-30 20:07:40 | INFO     |   ✓ Target #14 at (1686, 278)
+2025-11-30 20:07:40 | DEBUG    |   Name #15: Cached
+2025-11-30 20:07:40 | INFO     |   ✓ Target #16 at (1565, 877)
+2025-11-30 20:07:40 | DEBUG    |   Name #17: Cached
+2025-11-30 20:07:40 | INFO     |   ✓ Target #18 at (1584, 296)
+2025-11-30 20:07:40 | INFO     |   ✓ Target #19 at (1647, 204)
+2025-11-30 20:07:40 | INFO     |   ✓ Target #20 at (1779, 183)
+2025-11-30 20:07:40 | INFO     |   ✓ Target #21 at (1703, 153)
+2025-11-30 20:07:40 | INFO     |   ✓ Target #22 at (1557, 155)
+2025-11-30 20:07:40 | INFO     |   ✓ Target #23 at (1453, 144)
+2025-11-30 20:07:40 | INFO     |   ✓ Target #24 at (1142, 144)
+2025-11-30 20:07:40 | INFO     |   ✓ Target #25 at (1253, 142)
+2025-11-30 20:07:40 | INFO     |   ✓ Target #26 at (1342, 136)
+2025-11-30 20:07:40 | INFO     | → Valid targets: 15
+2025-11-30 20:07:40 | INFO     | 
+  Verifying #1...
+2025-11-30 20:07:40 | DEBUG    |     Clicking (377, 789)
+2025-11-30 20:07:40 | DEBUG    |     Nameplate read in 1 attempts
+2025-11-30 20:07:40 | INFO     |     ✓ Elite | HP: 69%
+2025-11-30 20:07:41 | INFO     | 
+  Verifying #2...
+2025-11-30 20:07:41 | DEBUG    |     Clicking (723, 289)
+2025-11-30 20:07:41 | DEBUG    |     Nameplate read in 1 attempts
+2025-11-30 20:07:41 | INFO     |     ✓ Elite | HP: 69%
+2025-11-30 20:07:41 | INFO     | 
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2025-11-30 20:07:41 | INFO     | ENGAGING: Elite (HP: 69%)
+2025-11-30 20:07:41 | INFO     | >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2025-11-30 20:07:41 | INFO     |   Skill 1: 1
+2025-11-30 20:07:42 | INFO     |   Skill 2: 2
+2025-11-30 20:07:42 | INFO     |   Skill 3: 3
+2025-11-30 20:07:43 | INFO     |   Skill 4: 4
+2025-11-30 20:07:44 | INFO     | <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+2025-11-30 20:07:44 | INFO     | Total engagements: 1
+
+2025-11-30 20:07:44 | INFO     | 
+======================================================================
+2025-11-30 20:07:44 | INFO     | CYCLE #2
+2025-11-30 20:07:44 | INFO     | ======================================================================
+2025-11-30 20:07:44 | INFO     | Detected: 23 floating names
+2025-11-30 20:07:44 | DEBUG    |   Name #1: Player zone
+2025-11-30 20:07:44 | DEBUG    |   Name #2: Cached
+2025-11-30 20:07:44 | DEBUG    |   Name #3: Player zone
+2025-11-30 20:07:44 | DEBUG    |   Name #4: Player zone
+2025-11-30 20:07:44 | DEBUG    |   Region near center, might be player
+2025-11-30 20:07:44 | DEBUG    |   Name #6: Cached
+2025-11-30 20:07:44 | INFO     |   ✓ Target #7 at (647, 315)
+2025-11-30 20:07:44 | INFO     |   ✓ Target #8 at (415, 303)
+2025-11-30 20:07:44 | INFO     |   ✓ Target #9 at (590, 299)
+2025-11-30 20:07:44 | INFO     |   ✓ Target #10 at (948, 247)
+2025-11-30 20:07:44 | INFO     |   ✓ Target #11 at (146, 164)
+2025-11-30 20:07:44 | DEBUG    |   Name #12: Cached
+2025-11-30 20:07:44 | INFO     |   ✓ Target #13 at (890, 837)
+2025-11-30 20:07:44 | INFO     |   ✓ Target #14 at (1284, 714)
+2025-11-30 20:07:44 | DEBUG    |   Region near center, might be player
+2025-11-30 20:07:44 | DEBUG    |   Name #16: Cached
+2025-11-30 20:07:44 | INFO     |   ✓ Target #17 at (1674, 173)
+2025-11-30 20:07:44 | INFO     |   ✓ Target #18 at (1562, 163)
+2025-11-30 20:07:44 | INFO     |   ✓ Target #19 at (1483, 156)
+2025-11-30 20:07:44 | INFO     |   ✓ Target #20 at (1201, 158)
+2025-11-30 20:07:44 | INFO     |   ✓ Target #21 at (1324, 156)
+2025-11-30 20:07:44 | INFO     |   ✓ Target #22 at (1424, 150)
+2025-11-30 20:07:44 | INFO     |   ✓ Target #23 at (841, 133)
+2025-11-30 20:07:44 | INFO     | → Valid targets: 14
+2025-11-30 20:07:44 | INFO     | 
+  Verifying #1...
+2025-11-30 20:07:44 | DEBUG    |     Clicking (647, 345)
+2025-11-30 20:07:45 | DEBUG    |     Nameplate read in 1 attempts
+2025-11-30 20:07:45 | INFO     |     ✓ Elite | HP: 69%
+2025-11-30 20:07:45 | INFO     | 
+  Verifying #2...
+2025-11-30 20:07:45 | DEBUG    |     Clicking (415, 333)
+2025-11-30 20:07:45 | DEBUG    |     Nameplate read in 1 attempts
+2025-11-30 20:07:45 | INFO     |     ✓ Elite | HP: 69%
+2025-11-30 20:07:45 | INFO     | 
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2025-11-30 20:07:45 | INFO     | ENGAGING: Elite (HP: 69%)
+2025-11-30 20:07:45 | INFO     | >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2025-11-30 20:07:45 | INFO     |   Skill 1: 1
+2025-11-30 20:07:46 | INFO     |   Skill 2: 2
+2025-11-30 20:07:46 | INFO     |   Skill 3: 3
+2025-11-30 20:07:47 | INFO     |   Skill 4: 4
+2025-11-30 20:07:48 | INFO     | <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+2025-11-30 20:07:48 | INFO     | Total engagements: 2
+
+2025-11-30 20:07:48 | INFO     | 
+======================================================================
+2025-11-30 20:07:48 | INFO     | CYCLE #3
+2025-11-30 20:07:48 | INFO     | ======================================================================
+2025-11-30 20:07:48 | INFO     | Detected: 23 floating names
+2025-11-30 20:07:48 | INFO     |   ✓ Target #1 at (694, 869)
+2025-11-30 20:07:48 | INFO     |   ✓ Target #2 at (381, 837)
+2025-11-30 20:07:48 | INFO     |   ✓ Target #3 at (306, 826)
+2025-11-30 20:07:48 | INFO     |   ✓ Target #4 at (152, 790)
+2025-11-30 20:07:48 | DEBUG    |   Name #5: Player zone
+2025-11-30 20:07:48 | DEBUG    |   Name #6: Player zone
+2025-11-30 20:07:48 | DEBUG    |   Region near center, might be player
+2025-11-30 20:07:48 | DEBUG    |   Region near center, might be player
+2025-11-30 20:07:48 | DEBUG    |   Region near center, might be player
+2025-11-30 20:07:48 | INFO     |   ✓ Target #10 at (837, 351)
+2025-11-30 20:07:48 | INFO     |   ✓ Target #11 at (1125, 347)
+2025-11-30 20:07:48 | INFO     |   ✓ Target #12 at (699, 328)
+2025-11-30 20:07:48 | INFO     |   ✓ Target #13 at (470, 300)
+2025-11-30 20:07:48 | INFO     |   ✓ Target #14 at (1035, 259)
+2025-11-30 20:07:48 | INFO     |   ✓ Target #15 at (207, 151)
+2025-11-30 20:07:48 | INFO     |   ✓ Target #16 at (97, 777)
+2025-11-30 20:07:48 | INFO     |   ✓ Target #17 at (1670, 260)
+2025-11-30 20:07:48 | INFO     |   ✓ Target #18 at (1278, 164)
+2025-11-30 20:07:48 | INFO     |   ✓ Target #19 at (1601, 165)
+2025-11-30 20:07:48 | INFO     |   ✓ Target #20 at (1509, 158)
+2025-11-30 20:07:48 | INFO     |   ✓ Target #21 at (1402, 163)
+2025-11-30 20:07:48 | INFO     |   ✓ Target #22 at (898, 137)
+2025-11-30 20:07:48 | INFO     |   ✓ Target #23 at (960, 138)
+2025-11-30 20:07:48 | INFO     | → Valid targets: 18
+2025-11-30 20:07:48 | INFO     | 
+  Verifying #1...
+2025-11-30 20:07:48 | DEBUG    |     Clicking (694, 899)
+2025-11-30 20:07:49 | DEBUG    |     Nameplate read in 1 attempts
+2025-11-30 20:07:49 | INFO     |     ✓ Elite | HP: 69%
+2025-11-30 20:07:49 | INFO     | 
+  Verifying #2...
+2025-11-30 20:07:49 | DEBUG    |     Clicking (381, 868)
+2025-11-30 20:07:49 | DEBUG    |     Nameplate read in 1 attempts
+2025-11-30 20:07:49 | INFO     |     ✓ Elite | HP: 69%
+2025-11-30 20:07:49 | INFO     | 
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2025-11-30 20:07:49 | INFO     | ENGAGING: Elite (HP: 69%)
+2025-11-30 20:07:49 | INFO     | >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2025-11-30 20:07:49 | INFO     |   Skill 1: 1
+2025-11-30 20:07:50 | INFO     |   Skill 2: 2
+2025-11-30 20:07:50 | INFO     |   Skill 3: 3
+2025-11-30 20:07:51 | INFO     |   Skill 4: 4
+2025-11-30 20:07:52 | INFO     | <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+2025-11-30 20:07:52 | INFO     | Total engagements: 3
+
+2025-11-30 20:07:52 | INFO     | 
+======================================================================
+2025-11-30 20:07:52 | INFO     | CYCLE #4
+2025-11-30 20:07:52 | INFO     | ======================================================================
+2025-11-30 20:07:52 | INFO     | Detected: 23 floating names
+2025-11-30 20:07:52 | DEBUG    |   Name #1: Player zone
+2025-11-30 20:07:52 | DEBUG    |   Name #2: Player zone
+2025-11-30 20:07:52 | DEBUG    |   Name #3: Cached
+2025-11-30 20:07:52 | DEBUG    |   Name #4: Cached
+2025-11-30 20:07:52 | DEBUG    |   Name #5: Player zone
+2025-11-30 20:07:52 | DEBUG    |   Region near center, might be player
+2025-11-30 20:07:52 | INFO     |   ✓ Target #7 at (1328, 380)
+2025-11-30 20:07:52 | INFO     |   ✓ Target #8 at (890, 344)
+2025-11-30 20:07:52 | INFO     |   ✓ Target #9 at (809, 336)
+2025-11-30 20:07:52 | DEBUG    |   Name #10: Player zone
+2025-11-30 20:07:52 | INFO     |   ✓ Target #11 at (1857, 258)
+2025-11-30 20:07:52 | INFO     |   ✓ Target #12 at (543, 813)
+2025-11-30 20:07:52 | DEBUG    |   Name #13: Cached
+2025-11-30 20:07:52 | DEBUG    |   Region near center, might be player
+2025-11-30 20:07:52 | INFO     |   ✓ Target #15 at (250, 380)
+2025-11-30 20:07:52 | INFO     |   ✓ Target #16 at (1722, 216)
+2025-11-30 20:07:52 | INFO     |   ✓ Target #17 at (1551, 195)
+2025-11-30 20:07:52 | INFO     |   ✓ Target #18 at (1482, 187)
+2025-11-30 20:07:52 | INFO     |   ✓ Target #19 at (1384, 190)
+2025-11-30 20:07:52 | INFO     |   ✓ Target #20 at (1277, 190)
+2025-11-30 20:07:52 | INFO     |   ✓ Target #21 at (417, 168)
+2025-11-30 20:07:52 | INFO     |   ✓ Target #22 at (1009, 166)
+2025-11-30 20:07:52 | INFO     |   ✓ Target #23 at (948, 163)
+2025-11-30 20:07:52 | INFO     | → Valid targets: 14
+2025-11-30 20:07:52 | INFO     | 
+  Verifying #1...
+2025-11-30 20:07:52 | DEBUG    |     Clicking (1328, 410)
+2025-11-30 20:07:53 | DEBUG    |     Nameplate read in 1 attempts
+2025-11-30 20:07:53 | INFO     |     ✓ Elite | HP: 69%
+2025-11-30 20:07:53 | INFO     | 
+  Verifying #2...
+2025-11-30 20:07:53 | DEBUG    |     Clicking (890, 374)
+2025-11-30 20:07:53 | DEBUG    |     Nameplate read in 1 attempts
+2025-11-30 20:07:53 | INFO     |     ✓ Elite | HP: 69%
+2025-11-30 20:07:53 | INFO     | 
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2025-11-30 20:07:53 | INFO     | ENGAGING: Elite (HP: 69%)
+2025-11-30 20:07:53 | INFO     | >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2025-11-30 20:07:53 | INFO     |   Skill 1: 1
+2025-11-30 20:07:54 | INFO     |   Skill 2: 2
+2025-11-30 20:07:54 | INFO     |   Skill 3: 3
+2025-11-30 20:07:55 | INFO     |   Skill 4: 4
+2025-11-30 20:07:56 | INFO     | <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+2025-11-30 20:07:56 | INFO     | Total engagements: 4
+
+2025-11-30 20:07:56 | INFO     | 
+======================================================================
+2025-11-30 20:07:56 | INFO     | CYCLE #5
+2025-11-30 20:07:56 | INFO     | ======================================================================
+2025-11-30 20:07:56 | INFO     | Detected: 25 floating names
+2025-11-30 20:07:56 | DEBUG    |   Name #1: Player zone
+2025-11-30 20:07:56 | DEBUG    |   Name #2: Player zone
+2025-11-30 20:07:56 | DEBUG    |   Name #3: Player zone
+2025-11-30 20:07:56 | DEBUG    |   Name #4: Player zone
+2025-11-30 20:07:56 | DEBUG    |   Name #5: Player zone
+2025-11-30 20:07:56 | DEBUG    |   Region near center, might be player
+2025-11-30 20:07:56 | DEBUG    |   Region near center, might be player
+2025-11-30 20:07:56 | DEBUG    |   Name #8: Cached
+2025-11-30 20:07:56 | INFO     |   ✓ Target #9 at (1243, 367)
+2025-11-30 20:07:56 | INFO     |   ✓ Target #10 at (701, 269)
+2025-11-30 20:07:56 | INFO     |   ✓ Target #11 at (141, 831)
+2025-11-30 20:07:56 | INFO     |   ✓ Target #12 at (1013, 250)
+2025-11-30 20:07:56 | INFO     |   ✓ Target #13 at (224, 145)
+2025-11-30 20:07:56 | INFO     |   ✓ Target #14 at (1601, 750)
+2025-11-30 20:07:56 | DEBUG    |   Region near center, might be player
+2025-11-30 20:07:56 | DEBUG    |   Region near center, might be player
+2025-11-30 20:07:56 | DEBUG    |   Name #17: Cached
+2025-11-30 20:07:56 | DEBUG    |   Region near center, might be player
+2025-11-30 20:07:56 | INFO     |   ✓ Target #19 at (1746, 177)
+2025-11-30 20:07:56 | INFO     |   ✓ Target #20 at (1642, 165)
+2025-11-30 20:07:56 | INFO     |   ✓ Target #21 at (1249, 160)
+2025-11-30 20:07:56 | INFO     |   ✓ Target #22 at (1550, 159)
+2025-11-30 20:07:56 | INFO     |   ✓ Target #23 at (1374, 159)
+2025-11-30 20:07:56 | INFO     |   ✓ Target #24 at (1474, 153)
+2025-11-30 20:07:56 | INFO     |   ✓ Target #25 at (887, 134)
+2025-11-30 20:07:56 | INFO     | → Valid targets: 13
+2025-11-30 20:07:56 | INFO     | 
+  Verifying #1...
+2025-11-30 20:07:56 | DEBUG    |     Clicking (1243, 397)
+2025-11-30 20:07:57 | DEBUG    |     Nameplate read in 1 attempts
+2025-11-30 20:07:57 | INFO     |     ✓ Elite | HP: 3%
+2025-11-30 20:07:57 | INFO     | 
+  Verifying #2...
+2025-11-30 20:07:57 | DEBUG    |     Clicking (701, 299)
+2025-11-30 20:07:57 | DEBUG    |     Nameplate read in 1 attempts
+2025-11-30 20:07:57 | INFO     |     ✓ Elite | HP: 69%
+2025-11-30 20:07:58 | INFO     | 
+======================================================================
+2025-11-30 20:07:58 | INFO     | CYCLE #6
+2025-11-30 20:07:58 | INFO     | ======================================================================
+2025-11-30 20:07:58 | INFO     | Detected: 23 floating names
+2025-11-30 20:07:58 | DEBUG    |   Name #1: Cached
+2025-11-30 20:07:58 | DEBUG    |   Name #2: Cached
+2025-11-30 20:07:58 | DEBUG    |   Name #3: Cached
+2025-11-30 20:07:58 | DEBUG    |   Region near center, might be player
+2025-11-30 20:07:58 | DEBUG    |   Region near center, might be player
+2025-11-30 20:07:58 | DEBUG    |   Name #6: Cached
+2025-11-30 20:07:58 | INFO     |   ✓ Target #7 at (740, 260)
+2025-11-30 20:07:58 | INFO     |   ✓ Target #8 at (167, 177)
+2025-11-30 20:07:58 | DEBUG    |   Name #9: Cached
+2025-11-30 20:07:58 | DEBUG    |   Name #10: Cached
+2025-11-30 20:07:58 | DEBUG    |   Name #11: Cached
+2025-11-30 20:07:58 | DEBUG    |   Name #12: Cached
+2025-11-30 20:07:58 | DEBUG    |   Name #13: Cached
+2025-11-30 20:07:58 | DEBUG    |   Name #14: Cached
+2025-11-30 20:07:58 | DEBUG    |   Name #15: Player zone
+2025-11-30 20:07:58 | DEBUG    |   Name #16: Cached
+2025-11-30 20:07:58 | DEBUG    |   Name #17: Cached
+2025-11-30 20:07:58 | DEBUG    |   Name #18: Cached
+2025-11-30 20:07:58 | DEBUG    |   Name #19: Cached
+2025-11-30 20:07:58 | DEBUG    |   Name #20: Cached
+2025-11-30 20:07:58 | DEBUG    |   Name #21: Cached
+2025-11-30 20:07:58 | DEBUG    |   Name #22: Cached
+2025-11-30 20:07:58 | DEBUG    |   Name #23: Cached
+2025-11-30 20:07:58 | INFO     | → Valid targets: 2
+2025-11-30 20:07:58 | INFO     | 
+  Verifying #1...
+2025-11-30 20:07:58 | DEBUG    |     Clicking (740, 290)
+2025-11-30 20:07:58 | DEBUG    |     Nameplate read in 1 attempts
+2025-11-30 20:07:58 | INFO     |     ✓ Elite | HP: 69%
+2025-11-30 20:07:58 | INFO     | 
+  Verifying #2...
+2025-11-30 20:07:58 | DEBUG    |     Clicking (167, 207)
+2025-11-30 20:07:58 | DEBUG    |     Nameplate read in 1 attempts
+2025-11-30 20:07:58 | INFO     |     ✓ Elite | HP: 69%
+2025-11-30 20:07:58 | INFO     | 
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2025-11-30 20:07:58 | INFO     | ENGAGING: Elite (HP: 69%)
+2025-11-30 20:07:58 | INFO     | >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2025-11-30 20:07:58 | INFO     |   Skill 1: 1
+2025-11-30 20:07:59 | INFO     |   Skill 2: 2
+2025-11-30 20:08:00 | INFO     |   Skill 3: 3
+2025-11-30 20:08:00 | INFO     |   Skill 4: 4
+2025-11-30 20:08:01 | INFO     | <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+2025-11-30 20:08:01 | INFO     | Total engagements: 5
+
+2025-11-30 20:08:02 | INFO     | 
+======================================================================
+2025-11-30 20:08:02 | INFO     | CYCLE #7
+2025-11-30 20:08:02 | INFO     | ======================================================================
+2025-11-30 20:08:02 | INFO     | Detected: 14 floating names
+2025-11-30 20:08:02 | DEBUG    |   Name #1: Player zone
+2025-11-30 20:08:02 | DEBUG    |   Name #2: Player zone
+2025-11-30 20:08:02 | DEBUG    |   Region near center, might be player
+2025-11-30 20:08:02 | DEBUG    |   Name #4: Cached
+2025-11-30 20:08:02 | DEBUG    |   Region near center, might be player
+2025-11-30 20:08:02 | INFO     |   ✓ Target #6 at (1188, 384)
+2025-11-30 20:08:02 | INFO     |   ✓ Target #7 at (1257, 307)
+2025-11-30 20:08:02 | INFO     |   ✓ Target #8 at (1769, 848)
+2025-11-30 20:08:02 | INFO     |   ✓ Target #9 at (1397, 715)
+2025-11-30 20:08:02 | INFO     |   ✓ Target #10 at (421, 185)
+2025-11-30 20:08:02 | DEBUG    |   Name #11: Cached
+2025-11-30 20:08:02 | INFO     |   ✓ Target #12 at (1051, 162)
+2025-11-30 20:08:02 | INFO     |   ✓ Target #13 at (1289, 145)
+2025-11-30 20:08:02 | INFO     |   ✓ Target #14 at (1132, 131)
+2025-11-30 20:08:02 | INFO     | → Valid targets: 8
+2025-11-30 20:08:02 | INFO     | 
+  Verifying #1...
+2025-11-30 20:08:02 | DEBUG    |     Clicking (1188, 414)
+2025-11-30 20:08:02 | DEBUG    |     Nameplate read in 1 attempts
+2025-11-30 20:08:02 | INFO     |     ✓ Elite | HP: 3%
+2025-11-30 20:08:02 | INFO     | 
+  Verifying #2...
+2025-11-30 20:08:02 | DEBUG    |     Clicking (1257, 340)
+2025-11-30 20:08:02 | DEBUG    |     Nameplate read in 1 attempts
+2025-11-30 20:08:02 | INFO     |     ✓ Elite | HP: 3%
+2025-11-30 20:08:03 | INFO     | 
+======================================================================
+2025-11-30 20:08:03 | INFO     | CYCLE #8
+2025-11-30 20:08:03 | INFO     | ======================================================================
+2025-11-30 20:08:03 | INFO     | Detected: 15 floating names
+2025-11-30 20:08:03 | DEBUG    |   Name #1: Cached
+2025-11-30 20:08:03 | DEBUG    |   Name #2: Cached
+2025-11-30 20:08:03 | DEBUG    |   Name #3: Cached
+2025-11-30 20:08:03 | DEBUG    |   Name #4: Cached
+2025-11-30 20:08:03 | DEBUG    |   Name #5: Cached
+2025-11-30 20:08:03 | DEBUG    |   Name #6: Cached
+2025-11-30 20:08:03 | INFO     |   ✓ Target #7 at (969, 137)
+2025-11-30 20:08:03 | INFO     |   ✓ Target #8 at (893, 138)
+2025-11-30 20:08:03 | DEBUG    |   Name #9: Cached
+2025-11-30 20:08:03 | DEBUG    |   Name #10: Cached
+2025-11-30 20:08:03 | DEBUG    |   Name #11: Cached
+2025-11-30 20:08:03 | DEBUG    |   Name #12: Cached
+2025-11-30 20:08:03 | DEBUG    |   Name #13: Cached
+2025-11-30 20:08:03 | DEBUG    |   Name #14: Cached
+2025-11-30 20:08:03 | DEBUG    |   Name #15: Cached
+2025-11-30 20:08:03 | INFO     | → Valid targets: 2
+2025-11-30 20:08:03 | INFO     | 
+  Verifying #1...
+2025-11-30 20:08:03 | DEBUG    |     Clicking (969, 167)
+2025-11-30 20:08:03 | DEBUG    |     Nameplate read in 1 attempts
+2025-11-30 20:08:03 | INFO     |     ✓ Elite | HP: 3%
+2025-11-30 20:08:03 | INFO     | 
+  Verifying #2...
+2025-11-30 20:08:03 | DEBUG    |     Clicking (893, 169)
+2025-11-30 20:08:04 | DEBUG    |     Nameplate read in 1 attempts
+2025-11-30 20:08:04 | INFO     |     ✓ Elite | HP: 3%
+2025-11-30 20:08:04 | INFO     | 
+======================================================================
+2025-11-30 20:08:04 | INFO     | CYCLE #9
+2025-11-30 20:08:04 | INFO     | ======================================================================
+2025-11-30 20:08:04 | INFO     | Detected: 22 floating names
+2025-11-30 20:08:04 | DEBUG    |   Name #1: Player zone
+2025-11-30 20:08:04 | DEBUG    |   Name #2: Cached
+2025-11-30 20:08:04 | DEBUG    |   Name #3: Player zone
+2025-11-30 20:08:04 | DEBUG    |   Region near center, might be player
+2025-11-30 20:08:04 | DEBUG    |   Name #5: Cached
+2025-11-30 20:08:04 | DEBUG    |   Name #6: Cached
+2025-11-30 20:08:04 | DEBUG    |   Region near center, might be player
+2025-11-30 20:08:04 | INFO     |   ✓ Target #8 at (820, 296)
+2025-11-30 20:08:04 | INFO     |   ✓ Target #9 at (1015, 137)
+2025-11-30 20:08:04 | DEBUG    |   Name #10: Cached
+2025-11-30 20:08:04 | DEBUG    |   Name #11: Cached
+2025-11-30 20:08:04 | INFO     |   ✓ Target #12 at (877, 714)
+2025-11-30 20:08:04 | INFO     |   ✓ Target #13 at (1305, 335)
+2025-11-30 20:08:04 | INFO     |   ✓ Target #14 at (297, 249)
+2025-11-30 20:08:04 | DEBUG    |   Name #15: Cached
+2025-11-30 20:08:04 | INFO     |   ✓ Target #16 at (1112, 824)
+2025-11-30 20:08:04 | DEBUG    |   Name #17: Player zone
+2025-11-30 20:08:04 | DEBUG    |   Name #18: Player zone
+2025-11-30 20:08:04 | INFO     |   ✓ Target #19 at (637, 205)
+2025-11-30 20:08:04 | INFO     |   ✓ Target #20 at (275, 182)
+2025-11-30 20:08:04 | INFO     |   ✓ Target #21 at (1061, 163)
+2025-11-30 20:08:04 | DEBUG    |   Name #22: Cached
+2025-11-30 20:08:04 | INFO     | → Valid targets: 9
+2025-11-30 20:08:04 | INFO     | 
+  Verifying #1...
+2025-11-30 20:08:04 | DEBUG    |     Clicking (820, 326)
+2025-11-30 20:08:05 | DEBUG    |     Nameplate read in 1 attempts
+2025-11-30 20:08:05 | INFO     |     ✓ Elite | HP: 69%
+2025-11-30 20:08:05 | INFO     | 
+  Verifying #2...
+2025-11-30 20:08:05 | DEBUG    |     Clicking (1015, 167)
+2025-11-30 20:08:05 | DEBUG    |     Nameplate read in 1 attempts
+2025-11-30 20:08:05 | INFO     |     ✓ Elite | HP: 69%
+2025-11-30 20:08:05 | INFO     | 
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2025-11-30 20:08:05 | INFO     | ENGAGING: Elite (HP: 69%)
+2025-11-30 20:08:05 | INFO     | >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2025-11-30 20:08:05 | INFO     |   Skill 1: 1
+2025-11-30 20:08:06 | INFO     |   Skill 2: 2
+2025-11-30 20:08:06 | INFO     |   Skill 3: 3
+2025-11-30 20:08:07 | INFO     |   Skill 4: 4
+2025-11-30 20:08:08 | INFO     | <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+2025-11-30 20:08:08 | INFO     | Total engagements: 6
+
+2025-11-30 20:08:08 | INFO     | 
+======================================================================
+2025-11-30 20:08:08 | INFO     | CYCLE #10
+2025-11-30 20:08:08 | INFO     | ======================================================================
+2025-11-30 20:08:08 | INFO     | Detected: 19 floating names
+2025-11-30 20:08:08 | INFO     |   ✓ Target #1 at (1097, 702)
+2025-11-30 20:08:08 | DEBUG    |   Name #2: Cached
+2025-11-30 20:08:08 | DEBUG    |   Name #3: Player zone
+2025-11-30 20:08:08 | DEBUG    |   Name #4: Cached
+2025-11-30 20:08:08 | DEBUG    |   Name #5: Player zone
+2025-11-30 20:08:08 | DEBUG    |   Region near center, might be player
+2025-11-30 20:08:08 | INFO     |   ✓ Target #7 at (846, 387)
+2025-11-30 20:08:08 | INFO     |   ✓ Target #8 at (546, 375)
+2025-11-30 20:08:08 | INFO     |   ✓ Target #9 at (1230, 363)
+2025-11-30 20:08:08 | INFO     |   ✓ Target #10 at (674, 269)
+2025-11-30 20:08:08 | INFO     |   ✓ Target #11 at (1021, 137)
+2025-11-30 20:08:08 | INFO     |   ✓ Target #12 at (983, 137)
+2025-11-30 20:08:08 | INFO     |   ✓ Target #13 at (947, 137)
+2025-11-30 20:08:08 | DEBUG    |   Region near center, might be player
+2025-11-30 20:08:08 | INFO     |   ✓ Target #15 at (583, 207)
+2025-11-30 20:08:08 | INFO     |   ✓ Target #16 at (564, 127)
+2025-11-30 20:08:08 | INFO     |   ✓ Target #17 at (1075, 172)
+2025-11-30 20:08:08 | INFO     |   ✓ Target #18 at (853, 163)
+2025-11-30 20:08:08 | INFO     |   ✓ Target #19 at (1174, 135)
+2025-11-30 20:08:08 | INFO     | → Valid targets: 13
+2025-11-30 20:08:08 | INFO     | 
+  Verifying #1...
+2025-11-30 20:08:08 | DEBUG    |     Clicking (1097, 732)
+2025-11-30 20:08:09 | DEBUG    |     Nameplate read in 1 attempts
+2025-11-30 20:08:09 | INFO     |     ✓ Elite | HP: 1%
+2025-11-30 20:08:09 | INFO     | 
+  Verifying #2...
+2025-11-30 20:08:09 | DEBUG    |     Clicking (846, 417)
+2025-11-30 20:08:09 | DEBUG    |     Nameplate read in 1 attempts
+2025-11-30 20:08:09 | INFO     |     ✓ Elite | HP: 69%
+2025-11-30 20:08:09 | INFO     | 
+======================================================================
+2025-11-30 20:08:09 | INFO     | CYCLE #11
+2025-11-30 20:08:09 | INFO     | ======================================================================
+2025-11-30 20:08:09 | INFO     | Detected: 21 floating names
+2025-11-30 20:08:09 | DEBUG    |   Name #1: Cached
+2025-11-30 20:08:09 | DEBUG    |   Name #2: Cached
+2025-11-30 20:08:09 | DEBUG    |   Region near center, might be player
+2025-11-30 20:08:09 | DEBUG    |   Name #4: Cached
+2025-11-30 20:08:09 | DEBUG    |   Name #5: Cached
+2025-11-30 20:08:09 | INFO     |   ✓ Target #6 at (458, 361)
+2025-11-30 20:08:09 | INFO     |   ✓ Target #7 at (1183, 355)
+2025-11-30 20:08:09 | DEBUG    |   Name #8: Cached
+2025-11-30 20:08:09 | DEBUG    |   Name #9: Cached
+2025-11-30 20:08:09 | INFO     |   ✓ Target #10 at (900, 137)
+2025-11-30 20:08:09 | INFO     |   ✓ Target #11 at (653, 837)
+2025-11-30 20:08:09 | DEBUG    |   Name #12: Cached
+2025-11-30 20:08:09 | DEBUG    |   Name #13: Cached
+2025-11-30 20:08:09 | DEBUG    |   Name #14: Cached
+2025-11-30 20:08:09 | INFO     |   ✓ Target #15 at (738, 884)
+2025-11-30 20:08:09 | INFO     |   ✓ Target #16 at (753, 781)
+2025-11-30 20:08:09 | DEBUG    |   Name #17: Cached
+2025-11-30 20:08:09 | DEBUG    |   Name #18: Cached
+2025-11-30 20:08:09 | DEBUG    |   Name #19: Cached
+2025-11-30 20:08:09 | INFO     |   ✓ Target #20 at (771, 149)
+2025-11-30 20:08:09 | DEBUG    |   Name #21: Cached
+2025-11-30 20:08:09 | INFO     | → Valid targets: 7
+2025-11-30 20:08:09 | INFO     | 
+  Verifying #1...
+2025-11-30 20:08:09 | DEBUG    |     Clicking (458, 391)
+2025-11-30 20:08:10 | DEBUG    |     Nameplate read in 1 attempts
+2025-11-30 20:08:10 | INFO     |     ✓ Elite | HP: 69%
+2025-11-30 20:08:10 | INFO     | 
+  Verifying #2...
+2025-11-30 20:08:10 | DEBUG    |     Clicking (1183, 385)
+2025-11-30 20:08:10 | DEBUG    |     Nameplate read in 1 attempts
+2025-11-30 20:08:10 | INFO     |     ✓ Elite | HP: 69%
+2025-11-30 20:08:10 | INFO     | 
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2025-11-30 20:08:10 | INFO     | ENGAGING: Elite (HP: 69%)
+2025-11-30 20:08:10 | INFO     | >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2025-11-30 20:08:10 | INFO     |   Skill 1: 1
+2025-11-30 20:08:11 | INFO     |   Skill 2: 2
+2025-11-30 20:08:12 | INFO     |   Skill 3: 3
+2025-11-30 20:08:12 | INFO     |   Skill 4: 4
+2025-11-30 20:08:13 | INFO     | <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+2025-11-30 20:08:13 | INFO     | Total engagements: 7
+
+2025-11-30 20:08:13 | INFO     | 
+======================================================================
+2025-11-30 20:08:13 | INFO     | CYCLE #12
+2025-11-30 20:08:13 | INFO     | ======================================================================
+2025-11-30 20:08:14 | INFO     | Detected: 19 floating names
+2025-11-30 20:08:14 | DEBUG    |   Name #1: Player zone
+2025-11-30 20:08:14 | DEBUG    |   Name #2: Player zone
+2025-11-30 20:08:14 | DEBUG    |   Name #3: Player zone
+2025-11-30 20:08:14 | DEBUG    |   Name #4: Player zone
+2025-11-30 20:08:14 | DEBUG    |   Name #5: Player zone
+2025-11-30 20:08:14 | DEBUG    |   Name #6: Cached
+2025-11-30 20:08:14 | DEBUG    |   Region near center, might be player
+2025-11-30 20:08:14 | INFO     |   ✓ Target #8 at (1110, 382)
+2025-11-30 20:08:14 | INFO     |   ✓ Target #9 at (1197, 332)
+2025-11-30 20:08:14 | INFO     |   ✓ Target #10 at (471, 270)
+2025-11-30 20:08:14 | INFO     |   ✓ Target #11 at (1025, 137)
+2025-11-30 20:08:14 | INFO     |   ✓ Target #12 at (951, 137)
+2025-11-30 20:08:14 | INFO     |   ✓ Target #13 at (900, 137)
+2025-11-30 20:08:14 | DEBUG    |   Region near center, might be player
+2025-11-30 20:08:14 | INFO     |   ✓ Target #15 at (454, 201)
+2025-11-30 20:08:14 | DEBUG    |   Name #16: Player zone
+2025-11-30 20:08:14 | DEBUG    |   Region near center, might be player
+2025-11-30 20:08:14 | DEBUG    |   Name #18: Cached
+2025-11-30 20:08:14 | INFO     |   ✓ Target #19 at (781, 153)
+2025-11-30 20:08:14 | INFO     | → Valid targets: 8
+2025-11-30 20:08:14 | INFO     | 
+  Verifying #1...
+2025-11-30 20:08:14 | DEBUG    |     Clicking (1110, 412)
+2025-11-30 20:08:14 | DEBUG    |     Nameplate read in 1 attempts
+2025-11-30 20:08:14 | INFO     |     ✓ Elite | HP: 69%
+2025-11-30 20:08:14 | INFO     | 
+  Verifying #2...
+2025-11-30 20:08:14 | DEBUG    |     Clicking (1197, 362)
+2025-11-30 20:08:14 | DEBUG    |     Nameplate read in 1 attempts
+2025-11-30 20:08:14 | INFO     |     ✓ Elite | HP: 69%
+2025-11-30 20:08:14 | INFO     | 
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2025-11-30 20:08:14 | INFO     | ENGAGING: Elite (HP: 69%)
+2025-11-30 20:08:14 | INFO     | >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2025-11-30 20:08:14 | INFO     |   Skill 1: 1
+2025-11-30 20:08:15 | INFO     |   Skill 2: 2
+2025-11-30 20:08:16 | INFO     |   Skill 3: 3
+2025-11-30 20:08:16 | INFO     |   Skill 4: 4
+2025-11-30 20:08:17 | INFO     | <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+2025-11-30 20:08:17 | INFO     | Total engagements: 8
+
+2025-11-30 20:08:18 | INFO     | 
+======================================================================
+2025-11-30 20:08:18 | INFO     | CYCLE #13
+2025-11-30 20:08:18 | INFO     | ======================================================================
+2025-11-30 20:08:18 | INFO     | Detected: 23 floating names
+2025-11-30 20:08:18 | DEBUG    |   Name #1: Player zone
+2025-11-30 20:08:18 | DEBUG    |   Region near center, might be player
+2025-11-30 20:08:18 | DEBUG    |   Name #3: Cached
+2025-11-30 20:08:18 | DEBUG    |   Region near center, might be player
+2025-11-30 20:08:18 | DEBUG    |   Name #5: Player zone
+2025-11-30 20:08:18 | DEBUG    |   Name #6: Player zone
+2025-11-30 20:08:18 | DEBUG    |   Region near center, might be player
+2025-11-30 20:08:18 | DEBUG    |   Region near center, might be player
+2025-11-30 20:08:18 | DEBUG    |   Name #9: Cached
+2025-11-30 20:08:18 | INFO     |   ✓ Target #10 at (1017, 288)
+2025-11-30 20:08:18 | DEBUG    |   Region near center, might be player
+2025-11-30 20:08:18 | INFO     |   ✓ Target #12 at (231, 209)
+2025-11-30 20:08:18 | DEBUG    |   Name #13: Cached
+2025-11-30 20:08:18 | INFO     |   ✓ Target #14 at (236, 160)
+2025-11-30 20:08:18 | INFO     |   ✓ Target #15 at (686, 713)
+2025-11-30 20:08:18 | DEBUG    |   Region near center, might be player
+2025-11-30 20:08:18 | DEBUG    |   Region near center, might be player
+2025-11-30 20:08:18 | DEBUG    |   Region near center, might be player
+2025-11-30 20:08:18 | DEBUG    |   Name #19: Cached
+2025-11-30 20:08:18 | DEBUG    |   Region near center, might be player
+2025-11-30 20:08:18 | DEBUG    |   Region near center, might be player
+2025-11-30 20:08:18 | DEBUG    |   Region near center, might be player
+2025-11-30 20:08:18 | INFO     |   ✓ Target #23 at (938, 146)
+2025-11-30 20:08:18 | INFO     | → Valid targets: 5
+2025-11-30 20:08:18 | INFO     | 
+  Verifying #1...
+2025-11-30 20:08:18 | DEBUG    |     Clicking (1017, 318)
+2025-11-30 20:08:18 | DEBUG    |     Nameplate read in 1 attempts
+2025-11-30 20:08:18 | INFO     |     ✓ Elite | HP: 3%
+2025-11-30 20:08:18 | INFO     | 
+  Verifying #2...
+2025-11-30 20:08:18 | DEBUG    |     Clicking (231, 241)
+2025-11-30 20:08:18 | DEBUG    |     Nameplate read in 1 attempts
+2025-11-30 20:08:18 | INFO     |     ✓ Elite | HP: 22%
+2025-11-30 20:08:19 | INFO     | 
+======================================================================
+2025-11-30 20:08:19 | INFO     | CYCLE #14
+2025-11-30 20:08:19 | INFO     | ======================================================================
+2025-11-30 20:08:19 | INFO     | Detected: 23 floating names
+2025-11-30 20:08:19 | DEBUG    |   Name #1: Player zone
+2025-11-30 20:08:19 | DEBUG    |   Name #2: Cached
+2025-11-30 20:08:19 | DEBUG    |   Name #3: Cached
+2025-11-30 20:08:19 | DEBUG    |   Name #4: Player zone
+2025-11-30 20:08:19 | DEBUG    |   Name #5: Cached
+2025-11-30 20:08:19 | DEBUG    |   Region near center, might be player
+2025-11-30 20:08:19 | DEBUG    |   Name #7: Cached
+2025-11-30 20:08:19 | DEBUG    |   Name #8: Cached
+2025-11-30 20:08:19 | INFO     |   ✓ Target #9 at (985, 338)
+2025-11-30 20:08:19 | DEBUG    |   Name #10: Cached
+2025-11-30 20:08:19 | DEBUG    |   Name #11: Cached
+2025-11-30 20:08:19 | DEBUG    |   Name #12: Cached
+2025-11-30 20:08:19 | DEBUG    |   Name #13: Cached
+2025-11-30 20:08:19 | DEBUG    |   Name #14: Cached
+2025-11-30 20:08:19 | DEBUG    |   Name #15: Cached
+2025-11-30 20:08:19 | DEBUG    |   Name #16: Cached
+2025-11-30 20:08:19 | DEBUG    |   Name #17: Player zone
+2025-11-30 20:08:19 | DEBUG    |   Name #18: Cached
+2025-11-30 20:08:19 | DEBUG    |   Name #19: Cached
+2025-11-30 20:08:19 | DEBUG    |   Name #20: Cached
+2025-11-30 20:08:19 | DEBUG    |   Name #21: Cached
+2025-11-30 20:08:19 | DEBUG    |   Name #22: Cached
+2025-11-30 20:08:19 | DEBUG    |   Name #23: Cached
+2025-11-30 20:08:19 | INFO     | → Valid targets: 1
+2025-11-30 20:08:19 | INFO     | 
+  Verifying #1...
+2025-11-30 20:08:19 | DEBUG    |     Clicking (985, 371)
+2025-11-30 20:08:19 | DEBUG    |     Nameplate read in 1 attempts
+2025-11-30 20:08:19 | INFO     |     ✓ Elite | HP: 3%
+2025-11-30 20:08:20 | INFO     | 
+======================================================================
+2025-11-30 20:08:20 | INFO     | CYCLE #15
+2025-11-30 20:08:20 | INFO     | ======================================================================
+2025-11-30 20:08:20 | INFO     | Detected: 27 floating names
+2025-11-30 20:08:20 | INFO     |   ✓ Target #1 at (546, 829)
+2025-11-30 20:08:20 | DEBUG    |   Name #2: Player zone
+2025-11-30 20:08:20 | DEBUG    |   Name #3: Player zone
+2025-11-30 20:08:20 | DEBUG    |   Region near center, might be player
+2025-11-30 20:08:20 | DEBUG    |   Name #5: Cached
+2025-11-30 20:08:20 | DEBUG    |   Region near center, might be player
+2025-11-30 20:08:20 | DEBUG    |   Name #7: Cached
+2025-11-30 20:08:20 | DEBUG    |   Region near center, might be player
+2025-11-30 20:08:20 | DEBUG    |   Name #9: Cached
+2025-11-30 20:08:20 | DEBUG    |   Name #10: Cached
+2025-11-30 20:08:20 | INFO     |   ✓ Target #11 at (127, 126)
+2025-11-30 20:08:20 | INFO     |   ✓ Target #12 at (730, 802)
+2025-11-30 20:08:20 | DEBUG    |   Region near center, might be player
+2025-11-30 20:08:20 | DEBUG    |   Region near center, might be player
+2025-11-30 20:08:20 | DEBUG    |   Name #15: Cached
+2025-11-30 20:08:20 | INFO     |   ✓ Target #16 at (1461, 207)
+2025-11-30 20:08:20 | INFO     |   ✓ Target #17 at (168, 200)
+2025-11-30 20:08:20 | INFO     |   ✓ Target #18 at (1614, 193)
+2025-11-30 20:08:20 | DEBUG    |   Name #19: Cached
+2025-11-30 20:08:20 | INFO     |   ✓ Target #20 at (1486, 713)
+2025-11-30 20:08:20 | DEBUG    |   Name #21: Cached
+2025-11-30 20:08:20 | DEBUG    |   Region near center, might be player
+2025-11-30 20:08:20 | DEBUG    |   Region near center, might be player
+2025-11-30 20:08:20 | DEBUG    |   Region near center, might be player
+2025-11-30 20:08:20 | DEBUG    |   Name #25: Cached
+2025-11-30 20:08:20 | DEBUG    |   Name #26: Cached
+2025-11-30 20:08:20 | DEBUG    |   Name #27: Cached
+2025-11-30 20:08:20 | INFO     | → Valid targets: 7
+2025-11-30 20:08:20 | INFO     | 
+  Verifying #1...
+2025-11-30 20:08:20 | DEBUG    |     Clicking (546, 859)
+2025-11-30 20:08:20 | DEBUG    |     Nameplate read in 1 attempts
+2025-11-30 20:08:20 | INFO     |     ✓ Elite | HP: 69%
+2025-11-30 20:08:20 | INFO     | 
+  Verifying #2...
+2025-11-30 20:08:20 | DEBUG    |     Clicking (127, 157)
+2025-11-30 20:08:20 | DEBUG    |     Nameplate read in 1 attempts
+2025-11-30 20:08:20 | INFO     |     ✓ Elite | HP: 69%
+2025-11-30 20:08:20 | INFO     | 
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2025-11-30 20:08:20 | INFO     | ENGAGING: Elite (HP: 69%)
+2025-11-30 20:08:20 | INFO     | >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2025-11-30 20:08:20 | INFO     |   Skill 1: 1
+2025-11-30 20:08:21 | INFO     |   Skill 2: 2
+2025-11-30 20:08:22 | INFO     |   Skill 3: 3
+2025-11-30 20:08:23 | INFO     |   Skill 4: 4
+2025-11-30 20:08:23 | INFO     | <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+2025-11-30 20:08:23 | INFO     | Total engagements: 9
+
+2025-11-30 20:08:24 | INFO     | 
+======================================================================
+2025-11-30 20:08:24 | INFO     | CYCLE #16
+2025-11-30 20:08:24 | INFO     | ======================================================================
+2025-11-30 20:08:24 | INFO     | Detected: 23 floating names
+2025-11-30 20:08:24 | DEBUG    |   Name #1: Player zone
+2025-11-30 20:08:24 | DEBUG    |   Region near center, might be player
+2025-11-30 20:08:24 | DEBUG    |   Name #3: Player zone
+2025-11-30 20:08:24 | DEBUG    |   Name #4: Cached
+2025-11-30 20:08:24 | DEBUG    |   Name #5: Player zone
+2025-11-30 20:08:24 | DEBUG    |   Region near center, might be player
+2025-11-30 20:08:24 | DEBUG    |   Region near center, might be player
+2025-11-30 20:08:24 | DEBUG    |   Region near center, might be player
+2025-11-30 20:08:24 | INFO     |   ✓ Target #9 at (538, 256)
+2025-11-30 20:08:24 | INFO     |   ✓ Target #10 at (1351, 778)
+2025-11-30 20:08:24 | DEBUG    |   Region near center, might be player
+2025-11-30 20:08:24 | DEBUG    |   Region near center, might be player
+2025-11-30 20:08:24 | INFO     |   ✓ Target #13 at (272, 213)
+2025-11-30 20:08:24 | INFO     |   ✓ Target #14 at (1471, 195)
+2025-11-30 20:08:24 | DEBUG    |   Name #15: Cached
+2025-11-30 20:08:24 | INFO     |   ✓ Target #16 at (277, 164)
+2025-11-30 20:08:24 | DEBUG    |   Region near center, might be player
+2025-11-30 20:08:24 | DEBUG    |   Region near center, might be player
+2025-11-30 20:08:24 | DEBUG    |   Region near center, might be player
+2025-11-30 20:08:24 | DEBUG    |   Region near center, might be player
+2025-11-30 20:08:24 | INFO     |   ✓ Target #21 at (1447, 161)
+2025-11-30 20:08:24 | INFO     |   ✓ Target #22 at (1626, 166)
+2025-11-30 20:08:24 | INFO     |   ✓ Target #23 at (983, 150)
+2025-11-30 20:08:24 | INFO     | → Valid targets: 8
+2025-11-30 20:08:24 | INFO     | 
+  Verifying #1...
+2025-11-30 20:08:24 | DEBUG    |     Clicking (538, 286)
+2025-11-30 20:08:24 | DEBUG    |     Nameplate read in 1 attempts
+2025-11-30 20:08:24 | INFO     |     ✓ Elite | HP: 69%
+2025-11-30 20:08:24 | INFO     | 
+  Verifying #2...
+2025-11-30 20:08:24 | DEBUG    |     Clicking (1351, 810)
+2025-11-30 20:08:25 | DEBUG    |     Nameplate read in 1 attempts
+2025-11-30 20:08:25 | INFO     |     ✓ Elite | HP: 69%
+2025-11-30 20:08:25 | INFO     | 
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2025-11-30 20:08:25 | INFO     | ENGAGING: Elite (HP: 69%)
+2025-11-30 20:08:25 | INFO     | >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2025-11-30 20:08:25 | INFO     |   Skill 1: 1
+2025-11-30 20:08:25 | INFO     |   Skill 2: 2
+2025-11-30 20:08:26 | INFO     |   Skill 3: 3
+2025-11-30 20:08:27 | INFO     |   Skill 4: 4
+2025-11-30 20:08:27 | INFO     | <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+2025-11-30 20:08:27 | INFO     | Total engagements: 10
+
+2025-11-30 20:08:28 | INFO     | 
+======================================================================
+2025-11-30 20:08:28 | INFO     | CYCLE #17
+2025-11-30 20:08:28 | INFO     | ======================================================================
+2025-11-30 20:08:28 | INFO     | Detected: 27 floating names
+2025-11-30 20:08:28 | INFO     |   ✓ Target #1 at (1421, 828)
+2025-11-30 20:08:28 | DEBUG    |   Name #2: Cached
+2025-11-30 20:08:28 | DEBUG    |   Region near center, might be player
+2025-11-30 20:08:28 | DEBUG    |   Region near center, might be player
+2025-11-30 20:08:28 | DEBUG    |   Name #5: Player zone
+2025-11-30 20:08:28 | DEBUG    |   Name #6: Player zone
+2025-11-30 20:08:28 | DEBUG    |   Region near center, might be player
+2025-11-30 20:08:28 | DEBUG    |   Region near center, might be player
+2025-11-30 20:08:28 | INFO     |   ✓ Target #9 at (562, 241)
+2025-11-30 20:08:28 | DEBUG    |   Name #10: Cached
+2025-11-30 20:08:28 | DEBUG    |   Name #11: Player zone
+2025-11-30 20:08:28 | DEBUG    |   Region near center, might be player
+2025-11-30 20:08:28 | INFO     |   ✓ Target #13 at (271, 213)
+2025-11-30 20:08:28 | INFO     |   ✓ Target #14 at (1471, 195)
+2025-11-30 20:08:28 | DEBUG    |   Name #15: Cached
+2025-11-30 20:08:28 | INFO     |   ✓ Target #16 at (277, 164)
+2025-11-30 20:08:28 | INFO     |   ✓ Target #17 at (1474, 887)
+2025-11-30 20:08:28 | INFO     |   ✓ Target #18 at (1455, 845)
+2025-11-30 20:08:28 | DEBUG    |   Region near center, might be player
+2025-11-30 20:08:28 | DEBUG    |   Region near center, might be player
+2025-11-30 20:08:28 | DEBUG    |   Region near center, might be player
+2025-11-30 20:08:28 | DEBUG    |   Region near center, might be player
+2025-11-30 20:08:28 | DEBUG    |   Region near center, might be player
+2025-11-30 20:08:28 | DEBUG    |   Region near center, might be player
+2025-11-30 20:08:28 | DEBUG    |   Region near center, might be player
+2025-11-30 20:08:28 | INFO     |   ✓ Target #26 at (1626, 166)
+2025-11-30 20:08:28 | INFO     |   ✓ Target #27 at (983, 149)
+2025-11-30 20:08:28 | INFO     | → Valid targets: 9
+2025-11-30 20:08:28 | INFO     | 
+  Verifying #1...
+2025-11-30 20:08:28 | DEBUG    |     Clicking (1421, 858)
+2025-11-30 20:08:28 | DEBUG    |     Nameplate read in 1 attempts
+2025-11-30 20:08:28 | INFO     |     ✓ Elite | HP: 100%
+2025-11-30 20:08:28 | INFO     | 
+  Verifying #2...
+2025-11-30 20:08:28 | DEBUG    |     Clicking (562, 271)
+2025-11-30 20:08:29 | DEBUG    |     Nameplate read in 1 attempts
+2025-11-30 20:08:29 | INFO     |     ✓ Elite | HP: 69%
+2025-11-30 20:08:29 | INFO     | 
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2025-11-30 20:08:29 | INFO     | ENGAGING: Elite (HP: 100%)
+2025-11-30 20:08:29 | INFO     | >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2025-11-30 20:08:29 | INFO     |   Skill 1: 1
+2025-11-30 20:08:29 | INFO     |   Skill 2: 2
+2025-11-30 20:08:30 | INFO     |   Skill 3: 3
+2025-11-30 20:08:31 | INFO     |   Skill 4: 4
+2025-11-30 20:08:31 | INFO     | <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+2025-11-30 20:08:31 | INFO     | Total engagements: 11
+
+2025-11-30 20:08:32 | INFO     | 
+======================================================================
+2025-11-30 20:08:32 | INFO     | CYCLE #18
+2025-11-30 20:08:32 | INFO     | ======================================================================
+2025-11-30 20:08:32 | INFO     | Detected: 19 floating names
+2025-11-30 20:08:32 | INFO     |   ✓ Target #1 at (1395, 810)
+2025-11-30 20:08:32 | DEBUG    |   Name #2: Player zone
+2025-11-30 20:08:32 | DEBUG    |   Name #3: Cached
+2025-11-30 20:08:32 | DEBUG    |   Name #4: Player zone
+2025-11-30 20:08:32 | INFO     |   ✓ Target #5 at (776, 308)
+2025-11-30 20:08:32 | INFO     |   ✓ Target #6 at (271, 174)
+2025-11-30 20:08:32 | INFO     |   ✓ Target #7 at (302, 290)
+2025-11-30 20:08:32 | DEBUG    |   Name #8: Cached
+2025-11-30 20:08:32 | INFO     |   ✓ Target #9 at (1792, 255)
+2025-11-30 20:08:32 | INFO     |   ✓ Target #10 at (289, 245)
+2025-11-30 20:08:32 | DEBUG    |   Name #11: Cached
+2025-11-30 20:08:32 | INFO     |   ✓ Target #12 at (147, 881)
+2025-11-30 20:08:32 | INFO     |   ✓ Target #13 at (595, 794)
+2025-11-30 20:08:32 | DEBUG    |   Region near center, might be player
+2025-11-30 20:08:32 | DEBUG    |   Region near center, might be player
+2025-11-30 20:08:32 | DEBUG    |   Region near center, might be player
+2025-11-30 20:08:32 | INFO     |   ✓ Target #17 at (1701, 205)
+2025-11-30 20:08:32 | INFO     |   ✓ Target #18 at (842, 172)
+2025-11-30 20:08:32 | INFO     |   ✓ Target #19 at (733, 157)
+2025-11-30 20:08:32 | INFO     | → Valid targets: 11
+2025-11-30 20:08:32 | INFO     | 
+  Verifying #1...
+2025-11-30 20:08:32 | DEBUG    |     Clicking (1395, 840)
+2025-11-30 20:08:32 | DEBUG    |     Nameplate read in 1 attempts
+2025-11-30 20:08:32 | INFO     |     ✓ Elite | HP: 69%
+2025-11-30 20:08:32 | INFO     | 
+  Verifying #2...
+2025-11-30 20:08:32 | DEBUG    |     Clicking (776, 338)
+2025-11-30 20:08:33 | DEBUG    |     Nameplate read in 1 attempts
+2025-11-30 20:08:33 | INFO     |     ✓ Elite | HP: 69%
+2025-11-30 20:08:33 | INFO     | 
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2025-11-30 20:08:33 | INFO     | ENGAGING: Elite (HP: 69%)
+2025-11-30 20:08:33 | INFO     | >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2025-11-30 20:08:33 | INFO     |   Skill 1: 1
+2025-11-30 20:08:33 | INFO     |   Skill 2: 2
+2025-11-30 20:08:34 | INFO     |   Skill 3: 3
+2025-11-30 20:08:35 | INFO     |   Skill 4: 4
+2025-11-30 20:08:35 | INFO     | <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+2025-11-30 20:08:35 | INFO     | Total engagements: 12
+
+2025-11-30 20:08:36 | INFO     | 
+======================================================================
+2025-11-30 20:08:36 | INFO     | CYCLE #19
+2025-11-30 20:08:36 | INFO     | ======================================================================
+2025-11-30 20:08:36 | INFO     | Detected: 20 floating names
+2025-11-30 20:08:36 | DEBUG    |   Name #1: Player zone
+2025-11-30 20:08:36 | DEBUG    |   Name #2: Player zone
+2025-11-30 20:08:36 | DEBUG    |   Name #3: Player zone
+2025-11-30 20:08:36 | DEBUG    |   Region near center, might be player
+2025-11-30 20:08:36 | DEBUG    |   Name #5: Cached
+2025-11-30 20:08:36 | INFO     |   ✓ Target #6 at (785, 357)
+2025-11-30 20:08:36 | INFO     |   ✓ Target #7 at (638, 269)
+2025-11-30 20:08:36 | INFO     |   ✓ Target #8 at (457, 260)
+2025-11-30 20:08:36 | INFO     |   ✓ Target #9 at (277, 178)
+2025-11-30 20:08:36 | INFO     |   ✓ Target #10 at (296, 292)
+2025-11-30 20:08:36 | DEBUG    |   Name #11: Cached
+2025-11-30 20:08:36 | INFO     |   ✓ Target #12 at (289, 246)
+2025-11-30 20:08:36 | DEBUG    |   Name #13: Cached
+2025-11-30 20:08:36 | INFO     |   ✓ Target #14 at (171, 763)
+2025-11-30 20:08:36 | DEBUG    |   Name #15: Player zone
+2025-11-30 20:08:36 | DEBUG    |   Region near center, might be player
+2025-11-30 20:08:36 | DEBUG    |   Region near center, might be player
+2025-11-30 20:08:36 | INFO     |   ✓ Target #18 at (1582, 193)
+2025-11-30 20:08:36 | INFO     |   ✓ Target #19 at (845, 173)
+2025-11-30 20:08:36 | INFO     |   ✓ Target #20 at (733, 158)
+2025-11-30 20:08:36 | INFO     | → Valid targets: 10
+2025-11-30 20:08:36 | INFO     | 
+  Verifying #1...
+2025-11-30 20:08:36 | DEBUG    |     Clicking (785, 387)
+2025-11-30 20:08:36 | DEBUG    |     Nameplate read in 1 attempts
+2025-11-30 20:08:36 | INFO     |     ✓ Elite | HP: 100%
+2025-11-30 20:08:36 | INFO     | 
+  Verifying #2...
+2025-11-30 20:08:36 | DEBUG    |     Clicking (638, 299)
+2025-11-30 20:08:37 | DEBUG    |     Nameplate read in 1 attempts
+2025-11-30 20:08:37 | INFO     |     ✓ Elite | HP: 100%
+2025-11-30 20:08:37 | INFO     | 
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2025-11-30 20:08:37 | INFO     | ENGAGING: Elite (HP: 100%)
+2025-11-30 20:08:37 | INFO     | >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2025-11-30 20:08:37 | INFO     |   Skill 1: 1
+2025-11-30 20:08:37 | INFO     |   Skill 2: 2
+2025-11-30 20:08:38 | INFO     |   Skill 3: 3
+2025-11-30 20:08:39 | INFO     |   Skill 4: 4
+2025-11-30 20:08:40 | INFO     | <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+2025-11-30 20:08:40 | INFO     | Total engagements: 13
+
+2025-11-30 20:08:40 | INFO     | 
+======================================================================
+2025-11-30 20:08:40 | INFO     | CYCLE #20
+2025-11-30 20:08:40 | INFO     | ======================================================================
+2025-11-30 20:08:40 | INFO     | Detected: 14 floating names
+2025-11-30 20:08:40 | DEBUG    |   Name #1: Player zone
+2025-11-30 20:08:40 | DEBUG    |   Name #2: Player zone
+2025-11-30 20:08:40 | DEBUG    |   Region near center, might be player
+2025-11-30 20:08:40 | DEBUG    |   Region near center, might be player
+2025-11-30 20:08:40 | DEBUG    |   Name #5: Cached
+2025-11-30 20:08:40 | DEBUG    |   Region near center, might be player
+2025-11-30 20:08:40 | INFO     |   ✓ Target #7 at (491, 348)
+2025-11-30 20:08:40 | DEBUG    |   Region near center, might be player
+2025-11-30 20:08:40 | DEBUG    |   Name #9: Player zone
+2025-11-30 20:08:40 | DEBUG    |   Region near center, might be player
+2025-11-30 20:08:40 | INFO     |   ✓ Target #11 at (359, 237)
+2025-11-30 20:08:40 | DEBUG    |   Name #12: Player zone
+2025-11-30 20:08:40 | INFO     |   ✓ Target #13 at (908, 232)
+2025-11-30 20:08:40 | INFO     |   ✓ Target #14 at (1361, 169)
+2025-11-30 20:08:40 | INFO     | → Valid targets: 4
+2025-11-30 20:08:40 | INFO     | 
+  Verifying #1...
+2025-11-30 20:08:40 | DEBUG    |     Clicking (491, 378)
+2025-11-30 20:08:40 | DEBUG    |     Nameplate read in 1 attempts
+2025-11-30 20:08:40 | INFO     |     ✓ Elite | HP: 69%
+2025-11-30 20:08:40 | INFO     | 
+  Verifying #2...
+2025-11-30 20:08:40 | DEBUG    |     Clicking (359, 269)
+2025-11-30 20:08:41 | DEBUG    |     Nameplate read in 1 attempts
+2025-11-30 20:08:41 | INFO     |     ✓ Elite | HP: 69%
+2025-11-30 20:08:41 | INFO     | 
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2025-11-30 20:08:41 | INFO     | ENGAGING: Elite (HP: 69%)
+2025-11-30 20:08:41 | INFO     | >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2025-11-30 20:08:41 | INFO     |   Skill 1: 1
+2025-11-30 20:08:41 | INFO     |   Skill 2: 2
+2025-11-30 20:08:42 | INFO     |   Skill 3: 3
+2025-11-30 20:08:43 | INFO     |   Skill 4: 4
+2025-11-30 20:08:44 | INFO     | <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+2025-11-30 20:08:44 | INFO     | Total engagements: 14
+
+2025-11-30 20:08:44 | INFO     | 
+======================================================================
+2025-11-30 20:08:44 | INFO     | CYCLE #21
+2025-11-30 20:08:44 | INFO     | ======================================================================
+2025-11-30 20:08:44 | INFO     | Detected: 14 floating names
+2025-11-30 20:08:44 | INFO     |   ✓ Target #1 at (1203, 760)
+2025-11-30 20:08:44 | DEBUG    |   Region near center, might be player
+2025-11-30 20:08:44 | INFO     |   ✓ Target #3 at (718, 308)
+2025-11-30 20:08:44 | INFO     |   ✓ Target #4 at (1855, 206)
+2025-11-30 20:08:44 | INFO     |   ✓ Target #5 at (1632, 720)
+2025-11-30 20:08:44 | INFO     |   ✓ Target #6 at (1220, 713)
+2025-11-30 20:08:44 | DEBUG    |   Name #7: Cached
+2025-11-30 20:08:44 | DEBUG    |   Region near center, might be player
+2025-11-30 20:08:44 | DEBUG    |   Region near center, might be player
+2025-11-30 20:08:44 | INFO     |   ✓ Target #10 at (1616, 343)
+2025-11-30 20:08:44 | INFO     |   ✓ Target #11 at (1577, 323)
+2025-11-30 20:08:44 | INFO     |   ✓ Target #12 at (1418, 233)
+2025-11-30 20:08:44 | INFO     |   ✓ Target #13 at (1721, 199)
+2025-11-30 20:08:44 | INFO     |   ✓ Target #14 at (1630, 197)
+2025-11-30 20:08:44 | INFO     | → Valid targets: 10
+2025-11-30 20:08:44 | INFO     | 
+  Verifying #1...
+2025-11-30 20:08:44 | DEBUG    |     Clicking (1203, 800)
+2025-11-30 20:08:44 | DEBUG    |     Nameplate read in 1 attempts
+2025-11-30 20:08:44 | INFO     |     ✓ Elite | HP: 69%
+2025-11-30 20:08:44 | INFO     | 
+  Verifying #2...
+2025-11-30 20:08:44 | DEBUG    |     Clicking (718, 338)
+2025-11-30 20:08:45 | DEBUG    |     Nameplate read in 1 attempts
+2025-11-30 20:08:45 | INFO     |     ✓ Elite | HP: 69%
+2025-11-30 20:08:45 | INFO     | 
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2025-11-30 20:08:45 | INFO     | ENGAGING: Elite (HP: 69%)
+2025-11-30 20:08:45 | INFO     | >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2025-11-30 20:08:45 | INFO     |   Skill 1: 1
+2025-11-30 20:08:46 | INFO     |   Skill 2: 2
+2025-11-30 20:08:46 | INFO     |   Skill 3: 3
+2025-11-30 20:08:47 | INFO     |   Skill 4: 4
+2025-11-30 20:08:48 | INFO     | <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+2025-11-30 20:08:48 | INFO     | Total engagements: 15
+
+2025-11-30 20:08:48 | INFO     | 
+======================================================================
+2025-11-30 20:08:48 | INFO     | CYCLE #22
+2025-11-30 20:08:48 | INFO     | ======================================================================
+2025-11-30 20:08:48 | INFO     | Detected: 14 floating names
+2025-11-30 20:08:48 | INFO     |   ✓ Target #1 at (1495, 729)
+2025-11-30 20:08:48 | DEBUG    |   Region near center, might be player
+2025-11-30 20:08:48 | INFO     |   ✓ Target #3 at (1025, 241)
+2025-11-30 20:08:48 | INFO     |   ✓ Target #4 at (1855, 207)
+2025-11-30 20:08:48 | INFO     |   ✓ Target #5 at (1409, 851)
+2025-11-30 20:08:48 | DEBUG    |   Region near center, might be player
+2025-11-30 20:08:48 | DEBUG    |   Region near center, might be player
+2025-11-30 20:08:48 | INFO     |   ✓ Target #8 at (1569, 286)
+2025-11-30 20:08:48 | INFO     |   ✓ Target #9 at (342, 759)
+2025-11-30 20:08:48 | DEBUG    |   Region near center, might be player
+2025-11-30 20:08:48 | DEBUG    |   Region near center, might be player
+2025-11-30 20:08:48 | DEBUG    |   Region near center, might be player
+2025-11-30 20:08:48 | INFO     |   ✓ Target #13 at (1087, 256)
+2025-11-30 20:08:48 | INFO     |   ✓ Target #14 at (941, 247)
+2025-11-30 20:08:48 | INFO     | → Valid targets: 8
+2025-11-30 20:08:48 | INFO     | 
+  Verifying #1...
+2025-11-30 20:08:48 | DEBUG    |     Clicking (1495, 762)
+2025-11-30 20:08:49 | DEBUG    |     Nameplate read in 1 attempts
+2025-11-30 20:08:49 | INFO     |     ✓ Elite | HP: 3%
+2025-11-30 20:08:49 | INFO     | 
+  Verifying #2...
+2025-11-30 20:08:49 | DEBUG    |     Clicking (1025, 271)
+2025-11-30 20:08:49 | DEBUG    |     Nameplate read in 1 attempts
+2025-11-30 20:08:49 | INFO     |     ✓ Elite | HP: 3%
+2025-11-30 20:08:49 | INFO     | 
+======================================================================
+2025-11-30 20:08:49 | INFO     | CYCLE #23
+2025-11-30 20:08:49 | INFO     | ======================================================================
+2025-11-30 20:08:49 | INFO     | Detected: 15 floating names
+2025-11-30 20:08:49 | DEBUG    |   Name #1: Player zone
+2025-11-30 20:08:49 | DEBUG    |   Name #2: Player zone
+2025-11-30 20:08:49 | INFO     |   ✓ Target #3 at (1646, 159)
+2025-11-30 20:08:49 | INFO     |   ✓ Target #4 at (1563, 742)
+2025-11-30 20:08:49 | INFO     |   ✓ Target #5 at (1175, 736)
+2025-11-30 20:08:49 | DEBUG    |   Region near center, might be player
+2025-11-30 20:08:49 | DEBUG    |   Region near center, might be player
+2025-11-30 20:08:49 | DEBUG    |   Region near center, might be player
+2025-11-30 20:08:49 | INFO     |   ✓ Target #9 at (1626, 374)
+2025-11-30 20:08:49 | INFO     |   ✓ Target #10 at (1397, 380)
+2025-11-30 20:08:49 | INFO     |   ✓ Target #11 at (1535, 356)
+2025-11-30 20:08:49 | INFO     |   ✓ Target #12 at (1594, 348)
+2025-11-30 20:08:49 | INFO     |   ✓ Target #13 at (1739, 214)
+2025-11-30 20:08:49 | INFO     |   ✓ Target #14 at (1634, 213)
+2025-11-30 20:08:49 | INFO     |   ✓ Target #15 at (312, 153)
+2025-11-30 20:08:49 | INFO     | → Valid targets: 10
+2025-11-30 20:08:49 | INFO     | 
+  Verifying #1...
+2025-11-30 20:08:49 | DEBUG    |     Clicking (1646, 189)
+2025-11-30 20:08:50 | DEBUG    |     Nameplate read in 1 attempts
+2025-11-30 20:08:50 | INFO     |     ✓ Elite | HP: 3%
+2025-11-30 20:08:50 | INFO     | 
+  Verifying #2...
+2025-11-30 20:08:50 | DEBUG    |     Clicking (1563, 777)
+2025-11-30 20:08:50 | DEBUG    |     Nameplate read in 1 attempts
+2025-11-30 20:08:50 | INFO     |     ✓ Elite | HP: 3%
+2025-11-30 20:08:51 | INFO     | 
+======================================================================
+2025-11-30 20:08:51 | INFO     | CYCLE #24
+2025-11-30 20:08:51 | INFO     | ======================================================================
+2025-11-30 20:08:51 | INFO     | Detected: 29 floating names
+2025-11-30 20:08:51 | INFO     |   ✓ Target #1 at (295, 802)
+2025-11-30 20:08:51 | DEBUG    |   Region near center, might be player
+2025-11-30 20:08:51 | DEBUG    |   Region near center, might be player
+2025-11-30 20:08:51 | DEBUG    |   Name #4: Cached
+2025-11-30 20:08:51 | DEBUG    |   Region near center, might be player
+2025-11-30 20:08:51 | DEBUG    |   Region near center, might be player
+2025-11-30 20:08:51 | DEBUG    |   Region near center, might be player
+2025-11-30 20:08:51 | DEBUG    |   Name #8: Player zone
+2025-11-30 20:08:51 | INFO     |   ✓ Target #9 at (188, 777)
+2025-11-30 20:08:51 | DEBUG    |   Region near center, might be player
+2025-11-30 20:08:51 | DEBUG    |   Name #11: Cached
+2025-11-30 20:08:51 | DEBUG    |   Region near center, might be player
+2025-11-30 20:08:51 | DEBUG    |   Name #13: Cached
+2025-11-30 20:08:51 | DEBUG    |   Region near center, might be player
+2025-11-30 20:08:51 | DEBUG    |   Region near center, might be player
+2025-11-30 20:08:51 | DEBUG    |   Region near center, might be player
+2025-11-30 20:08:51 | DEBUG    |   Region near center, might be player
+2025-11-30 20:08:51 | INFO     |   ✓ Target #18 at (222, 334)
+2025-11-30 20:08:51 | INFO     |   ✓ Target #19 at (1683, 726)
+2025-11-30 20:08:51 | DEBUG    |   Region near center, might be player
+2025-11-30 20:08:51 | DEBUG    |   Name #21: Player zone
+2025-11-30 20:08:51 | INFO     |   ✓ Target #22 at (417, 387)
+2025-11-30 20:08:51 | INFO     |   ✓ Target #23 at (86, 382)
+2025-11-30 20:08:51 | INFO     |   ✓ Target #24 at (356, 379)
+2025-11-30 20:08:51 | INFO     |   ✓ Target #25 at (935, 269)
+2025-11-30 20:08:51 | INFO     |   ✓ Target #26 at (1576, 215)
+2025-11-30 20:08:51 | INFO     |   ✓ Target #27 at (1463, 213)
+2025-11-30 20:08:51 | INFO     |   ✓ Target #28 at (1368, 189)
+2025-11-30 20:08:51 | INFO     |   ✓ Target #29 at (1794, 152)
+2025-11-30 20:08:51 | INFO     | → Valid targets: 12
+2025-11-30 20:08:51 | INFO     | 
+  Verifying #1...
+2025-11-30 20:08:51 | DEBUG    |     Clicking (295, 835)
+2025-11-30 20:08:51 | DEBUG    |     Nameplate read in 1 attempts
+2025-11-30 20:08:51 | INFO     |     ✓ Elite | HP: 3%
+2025-11-30 20:08:51 | INFO     | 
+  Verifying #2...
+2025-11-30 20:08:51 | DEBUG    |     Clicking (188, 809)
+2025-11-30 20:08:51 | DEBUG    |     Nameplate read in 1 attempts
+2025-11-30 20:08:51 | INFO     |     ✓ Elite | HP: 3%
+2025-11-30 20:08:52 | INFO     | 
+======================================================================
+2025-11-30 20:08:52 | INFO     | CYCLE #25
+2025-11-30 20:08:52 | INFO     | ======================================================================
+2025-11-30 20:08:52 | INFO     | Detected: 35 floating names
+2025-11-30 20:08:52 | DEBUG    |   Name #1: Player zone
+2025-11-30 20:08:52 | DEBUG    |   Region near center, might be player
+2025-11-30 20:08:52 | DEBUG    |   Name #3: Player zone
+2025-11-30 20:08:52 | DEBUG    |   Region near center, might be player
+2025-11-30 20:08:52 | DEBUG    |   Name #5: Player zone
+2025-11-30 20:08:52 | DEBUG    |   Name #6: Cached
+2025-11-30 20:08:52 | DEBUG    |   Region near center, might be player
+2025-11-30 20:08:52 | DEBUG    |   Region near center, might be player
+2025-11-30 20:08:52 | INFO     |   ✓ Target #9 at (1550, 368)
+2025-11-30 20:08:52 | DEBUG    |   Name #10: Cached
+2025-11-30 20:08:52 | INFO     |   ✓ Target #11 at (832, 328)
+2025-11-30 20:08:52 | INFO     |   ✓ Target #12 at (985, 295)
+2025-11-30 20:08:52 | INFO     |   ✓ Target #13 at (935, 151)
+2025-11-30 20:08:52 | DEBUG    |   Region near center, might be player
+2025-11-30 20:08:52 | DEBUG    |   Name #15: Cached
+2025-11-30 20:08:52 | DEBUG    |   Name #16: Cached
+2025-11-30 20:08:52 | DEBUG    |   Name #17: Player zone
+2025-11-30 20:08:52 | DEBUG    |   Name #18: Player zone
+2025-11-30 20:08:52 | DEBUG    |   Name #19: Cached
+2025-11-30 20:08:52 | DEBUG    |   Region near center, might be player
+2025-11-30 20:08:52 | DEBUG    |   Name #21: Player zone
+2025-11-30 20:08:52 | DEBUG    |   Region near center, might be player
+2025-11-30 20:08:52 | INFO     |   ✓ Target #23 at (1141, 298)
+2025-11-30 20:08:52 | INFO     |   ✓ Target #24 at (1592, 290)
+2025-11-30 20:08:52 | DEBUG    |   Name #25: Cached
+2025-11-30 20:08:52 | INFO     |   ✓ Target #26 at (1607, 243)
+2025-11-30 20:08:52 | INFO     |   ✓ Target #27 at (1336, 232)
+2025-11-30 20:08:52 | INFO     |   ✓ Target #28 at (960, 194)
+2025-11-30 20:08:52 | INFO     |   ✓ Target #29 at (1542, 193)
+2025-11-30 20:08:52 | INFO     |   ✓ Target #30 at (1616, 200)
+2025-11-30 20:08:52 | INFO     |   ✓ Target #31 at (1442, 185)
+2025-11-30 20:08:52 | DEBUG    |   Name #32: Cached
+2025-11-30 20:08:52 | INFO     |   ✓ Target #33 at (870, 174)
+2025-11-30 20:08:52 | INFO     |   ✓ Target #34 at (1270, 173)
+2025-11-30 20:08:52 | INFO     |   ✓ Target #35 at (1580, 136)
+2025-11-30 20:08:52 | INFO     | → Valid targets: 15
+2025-11-30 20:08:52 | INFO     | 
+  Verifying #1...
+2025-11-30 20:08:52 | DEBUG    |     Clicking (1550, 398)
+2025-11-30 20:08:52 | DEBUG    |     Nameplate read in 1 attempts
+2025-11-30 20:08:52 | INFO     |     ✓ Elite | HP: 69%
+2025-11-30 20:08:52 | INFO     | 
+  Verifying #2...
+2025-11-30 20:08:52 | DEBUG    |     Clicking (832, 358)
+2025-11-30 20:08:53 | DEBUG    |     Nameplate read in 1 attempts
+2025-11-30 20:08:53 | INFO     |     ✓ Elite | HP: 69%
+2025-11-30 20:08:53 | INFO     | 
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2025-11-30 20:08:53 | INFO     | ENGAGING: Elite (HP: 69%)
+2025-11-30 20:08:53 | INFO     | >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2025-11-30 20:08:53 | INFO     |   Skill 1: 1
+2025-11-30 20:08:53 | INFO     |   Skill 2: 2
+2025-11-30 20:08:53 | INFO     | 
+
+⛔ Bot stopped by user
+2025-11-30 20:08:54 | INFO     | 
+======================================================================
+2025-11-30 20:08:54 | INFO     | FINAL STATISTICS
+2025-11-30 20:08:54 | INFO     | ======================================================================
+2025-11-30 20:08:54 | INFO     | Total Cycles: 25
+2025-11-30 20:08:54 | INFO     | Total Clicks: 49
+2025-11-30 20:08:54 | INFO     | Total Engagements: 15
+2025-11-30 20:08:54 | INFO     | Uptime: 73s (1m 13s)
+2025-11-30 20:08:54 | INFO     | Cache Hit Rate: 23.3%
+2025-11-30 20:08:54 | INFO     | Avg Cycle Time: 2.92s
+2025-11-30 20:08:54 | INFO     | ======================================================================

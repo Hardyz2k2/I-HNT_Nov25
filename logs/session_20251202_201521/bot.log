@@ -1,0 +1,577 @@
+2025-12-02 20:15:21 | INFO     | ======================================================================
+2025-12-02 20:15:21 | INFO     | MOB HUNTER v3.0 - CENTER-OUT + BINARY HEALTH
+2025-12-02 20:15:21 | INFO     | ======================================================================
+2025-12-02 20:15:21 | INFO     | Log directory: logs/session_20251202_201521
+2025-12-02 20:15:21 | INFO     | Screen: 1920x1080
+2025-12-02 20:15:21 | INFO     | Strategy: Attack closest to center first
+2025-12-02 20:15:21 | INFO     | Health: Binary (ALIVE/DEAD) detection
+2025-12-02 20:15:21 | INFO     | Pet Filter: Via nameplate class detection
+2025-12-02 20:15:21 | INFO     | ======================================================================
+2025-12-02 20:15:21 | INFO     | 
+🚀 Bot started! Press Ctrl+C to stop.
+
+2025-12-02 20:15:21 | INFO     | 💡 Controls: CapsLock = Pause/Resume
+
+2025-12-02 20:15:21 | INFO     | 
+======================================================================
+2025-12-02 20:15:21 | INFO     | CYCLE #1
+2025-12-02 20:15:21 | INFO     | ======================================================================
+2025-12-02 20:15:21 | DEBUG    |   Detection stats: total_contours=0, rejected_by_size=0, rejected_by_aspect=0, rejected_by_position=0, rejected_by_text_validation=0
+2025-12-02 20:15:21 | INFO     |   → After filtering: 0 valid detections
+2025-12-02 20:15:21 | INFO     | Detected: 0 floating names
+2025-12-02 20:15:21 | INFO     | → No floating names found
+2025-12-02 20:15:21 | INFO     | 
+======================================================================
+2025-12-02 20:15:21 | INFO     | CYCLE #2
+2025-12-02 20:15:21 | INFO     | ======================================================================
+2025-12-02 20:15:21 | DEBUG    |   Detection stats: total_contours=0, rejected_by_size=0, rejected_by_aspect=0, rejected_by_position=0, rejected_by_text_validation=0
+2025-12-02 20:15:21 | INFO     |   → After filtering: 0 valid detections
+2025-12-02 20:15:21 | INFO     | Detected: 0 floating names
+2025-12-02 20:15:21 | INFO     | → No floating names found
+2025-12-02 20:15:22 | INFO     | 
+======================================================================
+2025-12-02 20:15:22 | INFO     | CYCLE #3
+2025-12-02 20:15:22 | INFO     | ======================================================================
+2025-12-02 20:15:22 | DEBUG    |   Detection stats: total_contours=0, rejected_by_size=0, rejected_by_aspect=0, rejected_by_position=0, rejected_by_text_validation=0
+2025-12-02 20:15:22 | INFO     |   → After filtering: 0 valid detections
+2025-12-02 20:15:22 | INFO     | Detected: 0 floating names
+2025-12-02 20:15:22 | INFO     | → No floating names found
+2025-12-02 20:15:22 | INFO     | 
+======================================================================
+2025-12-02 20:15:22 | INFO     | CYCLE #4
+2025-12-02 20:15:22 | INFO     | ======================================================================
+2025-12-02 20:15:22 | DEBUG    |   Candidate at (146,868) size=47x11 aspect=4.3 -> FAIL
+2025-12-02 20:15:22 | DEBUG    |   Candidate at (146,868) size=47x11 aspect=4.3 -> FAIL
+2025-12-02 20:15:22 | DEBUG    |   Candidate at (912,501) size=32x11 aspect=2.9 -> PASS
+2025-12-02 20:15:22 | DEBUG    |   Detected: pos=(912,501) size=32x11 aspect=2.9 dist=47
+2025-12-02 20:15:22 | DEBUG    |   Candidate at (146,868) size=47x11 aspect=4.3 -> FAIL
+2025-12-02 20:15:22 | DEBUG    |   Candidate at (891,535) size=40x18 aspect=2.2 -> PASS
+2025-12-02 20:15:22 | DEBUG    |   Detected: pos=(891,535) size=40x18 aspect=2.2 dist=49
+2025-12-02 20:15:22 | DEBUG    |   Candidate at (912,501) size=32x11 aspect=2.9 -> PASS
+2025-12-02 20:15:22 | DEBUG    |   Detection stats: total_contours=1636, rejected_by_size=1585, rejected_by_aspect=1, rejected_by_position=44, rejected_by_text_validation=3
+2025-12-02 20:15:22 | INFO     |   → After filtering: 2 valid detections
+2025-12-02 20:15:22 | INFO     | Detected: 2 floating names
+2025-12-02 20:15:22 | INFO     | → Valid targets (after cache): 2
+2025-12-02 20:15:22 | INFO     | → Target priority (closest to farthest):
+2025-12-02 20:15:22 | INFO     |    #1: Distance=46px from center
+2025-12-02 20:15:22 | INFO     |    #2: Distance=49px from center
+2025-12-02 20:15:22 | INFO     | 
+  Verifying target #1 (D=46px)...
+2025-12-02 20:15:22 | DEBUG    |     Clicking (928, 537)
+2025-12-02 20:15:23 | DEBUG    |     Health check: 0 red pixels -> DEAD
+2025-12-02 20:15:23 | DEBUG    |     ✓ Verified MOB in 1 attempts
+2025-12-02 20:15:23 | INFO     |     ✗ Mob already DEAD
+2025-12-02 20:15:23 | INFO     | 
+  Verifying target #2 (D=49px)...
+2025-12-02 20:15:23 | DEBUG    |     Clicking (911, 578)
+2025-12-02 20:15:23 | DEBUG    |     Health check: 0 red pixels -> DEAD
+2025-12-02 20:15:23 | DEBUG    |     ✓ Verified MOB in 1 attempts
+2025-12-02 20:15:23 | INFO     |     ✗ Mob already DEAD
+2025-12-02 20:15:23 | INFO     | 
+======================================================================
+2025-12-02 20:15:23 | INFO     | CYCLE #5
+2025-12-02 20:15:23 | INFO     | ======================================================================
+2025-12-02 20:15:24 | DEBUG    |   Candidate at (146,868) size=47x11 aspect=4.3 -> FAIL
+2025-12-02 20:15:24 | DEBUG    |   Candidate at (146,868) size=47x11 aspect=4.3 -> FAIL
+2025-12-02 20:15:24 | DEBUG    |   Candidate at (899,501) size=56x11 aspect=5.1 -> PASS
+2025-12-02 20:15:24 | DEBUG    |   Detected: pos=(899,501) size=56x11 aspect=5.1 dist=47
+2025-12-02 20:15:24 | DEBUG    |   Candidate at (146,868) size=47x11 aspect=4.3 -> FAIL
+2025-12-02 20:15:24 | DEBUG    |   Candidate at (899,501) size=56x11 aspect=5.1 -> PASS
+2025-12-02 20:15:24 | DEBUG    |   Detection stats: total_contours=1631, rejected_by_size=1582, rejected_by_aspect=0, rejected_by_position=44, rejected_by_text_validation=3
+2025-12-02 20:15:24 | INFO     |   → After filtering: 1 valid detections
+2025-12-02 20:15:24 | INFO     | Detected: 1 floating names
+2025-12-02 20:15:24 | DEBUG    |   Name #1: Cached, skipping
+2025-12-02 20:15:24 | INFO     | → Valid targets (after cache): 0
+2025-12-02 20:15:24 | INFO     | 
+======================================================================
+2025-12-02 20:15:24 | INFO     | CYCLE #6
+2025-12-02 20:15:24 | INFO     | ======================================================================
+2025-12-02 20:15:24 | DEBUG    |   Candidate at (146,868) size=47x11 aspect=4.3 -> FAIL
+2025-12-02 20:15:24 | DEBUG    |   Candidate at (146,868) size=47x11 aspect=4.3 -> FAIL
+2025-12-02 20:15:24 | DEBUG    |   Candidate at (912,501) size=32x11 aspect=2.9 -> PASS
+2025-12-02 20:15:24 | DEBUG    |   Detected: pos=(912,501) size=32x11 aspect=2.9 dist=47
+2025-12-02 20:15:24 | DEBUG    |   Candidate at (146,868) size=47x11 aspect=4.3 -> FAIL
+2025-12-02 20:15:24 | DEBUG    |   Candidate at (912,501) size=32x11 aspect=2.9 -> PASS
+2025-12-02 20:15:24 | DEBUG    |   Detection stats: total_contours=1625, rejected_by_size=1576, rejected_by_aspect=0, rejected_by_position=44, rejected_by_text_validation=3
+2025-12-02 20:15:24 | INFO     |   → After filtering: 1 valid detections
+2025-12-02 20:15:24 | INFO     | Detected: 1 floating names
+2025-12-02 20:15:24 | DEBUG    |   Name #1: Cached, skipping
+2025-12-02 20:15:24 | INFO     | → Valid targets (after cache): 0
+2025-12-02 20:15:24 | INFO     | 
+======================================================================
+2025-12-02 20:15:24 | INFO     | CYCLE #7
+2025-12-02 20:15:24 | INFO     | ======================================================================
+2025-12-02 20:15:24 | DEBUG    |   Candidate at (146,868) size=47x11 aspect=4.3 -> FAIL
+2025-12-02 20:15:24 | DEBUG    |   Candidate at (146,868) size=47x11 aspect=4.3 -> FAIL
+2025-12-02 20:15:24 | DEBUG    |   Candidate at (912,501) size=32x11 aspect=2.9 -> PASS
+2025-12-02 20:15:24 | DEBUG    |   Detected: pos=(912,501) size=32x11 aspect=2.9 dist=47
+2025-12-02 20:15:24 | DEBUG    |   Candidate at (146,868) size=47x11 aspect=4.3 -> FAIL
+2025-12-02 20:15:24 | DEBUG    |   Candidate at (912,501) size=32x11 aspect=2.9 -> PASS
+2025-12-02 20:15:24 | DEBUG    |   Detection stats: total_contours=1615, rejected_by_size=1564, rejected_by_aspect=2, rejected_by_position=44, rejected_by_text_validation=3
+2025-12-02 20:15:24 | INFO     |   → After filtering: 1 valid detections
+2025-12-02 20:15:24 | INFO     | Detected: 1 floating names
+2025-12-02 20:15:24 | DEBUG    |   Name #1: Cached, skipping
+2025-12-02 20:15:24 | INFO     | → Valid targets (after cache): 0
+2025-12-02 20:15:25 | INFO     | 
+======================================================================
+2025-12-02 20:15:25 | INFO     | CYCLE #8
+2025-12-02 20:15:25 | INFO     | ======================================================================
+2025-12-02 20:15:25 | DEBUG    |   Candidate at (146,868) size=47x11 aspect=4.3 -> FAIL
+2025-12-02 20:15:25 | DEBUG    |   Candidate at (925,502) size=91x10 aspect=9.1 -> FAIL
+2025-12-02 20:15:25 | DEBUG    |   Candidate at (146,868) size=47x11 aspect=4.3 -> FAIL
+2025-12-02 20:15:25 | DEBUG    |   Candidate at (965,522) size=32x11 aspect=2.9 -> PASS
+2025-12-02 20:15:25 | DEBUG    |   Detected: pos=(965,522) size=32x11 aspect=2.9 dist=25
+2025-12-02 20:15:25 | DEBUG    |   Candidate at (925,502) size=91x10 aspect=9.1 -> FAIL
+2025-12-02 20:15:25 | DEBUG    |   Candidate at (146,868) size=47x11 aspect=4.3 -> FAIL
+2025-12-02 20:15:25 | DEBUG    |   Candidate at (941,533) size=32x12 aspect=2.7 -> PASS
+2025-12-02 20:15:25 | DEBUG    |   Candidate at (965,522) size=32x11 aspect=2.9 -> PASS
+2025-12-02 20:15:25 | DEBUG    |   Candidate at (925,502) size=91x10 aspect=9.1 -> FAIL
+2025-12-02 20:15:25 | DEBUG    |   Detection stats: total_contours=1630, rejected_by_size=1577, rejected_by_aspect=0, rejected_by_position=44, rejected_by_text_validation=6
+2025-12-02 20:15:25 | INFO     |   → After filtering: 1 valid detections
+2025-12-02 20:15:25 | INFO     | Detected: 1 floating names
+2025-12-02 20:15:25 | INFO     | → Valid targets (after cache): 1
+2025-12-02 20:15:25 | INFO     | → Target priority (closest to farthest):
+2025-12-02 20:15:25 | INFO     |    #1: Distance=24px from center
+2025-12-02 20:15:25 | INFO     | 
+  Verifying target #1 (D=24px)...
+2025-12-02 20:15:25 | DEBUG    |     Clicking (981, 558)
+2025-12-02 20:15:25 | DEBUG    |     Health check: 13 red pixels -> DEAD
+2025-12-02 20:15:25 | DEBUG    |     ✓ Verified MOB in 1 attempts
+2025-12-02 20:15:25 | INFO     |     ✗ Mob already DEAD
+2025-12-02 20:15:26 | INFO     | 
+======================================================================
+2025-12-02 20:15:26 | INFO     | CYCLE #9
+2025-12-02 20:15:26 | INFO     | ======================================================================
+2025-12-02 20:15:26 | DEBUG    |   Candidate at (146,868) size=47x11 aspect=4.3 -> FAIL
+2025-12-02 20:15:26 | DEBUG    |   Candidate at (1046,567) size=37x12 aspect=3.1 -> PASS
+2025-12-02 20:15:26 | DEBUG    |   Detected: pos=(1046,567) size=37x12 aspect=3.1 dist=109
+2025-12-02 20:15:26 | DEBUG    |   Candidate at (146,868) size=47x11 aspect=4.3 -> FAIL
+2025-12-02 20:15:26 | DEBUG    |   Candidate at (1046,567) size=37x12 aspect=3.1 -> PASS
+2025-12-02 20:15:26 | DEBUG    |   Candidate at (927,509) size=32x11 aspect=2.9 -> PASS
+2025-12-02 20:15:26 | DEBUG    |   Detected: pos=(927,509) size=32x11 aspect=2.9 dist=31
+2025-12-02 20:15:26 | DEBUG    |   Candidate at (146,868) size=47x11 aspect=4.3 -> FAIL
+2025-12-02 20:15:26 | DEBUG    |   Candidate at (1045,567) size=38x13 aspect=2.9 -> PASS
+2025-12-02 20:15:26 | DEBUG    |   Candidate at (927,509) size=32x11 aspect=2.9 -> PASS
+2025-12-02 20:15:26 | DEBUG    |   Detection stats: total_contours=1673, rejected_by_size=1621, rejected_by_aspect=0, rejected_by_position=44, rejected_by_text_validation=3
+2025-12-02 20:15:26 | INFO     |   → After filtering: 2 valid detections
+2025-12-02 20:15:26 | INFO     | Detected: 2 floating names
+2025-12-02 20:15:26 | INFO     | → Valid targets (after cache): 2
+2025-12-02 20:15:26 | INFO     | → Target priority (closest to farthest):
+2025-12-02 20:15:26 | INFO     |    #1: Distance=31px from center
+2025-12-02 20:15:26 | INFO     |    #2: Distance=109px from center
+2025-12-02 20:15:26 | INFO     | 
+  Verifying target #1 (D=31px)...
+2025-12-02 20:15:26 | DEBUG    |     Clicking (943, 545)
+2025-12-02 20:15:26 | DEBUG    |     Health check: 0 red pixels -> DEAD
+2025-12-02 20:15:26 | DEBUG    |     ✓ Verified MOB in 1 attempts
+2025-12-02 20:15:26 | INFO     |     ✗ Mob already DEAD
+2025-12-02 20:15:26 | INFO     | 
+  Verifying target #2 (D=109px)...
+2025-12-02 20:15:26 | DEBUG    |     Clicking (1064, 604)
+2025-12-02 20:15:27 | DEBUG    |     Health check: 0 red pixels -> DEAD
+2025-12-02 20:15:27 | DEBUG    |     ✓ Verified MOB in 1 attempts
+2025-12-02 20:15:27 | INFO     |     ✗ Mob already DEAD
+2025-12-02 20:15:27 | INFO     | 
+======================================================================
+2025-12-02 20:15:27 | INFO     | CYCLE #10
+2025-12-02 20:15:27 | INFO     | ======================================================================
+2025-12-02 20:15:27 | DEBUG    |   Candidate at (146,868) size=47x11 aspect=4.3 -> FAIL
+2025-12-02 20:15:27 | DEBUG    |   Candidate at (146,868) size=47x11 aspect=4.3 -> FAIL
+2025-12-02 20:15:27 | DEBUG    |   Candidate at (821,507) size=32x11 aspect=2.9 -> PASS
+2025-12-02 20:15:27 | DEBUG    |   Detected: pos=(821,507) size=32x11 aspect=2.9 dist=126
+2025-12-02 20:15:27 | DEBUG    |   Candidate at (146,868) size=47x11 aspect=4.3 -> FAIL
+2025-12-02 20:15:27 | DEBUG    |   Candidate at (821,507) size=32x11 aspect=2.9 -> PASS
+2025-12-02 20:15:27 | DEBUG    |   Detection stats: total_contours=1637, rejected_by_size=1587, rejected_by_aspect=1, rejected_by_position=44, rejected_by_text_validation=3
+2025-12-02 20:15:27 | INFO     |   → After filtering: 1 valid detections
+2025-12-02 20:15:27 | INFO     | Detected: 1 floating names
+2025-12-02 20:15:27 | INFO     | → Valid targets (after cache): 1
+2025-12-02 20:15:27 | INFO     | → Target priority (closest to farthest):
+2025-12-02 20:15:27 | INFO     |    #1: Distance=126px from center
+2025-12-02 20:15:27 | INFO     | 
+  Verifying target #1 (D=126px)...
+2025-12-02 20:15:27 | DEBUG    |     Clicking (837, 543)
+2025-12-02 20:15:27 | DEBUG    |     Health check: 0 red pixels -> DEAD
+2025-12-02 20:15:27 | DEBUG    |     ✓ Verified MOB in 1 attempts
+2025-12-02 20:15:27 | INFO     |     ✗ Mob already DEAD
+2025-12-02 20:15:28 | INFO     | 
+======================================================================
+2025-12-02 20:15:28 | INFO     | CYCLE #11
+2025-12-02 20:15:28 | INFO     | ======================================================================
+2025-12-02 20:15:28 | DEBUG    |   Candidate at (146,868) size=47x11 aspect=4.3 -> FAIL
+2025-12-02 20:15:28 | DEBUG    |   Candidate at (146,868) size=47x11 aspect=4.3 -> FAIL
+2025-12-02 20:15:28 | DEBUG    |   Candidate at (808,507) size=56x11 aspect=5.1 -> PASS
+2025-12-02 20:15:28 | DEBUG    |   Detected: pos=(808,507) size=56x11 aspect=5.1 dist=127
+2025-12-02 20:15:28 | DEBUG    |   Candidate at (146,868) size=47x11 aspect=4.3 -> FAIL
+2025-12-02 20:15:28 | DEBUG    |   Candidate at (808,507) size=56x11 aspect=5.1 -> PASS
+2025-12-02 20:15:28 | DEBUG    |   Detection stats: total_contours=1641, rejected_by_size=1591, rejected_by_aspect=1, rejected_by_position=44, rejected_by_text_validation=3
+2025-12-02 20:15:28 | INFO     |   → After filtering: 1 valid detections
+2025-12-02 20:15:28 | INFO     | Detected: 1 floating names
+2025-12-02 20:15:28 | DEBUG    |   Name #1: Cached, skipping
+2025-12-02 20:15:28 | INFO     | → Valid targets (after cache): 0
+2025-12-02 20:15:28 | INFO     | 
+======================================================================
+2025-12-02 20:15:28 | INFO     | CYCLE #12
+2025-12-02 20:15:28 | INFO     | ======================================================================
+2025-12-02 20:15:28 | DEBUG    |   Candidate at (146,868) size=47x11 aspect=4.3 -> FAIL
+2025-12-02 20:15:28 | DEBUG    |   Candidate at (146,868) size=47x11 aspect=4.3 -> FAIL
+2025-12-02 20:15:28 | DEBUG    |   Candidate at (808,507) size=56x11 aspect=5.1 -> PASS
+2025-12-02 20:15:28 | DEBUG    |   Detected: pos=(808,507) size=56x11 aspect=5.1 dist=127
+2025-12-02 20:15:28 | DEBUG    |   Candidate at (146,868) size=47x11 aspect=4.3 -> FAIL
+2025-12-02 20:15:28 | DEBUG    |   Candidate at (808,507) size=56x11 aspect=5.1 -> PASS
+2025-12-02 20:15:28 | DEBUG    |   Detection stats: total_contours=1623, rejected_by_size=1572, rejected_by_aspect=2, rejected_by_position=44, rejected_by_text_validation=3
+2025-12-02 20:15:28 | INFO     |   → After filtering: 1 valid detections
+2025-12-02 20:15:28 | INFO     | Detected: 1 floating names
+2025-12-02 20:15:28 | DEBUG    |   Name #1: Cached, skipping
+2025-12-02 20:15:28 | INFO     | → Valid targets (after cache): 0
+2025-12-02 20:15:29 | INFO     | 
+======================================================================
+2025-12-02 20:15:29 | INFO     | CYCLE #13
+2025-12-02 20:15:29 | INFO     | ======================================================================
+2025-12-02 20:15:29 | DEBUG    |   Candidate at (146,868) size=47x11 aspect=4.3 -> FAIL
+2025-12-02 20:15:29 | DEBUG    |   Candidate at (146,868) size=47x11 aspect=4.3 -> FAIL
+2025-12-02 20:15:29 | DEBUG    |   Candidate at (808,507) size=56x11 aspect=5.1 -> PASS
+2025-12-02 20:15:29 | DEBUG    |   Detected: pos=(808,507) size=56x11 aspect=5.1 dist=127
+2025-12-02 20:15:29 | DEBUG    |   Candidate at (146,868) size=47x11 aspect=4.3 -> FAIL
+2025-12-02 20:15:29 | DEBUG    |   Candidate at (808,507) size=56x11 aspect=5.1 -> PASS
+2025-12-02 20:15:29 | DEBUG    |   Detection stats: total_contours=1632, rejected_by_size=1582, rejected_by_aspect=1, rejected_by_position=44, rejected_by_text_validation=3
+2025-12-02 20:15:29 | INFO     |   → After filtering: 1 valid detections
+2025-12-02 20:15:29 | INFO     | Detected: 1 floating names
+2025-12-02 20:15:29 | DEBUG    |   Name #1: Cached, skipping
+2025-12-02 20:15:29 | INFO     | → Valid targets (after cache): 0
+2025-12-02 20:15:29 | INFO     | 
+======================================================================
+2025-12-02 20:15:29 | INFO     | CYCLE #14
+2025-12-02 20:15:29 | INFO     | ======================================================================
+2025-12-02 20:15:29 | DEBUG    |   Candidate at (146,868) size=47x11 aspect=4.3 -> FAIL
+2025-12-02 20:15:29 | DEBUG    |   Candidate at (146,868) size=47x11 aspect=4.3 -> FAIL
+2025-12-02 20:15:29 | DEBUG    |   Candidate at (808,507) size=56x11 aspect=5.1 -> PASS
+2025-12-02 20:15:29 | DEBUG    |   Detected: pos=(808,507) size=56x11 aspect=5.1 dist=127
+2025-12-02 20:15:29 | DEBUG    |   Candidate at (146,868) size=47x11 aspect=4.3 -> FAIL
+2025-12-02 20:15:29 | DEBUG    |   Candidate at (808,507) size=56x11 aspect=5.1 -> PASS
+2025-12-02 20:15:29 | DEBUG    |   Detection stats: total_contours=1626, rejected_by_size=1576, rejected_by_aspect=1, rejected_by_position=44, rejected_by_text_validation=3
+2025-12-02 20:15:29 | INFO     |   → After filtering: 1 valid detections
+2025-12-02 20:15:29 | INFO     | Detected: 1 floating names
+2025-12-02 20:15:29 | DEBUG    |   Name #1: Cached, skipping
+2025-12-02 20:15:29 | INFO     | → Valid targets (after cache): 0
+2025-12-02 20:15:30 | INFO     | 
+======================================================================
+2025-12-02 20:15:30 | INFO     | CYCLE #15
+2025-12-02 20:15:30 | INFO     | ======================================================================
+2025-12-02 20:15:30 | DEBUG    |   Candidate at (146,868) size=47x11 aspect=4.3 -> FAIL
+2025-12-02 20:15:30 | DEBUG    |   Candidate at (146,868) size=47x11 aspect=4.3 -> FAIL
+2025-12-02 20:15:30 | DEBUG    |   Candidate at (808,507) size=56x11 aspect=5.1 -> PASS
+2025-12-02 20:15:30 | DEBUG    |   Detected: pos=(808,507) size=56x11 aspect=5.1 dist=127
+2025-12-02 20:15:30 | DEBUG    |   Candidate at (146,868) size=47x11 aspect=4.3 -> FAIL
+2025-12-02 20:15:30 | DEBUG    |   Candidate at (808,507) size=56x11 aspect=5.1 -> PASS
+2025-12-02 20:15:30 | DEBUG    |   Detection stats: total_contours=1631, rejected_by_size=1581, rejected_by_aspect=1, rejected_by_position=44, rejected_by_text_validation=3
+2025-12-02 20:15:30 | INFO     |   → After filtering: 1 valid detections
+2025-12-02 20:15:30 | INFO     | Detected: 1 floating names
+2025-12-02 20:15:30 | INFO     | → Valid targets (after cache): 1
+2025-12-02 20:15:30 | INFO     | → Target priority (closest to farthest):
+2025-12-02 20:15:30 | INFO     |    #1: Distance=127px from center
+2025-12-02 20:15:30 | INFO     | 
+  Verifying target #1 (D=127px)...
+2025-12-02 20:15:30 | DEBUG    |     Clicking (836, 543)
+2025-12-02 20:15:30 | DEBUG    |     Health check: 0 red pixels -> DEAD
+2025-12-02 20:15:30 | DEBUG    |     ✓ Verified MOB in 1 attempts
+2025-12-02 20:15:30 | INFO     |     ✗ Mob already DEAD
+2025-12-02 20:15:30 | INFO     | 
+======================================================================
+2025-12-02 20:15:30 | INFO     | CYCLE #16
+2025-12-02 20:15:30 | INFO     | ======================================================================
+2025-12-02 20:15:30 | DEBUG    |   Candidate at (146,868) size=47x11 aspect=4.3 -> FAIL
+2025-12-02 20:15:30 | DEBUG    |   Candidate at (146,868) size=47x11 aspect=4.3 -> FAIL
+2025-12-02 20:15:30 | DEBUG    |   Candidate at (756,605) size=32x11 aspect=2.9 -> PASS
+2025-12-02 20:15:30 | DEBUG    |   Detected: pos=(756,605) size=32x11 aspect=2.9 dist=201
+2025-12-02 20:15:30 | DEBUG    |   Candidate at (146,868) size=47x11 aspect=4.3 -> FAIL
+2025-12-02 20:15:30 | DEBUG    |   Candidate at (756,605) size=32x11 aspect=2.9 -> PASS
+2025-12-02 20:15:30 | DEBUG    |   Detection stats: total_contours=1607, rejected_by_size=1555, rejected_by_aspect=3, rejected_by_position=44, rejected_by_text_validation=3
+2025-12-02 20:15:30 | INFO     |   → After filtering: 1 valid detections
+2025-12-02 20:15:30 | INFO     | Detected: 1 floating names
+2025-12-02 20:15:30 | INFO     | → Valid targets (after cache): 1
+2025-12-02 20:15:30 | INFO     | → Target priority (closest to farthest):
+2025-12-02 20:15:30 | INFO     |    #1: Distance=200px from center
+2025-12-02 20:15:30 | INFO     | 
+  Verifying target #1 (D=200px)...
+2025-12-02 20:15:30 | DEBUG    |     Clicking (772, 641)
+2025-12-02 20:15:31 | DEBUG    |     Health check: 0 red pixels -> DEAD
+2025-12-02 20:15:31 | DEBUG    |     ✓ Verified MOB in 1 attempts
+2025-12-02 20:15:31 | INFO     |     ✗ Mob already DEAD
+2025-12-02 20:15:31 | INFO     | 
+======================================================================
+2025-12-02 20:15:31 | INFO     | CYCLE #17
+2025-12-02 20:15:31 | INFO     | ======================================================================
+2025-12-02 20:15:31 | DEBUG    |   Candidate at (146,868) size=47x11 aspect=4.3 -> FAIL
+2025-12-02 20:15:31 | DEBUG    |   Candidate at (146,868) size=47x11 aspect=4.3 -> FAIL
+2025-12-02 20:15:31 | DEBUG    |   Candidate at (791,703) size=32x11 aspect=2.9 -> PASS
+2025-12-02 20:15:31 | DEBUG    |   Detected: pos=(791,703) size=32x11 aspect=2.9 dist=227
+2025-12-02 20:15:31 | DEBUG    |   Candidate at (146,868) size=47x11 aspect=4.3 -> FAIL
+2025-12-02 20:15:31 | DEBUG    |   Candidate at (791,703) size=32x11 aspect=2.9 -> PASS
+2025-12-02 20:15:31 | DEBUG    |   Detection stats: total_contours=1704, rejected_by_size=1655, rejected_by_aspect=0, rejected_by_position=44, rejected_by_text_validation=3
+2025-12-02 20:15:31 | INFO     |   → After filtering: 1 valid detections
+2025-12-02 20:15:31 | INFO     | Detected: 1 floating names
+2025-12-02 20:15:31 | INFO     | → Valid targets (after cache): 1
+2025-12-02 20:15:31 | INFO     | → Target priority (closest to farthest):
+2025-12-02 20:15:31 | INFO     |    #1: Distance=227px from center
+2025-12-02 20:15:31 | INFO     | 
+  Verifying target #1 (D=227px)...
+2025-12-02 20:15:31 | DEBUG    |     Clicking (807, 739)
+2025-12-02 20:15:32 | DEBUG    |     Health check: 0 red pixels -> DEAD
+2025-12-02 20:15:32 | DEBUG    |     ✓ Verified MOB in 1 attempts
+2025-12-02 20:15:32 | INFO     |     ✗ Mob already DEAD
+2025-12-02 20:15:32 | INFO     | 
+======================================================================
+2025-12-02 20:15:32 | INFO     | CYCLE #18
+2025-12-02 20:15:32 | INFO     | ======================================================================
+2025-12-02 20:15:32 | DEBUG    |   Candidate at (146,868) size=47x11 aspect=4.3 -> FAIL
+2025-12-02 20:15:32 | DEBUG    |   Candidate at (146,868) size=47x11 aspect=4.3 -> FAIL
+2025-12-02 20:15:32 | DEBUG    |   Candidate at (146,868) size=47x11 aspect=4.3 -> FAIL
+2025-12-02 20:15:32 | DEBUG    |   Detection stats: total_contours=1566, rejected_by_size=1519, rejected_by_aspect=0, rejected_by_position=44, rejected_by_text_validation=3
+2025-12-02 20:15:32 | INFO     |   → After filtering: 0 valid detections
+2025-12-02 20:15:32 | INFO     | Detected: 0 floating names
+2025-12-02 20:15:32 | INFO     | → No floating names found
+2025-12-02 20:15:33 | INFO     | 
+======================================================================
+2025-12-02 20:15:33 | INFO     | CYCLE #19
+2025-12-02 20:15:33 | INFO     | ======================================================================
+2025-12-02 20:15:33 | DEBUG    |   Candidate at (146,868) size=47x11 aspect=4.3 -> FAIL
+2025-12-02 20:15:33 | DEBUG    |   Candidate at (146,868) size=47x11 aspect=4.3 -> FAIL
+2025-12-02 20:15:33 | DEBUG    |   Candidate at (825,815) size=32x11 aspect=2.9 -> PASS
+2025-12-02 20:15:33 | DEBUG    |   Detected: pos=(825,815) size=32x11 aspect=2.9 dist=304
+2025-12-02 20:15:33 | DEBUG    |   Candidate at (146,868) size=47x11 aspect=4.3 -> FAIL
+2025-12-02 20:15:33 | DEBUG    |   Candidate at (825,815) size=32x11 aspect=2.9 -> PASS
+2025-12-02 20:15:33 | DEBUG    |   Detection stats: total_contours=1693, rejected_by_size=1644, rejected_by_aspect=0, rejected_by_position=44, rejected_by_text_validation=3
+2025-12-02 20:15:33 | INFO     |   → After filtering: 1 valid detections
+2025-12-02 20:15:33 | INFO     | Detected: 1 floating names
+2025-12-02 20:15:33 | INFO     | → Valid targets (after cache): 1
+2025-12-02 20:15:33 | INFO     | → Target priority (closest to farthest):
+2025-12-02 20:15:33 | INFO     |    #1: Distance=304px from center
+2025-12-02 20:15:33 | INFO     | 
+  Verifying target #1 (D=304px)...
+2025-12-02 20:15:33 | DEBUG    |     Clicking (841, 851)
+2025-12-02 20:15:33 | DEBUG    |     Health check: 37 red pixels -> DEAD
+2025-12-02 20:15:33 | DEBUG    |     ✓ Verified MOB in 1 attempts
+2025-12-02 20:15:33 | INFO     |     ✗ Mob already DEAD
+2025-12-02 20:15:33 | INFO     | 
+======================================================================
+2025-12-02 20:15:33 | INFO     | CYCLE #20
+2025-12-02 20:15:33 | INFO     | ======================================================================
+2025-12-02 20:15:33 | DEBUG    |   Candidate at (146,868) size=47x11 aspect=4.3 -> FAIL
+2025-12-02 20:15:33 | DEBUG    |   Candidate at (146,868) size=47x11 aspect=4.3 -> FAIL
+2025-12-02 20:15:33 | DEBUG    |   Candidate at (927,517) size=32x11 aspect=2.9 -> PASS
+2025-12-02 20:15:33 | DEBUG    |   Detected: pos=(927,517) size=32x11 aspect=2.9 dist=25
+2025-12-02 20:15:33 | DEBUG    |   Candidate at (146,868) size=47x11 aspect=4.3 -> FAIL
+2025-12-02 20:15:33 | DEBUG    |   Candidate at (927,517) size=32x11 aspect=2.9 -> PASS
+2025-12-02 20:15:33 | DEBUG    |   Detection stats: total_contours=1664, rejected_by_size=1612, rejected_by_aspect=3, rejected_by_position=44, rejected_by_text_validation=3
+2025-12-02 20:15:33 | INFO     |   → After filtering: 1 valid detections
+2025-12-02 20:15:33 | INFO     | Detected: 1 floating names
+2025-12-02 20:15:33 | INFO     | → Valid targets (after cache): 1
+2025-12-02 20:15:33 | INFO     | → Target priority (closest to farthest):
+2025-12-02 20:15:33 | INFO     |    #1: Distance=24px from center
+2025-12-02 20:15:33 | INFO     | 
+  Verifying target #1 (D=24px)...
+2025-12-02 20:15:33 | DEBUG    |     Clicking (943, 553)
+2025-12-02 20:15:34 | DEBUG    |     Health check: 35 red pixels -> DEAD
+2025-12-02 20:15:34 | DEBUG    |     ✓ Verified MOB in 1 attempts
+2025-12-02 20:15:34 | INFO     |     ✗ Mob already DEAD
+2025-12-02 20:15:34 | INFO     | 
+======================================================================
+2025-12-02 20:15:34 | INFO     | CYCLE #21
+2025-12-02 20:15:34 | INFO     | ======================================================================
+2025-12-02 20:15:34 | DEBUG    |   Candidate at (146,868) size=47x11 aspect=4.3 -> FAIL
+2025-12-02 20:15:34 | DEBUG    |   Candidate at (146,868) size=47x11 aspect=4.3 -> FAIL
+2025-12-02 20:15:34 | DEBUG    |   Candidate at (926,517) size=44x11 aspect=4.0 -> PASS
+2025-12-02 20:15:34 | DEBUG    |   Detected: pos=(926,517) size=44x11 aspect=4.0 dist=22
+2025-12-02 20:15:34 | DEBUG    |   Candidate at (146,868) size=47x11 aspect=4.3 -> FAIL
+2025-12-02 20:15:34 | DEBUG    |   Candidate at (914,517) size=56x11 aspect=5.1 -> PASS
+2025-12-02 20:15:34 | DEBUG    |   Detection stats: total_contours=1667, rejected_by_size=1618, rejected_by_aspect=0, rejected_by_position=44, rejected_by_text_validation=3
+2025-12-02 20:15:34 | INFO     |   → After filtering: 1 valid detections
+2025-12-02 20:15:34 | INFO     | Detected: 1 floating names
+2025-12-02 20:15:34 | DEBUG    |   Name #1: Cached, skipping
+2025-12-02 20:15:34 | INFO     | → Valid targets (after cache): 0
+2025-12-02 20:15:35 | INFO     | 
+======================================================================
+2025-12-02 20:15:35 | INFO     | CYCLE #22
+2025-12-02 20:15:35 | INFO     | ======================================================================
+2025-12-02 20:15:35 | DEBUG    |   Candidate at (146,868) size=47x11 aspect=4.3 -> FAIL
+2025-12-02 20:15:35 | DEBUG    |   Candidate at (146,868) size=47x11 aspect=4.3 -> FAIL
+2025-12-02 20:15:35 | DEBUG    |   Candidate at (926,517) size=44x11 aspect=4.0 -> PASS
+2025-12-02 20:15:35 | DEBUG    |   Detected: pos=(926,517) size=44x11 aspect=4.0 dist=22
+2025-12-02 20:15:35 | DEBUG    |   Candidate at (146,868) size=47x11 aspect=4.3 -> FAIL
+2025-12-02 20:15:35 | DEBUG    |   Candidate at (914,517) size=56x11 aspect=5.1 -> PASS
+2025-12-02 20:15:35 | DEBUG    |   Detection stats: total_contours=1691, rejected_by_size=1641, rejected_by_aspect=1, rejected_by_position=44, rejected_by_text_validation=3
+2025-12-02 20:15:35 | INFO     |   → After filtering: 1 valid detections
+2025-12-02 20:15:35 | INFO     | Detected: 1 floating names
+2025-12-02 20:15:35 | DEBUG    |   Name #1: Cached, skipping
+2025-12-02 20:15:35 | INFO     | → Valid targets (after cache): 0
+2025-12-02 20:15:35 | INFO     | 
+======================================================================
+2025-12-02 20:15:35 | INFO     | CYCLE #23
+2025-12-02 20:15:35 | INFO     | ======================================================================
+2025-12-02 20:15:35 | DEBUG    |   Candidate at (146,868) size=47x11 aspect=4.3 -> FAIL
+2025-12-02 20:15:35 | DEBUG    |   Candidate at (146,868) size=47x11 aspect=4.3 -> FAIL
+2025-12-02 20:15:35 | DEBUG    |   Candidate at (926,517) size=44x11 aspect=4.0 -> PASS
+2025-12-02 20:15:35 | DEBUG    |   Detected: pos=(926,517) size=44x11 aspect=4.0 dist=22
+2025-12-02 20:15:35 | DEBUG    |   Candidate at (146,868) size=47x11 aspect=4.3 -> FAIL
+2025-12-02 20:15:35 | DEBUG    |   Candidate at (914,517) size=56x11 aspect=5.1 -> PASS
+2025-12-02 20:15:35 | DEBUG    |   Detection stats: total_contours=1669, rejected_by_size=1620, rejected_by_aspect=0, rejected_by_position=44, rejected_by_text_validation=3
+2025-12-02 20:15:35 | INFO     |   → After filtering: 1 valid detections
+2025-12-02 20:15:35 | INFO     | Detected: 1 floating names
+2025-12-02 20:15:35 | DEBUG    |   Name #1: Cached, skipping
+2025-12-02 20:15:35 | INFO     | → Valid targets (after cache): 0
+2025-12-02 20:15:36 | INFO     | 
+======================================================================
+2025-12-02 20:15:36 | INFO     | CYCLE #24
+2025-12-02 20:15:36 | INFO     | ======================================================================
+2025-12-02 20:15:36 | DEBUG    |   Candidate at (146,868) size=47x11 aspect=4.3 -> FAIL
+2025-12-02 20:15:36 | DEBUG    |   Candidate at (146,868) size=47x11 aspect=4.3 -> FAIL
+2025-12-02 20:15:36 | DEBUG    |   Candidate at (926,517) size=44x11 aspect=4.0 -> PASS
+2025-12-02 20:15:36 | DEBUG    |   Detected: pos=(926,517) size=44x11 aspect=4.0 dist=22
+2025-12-02 20:15:36 | DEBUG    |   Candidate at (146,868) size=47x11 aspect=4.3 -> FAIL
+2025-12-02 20:15:36 | DEBUG    |   Candidate at (914,517) size=56x11 aspect=5.1 -> PASS
+2025-12-02 20:15:36 | DEBUG    |   Detection stats: total_contours=1645, rejected_by_size=1594, rejected_by_aspect=2, rejected_by_position=44, rejected_by_text_validation=3
+2025-12-02 20:15:36 | INFO     |   → After filtering: 1 valid detections
+2025-12-02 20:15:36 | INFO     | Detected: 1 floating names
+2025-12-02 20:15:36 | DEBUG    |   Name #1: Cached, skipping
+2025-12-02 20:15:36 | INFO     | → Valid targets (after cache): 0
+2025-12-02 20:15:36 | INFO     | 
+======================================================================
+2025-12-02 20:15:36 | INFO     | CYCLE #25
+2025-12-02 20:15:36 | INFO     | ======================================================================
+2025-12-02 20:15:36 | DEBUG    |   Candidate at (146,868) size=47x11 aspect=4.3 -> FAIL
+2025-12-02 20:15:36 | DEBUG    |   Candidate at (146,868) size=47x11 aspect=4.3 -> FAIL
+2025-12-02 20:15:36 | DEBUG    |   Candidate at (926,517) size=44x11 aspect=4.0 -> PASS
+2025-12-02 20:15:36 | DEBUG    |   Detected: pos=(926,517) size=44x11 aspect=4.0 dist=22
+2025-12-02 20:15:36 | DEBUG    |   Candidate at (146,868) size=47x11 aspect=4.3 -> FAIL
+2025-12-02 20:15:36 | DEBUG    |   Candidate at (914,517) size=56x11 aspect=5.1 -> PASS
+2025-12-02 20:15:36 | DEBUG    |   Detection stats: total_contours=1660, rejected_by_size=1611, rejected_by_aspect=0, rejected_by_position=44, rejected_by_text_validation=3
+2025-12-02 20:15:36 | INFO     |   → After filtering: 1 valid detections
+2025-12-02 20:15:36 | INFO     | Detected: 1 floating names
+2025-12-02 20:15:36 | INFO     | → Valid targets (after cache): 1
+2025-12-02 20:15:36 | INFO     | → Target priority (closest to farthest):
+2025-12-02 20:15:36 | INFO     |    #1: Distance=21px from center
+2025-12-02 20:15:36 | INFO     | 
+  Verifying target #1 (D=21px)...
+2025-12-02 20:15:36 | DEBUG    |     Clicking (948, 553)
+2025-12-02 20:15:37 | DEBUG    |     Health check: 49 red pixels -> DEAD
+2025-12-02 20:15:37 | DEBUG    |     ✓ Verified MOB in 1 attempts
+2025-12-02 20:15:37 | INFO     |     ✗ Mob already DEAD
+2025-12-02 20:15:37 | INFO     | 
+======================================================================
+2025-12-02 20:15:37 | INFO     | CYCLE #26
+2025-12-02 20:15:37 | INFO     | ======================================================================
+2025-12-02 20:15:37 | DEBUG    |   Candidate at (146,868) size=47x11 aspect=4.3 -> FAIL
+2025-12-02 20:15:37 | DEBUG    |   Candidate at (146,868) size=47x11 aspect=4.3 -> FAIL
+2025-12-02 20:15:37 | DEBUG    |   Candidate at (926,517) size=44x11 aspect=4.0 -> PASS
+2025-12-02 20:15:37 | DEBUG    |   Detected: pos=(926,517) size=44x11 aspect=4.0 dist=22
+2025-12-02 20:15:37 | DEBUG    |   Candidate at (146,868) size=47x11 aspect=4.3 -> FAIL
+2025-12-02 20:15:37 | DEBUG    |   Candidate at (914,517) size=56x11 aspect=5.1 -> PASS
+2025-12-02 20:15:37 | DEBUG    |   Detection stats: total_contours=1658, rejected_by_size=1609, rejected_by_aspect=0, rejected_by_position=44, rejected_by_text_validation=3
+2025-12-02 20:15:37 | INFO     |   → After filtering: 1 valid detections
+2025-12-02 20:15:37 | INFO     | Detected: 1 floating names
+2025-12-02 20:15:37 | DEBUG    |   Name #1: Cached, skipping
+2025-12-02 20:15:37 | INFO     | → Valid targets (after cache): 0
+2025-12-02 20:15:37 | INFO     | 
+======================================================================
+2025-12-02 20:15:37 | INFO     | CYCLE #27
+2025-12-02 20:15:37 | INFO     | ======================================================================
+2025-12-02 20:15:37 | DEBUG    |   Candidate at (146,868) size=47x11 aspect=4.3 -> FAIL
+2025-12-02 20:15:37 | DEBUG    |   Candidate at (146,868) size=47x11 aspect=4.3 -> FAIL
+2025-12-02 20:15:37 | DEBUG    |   Candidate at (926,517) size=44x11 aspect=4.0 -> PASS
+2025-12-02 20:15:37 | DEBUG    |   Detected: pos=(926,517) size=44x11 aspect=4.0 dist=22
+2025-12-02 20:15:37 | DEBUG    |   Candidate at (146,868) size=47x11 aspect=4.3 -> FAIL
+2025-12-02 20:15:37 | DEBUG    |   Candidate at (914,517) size=56x11 aspect=5.1 -> PASS
+2025-12-02 20:15:37 | DEBUG    |   Detection stats: total_contours=1664, rejected_by_size=1615, rejected_by_aspect=0, rejected_by_position=44, rejected_by_text_validation=3
+2025-12-02 20:15:37 | INFO     |   → After filtering: 1 valid detections
+2025-12-02 20:15:37 | INFO     | Detected: 1 floating names
+2025-12-02 20:15:37 | DEBUG    |   Name #1: Cached, skipping
+2025-12-02 20:15:37 | INFO     | → Valid targets (after cache): 0
+2025-12-02 20:15:38 | INFO     | 
+======================================================================
+2025-12-02 20:15:38 | INFO     | CYCLE #28
+2025-12-02 20:15:38 | INFO     | ======================================================================
+2025-12-02 20:15:38 | DEBUG    |   Candidate at (146,868) size=47x11 aspect=4.3 -> FAIL
+2025-12-02 20:15:38 | DEBUG    |   Candidate at (146,868) size=47x11 aspect=4.3 -> FAIL
+2025-12-02 20:15:38 | DEBUG    |   Candidate at (926,517) size=44x11 aspect=4.0 -> PASS
+2025-12-02 20:15:38 | DEBUG    |   Detected: pos=(926,517) size=44x11 aspect=4.0 dist=22
+2025-12-02 20:15:38 | DEBUG    |   Candidate at (146,868) size=47x11 aspect=4.3 -> FAIL
+2025-12-02 20:15:38 | DEBUG    |   Candidate at (914,517) size=56x11 aspect=5.1 -> PASS
+2025-12-02 20:15:38 | DEBUG    |   Detection stats: total_contours=1677, rejected_by_size=1628, rejected_by_aspect=0, rejected_by_position=44, rejected_by_text_validation=3
+2025-12-02 20:15:38 | INFO     |   → After filtering: 1 valid detections
+2025-12-02 20:15:38 | INFO     | Detected: 1 floating names
+2025-12-02 20:15:38 | DEBUG    |   Name #1: Cached, skipping
+2025-12-02 20:15:38 | INFO     | → Valid targets (after cache): 0
+2025-12-02 20:15:38 | INFO     | 
+======================================================================
+2025-12-02 20:15:38 | INFO     | CYCLE #29
+2025-12-02 20:15:38 | INFO     | ======================================================================
+2025-12-02 20:15:38 | DEBUG    |   Candidate at (146,868) size=47x11 aspect=4.3 -> FAIL
+2025-12-02 20:15:38 | DEBUG    |   Candidate at (146,868) size=47x11 aspect=4.3 -> FAIL
+2025-12-02 20:15:38 | DEBUG    |   Candidate at (926,517) size=44x11 aspect=4.0 -> PASS
+2025-12-02 20:15:38 | DEBUG    |   Detected: pos=(926,517) size=44x11 aspect=4.0 dist=22
+2025-12-02 20:15:38 | DEBUG    |   Candidate at (146,868) size=47x11 aspect=4.3 -> FAIL
+2025-12-02 20:15:38 | DEBUG    |   Candidate at (914,517) size=56x11 aspect=5.1 -> PASS
+2025-12-02 20:15:38 | DEBUG    |   Detection stats: total_contours=1679, rejected_by_size=1630, rejected_by_aspect=0, rejected_by_position=44, rejected_by_text_validation=3
+2025-12-02 20:15:38 | INFO     |   → After filtering: 1 valid detections
+2025-12-02 20:15:38 | INFO     | Detected: 1 floating names
+2025-12-02 20:15:38 | DEBUG    |   Name #1: Cached, skipping
+2025-12-02 20:15:38 | INFO     | → Valid targets (after cache): 0
+2025-12-02 20:15:39 | INFO     | 
+======================================================================
+2025-12-02 20:15:39 | INFO     | CYCLE #30
+2025-12-02 20:15:39 | INFO     | ======================================================================
+2025-12-02 20:15:39 | DEBUG    |   Candidate at (146,868) size=47x11 aspect=4.3 -> FAIL
+2025-12-02 20:15:39 | DEBUG    |   Candidate at (146,868) size=47x11 aspect=4.3 -> FAIL
+2025-12-02 20:15:39 | DEBUG    |   Candidate at (926,517) size=44x11 aspect=4.0 -> PASS
+2025-12-02 20:15:39 | DEBUG    |   Detected: pos=(926,517) size=44x11 aspect=4.0 dist=22
+2025-12-02 20:15:39 | DEBUG    |   Candidate at (146,868) size=47x11 aspect=4.3 -> FAIL
+2025-12-02 20:15:39 | DEBUG    |   Candidate at (914,517) size=56x11 aspect=5.1 -> PASS
+2025-12-02 20:15:39 | DEBUG    |   Detection stats: total_contours=1675, rejected_by_size=1626, rejected_by_aspect=0, rejected_by_position=44, rejected_by_text_validation=3
+2025-12-02 20:15:39 | INFO     |   → After filtering: 1 valid detections
+2025-12-02 20:15:39 | INFO     | Detected: 1 floating names
+2025-12-02 20:15:39 | INFO     | → Valid targets (after cache): 1
+2025-12-02 20:15:39 | INFO     | → Target priority (closest to farthest):
+2025-12-02 20:15:39 | INFO     |    #1: Distance=21px from center
+2025-12-02 20:15:39 | INFO     | 
+  Verifying target #1 (D=21px)...
+2025-12-02 20:15:39 | DEBUG    |     Clicking (948, 553)
+2025-12-02 20:15:39 | DEBUG    |     Health check: 59 red pixels -> ALIVE
+2025-12-02 20:15:39 | DEBUG    |     ✓ Verified MOB in 1 attempts
+2025-12-02 20:15:39 | INFO     |     ✓ Elite | Status: ALIVE
+2025-12-02 20:15:39 | INFO     | 
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2025-12-02 20:15:39 | INFO     | ⚔️  ENGAGING: Elite
+2025-12-02 20:15:39 | INFO     | >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2025-12-02 20:15:39 | DEBUG    |     Health check: 60 red pixels -> ALIVE
+2025-12-02 20:15:39 | INFO     |   → Skill 1: 1
+2025-12-02 20:15:40 | DEBUG    |     Health check: 61 red pixels -> ALIVE
+2025-12-02 20:15:40 | INFO     |   → Skill 2: 2
+2025-12-02 20:15:41 | DEBUG    |     Health check: 56 red pixels -> ALIVE
+2025-12-02 20:15:41 | INFO     |   → Skill 3: 3
+2025-12-02 20:15:43 | DEBUG    |     Health check: 32 red pixels -> DEAD
+2025-12-02 20:15:43 | INFO     |   ✓ Mob DEAD after skill 3!
+2025-12-02 20:15:43 | INFO     | <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+2025-12-02 20:15:43 | INFO     | 💀 Total kills: 1 | Skills saved: 1
+2025-12-02 20:15:43 | INFO     | <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+2025-12-02 20:15:43 | INFO     | 
+⏸️  PAUSED - Press CapsLock to resume
+
+2025-12-02 20:15:48 | INFO     | 
+
+⛔ Bot stopped by user
+2025-12-02 20:15:48 | INFO     | 
+======================================================================
+2025-12-02 20:15:48 | INFO     | FINAL STATISTICS
+2025-12-02 20:15:48 | INFO     | ======================================================================
+2025-12-02 20:15:48 | INFO     | Total Cycles: 30
+2025-12-02 20:15:48 | INFO     | Total Clicks: 13
+2025-12-02 20:15:48 | INFO     | Verified Mobs: 13
+2025-12-02 20:15:48 | INFO     | Filtered Pets: 0
+2025-12-02 20:15:48 | INFO     | Total Kills: 1
+2025-12-02 20:15:48 | INFO     | Early Stops: 1 (stopped rotation early due to death)
+2025-12-02 20:15:48 | INFO     | Skills Used: 3
+2025-12-02 20:15:48 | INFO     | Avg Skills/Kill: 3.0
+2025-12-02 20:15:48 | INFO     | Uptime: 26s (0m 26s)
+2025-12-02 20:15:48 | INFO     | Cache Hit Rate: 53.6%
+2025-12-02 20:15:48 | INFO     | ======================================================================

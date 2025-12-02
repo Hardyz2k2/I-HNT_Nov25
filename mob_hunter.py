@@ -1,6 +1,6 @@
 """
-MOB HUNTER v3.0 - Complete MMORPG Auto-Combat Bot
-Full featured with overlay, debugging, and robust detection
+MOB HUNTER v3.0 - FINAL OPTIMIZED VERSION
+Center-out targeting + Binary health detection + Pet filtering via nameplate
 """
 
 import cv2
@@ -8,32 +8,36 @@ import numpy as np
 import time
 import logging
 import os
-import sys
 from datetime import datetime
 from mss import mss
 import pyautogui
-from PIL import Image, ImageDraw, ImageFont
 import threading
 import traceback
-from collections import deque
-from pynput import keyboard
-import signal
+import ctypes
 
-# Disable PyAutoGUI fail-safe for smoother operation
+# Disable PyAutoGUI fail-safe
 pyautogui.FAILSAFE = False
+
+# CapsLock detection for Windows
+VK_CAPITAL = 0x14
+user32 = ctypes.windll.user32
+
+def is_capslock_on():
+    """Check if CapsLock is currently on"""
+    return bool(user32.GetKeyState(VK_CAPITAL) & 0x0001)
 
 # ============================================================================
 # CONFIGURATION
 # ============================================================================
 
 class Config:
-    # Screen settings (adjust to your resolution)
+    # Screen settings
     SCREEN_WIDTH = 1920
     SCREEN_HEIGHT = 1080
     SCREEN_REGION = {'top': 0, 'left': 0, 'width': SCREEN_WIDTH, 'height': SCREEN_HEIGHT}
     NAMEPLATE_REGION = (660, 10, 600, 100)  # (x, y, w, h) - top-middle
     
-    # Detection boundaries (ignore UI)
+    # Detection boundaries (ignore UI only)
     IGNORE_TOP = 120
     IGNORE_BOTTOM = 200
     IGNORE_LEFT = 60
@@ -47,26 +51,19 @@ class Config:
     MIN_ASPECT_RATIO = 1.5
     MAX_ASPECT_RATIO = 20
     
-    # OCR settings - using simple methods, no Tesseract required
-    USE_SIMPLE_OCR = True  # Use template matching instead of Tesseract
-    
-    # Blacklist
-    KNOWN_PETS = ['Gom3a', 'Savy', 'gom3a', 'savy']
-    PLAYER_INDICATORS = ['SnowRunner', 'snowrunner', '[', ']', '<', '>', 'Moon', 'Trade']
-    KNOWN_MOBS = ['Mangyang', 'mangyang', 'Ghost', 'ghost', 'Wolf', 'Bear', 'Small', 'eyed']
-    
     # Combat settings
-    MIN_HEALTH_THRESHOLD = 5   # Attack if health > 5%
-    MAX_TARGETS_PER_CYCLE = 2  # Max clicks per cycle
+    RED_PIXEL_THRESHOLD = 50   # Pixels needed to consider mob "alive"
+    MAX_TARGETS_PER_CYCLE = 3  # Max verifications per cycle
     CYCLE_DELAY = 0.4          # Seconds between cycles
     NAMEPLATE_TIMEOUT = 1.0    # Nameplate wait time
     CLICK_DELAY = 0.25         # Delay after clicking
+    HEALTH_CHECK_INTERVAL = 1.0  # Check health every 1 second during combat
     
     # Cache settings
     POSITION_CACHE_DURATION = 2.5
     POSITION_PROXIMITY = 35
     
-    # Priority system
+    # Priority system (only used for tie-breaking at same distance)
     CLASS_PRIORITIES = {
         'Unique': 1,
         'Champion': 2,
@@ -77,7 +74,7 @@ class Config:
     
     # Combat rotation
     SKILL_KEYS = ['1', '2', '3', '4']
-    SKILL_DELAY = 0.6
+    SKILL_ANIMATION_TIME = 0.6  # Time for skill animation
     
     # Overlay settings
     SHOW_OVERLAY = True
@@ -85,7 +82,7 @@ class Config:
     
     # Debug
     DEBUG_MODE = True
-    SAVE_SCREENSHOTS = True
+    SAVE_SCREENSHOTS = False
 
 
 # ============================================================================
@@ -141,88 +138,6 @@ class ScreenCapture:
 
 
 # ============================================================================
-# SIMPLE OCR (No Tesseract required)
-# ============================================================================
-
-class SimpleOCR:
-    """Simple text detection using contour analysis"""
-    
-    def __init__(self, logger):
-        self.logger = logger
-    
-    def extract_text_simple(self, screenshot, region):
-        """
-        Extract text using simple pattern matching
-        Returns the most likely text based on known names
-        """
-        try:
-            x, y, w, h = region
-            roi = screenshot[y:y+h, x:x+w]
-            
-            # Convert to grayscale
-            gray = cv2.cvtColor(roi, cv2.COLOR_BGR2GRAY)
-            
-            # Threshold for white text
-            _, binary = cv2.threshold(gray, 180, 255, cv2.THRESH_BINARY)
-            
-            # Count white pixels (text density)
-            white_pixels = cv2.countNonZero(binary)
-            total_pixels = w * h
-            density = white_pixels / total_pixels if total_pixels > 0 else 0
-            
-            # If text density is good, try to match known names
-            if density > 0.1:  # At least 10% white pixels
-                # This is likely a name, return region info for clicking
-                return f"Name_{x}_{y}"  # Unique identifier
-            
-            return None
-            
-        except Exception as e:
-            self.logger.debug(f"Simple OCR error: {e}")
-            return None
-    
-    def analyze_region_advanced(self, screenshot, region):
-        """
-        Advanced analysis to determine if region contains mob name
-        """
-        try:
-            x, y, w, h = region
-            roi = screenshot[y:y+h, x:x+w]
-            
-            # Multiple checks
-            gray = cv2.cvtColor(roi, cv2.COLOR_BGR2GRAY)
-            
-            # Check 1: White text detection
-            _, white = cv2.threshold(gray, 200, 255, cv2.THRESH_BINARY)
-            white_ratio = cv2.countNonZero(white) / (w * h)
-            
-            # Check 2: Edge detection (text has edges)
-            edges = cv2.Canny(gray, 50, 150)
-            edge_ratio = cv2.countNonZero(edges) / (w * h)
-            
-            # Check 3: Variance (text has variance)
-            variance = np.var(gray)
-            
-            # Score the region
-            score = 0
-            if 0.05 < white_ratio < 0.7:  # Text is white but not entire region
-                score += 3
-            if edge_ratio > 0.1:  # Text has edges
-                score += 2
-            if variance > 100:  # Text has variance
-                score += 2
-            
-            # If score is high, this is likely a name
-            if score >= 5:
-                return True
-            
-            return False
-            
-        except:
-            return False
-
-
-# ============================================================================
 # FLOATING NAME DETECTOR
 # ============================================================================
 
@@ -236,7 +151,7 @@ class FloatingNameDetector:
     def find_floating_names(self, screenshot):
         """
         Detect white text regions (floating names)
-        Returns list of {region: (x,y,w,h), center: (x,y), score: float}
+        Returns list of {region: (x,y,w,h), center: (x,y)}
         """
         height, width = screenshot.shape[:2]
         
@@ -271,7 +186,7 @@ class FloatingNameDetector:
                 if aspect_ratio < Config.MIN_ASPECT_RATIO or aspect_ratio > Config.MAX_ASPECT_RATIO:
                     continue
                 
-                # Position filter (ignore UI)
+                # Position filter (ignore UI only)
                 if y < Config.IGNORE_TOP or y > height - Config.IGNORE_BOTTOM:
                     continue
                 if x < Config.IGNORE_LEFT or x > width - Config.IGNORE_RIGHT:
@@ -290,64 +205,22 @@ class FloatingNameDetector:
                         break
                 
                 if not is_duplicate:
+                    # Calculate distance from screen center
+                    center_screen_x = Config.SCREEN_WIDTH // 2
+                    center_screen_y = Config.SCREEN_HEIGHT // 2
+                    distance = np.sqrt(
+                        (center_x - center_screen_x)**2 + 
+                        (center_y - center_screen_y)**2
+                    )
+                    
                     detections.append({
                         'region': (x, y, w, h),
                         'center': (center_x, center_y),
-                        'score': 1.0
+                        'distance_from_center': distance
                     })
         
         self.last_detections = detections
         return detections
-
-
-# ============================================================================
-# NAME FILTER
-# ============================================================================
-
-class NameFilter:
-    """Filter pets and players"""
-    
-    def __init__(self, logger):
-        self.logger = logger
-        self.rejected_count = 0
-        self.accepted_count = 0
-    
-    def is_valid_mob_region(self, screenshot, region):
-        """
-        Check if region is likely a mob (not pet/player)
-        Uses position and pattern analysis
-        """
-        x, y, w, h = region
-        center_y = y + h // 2
-        
-        # Rule 1: Names near screen center are more likely players
-        screen_center_y = Config.SCREEN_HEIGHT // 2
-        distance_from_center = abs(center_y - screen_center_y)
-        
-        # If very close to center (where player usually is), be cautious
-        if distance_from_center < 150:
-            self.logger.debug(f"  Region near center, might be player")
-            return False
-        
-        # Rule 2: Check if region is part of a cluster (players often travel with pets)
-        # This is a simple heuristic
-        
-        # Accept by default
-        return True
-    
-    def should_skip_position(self, center):
-        """
-        Check if position should be skipped based on known player/pet locations
-        """
-        # Center of screen (where player usually is)
-        player_zone_x = (Config.SCREEN_WIDTH // 2 - 200, Config.SCREEN_WIDTH // 2 + 200)
-        player_zone_y = (Config.SCREEN_HEIGHT // 2 - 100, Config.SCREEN_HEIGHT // 2 + 150)
-        
-        if (player_zone_x[0] < center[0] < player_zone_x[1] and 
-            player_zone_y[0] < center[1] < player_zone_y[1]):
-            return True
-        
-        return False
 
 
 # ============================================================================
@@ -405,12 +278,14 @@ class PositionCache:
 # ============================================================================
 
 class NameplateReader:
-    """Read mob info from nameplate"""
+    """Read mob info from nameplate with binary health detection"""
     
     def __init__(self, logger, screen_capture):
         self.logger = logger
         self.screen_capture = screen_capture
         self.click_count = 0
+        self.verified_mobs = 0
+        self.filtered_pets = 0
     
     def click_and_read(self, position, timeout=None):
         """Click and read nameplate with timeout"""
@@ -435,13 +310,21 @@ class NameplateReader:
                 
                 attempts += 1
                 
-                if info and info.get('class'):
-                    self.logger.debug(f"    Nameplate read in {attempts} attempts")
-                    return info
+                if info is not None:
+                    if info.get('class'):
+                        # Has class = it's a mob
+                        self.verified_mobs += 1
+                        self.logger.debug(f"    ✓ Verified MOB in {attempts} attempts")
+                        return info
+                    else:
+                        # No class = it's a pet
+                        self.filtered_pets += 1
+                        self.logger.debug(f"    ✗ Filtered PET (no class)")
+                        return None
                 
                 time.sleep(0.1)
             
-            self.logger.debug(f"    Nameplate timeout ({attempts} attempts)")
+            self.logger.debug(f"    ✗ Nameplate timeout ({attempts} attempts)")
             return None
             
         except Exception as e:
@@ -454,16 +337,21 @@ class NameplateReader:
             x, y, w, h = Config.NAMEPLATE_REGION
             nameplate = screenshot[y:y+h, x:x+w]
             
-            # Detect class by color patterns (more reliable than OCR)
+            # Detect class by color patterns
             mob_class = self.detect_class_by_color(nameplate)
             
-            # Detect health
-            health = self.detect_health(nameplate)
+            # If no class detected, this is a pet
+            if not mob_class:
+                return {'class': None, 'is_pet': True}
+            
+            # Check if mob is alive (binary)
+            is_alive = self.is_mob_alive(nameplate)
             
             return {
-                'name': 'Mob',  # Generic name
+                'name': 'Mob',
                 'class': mob_class,
-                'health': health
+                'is_alive': is_alive,
+                'is_pet': False
             }
             
         except Exception as e:
@@ -473,16 +361,22 @@ class NameplateReader:
     def detect_class_by_color(self, nameplate):
         """
         Detect mob class by color patterns in nameplate
-        General/Elite usually have specific color schemes
+        Returns class name or None if no class (pet)
         """
         # Convert to HSV
         hsv = cv2.cvtColor(nameplate, cv2.COLOR_BGR2HSV)
         
-        # Check for golden/yellow colors (often indicates elite/unique)
+        # Check for golden/yellow colors (elite/unique)
         yellow_lower = np.array([20, 100, 100])
         yellow_upper = np.array([30, 255, 255])
         yellow_mask = cv2.inRange(hsv, yellow_lower, yellow_upper)
         yellow_pixels = cv2.countNonZero(yellow_mask)
+        
+        # Check for purple colors (champion)
+        purple_lower = np.array([130, 100, 100])
+        purple_upper = np.array([160, 255, 255])
+        purple_mask = cv2.inRange(hsv, purple_lower, purple_upper)
+        purple_pixels = cv2.countNonZero(purple_mask)
         
         # Check for red colors (boss/unique)
         red_lower1 = np.array([0, 100, 100])
@@ -494,19 +388,38 @@ class NameplateReader:
         red_pixels = cv2.countNonZero(red_mask1) + cv2.countNonZero(red_mask2)
         
         # Classify based on color
+        # If no significant colored pixels, it's likely a pet (no class icon)
+        total_class_pixels = yellow_pixels + purple_pixels
+        
+        if total_class_pixels < 30:
+            # Not enough colored pixels = no class icon = pet
+            return None
+        
         if yellow_pixels > 50:
             return 'Elite'
+        elif purple_pixels > 50:
+            return 'Champion'
         elif red_pixels > 100:
             return 'Unique'
         else:
-            return 'General'  # Default
+            return 'General'  # Default for mobs with class
     
-    def detect_health(self, nameplate):
-        """Detect health percentage from red bar"""
+    def is_mob_alive(self, nameplate=None):
+        """
+        Binary health detection: ALIVE or DEAD
+        Returns True if red pixels exist (alive), False otherwise (dead)
+        """
         try:
+            # If no nameplate provided, capture it
+            if nameplate is None:
+                screenshot = self.screen_capture.capture()
+                x, y, w, h = Config.NAMEPLATE_REGION
+                nameplate = screenshot[y:y+h, x:x+w]
+            
+            # Convert to HSV
             hsv = cv2.cvtColor(nameplate, cv2.COLOR_BGR2HSV)
             
-            # Red health bar
+            # Red health bar detection
             red_lower1 = np.array([0, 150, 100])
             red_upper1 = np.array([10, 255, 255])
             red_lower2 = np.array([170, 150, 100])
@@ -516,53 +429,86 @@ class NameplateReader:
             mask2 = cv2.inRange(hsv, red_lower2, red_upper2)
             red_mask = cv2.bitwise_or(mask1, mask2)
             
-            contours, _ = cv2.findContours(red_mask, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+            red_pixels = cv2.countNonZero(red_mask)
             
-            if contours:
-                largest = max(contours, key=cv2.contourArea)
-                x, y, w, h = cv2.boundingRect(largest)
-                health_pct = min(100, max(0, (w / 300) * 100))
-                return health_pct
+            # Binary decision: more than threshold = ALIVE
+            is_alive = red_pixels > Config.RED_PIXEL_THRESHOLD
             
-            return 100  # Default full health
+            self.logger.debug(f"    Health check: {red_pixels} red pixels -> {'ALIVE' if is_alive else 'DEAD'}")
             
-        except:
-            return 100
+            return is_alive
+            
+        except Exception as e:
+            self.logger.error(f"Health check error: {e}")
+            return True  # Assume alive on error to be safe
 
 
 # ============================================================================
-# COMBAT SYSTEM
+# COMBAT SYSTEM WITH HEALTH MONITORING
 # ============================================================================
 
 class CombatSystem:
-    """Handle combat"""
+    """Handle combat with live health monitoring"""
     
-    def __init__(self, logger):
+    def __init__(self, logger, nameplate_reader):
         self.logger = logger
+        self.nameplate_reader = nameplate_reader
         self.total_kills = 0
+        self.skills_used = 0
+        self.early_stops = 0  # Times we stopped rotation early due to death
     
     def engage(self, target_info):
-        """Execute combat rotation"""
+        """
+        Execute combat rotation with health monitoring
+        Returns True if mob was killed, False otherwise
+        """
         try:
             mob_class = target_info.get('class', 'Unknown')
-            health = target_info.get('health', 100)
             
-            self.logger.info(f"\n{'>'*50}")
-            self.logger.info(f"ENGAGING: {mob_class} (HP: {health:.0f}%)")
-            self.logger.info(f"{'>'*50}")
+            self.logger.info(f"\n{'>'*60}")
+            self.logger.info(f"⚔️  ENGAGING: {mob_class}")
+            self.logger.info(f"{'>'*60}")
             
-            # Simple rotation
-            for i, key in enumerate(Config.SKILL_KEYS, 1):
-                self.logger.info(f"  Skill {i}: {key}")
-                pyautogui.press(key)
-                time.sleep(Config.SKILL_DELAY)
+            # Initial health check
+            if not self.nameplate_reader.is_mob_alive():
+                self.logger.info("✗ Mob already dead, skipping")
+                return False
             
+            # Combat rotation with health checks
+            for i, skill_key in enumerate(Config.SKILL_KEYS, 1):
+                # Use skill
+                self.logger.info(f"  → Skill {i}: {skill_key}")
+                pyautogui.press(skill_key)
+                self.skills_used += 1
+                
+                # Wait for skill animation
+                time.sleep(Config.SKILL_ANIMATION_TIME)
+                
+                # Wait additional time to reach 1 second check interval
+                time.sleep(Config.HEALTH_CHECK_INTERVAL - Config.SKILL_ANIMATION_TIME)
+                
+                # Check if mob still alive
+                if not self.nameplate_reader.is_mob_alive():
+                    self.logger.info(f"  ✓ Mob DEAD after skill {i}!")
+                    self.total_kills += 1
+                    self.early_stops += 1
+                    self.logger.info(f"{'<'*60}")
+                    self.logger.info(f"💀 Total kills: {self.total_kills} | Skills saved: {4-i}")
+                    self.logger.info(f"{'<'*60}\n")
+                    return True
+            
+            # Rotation complete
+            self.logger.info(f"  ℹ️  Rotation complete (mob status unknown)")
             self.total_kills += 1
-            self.logger.info(f"{'<'*50}")
-            self.logger.info(f"Total engagements: {self.total_kills}\n")
+            self.logger.info(f"{'<'*60}")
+            self.logger.info(f"💀 Total kills: {self.total_kills}")
+            self.logger.info(f"{'<'*60}\n")
+            
+            return True
             
         except Exception as e:
             self.logger.error(f"Combat error: {e}")
+            return False
 
 
 # ============================================================================
@@ -595,7 +541,7 @@ class OverlayWindow:
     
     def update(self, frame, detections, stats):
         """Update overlay data"""
-        self.current_frame = frame.copy()
+        self.current_frame = frame.copy() if frame is not None else None
         self.detections = detections
         self.stats = stats
     
@@ -606,19 +552,76 @@ class OverlayWindow:
                 if self.current_frame is not None:
                     display = self.current_frame.copy()
                     
-                    # Draw detections
-                    for det in self.detections:
+                    # Draw screen center crosshair
+                    center_x = Config.SCREEN_WIDTH // 2
+                    center_y = Config.SCREEN_HEIGHT // 2
+                    cv2.line(display, (center_x - 30, center_y), (center_x + 30, center_y), (255, 255, 0), 2)
+                    cv2.line(display, (center_x, center_y - 30), (center_x, center_y + 30), (255, 255, 0), 2)
+                    cv2.circle(display, (center_x, center_y), 100, (255, 255, 0), 1)
+                    
+                    # Draw detections with distance indicators
+                    for i, det in enumerate(self.detections, 1):
                         x, y, w, h = det['region']
-                        cv2.rectangle(display, (x, y), (x+w, y+h), (0, 255, 0), 2)
-                        cv2.circle(display, det['center'], 5, (0, 0, 255), -1)
+                        center = det['center']
+                        distance = det.get('distance_from_center', 0)
+                        
+                        # Color based on distance (green = close, red = far)
+                        color_intensity = min(255, int(distance / 3))
+                        color = (0, 255 - color_intensity, color_intensity)
+                        
+                        # Draw box
+                        cv2.rectangle(display, (x, y), (x+w, y+h), color, 2)
+                        
+                        # Draw center dot
+                        cv2.circle(display, center, 5, (0, 0, 255), -1)
+                        
+                        # Draw line to center
+                        cv2.line(display, center, (center_x, center_y), (100, 100, 100), 1)
+                        
+                        # Draw distance text
+                        dist_text = f"#{i} D:{int(distance)}"
+                        cv2.putText(display, dist_text, (x, y - 5), 
+                                   cv2.FONT_HERSHEY_SIMPLEX, 0.4, color, 1)
                     
                     # Draw stats
                     y_pos = 30
                     for key, value in self.stats.items():
                         text = f"{key}: {value}"
+                        # Color based on status
+                        if key == 'Status' and 'PAUSED' in str(value):
+                            text_color = (0, 165, 255)  # Orange for paused
+                        else:
+                            text_color = (0, 255, 0)  # Green for normal
+                        
+                        # Black outline
+                        cv2.putText(display, text, (12, y_pos + 2), 
+                                   cv2.FONT_HERSHEY_SIMPLEX, 0.6, (0, 0, 0), 3)
+                        # Colored text
                         cv2.putText(display, text, (10, y_pos), 
-                                   cv2.FONT_HERSHEY_SIMPLEX, 0.6, (0, 255, 0), 2)
-                        y_pos += 25
+                                   cv2.FONT_HERSHEY_SIMPLEX, 0.6, text_color, 2)
+                        y_pos += 30
+                    
+                    # Draw large PAUSED overlay if paused
+                    if 'Status' in self.stats and 'PAUSED' in str(self.stats.get('Status', '')):
+                        # Semi-transparent overlay
+                        overlay = display.copy()
+                        cv2.rectangle(overlay, (0, 0), (display.shape[1], display.shape[0]), (0, 0, 0), -1)
+                        display = cv2.addWeighted(display, 0.7, overlay, 0.3, 0)
+                        
+                        # Large PAUSED text
+                        text = "PAUSED"
+                        font_scale = 3
+                        thickness = 5
+                        (text_width, text_height), baseline = cv2.getTextSize(text, cv2.FONT_HERSHEY_SIMPLEX, font_scale, thickness)
+                        text_x = (display.shape[1] - text_width) // 2
+                        text_y = (display.shape[0] + text_height) // 2
+                        
+                        # Black outline
+                        cv2.putText(display, text, (text_x + 2, text_y + 2), 
+                                   cv2.FONT_HERSHEY_SIMPLEX, font_scale, (0, 0, 0), thickness + 2)
+                        # Orange text
+                        cv2.putText(display, text, (text_x, text_y), 
+                                   cv2.FONT_HERSHEY_SIMPLEX, font_scale, (0, 165, 255), thickness)
                     
                     # Show
                     cv2.imshow('MOB HUNTER v3.0 - Detection Overlay', display)
@@ -638,116 +641,80 @@ class OverlayWindow:
 # ============================================================================
 
 class MobHunter:
-    """Main bot controller"""
+    """Main bot controller with center-out targeting"""
     
     def __init__(self):
         self.logger, self.log_dir = setup_logger()
         self.logger.info("="*70)
-        self.logger.info("MOB HUNTER v3.0 - FULL VERSION")
+        self.logger.info("MOB HUNTER v3.0 - CENTER-OUT + BINARY HEALTH")
         self.logger.info("="*70)
         self.logger.info(f"Log directory: {self.log_dir}")
         self.logger.info(f"Screen: {Config.SCREEN_WIDTH}x{Config.SCREEN_HEIGHT}")
-        self.logger.info(f"Overlay: {'ENABLED' if Config.SHOW_OVERLAY else 'DISABLED'}")
+        self.logger.info(f"Strategy: Attack closest to center first")
+        self.logger.info(f"Health: Binary (ALIVE/DEAD) detection")
+        self.logger.info(f"Pet Filter: Via nameplate class detection")
         self.logger.info("="*70)
         
         # Components
         self.screen_capture = ScreenCapture()
         self.detector = FloatingNameDetector(self.logger)
-        self.ocr = SimpleOCR(self.logger)
-        self.name_filter = NameFilter(self.logger)
         self.cache = PositionCache(self.logger)
         self.nameplate_reader = NameplateReader(self.logger, self.screen_capture)
-        self.combat = CombatSystem(self.logger)
+        self.combat = CombatSystem(self.logger, self.nameplate_reader)
         self.overlay = OverlayWindow(self.logger)
         
         self.cycle = 0
         self.running = True
-        self.is_paused = True  # Start paused, wait for CapsLock
-        self.should_exit = False
+        self.paused = False
         self.start_time = time.time()
-        self.keyboard_listener = None
-        
-        # Setup keyboard listener
-        self.setup_keyboard_listener()
-    
-    def setup_keyboard_listener(self):
-        """Setup CapsLock toggle for start/pause"""
-        def on_press(key):
-            try:
-                if key == keyboard.Key.caps_lock:
-                    if self.is_paused:
-                        self.is_paused = False
-                        self.logger.info("\n▶ RUNNING - Press CapsLock to pause")
-                        print("\n▶ RUNNING - Press CapsLock to pause")
-                    else:
-                        self.is_paused = True
-                        self.logger.info("\n⏸ PAUSED - Press CapsLock to resume")
-                        print("\n⏸ PAUSED - Press CapsLock to resume")
-            except:
-                pass
-        
-        self.keyboard_listener = keyboard.Listener(on_press=on_press)
-        self.keyboard_listener.daemon = True
-        self.keyboard_listener.start()
-    
-    def shutdown(self):
-        """Gracefully shutdown the bot"""
-        self.logger.info("Shutting down gracefully...")
-        self.should_exit = True
-        self.running = False
-        self.is_paused = False  # Unpause to allow loop to exit
-        
-        # Stop keyboard listener
-        if self.keyboard_listener:
-            try:
-                self.keyboard_listener.stop()
-            except:
-                pass
-        
-        # Stop overlay
-        if self.overlay:
-            try:
-                self.overlay.stop()
-            except:
-                pass
+        self.last_capslock_state = False
     
     def run(self):
         """Main loop"""
-        self.logger.info("\n🚀 Bot initialized! Press CapsLock to start, Ctrl+C to stop.\n")
-        print("\n⏳ Waiting for CapsLock to start...")
-        print("💡 Press CapsLock to START/PAUSE, Ctrl+C to EXIT")
+        self.logger.info("\n🚀 Bot started! Press Ctrl+C to stop.\n")
+        self.logger.info("💡 Controls: CapsLock = Pause/Resume\n")
         
         # Start overlay
         self.overlay.start()
         
         try:
-            while self.running and not self.should_exit:
-                # Wait if paused
-                if self.is_paused:
-                    time.sleep(0.1)
+            while self.running:
+                # Check CapsLock for pause/resume
+                caps_state = is_capslock_on()
+                
+                # Toggle pause on CapsLock press (edge detection)
+                if caps_state and not self.last_capslock_state:
+                    self.paused = not self.paused
+                    if self.paused:
+                        self.logger.info("\n⏸️  PAUSED - Press CapsLock to resume\n")
+                    else:
+                        self.logger.info("\n▶️  RESUMED - Press CapsLock to pause\n")
+                
+                self.last_capslock_state = caps_state
+                
+                # Skip cycle if paused, but update overlay
+                if self.paused:
+                    # Update overlay with paused state
+                    screenshot = self.screen_capture.capture()
+                    self.update_overlay(screenshot, [], 0, 0)
+                    time.sleep(0.1)  # Short sleep when paused
                     continue
                 
-                # Run cycle if not paused
                 self.cycle += 1
                 self.run_cycle()
                 time.sleep(Config.CYCLE_DELAY)
                 
         except KeyboardInterrupt:
-            self.logger.info("\n\n⛔ Bot stopped by user (Ctrl+C)")
-            print("\n⛔ Bot stopped by user (Ctrl+C)")
+            self.logger.info("\n\n⛔ Bot stopped by user")
         except Exception as e:
             self.logger.error(f"\n💥 FATAL ERROR: {e}")
             self.logger.error(traceback.format_exc())
         finally:
-            self.shutdown()
+            self.overlay.stop()
             self.print_statistics()
     
     def run_cycle(self):
-        """Single detection cycle"""
-        # Check if should exit or is paused
-        if self.should_exit or self.is_paused:
-            return
-        
+        """Single detection cycle with center-out targeting"""
         try:
             self.logger.info(f"\n{'='*70}")
             self.logger.info(f"CYCLE #{self.cycle}")
@@ -756,86 +723,109 @@ class MobHunter:
             # Capture
             screenshot = self.screen_capture.capture()
             
-            # Detect
+            # Detect all floating names
             detections = self.detector.find_floating_names(screenshot)
             self.logger.info(f"Detected: {len(detections)} floating names")
             
             if not detections:
+                self.logger.info("→ No floating names found")
+                # Update overlay even with no detections
+                self.update_overlay(screenshot, [], 0, 0)
                 return
             
-            # Filter and process
+            # Filter cached positions
             valid_targets = []
             for i, det in enumerate(detections, 1):
-                region = det['region']
                 center = det['center']
                 
-                # Cache check
+                # Cache check only
                 if self.cache.is_recently_checked(center):
-                    self.logger.debug(f"  Name #{i}: Cached")
-                    continue
-                
-                # Position check
-                if self.name_filter.should_skip_position(center):
-                    self.logger.debug(f"  Name #{i}: Player zone")
-                    continue
-                
-                # Region validation
-                if not self.name_filter.is_valid_mob_region(screenshot, region):
+                    self.logger.debug(f"  Name #{i}: Cached, skipping")
                     continue
                 
                 # Calculate click position (below text)
-                x, y, w, h = region
+                x, y, w, h = det['region']
                 click_pos = (x + w//2, y + h + 25)
-                
-                self.logger.info(f"  ✓ Target #{i} at {center}")
                 
                 valid_targets.append({
                     'click_pos': click_pos,
-                    'region': region,
-                    'center': center
+                    'center': center,
+                    'distance': det['distance_from_center'],
+                    'detection': det
                 })
             
-            self.logger.info(f"→ Valid targets: {len(valid_targets)}")
+            # SORT BY DISTANCE FROM CENTER (closest first)
+            valid_targets.sort(key=lambda t: t['distance'])
             
-            # Verify via nameplate
-            confirmed = []
+            self.logger.info(f"→ Valid targets (after cache): {len(valid_targets)}")
+            
+            if valid_targets:
+                self.logger.info(f"→ Target priority (closest to farthest):")
+                for i, target in enumerate(valid_targets[:5], 1):
+                    dist = int(target['distance'])
+                    self.logger.info(f"   #{i}: Distance={dist}px from center")
+            
+            # Verify and attack (max per cycle)
+            confirmed_mobs = []
             for i, target in enumerate(valid_targets[:Config.MAX_TARGETS_PER_CYCLE], 1):
-                self.logger.info(f"\n  Verifying #{i}...")
+                self.logger.info(f"\n  Verifying target #{i} (D={int(target['distance'])}px)...")
                 
+                # Click and read nameplate
                 info = self.nameplate_reader.click_and_read(target['click_pos'])
                 
-                if info and info.get('class'):
-                    self.logger.info(f"    ✓ {info['class']} | HP: {info['health']:.0f}%")
-                    confirmed.append(info)
-                else:
-                    self.logger.info(f"    ✗ No nameplate")
-            
-            # Attack
-            if confirmed:
-                best = min(confirmed, key=lambda m: Config.CLASS_PRIORITIES.get(m['class'], 99))
-                if best['health'] > Config.MIN_HEALTH_THRESHOLD:
-                    self.combat.engage(best)
+                if info is None:
+                    self.logger.info(f"    ✗ No valid nameplate or is a pet")
+                    continue
+                
+                if info.get('is_pet'):
+                    self.logger.info(f"    ✗ Filtered: PET (no class icon)")
+                    continue
+                
+                if not info.get('class'):
+                    self.logger.info(f"    ✗ No class detected")
+                    continue
+                
+                # Check if alive
+                if not info.get('is_alive'):
+                    self.logger.info(f"    ✗ Mob already DEAD")
+                    continue
+                
+                # Valid mob!
+                self.logger.info(f"    ✓ {info['class']} | Status: ALIVE")
+                confirmed_mobs.append(info)
+                
+                # Attack immediately (closest first strategy)
+                self.combat.engage(info)
             
             # Update overlay
-            stats = {
-                'Cycle': self.cycle,
-                'Detected': len(detections),
-                'Valid': len(valid_targets),
-                'Confirmed': len(confirmed),
-                'Clicks': self.nameplate_reader.click_count,
-                'Kills': self.combat.total_kills,
-                'Cache': f"{len(self.cache.cache)} entries",
-                'Uptime': f"{int(time.time() - self.start_time)}s"
-            }
-            self.overlay.update(screenshot, detections, stats)
+            self.update_overlay(screenshot, detections, len(valid_targets), len(confirmed_mobs))
             
-            # Save screenshot
+            # Save screenshot occasionally
             if Config.SAVE_SCREENSHOTS and self.cycle % 10 == 0:
                 cv2.imwrite(f"{self.log_dir}/screenshots/cycle_{self.cycle:04d}.png", screenshot)
             
         except Exception as e:
             self.logger.error(f"Cycle error: {e}")
             self.logger.error(traceback.format_exc())
+    
+    def update_overlay(self, screenshot, detections, valid_count, confirmed_count):
+        """Update overlay with current stats"""
+        status = "⏸️ PAUSED" if self.paused else "▶️ RUNNING"
+        stats = {
+            'Status': status,
+            'Cycle': self.cycle,
+            'Detected': len(detections),
+            'Valid': valid_count,
+            'Confirmed': confirmed_count,
+            'Clicks': self.nameplate_reader.click_count,
+            'Mobs': self.nameplate_reader.verified_mobs,
+            'Pets': self.nameplate_reader.filtered_pets,
+            'Kills': self.combat.total_kills,
+            'Early_Stops': self.combat.early_stops,
+            'Cache': f"{len(self.cache.cache)}",
+            'Uptime': f"{int(time.time() - self.start_time)}s"
+        }
+        self.overlay.update(screenshot, detections, stats)
     
     def print_statistics(self):
         """Print final statistics"""
@@ -847,10 +837,14 @@ class MobHunter:
         self.logger.info("="*70)
         self.logger.info(f"Total Cycles: {self.cycle}")
         self.logger.info(f"Total Clicks: {self.nameplate_reader.click_count}")
-        self.logger.info(f"Total Engagements: {self.combat.total_kills}")
+        self.logger.info(f"Verified Mobs: {self.nameplate_reader.verified_mobs}")
+        self.logger.info(f"Filtered Pets: {self.nameplate_reader.filtered_pets}")
+        self.logger.info(f"Total Kills: {self.combat.total_kills}")
+        self.logger.info(f"Early Stops: {self.combat.early_stops} (stopped rotation early due to death)")
+        self.logger.info(f"Skills Used: {self.combat.skills_used}")
+        self.logger.info(f"Avg Skills/Kill: {self.combat.skills_used/self.combat.total_kills:.1f}" if self.combat.total_kills > 0 else "N/A")
         self.logger.info(f"Uptime: {uptime}s ({uptime//60}m {uptime%60}s)")
         self.logger.info(f"Cache Hit Rate: {cache_stats['hit_rate']:.1f}%")
-        self.logger.info(f"Avg Cycle Time: {uptime/self.cycle:.2f}s" if self.cycle > 0 else "N/A")
         self.logger.info("="*70)
 
 
@@ -860,53 +854,40 @@ class MobHunter:
 
 def main():
     """Entry point"""
-    bot = None
-    
-    def signal_handler(sig, frame):
-        """Handle Ctrl+C gracefully"""
-        print("\n\n🛑 Ctrl+C detected - Shutting down gracefully...")
-        if bot:
-            bot.shutdown()
-        print("✓ Shutdown complete. Goodbye!")
-        sys.exit(0)
-    
-    # Register signal handler for Ctrl+C
-    signal.signal(signal.SIGINT, signal_handler)
-    
     print("""
-    ╔═══════════════════════════════════════════════════════╗
-    ║                                                       ║
-    ║           MOB HUNTER v3.0 - FULL VERSION            ║
-    ║                                                       ║
-    ║   Complete MMORPG Auto-Combat Bot                    ║
-    ║   • Real-time Detection                              ║
-    ║   • Live Overlay                                     ║
-    ║   • Smart Filtering                                  ║
-    ║   • Auto Combat                                      ║
-    ║                                                       ║
-    ╚═══════════════════════════════════════════════════════╝
+╔═══════════════════════════════════════════════════════╗
+║                                                       ║
+║     MOB HUNTER v3.0 - FINAL OPTIMIZED VERSION        ║
+║                                                       ║
+║   ✅ Center-Out Targeting (closest first)           ║
+║   ✅ Binary Health (ALIVE/DEAD only)                ║
+║   ✅ Pet Filter (via nameplate class)               ║
+║   ✅ Health Check Every 1 Second                    ║
+║   ✅ Stop Rotation When Mob Dies                    ║
+║   ✅ Continue Scanning Always                       ║
+║                                                       ║
+╚═══════════════════════════════════════════════════════╝
+Controls:
+• CapsLock = Start bot / Pause/Resume
+• Ctrl+C = Stop bot
+
+Waiting for CapsLock to start...
+""")
+
+    # Wait for CapsLock to be pressed to start
+    print("Press CapsLock to start the bot...")
+    while not is_capslock_on():
+        time.sleep(0.1)
     
-    Controls:
-    • CapsLock = START/PAUSE
-    • Ctrl+C = EXIT
+    # Wait for CapsLock to be released
+    while is_capslock_on():
+        time.sleep(0.1)
     
-    Initializing...
-    """)
-    
-    try:
-        bot = MobHunter()
-        bot.run()
-    except KeyboardInterrupt:
-        print("\n\n🛑 Initialization interrupted - Shutting down...")
-        if bot:
-            bot.shutdown()
-        sys.exit(0)
-    except Exception as e:
-        print(f"\n❌ Initialization failed: {e}")
-        traceback.print_exc()
-        if bot:
-            bot.shutdown()
-        sys.exit(1)
+    print("Bot starting...\n")
+    time.sleep(0.5)
+
+    bot = MobHunter()
+    bot.run()
 
 
 if __name__ == "__main__":

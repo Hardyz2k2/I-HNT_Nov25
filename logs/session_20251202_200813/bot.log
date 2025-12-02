@@ -1,0 +1,156 @@
+2025-12-02 20:08:13 | INFO     | ======================================================================
+2025-12-02 20:08:13 | INFO     | MOB HUNTER v3.0 - CENTER-OUT + BINARY HEALTH
+2025-12-02 20:08:13 | INFO     | ======================================================================
+2025-12-02 20:08:13 | INFO     | Log directory: logs/session_20251202_200813
+2025-12-02 20:08:13 | INFO     | Screen: 1920x1080
+2025-12-02 20:08:13 | INFO     | Strategy: Attack closest to center first
+2025-12-02 20:08:13 | INFO     | Health: Binary (ALIVE/DEAD) detection
+2025-12-02 20:08:13 | INFO     | Pet Filter: Via nameplate class detection
+2025-12-02 20:08:13 | INFO     | ======================================================================
+2025-12-02 20:08:13 | INFO     | 
+🚀 Bot started! Press Ctrl+C to stop.
+
+2025-12-02 20:08:13 | INFO     | 💡 Controls: CapsLock = Pause/Resume
+
+2025-12-02 20:08:13 | INFO     | 
+======================================================================
+2025-12-02 20:08:13 | INFO     | CYCLE #1
+2025-12-02 20:08:13 | INFO     | ======================================================================
+2025-12-02 20:08:13 | DEBUG    |   Detection stats: total_contours=1686, rejected_by_size=1617, rejected_by_aspect=1, rejected_by_position=68, rejected_by_text_validation=0
+2025-12-02 20:08:13 | INFO     |   → After filtering: 0 valid detections
+2025-12-02 20:08:13 | INFO     | Detected: 0 floating names
+2025-12-02 20:08:13 | INFO     | → No floating names found
+2025-12-02 20:08:14 | INFO     | 
+======================================================================
+2025-12-02 20:08:14 | INFO     | CYCLE #2
+2025-12-02 20:08:14 | INFO     | ======================================================================
+2025-12-02 20:08:14 | DEBUG    |   Detection stats: total_contours=1672, rejected_by_size=1602, rejected_by_aspect=2, rejected_by_position=68, rejected_by_text_validation=0
+2025-12-02 20:08:14 | INFO     |   → After filtering: 0 valid detections
+2025-12-02 20:08:14 | INFO     | Detected: 0 floating names
+2025-12-02 20:08:14 | INFO     | → No floating names found
+2025-12-02 20:08:14 | INFO     | 
+======================================================================
+2025-12-02 20:08:14 | INFO     | CYCLE #3
+2025-12-02 20:08:14 | INFO     | ======================================================================
+2025-12-02 20:08:14 | DEBUG    |   Detection stats: total_contours=1672, rejected_by_size=1603, rejected_by_aspect=1, rejected_by_position=68, rejected_by_text_validation=0
+2025-12-02 20:08:14 | INFO     |   → After filtering: 0 valid detections
+2025-12-02 20:08:14 | INFO     | Detected: 0 floating names
+2025-12-02 20:08:14 | INFO     | → No floating names found
+2025-12-02 20:08:14 | INFO     | 
+======================================================================
+2025-12-02 20:08:14 | INFO     | CYCLE #4
+2025-12-02 20:08:14 | INFO     | ======================================================================
+2025-12-02 20:08:14 | DEBUG    |   Detected: pos=(931,603) size=39x12 aspect=3.2 dist=70
+2025-12-02 20:08:15 | DEBUG    |   Detection stats: total_contours=1673, rejected_by_size=1601, rejected_by_aspect=1, rejected_by_position=68, rejected_by_text_validation=0
+2025-12-02 20:08:15 | INFO     |   → After filtering: 1 valid detections
+2025-12-02 20:08:15 | INFO     | Detected: 1 floating names
+2025-12-02 20:08:15 | INFO     | → Valid targets (after cache): 1
+2025-12-02 20:08:15 | INFO     | → Target priority (closest to farthest):
+2025-12-02 20:08:15 | INFO     |    #1: Distance=69px from center
+2025-12-02 20:08:15 | INFO     | 
+  Verifying target #1 (D=69px)...
+2025-12-02 20:08:15 | DEBUG    |     Clicking (950, 640)
+2025-12-02 20:08:15 | DEBUG    |     Health check: 0 red pixels -> DEAD
+2025-12-02 20:08:15 | DEBUG    |     ✓ Verified MOB in 1 attempts
+2025-12-02 20:08:15 | INFO     |     ✗ Mob already DEAD
+2025-12-02 20:08:15 | INFO     | 
+======================================================================
+2025-12-02 20:08:15 | INFO     | CYCLE #5
+2025-12-02 20:08:15 | INFO     | ======================================================================
+2025-12-02 20:08:15 | DEBUG    |   Detection stats: total_contours=1681, rejected_by_size=1607, rejected_by_aspect=1, rejected_by_position=71, rejected_by_text_validation=2
+2025-12-02 20:08:15 | INFO     |   → After filtering: 0 valid detections
+2025-12-02 20:08:15 | INFO     | Detected: 0 floating names
+2025-12-02 20:08:15 | INFO     | → No floating names found
+2025-12-02 20:08:16 | INFO     | 
+======================================================================
+2025-12-02 20:08:16 | INFO     | CYCLE #6
+2025-12-02 20:08:16 | INFO     | ======================================================================
+2025-12-02 20:08:16 | DEBUG    |   Detection stats: total_contours=1676, rejected_by_size=1602, rejected_by_aspect=1, rejected_by_position=71, rejected_by_text_validation=2
+2025-12-02 20:08:16 | INFO     |   → After filtering: 0 valid detections
+2025-12-02 20:08:16 | INFO     | Detected: 0 floating names
+2025-12-02 20:08:16 | INFO     | → No floating names found
+2025-12-02 20:08:16 | INFO     | 
+======================================================================
+2025-12-02 20:08:16 | INFO     | CYCLE #7
+2025-12-02 20:08:16 | INFO     | ======================================================================
+2025-12-02 20:08:16 | DEBUG    |   Detection stats: total_contours=1700, rejected_by_size=1626, rejected_by_aspect=1, rejected_by_position=71, rejected_by_text_validation=2
+2025-12-02 20:08:16 | INFO     |   → After filtering: 0 valid detections
+2025-12-02 20:08:16 | INFO     | Detected: 0 floating names
+2025-12-02 20:08:16 | INFO     | → No floating names found
+2025-12-02 20:08:17 | INFO     | 
+======================================================================
+2025-12-02 20:08:17 | INFO     | CYCLE #8
+2025-12-02 20:08:17 | INFO     | ======================================================================
+2025-12-02 20:08:17 | DEBUG    |   Detection stats: total_contours=1694, rejected_by_size=1620, rejected_by_aspect=1, rejected_by_position=71, rejected_by_text_validation=2
+2025-12-02 20:08:17 | INFO     |   → After filtering: 0 valid detections
+2025-12-02 20:08:17 | INFO     | Detected: 0 floating names
+2025-12-02 20:08:17 | INFO     | → No floating names found
+2025-12-02 20:08:17 | INFO     | 
+======================================================================
+2025-12-02 20:08:17 | INFO     | CYCLE #9
+2025-12-02 20:08:17 | INFO     | ======================================================================
+2025-12-02 20:08:17 | DEBUG    |   Detection stats: total_contours=1688, rejected_by_size=1614, rejected_by_aspect=1, rejected_by_position=71, rejected_by_text_validation=2
+2025-12-02 20:08:17 | INFO     |   → After filtering: 0 valid detections
+2025-12-02 20:08:17 | INFO     | Detected: 0 floating names
+2025-12-02 20:08:17 | INFO     | → No floating names found
+2025-12-02 20:08:18 | INFO     | 
+======================================================================
+2025-12-02 20:08:18 | INFO     | CYCLE #10
+2025-12-02 20:08:18 | INFO     | ======================================================================
+2025-12-02 20:08:18 | DEBUG    |   Detection stats: total_contours=1679, rejected_by_size=1605, rejected_by_aspect=1, rejected_by_position=71, rejected_by_text_validation=2
+2025-12-02 20:08:18 | INFO     |   → After filtering: 0 valid detections
+2025-12-02 20:08:18 | INFO     | Detected: 0 floating names
+2025-12-02 20:08:18 | INFO     | → No floating names found
+2025-12-02 20:08:18 | INFO     | 
+======================================================================
+2025-12-02 20:08:18 | INFO     | CYCLE #11
+2025-12-02 20:08:18 | INFO     | ======================================================================
+2025-12-02 20:08:18 | DEBUG    |   Detection stats: total_contours=1683, rejected_by_size=1609, rejected_by_aspect=1, rejected_by_position=71, rejected_by_text_validation=2
+2025-12-02 20:08:18 | INFO     |   → After filtering: 0 valid detections
+2025-12-02 20:08:18 | INFO     | Detected: 0 floating names
+2025-12-02 20:08:18 | INFO     | → No floating names found
+2025-12-02 20:08:18 | INFO     | 
+======================================================================
+2025-12-02 20:08:18 | INFO     | CYCLE #12
+2025-12-02 20:08:18 | INFO     | ======================================================================
+2025-12-02 20:08:18 | DEBUG    |   Detection stats: total_contours=1694, rejected_by_size=1620, rejected_by_aspect=1, rejected_by_position=71, rejected_by_text_validation=2
+2025-12-02 20:08:18 | INFO     |   → After filtering: 0 valid detections
+2025-12-02 20:08:18 | INFO     | Detected: 0 floating names
+2025-12-02 20:08:18 | INFO     | → No floating names found
+2025-12-02 20:08:19 | INFO     | 
+======================================================================
+2025-12-02 20:08:19 | INFO     | CYCLE #13
+2025-12-02 20:08:19 | INFO     | ======================================================================
+2025-12-02 20:08:19 | DEBUG    |   Detection stats: total_contours=1671, rejected_by_size=1597, rejected_by_aspect=1, rejected_by_position=71, rejected_by_text_validation=2
+2025-12-02 20:08:19 | INFO     |   → After filtering: 0 valid detections
+2025-12-02 20:08:19 | INFO     | Detected: 0 floating names
+2025-12-02 20:08:19 | INFO     | → No floating names found
+2025-12-02 20:08:19 | INFO     | 
+======================================================================
+2025-12-02 20:08:19 | INFO     | CYCLE #14
+2025-12-02 20:08:19 | INFO     | ======================================================================
+2025-12-02 20:08:19 | DEBUG    |   Detection stats: total_contours=1684, rejected_by_size=1610, rejected_by_aspect=1, rejected_by_position=71, rejected_by_text_validation=2
+2025-12-02 20:08:19 | INFO     |   → After filtering: 0 valid detections
+2025-12-02 20:08:19 | INFO     | Detected: 0 floating names
+2025-12-02 20:08:19 | INFO     | → No floating names found
+2025-12-02 20:08:20 | INFO     | 
+⏸️  PAUSED - Press CapsLock to resume
+
+2025-12-02 20:08:22 | INFO     | 
+
+⛔ Bot stopped by user
+2025-12-02 20:08:22 | INFO     | 
+======================================================================
+2025-12-02 20:08:22 | INFO     | FINAL STATISTICS
+2025-12-02 20:08:22 | INFO     | ======================================================================
+2025-12-02 20:08:22 | INFO     | Total Cycles: 14
+2025-12-02 20:08:22 | INFO     | Total Clicks: 1
+2025-12-02 20:08:22 | INFO     | Verified Mobs: 1
+2025-12-02 20:08:22 | INFO     | Filtered Pets: 0
+2025-12-02 20:08:22 | INFO     | Total Kills: 0
+2025-12-02 20:08:22 | INFO     | Early Stops: 0 (stopped rotation early due to death)
+2025-12-02 20:08:22 | INFO     | Skills Used: 0
+2025-12-02 20:08:22 | INFO     | N/A
+2025-12-02 20:08:22 | INFO     | Uptime: 8s (0m 8s)
+2025-12-02 20:08:22 | INFO     | Cache Hit Rate: 0.0%
+2025-12-02 20:08:22 | INFO     | ======================================================================

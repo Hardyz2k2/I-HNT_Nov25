@@ -1,0 +1,79 @@
+2025-12-01 23:17:25 | INFO     | ======================================================================
+2025-12-01 23:17:25 | INFO     | MOB HUNTER v3.0 - CENTER-OUT + BINARY HEALTH
+2025-12-01 23:17:25 | INFO     | ======================================================================
+2025-12-01 23:17:25 | INFO     | Log directory: logs/session_20251201_231725
+2025-12-01 23:17:25 | INFO     | Screen: 1920x1080
+2025-12-01 23:17:25 | INFO     | Strategy: Attack closest to center first
+2025-12-01 23:17:25 | INFO     | Health: Binary (ALIVE/DEAD) detection
+2025-12-01 23:17:25 | INFO     | Pet Filter: Via nameplate class detection
+2025-12-01 23:17:25 | INFO     | ======================================================================
+2025-12-01 23:17:25 | INFO     | 
+🚀 Bot started! Press Ctrl+C to stop.
+
+2025-12-01 23:17:25 | INFO     | 💡 Controls: CapsLock = Pause/Resume
+
+2025-12-01 23:17:25 | INFO     | 
+======================================================================
+2025-12-01 23:17:25 | INFO     | CYCLE #1
+2025-12-01 23:17:25 | INFO     | ======================================================================
+2025-12-01 23:17:27 | DEBUG    |   Detected: pos=(515,743) size=41x13 aspect=3.2 dist=474
+2025-12-01 23:17:27 | INFO     |   → After filtering: 1 valid detections
+2025-12-01 23:17:27 | INFO     | Detected: 1 floating names
+2025-12-01 23:17:27 | INFO     | → Valid targets (after cache): 1
+2025-12-01 23:17:27 | INFO     | → Target priority (closest to farthest):
+2025-12-01 23:17:27 | INFO     |    #1: Distance=473px from center
+2025-12-01 23:17:27 | INFO     | 
+  Verifying target #1 (D=473px)...
+2025-12-01 23:17:27 | DEBUG    |     Clicking (535, 781)
+2025-12-01 23:17:28 | DEBUG    |     Health check: 0 red pixels -> DEAD
+2025-12-01 23:17:28 | DEBUG    |     ✓ Verified MOB in 1 attempts
+2025-12-01 23:17:28 | INFO     |     ✗ Mob already DEAD
+2025-12-01 23:17:29 | INFO     | 
+======================================================================
+2025-12-01 23:17:29 | INFO     | CYCLE #2
+2025-12-01 23:17:29 | INFO     | ======================================================================
+2025-12-01 23:17:31 | INFO     |   → After filtering: 0 valid detections
+2025-12-01 23:17:31 | INFO     | Detected: 0 floating names
+2025-12-01 23:17:31 | INFO     | → No floating names found
+2025-12-01 23:17:32 | INFO     | 
+======================================================================
+2025-12-01 23:17:32 | INFO     | CYCLE #3
+2025-12-01 23:17:32 | INFO     | ======================================================================
+2025-12-01 23:17:33 | INFO     |   → After filtering: 0 valid detections
+2025-12-01 23:17:33 | INFO     | Detected: 0 floating names
+2025-12-01 23:17:34 | INFO     | → No floating names found
+2025-12-01 23:17:34 | INFO     | 
+======================================================================
+2025-12-01 23:17:34 | INFO     | CYCLE #4
+2025-12-01 23:17:34 | INFO     | ======================================================================
+2025-12-01 23:17:36 | INFO     |   → After filtering: 0 valid detections
+2025-12-01 23:17:36 | INFO     | Detected: 0 floating names
+2025-12-01 23:17:36 | INFO     | → No floating names found
+2025-12-01 23:17:37 | INFO     | 
+======================================================================
+2025-12-01 23:17:37 | INFO     | CYCLE #5
+2025-12-01 23:17:37 | INFO     | ======================================================================
+2025-12-01 23:17:38 | INFO     |   → After filtering: 0 valid detections
+2025-12-01 23:17:38 | INFO     | Detected: 0 floating names
+2025-12-01 23:17:38 | INFO     | → No floating names found
+2025-12-01 23:17:38 | INFO     | 
+⏸️  PAUSED - Press CapsLock to resume
+
+2025-12-01 23:17:40 | INFO     | 
+
+⛔ Bot stopped by user
+2025-12-01 23:17:40 | INFO     | 
+======================================================================
+2025-12-01 23:17:40 | INFO     | FINAL STATISTICS
+2025-12-01 23:17:40 | INFO     | ======================================================================
+2025-12-01 23:17:40 | INFO     | Total Cycles: 5
+2025-12-01 23:17:40 | INFO     | Total Clicks: 1
+2025-12-01 23:17:40 | INFO     | Verified Mobs: 1
+2025-12-01 23:17:40 | INFO     | Filtered Pets: 0
+2025-12-01 23:17:40 | INFO     | Total Kills: 0
+2025-12-01 23:17:40 | INFO     | Early Stops: 0 (stopped rotation early due to death)
+2025-12-01 23:17:40 | INFO     | Skills Used: 0
+2025-12-01 23:17:40 | INFO     | N/A
+2025-12-01 23:17:40 | INFO     | Uptime: 15s (0m 15s)
+2025-12-01 23:17:40 | INFO     | Cache Hit Rate: 0.0%
+2025-12-01 23:17:40 | INFO     | ======================================================================

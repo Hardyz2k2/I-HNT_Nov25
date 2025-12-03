@@ -18,6 +18,9 @@ import pyautogui
 import threading
 import traceback
 import ctypes
+import win32gui
+import win32con
+import win32api
 
 # Disable PyAutoGUI fail-safe
 pyautogui.FAILSAFE = False
@@ -531,8 +534,8 @@ class CombatSystem:
 # ============================================================================
 
 class OverlayWindow:
-    """Display detection overlay"""
-    
+    """Display detection overlay with transparent background and click-through"""
+
     def __init__(self, logger):
         self.logger = logger
         self.running = False
@@ -540,65 +543,142 @@ class OverlayWindow:
         self.detections = []
         self.stats = {}
         self.thread = None
-    
+        self.window_name = 'MOB HUNTER v3.0 - Overlay'
+        self.hwnd = None
+
     def start(self):
         """Start overlay in separate thread"""
         if Config.SHOW_OVERLAY:
             self.running = True
             self.thread = threading.Thread(target=self._run, daemon=True)
             self.thread.start()
-    
+            self.logger.info("🖥️  Click-through overlay starting...")
+
     def stop(self):
         """Stop overlay"""
         self.running = False
         if self.thread:
             self.thread.join(timeout=1)
-    
+        cv2.destroyAllWindows()
+
     def update(self, frame, detections, stats):
         """Update overlay data"""
         self.current_frame = frame.copy() if frame is not None else None
         self.detections = detections
         self.stats = stats
+
+    def make_click_through(self):
+        """Make the window transparent and click-through using Windows API"""
+        try:
+            # Wait for window to be created
+            time.sleep(0.5)
+
+            # Find the OpenCV window
+            self.hwnd = win32gui.FindWindow(None, self.window_name)
+
+            if not self.hwnd:
+                self.logger.warning("⚠️  Could not find overlay window")
+                return False
+
+            # Get current extended window style
+            ex_style = win32gui.GetWindowLong(self.hwnd, win32con.GWL_EXSTYLE)
+
+            # Add layered and transparent flags
+            # WS_EX_LAYERED: Enables transparency
+            # WS_EX_TRANSPARENT: Makes window click-through
+            # WS_EX_TOPMOST: Keeps window on top
+            new_ex_style = ex_style | win32con.WS_EX_LAYERED | win32con.WS_EX_TRANSPARENT | win32con.WS_EX_TOPMOST
+
+            # Apply the new style
+            win32gui.SetWindowLong(self.hwnd, win32con.GWL_EXSTYLE, new_ex_style)
+
+            # Set transparency using color key - black pixels (RGB 0,0,0) will be fully transparent
+            # This makes the background invisible while keeping colored elements visible
+            win32gui.SetLayeredWindowAttributes(
+                self.hwnd,
+                0,  # Color key (RGB 0,0,0 = black, will be transparent)
+                0,  # Alpha value (not used with LWA_COLORKEY)
+                win32con.LWA_COLORKEY  # Use color key transparency (black = transparent)
+            )
+
+            # Make window always on top
+            win32gui.SetWindowPos(
+                self.hwnd,
+                win32con.HWND_TOPMOST,  # Place above all non-topmost windows
+                0, 0, 0, 0,  # Position and size (ignored with flags below)
+                win32con.SWP_NOMOVE | win32con.SWP_NOSIZE  # Don't change position/size
+            )
+
+            # Remove window borders and make it truly borderless
+            style = win32gui.GetWindowLong(self.hwnd, win32con.GWL_STYLE)
+            style = style & ~win32con.WS_CAPTION & ~win32con.WS_THICKFRAME
+            win32gui.SetWindowLong(self.hwnd, win32con.GWL_STYLE, style)
+
+            self.logger.info("✅ Overlay is now CLICK-THROUGH and transparent")
+            return True
+
+        except Exception as e:
+            self.logger.error(f"Failed to make window click-through: {e}")
+            return False
     
     def _run(self):
-        """Overlay loop"""
-        while self.running:
-            try:
-                if self.current_frame is not None:
-                    display = self.current_frame.copy()
-                    
+        """Overlay rendering loop with transparent background"""
+        try:
+            # Create named window in fullscreen mode
+            cv2.namedWindow(self.window_name, cv2.WINDOW_NORMAL)
+            cv2.setWindowProperty(self.window_name, cv2.WND_PROP_FULLSCREEN, cv2.WINDOW_FULLSCREEN)
+
+            # Make it click-through
+            self.make_click_through()
+
+            while self.running:
+                try:
+                    # Create BLACK background (will be transparent)
+                    # Same dimensions as screen for perfect alignment
+                    display = np.zeros((Config.SCREEN_HEIGHT, Config.SCREEN_WIDTH, 3), dtype=np.uint8)
+
                     # Draw screen center crosshair
                     center_x = Config.SCREEN_WIDTH // 2
                     center_y = Config.SCREEN_HEIGHT // 2
-                    cv2.line(display, (center_x - 30, center_y), (center_x + 30, center_y), (255, 255, 0), 2)
-                    cv2.line(display, (center_x, center_y - 30), (center_x, center_y + 30), (255, 255, 0), 2)
-                    cv2.circle(display, (center_x, center_y), 100, (255, 255, 0), 1)
-                    
+                    cv2.line(display, (center_x - 30, center_y), (center_x + 30, center_y), (0, 255, 255), 2)
+                    cv2.line(display, (center_x, center_y - 30), (center_x, center_y + 30), (0, 255, 255), 2)
+                    cv2.circle(display, (center_x, center_y), 100, (0, 255, 255), 1)
+
                     # Draw detections with distance indicators
                     for i, det in enumerate(self.detections, 1):
                         x, y, w, h = det['region']
                         center = det['center']
                         distance = det.get('distance_from_center', 0)
-                        
+
                         # Color based on distance (green = close, red = far)
                         color_intensity = min(255, int(distance / 3))
                         color = (0, 255 - color_intensity, color_intensity)
-                        
-                        # Draw box
+
+                        # Draw box around detected name
                         cv2.rectangle(display, (x, y), (x+w, y+h), color, 2)
-                        
+
                         # Draw center dot
                         cv2.circle(display, center, 5, (0, 0, 255), -1)
-                        
-                        # Draw line to center
+
+                        # Draw line from detection to screen center
                         cv2.line(display, center, (center_x, center_y), (100, 100, 100), 1)
-                        
-                        # Draw distance text
+
+                        # Draw distance label with background for readability
                         dist_text = f"#{i} D:{int(distance)}"
-                        cv2.putText(display, dist_text, (x, y - 5), 
+                        (text_width, text_height), baseline = cv2.getTextSize(dist_text, cv2.FONT_HERSHEY_SIMPLEX, 0.4, 1)
+
+                        # Draw dark background rectangle behind text
+                        padding = 2
+                        cv2.rectangle(display,
+                                    (x - padding, y - text_height - 8 - padding),
+                                    (x + text_width + padding, y - 5 + padding),
+                                    (50, 50, 50), -1)  # Dark gray background
+
+                        # Colored text
+                        cv2.putText(display, dist_text, (x, y-5),
                                    cv2.FONT_HERSHEY_SIMPLEX, 0.4, color, 1)
-                    
-                    # Draw stats
+
+                    # Draw stats in top-left corner
                     y_pos = 30
                     for key, value in self.stats.items():
                         text = f"{key}: {value}"
@@ -607,48 +687,63 @@ class OverlayWindow:
                             text_color = (0, 165, 255)  # Orange for paused
                         else:
                             text_color = (0, 255, 0)  # Green for normal
-                        
-                        # Black outline
-                        cv2.putText(display, text, (12, y_pos + 2), 
-                                   cv2.FONT_HERSHEY_SIMPLEX, 0.6, (0, 0, 0), 3)
+
+                        # Get text size for background rectangle
+                        (text_width, text_height), baseline = cv2.getTextSize(text, cv2.FONT_HERSHEY_SIMPLEX, 0.6, 2)
+
+                        # Draw dark background rectangle behind text for readability
+                        padding = 5
+                        cv2.rectangle(display,
+                                    (5, y_pos - text_height - padding),
+                                    (15 + text_width, y_pos + padding),
+                                    (50, 50, 50), -1)  # Dark gray background
+
+                        # White outline for better visibility
+                        cv2.putText(display, text, (12, y_pos + 2),
+                                   cv2.FONT_HERSHEY_SIMPLEX, 0.6, (255, 255, 255), 4)
                         # Colored text
-                        cv2.putText(display, text, (10, y_pos), 
+                        cv2.putText(display, text, (10, y_pos),
                                    cv2.FONT_HERSHEY_SIMPLEX, 0.6, text_color, 2)
                         y_pos += 30
-                    
+
                     # Draw large PAUSED overlay if paused
                     if 'Status' in self.stats and 'PAUSED' in str(self.stats.get('Status', '')):
-                        # Semi-transparent overlay
-                        overlay = display.copy()
-                        cv2.rectangle(overlay, (0, 0), (display.shape[1], display.shape[0]), (0, 0, 0), -1)
-                        display = cv2.addWeighted(display, 0.7, overlay, 0.3, 0)
-                        
                         # Large PAUSED text
                         text = "PAUSED"
                         font_scale = 3
                         thickness = 5
                         (text_width, text_height), baseline = cv2.getTextSize(text, cv2.FONT_HERSHEY_SIMPLEX, font_scale, thickness)
-                        text_x = (display.shape[1] - text_width) // 2
-                        text_y = (display.shape[0] + text_height) // 2
-                        
-                        # Black outline
-                        cv2.putText(display, text, (text_x + 2, text_y + 2), 
-                                   cv2.FONT_HERSHEY_SIMPLEX, font_scale, (0, 0, 0), thickness + 2)
+                        text_x = (Config.SCREEN_WIDTH - text_width) // 2
+                        text_y = (Config.SCREEN_HEIGHT + text_height) // 2
+
+                        # White outline
+                        cv2.putText(display, text, (text_x + 2, text_y + 2),
+                                   cv2.FONT_HERSHEY_SIMPLEX, font_scale, (255, 255, 255), thickness + 2)
                         # Orange text
-                        cv2.putText(display, text, (text_x, text_y), 
+                        cv2.putText(display, text, (text_x, text_y),
                                    cv2.FONT_HERSHEY_SIMPLEX, font_scale, (0, 165, 255), thickness)
-                    
-                    # Show
-                    cv2.imshow('MOB HUNTER v3.0 - Detection Overlay', display)
-                    cv2.waitKey(1)
-                
+
+                    # Show overlay
+                    cv2.imshow(self.window_name, display)
+
+                    # Check for 'q' key to close (though clicks won't register due to transparency)
+                    key = cv2.waitKey(1)
+                    if key == ord('q'):
+                        self.logger.info("Overlay closed by user")
+                        self.running = False
+
+                except Exception as e:
+                    self.logger.error(f"Overlay rendering error: {e}")
+                    continue
+
+                # Control frame rate
                 time.sleep(1.0 / Config.OVERLAY_UPDATE_FPS)
-                
-            except Exception as e:
-                self.logger.error(f"Overlay error: {e}")
-                break
-        
-        cv2.destroyAllWindows()
+
+        except Exception as e:
+            self.logger.error(f"Overlay thread error: {e}")
+            self.logger.error(traceback.format_exc())
+        finally:
+            cv2.destroyAllWindows()
 
 
 # ============================================================================

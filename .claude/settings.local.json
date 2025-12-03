@@ -2,7 +2,11 @@
   "permissions": {
     "allow": [
       "Bash(dir:*)",
-      "Bash(git -C \"c:\\Users\\hamza\\Desktop\\SRO PROJECT\\Nov25\\I-HNT_Nov25\" log --oneline --all)"
+      "Bash(git -C \"c:\\Users\\hamza\\Desktop\\SRO PROJECT\\Nov25\\I-HNT_Nov25\" log --oneline --all)",
+      "Bash(python -m py_compile:*)",
+      "Bash(python test_phase1.py:*)",
+      "Bash(python:*)",
+      "Bash(git restore:*)"
     ],
     "deny": [],
     "ask": []

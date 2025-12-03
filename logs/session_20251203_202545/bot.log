@@ -1,0 +1,384 @@
+2025-12-03 20:25:45 | INFO     | ======================================================================
+2025-12-03 20:25:45 | INFO     | MOB HUNTER v3.0 - CENTER-OUT + BINARY HEALTH
+2025-12-03 20:25:45 | INFO     | ======================================================================
+2025-12-03 20:25:45 | INFO     | Log directory: logs/session_20251203_202545
+2025-12-03 20:25:45 | INFO     | Screen: 1920x1080
+2025-12-03 20:25:45 | INFO     | Strategy: Attack closest to center first
+2025-12-03 20:25:45 | INFO     | Health: Binary (ALIVE/DEAD) detection
+2025-12-03 20:25:45 | INFO     | Pet Filter: Via nameplate class detection
+2025-12-03 20:25:45 | INFO     | ======================================================================
+2025-12-03 20:25:45 | INFO     | 
+🚀 Bot started! Press Ctrl+C to stop.
+
+2025-12-03 20:25:45 | INFO     | 💡 Controls: CapsLock = Pause/Resume
+
+2025-12-03 20:25:45 | INFO     | 
+======================================================================
+2025-12-03 20:25:45 | INFO     | CYCLE #1
+2025-12-03 20:25:45 | INFO     | ======================================================================
+2025-12-03 20:25:45 | INFO     | Detected: 62 floating names
+2025-12-03 20:25:45 | DEBUG    |   Name #3: Cached, skipping
+2025-12-03 20:25:45 | DEBUG    |   Name #17: Cached, skipping
+2025-12-03 20:25:45 | DEBUG    |   Name #25: Cached, skipping
+2025-12-03 20:25:45 | DEBUG    |   Name #29: Cached, skipping
+2025-12-03 20:25:45 | DEBUG    |   Name #37: Cached, skipping
+2025-12-03 20:25:45 | DEBUG    |   Name #40: Cached, skipping
+2025-12-03 20:25:45 | INFO     | → Valid targets (after cache): 56
+2025-12-03 20:25:45 | INFO     | → Target priority (closest to farthest):
+2025-12-03 20:25:45 | INFO     |    #1: Distance=179px from center
+2025-12-03 20:25:45 | INFO     |    #2: Distance=200px from center
+2025-12-03 20:25:45 | INFO     |    #3: Distance=225px from center
+2025-12-03 20:25:45 | INFO     |    #4: Distance=240px from center
+2025-12-03 20:25:45 | INFO     |    #5: Distance=249px from center
+2025-12-03 20:25:45 | INFO     | 
+  Verifying target #1 (D=179px)...
+2025-12-03 20:25:45 | DEBUG    |     Clicking (867, 418)
+2025-12-03 20:25:45 | DEBUG    |     ✗ Filtered PET (no class)
+2025-12-03 20:25:45 | INFO     |     ✗ No valid nameplate or is a pet
+2025-12-03 20:25:45 | INFO     | 
+  Verifying target #2 (D=200px)...
+2025-12-03 20:25:45 | DEBUG    |     Clicking (831, 418)
+2025-12-03 20:25:46 | DEBUG    |     ✗ Filtered PET (no class)
+2025-12-03 20:25:46 | INFO     |     ✗ No valid nameplate or is a pet
+2025-12-03 20:25:46 | INFO     | 
+  Verifying target #3 (D=225px)...
+2025-12-03 20:25:46 | DEBUG    |     Clicking (840, 380)
+2025-12-03 20:25:46 | DEBUG    |     ✗ Filtered PET (no class)
+2025-12-03 20:25:46 | INFO     |     ✗ No valid nameplate or is a pet
+2025-12-03 20:25:46 | INFO     | 
+======================================================================
+2025-12-03 20:25:46 | INFO     | CYCLE #2
+2025-12-03 20:25:46 | INFO     | ======================================================================
+2025-12-03 20:25:47 | INFO     | Detected: 12 floating names
+2025-12-03 20:25:47 | DEBUG    |   Name #9: Cached, skipping
+2025-12-03 20:25:47 | DEBUG    |   Name #10: Cached, skipping
+2025-12-03 20:25:47 | DEBUG    |   Name #11: Cached, skipping
+2025-12-03 20:25:47 | DEBUG    |   Name #12: Cached, skipping
+2025-12-03 20:25:47 | INFO     | → Valid targets (after cache): 8
+2025-12-03 20:25:47 | INFO     | → Target priority (closest to farthest):
+2025-12-03 20:25:47 | INFO     |    #1: Distance=31px from center
+2025-12-03 20:25:47 | INFO     |    #2: Distance=67px from center
+2025-12-03 20:25:47 | INFO     |    #3: Distance=84px from center
+2025-12-03 20:25:47 | INFO     |    #4: Distance=89px from center
+2025-12-03 20:25:47 | INFO     |    #5: Distance=196px from center
+2025-12-03 20:25:47 | INFO     | 
+  Verifying target #1 (D=31px)...
+2025-12-03 20:25:47 | DEBUG    |     Clicking (960, 539)
+2025-12-03 20:25:47 | DEBUG    |     ✗ Filtered PET (no class)
+2025-12-03 20:25:47 | INFO     |     ✗ No valid nameplate or is a pet
+2025-12-03 20:25:47 | INFO     | 
+  Verifying target #2 (D=67px)...
+2025-12-03 20:25:47 | DEBUG    |     Clicking (941, 505)
+2025-12-03 20:25:47 | DEBUG    |     ✗ Filtered PET (no class)
+2025-12-03 20:25:47 | INFO     |     ✗ No valid nameplate or is a pet
+2025-12-03 20:25:47 | INFO     | 
+  Verifying target #3 (D=84px)...
+2025-12-03 20:25:47 | DEBUG    |     Clicking (1044, 581)
+2025-12-03 20:25:48 | DEBUG    |     ✗ Filtered PET (no class)
+2025-12-03 20:25:48 | INFO     |     ✗ No valid nameplate or is a pet
+2025-12-03 20:25:48 | INFO     | 
+======================================================================
+2025-12-03 20:25:48 | INFO     | CYCLE #3
+2025-12-03 20:25:48 | INFO     | ======================================================================
+2025-12-03 20:25:48 | INFO     | Detected: 12 floating names
+2025-12-03 20:25:48 | DEBUG    |   Name #2: Cached, skipping
+2025-12-03 20:25:48 | DEBUG    |   Name #3: Cached, skipping
+2025-12-03 20:25:48 | DEBUG    |   Name #5: Cached, skipping
+2025-12-03 20:25:48 | DEBUG    |   Name #7: Cached, skipping
+2025-12-03 20:25:48 | DEBUG    |   Name #12: Cached, skipping
+2025-12-03 20:25:48 | INFO     | → Valid targets (after cache): 7
+2025-12-03 20:25:48 | INFO     | → Target priority (closest to farthest):
+2025-12-03 20:25:48 | INFO     |    #1: Distance=187px from center
+2025-12-03 20:25:48 | INFO     |    #2: Distance=195px from center
+2025-12-03 20:25:48 | INFO     |    #3: Distance=273px from center
+2025-12-03 20:25:48 | INFO     |    #4: Distance=279px from center
+2025-12-03 20:25:48 | INFO     |    #5: Distance=350px from center
+2025-12-03 20:25:48 | INFO     | 
+  Verifying target #1 (D=187px)...
+2025-12-03 20:25:48 | DEBUG    |     Clicking (843, 424)
+2025-12-03 20:25:49 | DEBUG    |     ✗ Filtered PET (no class)
+2025-12-03 20:25:49 | INFO     |     ✗ No valid nameplate or is a pet
+2025-12-03 20:25:49 | INFO     | 
+  Verifying target #2 (D=195px)...
+2025-12-03 20:25:49 | DEBUG    |     Clicking (1108, 444)
+2025-12-03 20:25:49 | DEBUG    |     ✗ Filtered PET (no class)
+2025-12-03 20:25:49 | INFO     |     ✗ No valid nameplate or is a pet
+2025-12-03 20:25:49 | INFO     | 
+  Verifying target #3 (D=273px)...
+2025-12-03 20:25:49 | DEBUG    |     Clicking (688, 546)
+2025-12-03 20:25:49 | DEBUG    |     ✗ Filtered PET (no class)
+2025-12-03 20:25:49 | INFO     |     ✗ No valid nameplate or is a pet
+2025-12-03 20:25:50 | INFO     | 
+======================================================================
+2025-12-03 20:25:50 | INFO     | CYCLE #4
+2025-12-03 20:25:50 | INFO     | ======================================================================
+2025-12-03 20:25:50 | INFO     | Detected: 14 floating names
+2025-12-03 20:25:50 | DEBUG    |   Name #9: Cached, skipping
+2025-12-03 20:25:50 | DEBUG    |   Name #11: Cached, skipping
+2025-12-03 20:25:50 | DEBUG    |   Name #12: Cached, skipping
+2025-12-03 20:25:50 | DEBUG    |   Name #14: Cached, skipping
+2025-12-03 20:25:50 | INFO     | → Valid targets (after cache): 10
+2025-12-03 20:25:50 | INFO     | → Target priority (closest to farthest):
+2025-12-03 20:25:50 | INFO     |    #1: Distance=31px from center
+2025-12-03 20:25:50 | INFO     |    #2: Distance=56px from center
+2025-12-03 20:25:50 | INFO     |    #3: Distance=67px from center
+2025-12-03 20:25:50 | INFO     |    #4: Distance=89px from center
+2025-12-03 20:25:50 | INFO     |    #5: Distance=154px from center
+2025-12-03 20:25:50 | INFO     | 
+  Verifying target #1 (D=31px)...
+2025-12-03 20:25:50 | DEBUG    |     Clicking (960, 539)
+2025-12-03 20:25:50 | DEBUG    |     ✗ Filtered PET (no class)
+2025-12-03 20:25:50 | INFO     |     ✗ No valid nameplate or is a pet
+2025-12-03 20:25:50 | INFO     | 
+  Verifying target #2 (D=56px)...
+2025-12-03 20:25:50 | DEBUG    |     Clicking (997, 613)
+2025-12-03 20:25:50 | DEBUG    |     ✗ Filtered PET (no class)
+2025-12-03 20:25:50 | INFO     |     ✗ No valid nameplate or is a pet
+2025-12-03 20:25:50 | INFO     | 
+  Verifying target #3 (D=67px)...
+2025-12-03 20:25:50 | DEBUG    |     Clicking (941, 505)
+2025-12-03 20:25:51 | DEBUG    |     ✗ Filtered PET (no class)
+2025-12-03 20:25:51 | INFO     |     ✗ No valid nameplate or is a pet
+2025-12-03 20:25:51 | INFO     | 
+======================================================================
+2025-12-03 20:25:51 | INFO     | CYCLE #5
+2025-12-03 20:25:51 | INFO     | ======================================================================
+2025-12-03 20:25:51 | INFO     | Detected: 14 floating names
+2025-12-03 20:25:51 | DEBUG    |   Name #4: Cached, skipping
+2025-12-03 20:25:51 | DEBUG    |   Name #5: Cached, skipping
+2025-12-03 20:25:51 | DEBUG    |   Name #6: Cached, skipping
+2025-12-03 20:25:51 | DEBUG    |   Name #13: Cached, skipping
+2025-12-03 20:25:51 | DEBUG    |   Name #14: Cached, skipping
+2025-12-03 20:25:51 | INFO     | → Valid targets (after cache): 9
+2025-12-03 20:25:51 | INFO     | → Target priority (closest to farthest):
+2025-12-03 20:25:51 | INFO     |    #1: Distance=105px from center
+2025-12-03 20:25:51 | INFO     |    #2: Distance=182px from center
+2025-12-03 20:25:51 | INFO     |    #3: Distance=215px from center
+2025-12-03 20:25:51 | INFO     |    #4: Distance=255px from center
+2025-12-03 20:25:51 | INFO     |    #5: Distance=351px from center
+2025-12-03 20:25:51 | INFO     | 
+  Verifying target #1 (D=105px)...
+2025-12-03 20:25:51 | DEBUG    |     Clicking (878, 637)
+2025-12-03 20:25:52 | DEBUG    |     ✗ Filtered PET (no class)
+2025-12-03 20:25:52 | INFO     |     ✗ No valid nameplate or is a pet
+2025-12-03 20:25:52 | INFO     | 
+  Verifying target #2 (D=182px)...
+2025-12-03 20:25:52 | DEBUG    |     Clicking (945, 389)
+2025-12-03 20:25:52 | DEBUG    |     ✗ Filtered PET (no class)
+2025-12-03 20:25:52 | INFO     |     ✗ No valid nameplate or is a pet
+2025-12-03 20:25:52 | INFO     | 
+  Verifying target #3 (D=215px)...
+2025-12-03 20:25:52 | DEBUG    |     Clicking (922, 359)
+2025-12-03 20:25:53 | DEBUG    |     ✗ Filtered PET (no class)
+2025-12-03 20:25:53 | INFO     |     ✗ No valid nameplate or is a pet
+2025-12-03 20:25:53 | INFO     | 
+======================================================================
+2025-12-03 20:25:53 | INFO     | CYCLE #6
+2025-12-03 20:25:53 | INFO     | ======================================================================
+2025-12-03 20:25:53 | INFO     | Detected: 40 floating names
+2025-12-03 20:25:53 | INFO     | → Valid targets (after cache): 40
+2025-12-03 20:25:53 | INFO     | → Target priority (closest to farthest):
+2025-12-03 20:25:53 | INFO     |    #1: Distance=130px from center
+2025-12-03 20:25:53 | INFO     |    #2: Distance=201px from center
+2025-12-03 20:25:53 | INFO     |    #3: Distance=204px from center
+2025-12-03 20:25:53 | INFO     |    #4: Distance=211px from center
+2025-12-03 20:25:53 | INFO     |    #5: Distance=215px from center
+2025-12-03 20:25:53 | INFO     | 
+  Verifying target #1 (D=130px)...
+2025-12-03 20:25:53 | DEBUG    |     Clicking (831, 551)
+2025-12-03 20:25:53 | DEBUG    |     ✗ Filtered PET (no class)
+2025-12-03 20:25:53 | INFO     |     ✗ No valid nameplate or is a pet
+2025-12-03 20:25:53 | INFO     | 
+  Verifying target #2 (D=201px)...
+2025-12-03 20:25:53 | DEBUG    |     Clicking (759, 570)
+2025-12-03 20:25:54 | DEBUG    |     ✗ Filtered PET (no class)
+2025-12-03 20:25:54 | INFO     |     ✗ No valid nameplate or is a pet
+2025-12-03 20:25:54 | INFO     | 
+  Verifying target #3 (D=204px)...
+2025-12-03 20:25:54 | DEBUG    |     Clicking (759, 608)
+2025-12-03 20:25:54 | DEBUG    |     ✗ Filtered PET (no class)
+2025-12-03 20:25:54 | INFO     |     ✗ No valid nameplate or is a pet
+2025-12-03 20:25:55 | INFO     | 
+======================================================================
+2025-12-03 20:25:55 | INFO     | CYCLE #7
+2025-12-03 20:25:55 | INFO     | ======================================================================
+2025-12-03 20:25:55 | INFO     | Detected: 12 floating names
+2025-12-03 20:25:55 | DEBUG    |   Name #1: Cached, skipping
+2025-12-03 20:25:55 | DEBUG    |   Name #3: Cached, skipping
+2025-12-03 20:25:55 | DEBUG    |   Name #5: Cached, skipping
+2025-12-03 20:25:55 | DEBUG    |   Name #6: Cached, skipping
+2025-12-03 20:25:55 | DEBUG    |   Name #7: Cached, skipping
+2025-12-03 20:25:55 | DEBUG    |   Name #12: Cached, skipping
+2025-12-03 20:25:55 | INFO     | → Valid targets (after cache): 6
+2025-12-03 20:25:55 | INFO     | → Target priority (closest to farthest):
+2025-12-03 20:25:55 | INFO     |    #1: Distance=30px from center
+2025-12-03 20:25:55 | INFO     |    #2: Distance=64px from center
+2025-12-03 20:25:55 | INFO     |    #3: Distance=220px from center
+2025-12-03 20:25:55 | INFO     |    #4: Distance=294px from center
+2025-12-03 20:25:55 | INFO     |    #5: Distance=330px from center
+2025-12-03 20:25:55 | INFO     | 
+  Verifying target #1 (D=30px)...
+2025-12-03 20:25:55 | DEBUG    |     Clicking (960, 540)
+2025-12-03 20:25:55 | DEBUG    |     ✗ Filtered PET (no class)
+2025-12-03 20:25:55 | INFO     |     ✗ No valid nameplate or is a pet
+2025-12-03 20:25:55 | INFO     | 
+  Verifying target #2 (D=64px)...
+2025-12-03 20:25:55 | DEBUG    |     Clicking (950, 508)
+2025-12-03 20:25:55 | DEBUG    |     ✗ Filtered PET (no class)
+2025-12-03 20:25:55 | INFO     |     ✗ No valid nameplate or is a pet
+2025-12-03 20:25:55 | INFO     | 
+  Verifying target #3 (D=220px)...
+2025-12-03 20:25:55 | DEBUG    |     Clicking (1000, 353)
+2025-12-03 20:25:56 | DEBUG    |     ✗ Filtered PET (no class)
+2025-12-03 20:25:56 | INFO     |     ✗ No valid nameplate or is a pet
+2025-12-03 20:25:56 | INFO     | 
+======================================================================
+2025-12-03 20:25:56 | INFO     | CYCLE #8
+2025-12-03 20:25:56 | INFO     | ======================================================================
+2025-12-03 20:25:56 | INFO     | Detected: 12 floating names
+2025-12-03 20:25:56 | DEBUG    |   Name #2: Cached, skipping
+2025-12-03 20:25:56 | DEBUG    |   Name #3: Cached, skipping
+2025-12-03 20:25:56 | DEBUG    |   Name #8: Cached, skipping
+2025-12-03 20:25:56 | DEBUG    |   Name #9: Cached, skipping
+2025-12-03 20:25:56 | DEBUG    |   Name #11: Cached, skipping
+2025-12-03 20:25:56 | DEBUG    |   Name #12: Cached, skipping
+2025-12-03 20:25:56 | INFO     | → Valid targets (after cache): 6
+2025-12-03 20:25:56 | INFO     | → Target priority (closest to farthest):
+2025-12-03 20:25:56 | INFO     |    #1: Distance=97px from center
+2025-12-03 20:25:56 | INFO     |    #2: Distance=273px from center
+2025-12-03 20:25:56 | INFO     |    #3: Distance=288px from center
+2025-12-03 20:25:56 | INFO     |    #4: Distance=384px from center
+2025-12-03 20:25:56 | INFO     |    #5: Distance=453px from center
+2025-12-03 20:25:56 | INFO     | 
+  Verifying target #1 (D=97px)...
+2025-12-03 20:25:56 | DEBUG    |     Clicking (895, 499)
+2025-12-03 20:25:57 | DEBUG    |     ✗ Filtered PET (no class)
+2025-12-03 20:25:57 | INFO     |     ✗ No valid nameplate or is a pet
+2025-12-03 20:25:57 | INFO     | 
+  Verifying target #2 (D=273px)...
+2025-12-03 20:25:57 | DEBUG    |     Clicking (707, 465)
+2025-12-03 20:25:57 | DEBUG    |     ✗ Filtered PET (no class)
+2025-12-03 20:25:57 | INFO     |     ✗ No valid nameplate or is a pet
+2025-12-03 20:25:57 | INFO     | 
+  Verifying target #3 (D=288px)...
+2025-12-03 20:25:57 | DEBUG    |     Clicking (866, 297)
+2025-12-03 20:25:57 | DEBUG    |     ✗ Filtered PET (no class)
+2025-12-03 20:25:57 | INFO     |     ✗ No valid nameplate or is a pet
+2025-12-03 20:25:58 | INFO     | 
+======================================================================
+2025-12-03 20:25:58 | INFO     | CYCLE #9
+2025-12-03 20:25:58 | INFO     | ======================================================================
+2025-12-03 20:25:58 | INFO     | Detected: 13 floating names
+2025-12-03 20:25:58 | DEBUG    |   Name #4: Cached, skipping
+2025-12-03 20:25:58 | DEBUG    |   Name #5: Cached, skipping
+2025-12-03 20:25:58 | DEBUG    |   Name #8: Cached, skipping
+2025-12-03 20:25:58 | DEBUG    |   Name #13: Cached, skipping
+2025-12-03 20:25:58 | INFO     | → Valid targets (after cache): 9
+2025-12-03 20:25:58 | INFO     | → Target priority (closest to farthest):
+2025-12-03 20:25:58 | INFO     |    #1: Distance=30px from center
+2025-12-03 20:25:58 | INFO     |    #2: Distance=66px from center
+2025-12-03 20:25:58 | INFO     |    #3: Distance=134px from center
+2025-12-03 20:25:58 | INFO     |    #4: Distance=220px from center
+2025-12-03 20:25:58 | INFO     |    #5: Distance=322px from center
+2025-12-03 20:25:58 | INFO     | 
+  Verifying target #1 (D=30px)...
+2025-12-03 20:25:58 | DEBUG    |     Clicking (964, 540)
+2025-12-03 20:25:58 | DEBUG    |     ✗ Filtered PET (no class)
+2025-12-03 20:25:58 | INFO     |     ✗ No valid nameplate or is a pet
+2025-12-03 20:25:58 | INFO     | 
+  Verifying target #2 (D=66px)...
+2025-12-03 20:25:58 | DEBUG    |     Clicking (985, 508)
+2025-12-03 20:25:59 | DEBUG    |     ✗ Filtered PET (no class)
+2025-12-03 20:25:59 | INFO     |     ✗ No valid nameplate or is a pet
+2025-12-03 20:25:59 | INFO     | 
+  Verifying target #3 (D=134px)...
+2025-12-03 20:25:59 | DEBUG    |     Clicking (876, 466)
+2025-12-03 20:25:59 | DEBUG    |     ✗ Filtered PET (no class)
+2025-12-03 20:25:59 | INFO     |     ✗ No valid nameplate or is a pet
+2025-12-03 20:25:59 | INFO     | 
+======================================================================
+2025-12-03 20:25:59 | INFO     | CYCLE #10
+2025-12-03 20:25:59 | INFO     | ======================================================================
+2025-12-03 20:25:59 | INFO     | Detected: 13 floating names
+2025-12-03 20:25:59 | DEBUG    |   Name #2: Cached, skipping
+2025-12-03 20:25:59 | DEBUG    |   Name #3: Cached, skipping
+2025-12-03 20:25:59 | DEBUG    |   Name #7: Cached, skipping
+2025-12-03 20:25:59 | DEBUG    |   Name #8: Cached, skipping
+2025-12-03 20:25:59 | DEBUG    |   Name #11: Cached, skipping
+2025-12-03 20:25:59 | DEBUG    |   Name #12: Cached, skipping
+2025-12-03 20:25:59 | DEBUG    |   Name #13: Cached, skipping
+2025-12-03 20:25:59 | INFO     | → Valid targets (after cache): 6
+2025-12-03 20:25:59 | INFO     | → Target priority (closest to farthest):
+2025-12-03 20:25:59 | INFO     |    #1: Distance=181px from center
+2025-12-03 20:25:59 | INFO     |    #2: Distance=283px from center
+2025-12-03 20:25:59 | INFO     |    #3: Distance=319px from center
+2025-12-03 20:25:59 | INFO     |    #4: Distance=389px from center
+2025-12-03 20:25:59 | INFO     |    #5: Distance=494px from center
+2025-12-03 20:25:59 | INFO     | 
+  Verifying target #1 (D=181px)...
+2025-12-03 20:25:59 | DEBUG    |     Clicking (1110, 468)
+2025-12-03 20:26:00 | DEBUG    |     ✗ Filtered PET (no class)
+2025-12-03 20:26:00 | INFO     |     ✗ No valid nameplate or is a pet
+2025-12-03 20:26:00 | INFO     | 
+  Verifying target #2 (D=283px)...
+2025-12-03 20:26:00 | DEBUG    |     Clicking (713, 431)
+2025-12-03 20:26:00 | DEBUG    |     ✗ Filtered PET (no class)
+2025-12-03 20:26:00 | INFO     |     ✗ No valid nameplate or is a pet
+2025-12-03 20:26:00 | INFO     | 
+  Verifying target #3 (D=319px)...
+2025-12-03 20:26:00 | DEBUG    |     Clicking (1257, 453)
+2025-12-03 20:26:01 | DEBUG    |     ✗ Filtered PET (no class)
+2025-12-03 20:26:01 | INFO     |     ✗ No valid nameplate or is a pet
+2025-12-03 20:26:01 | INFO     | 
+======================================================================
+2025-12-03 20:26:01 | INFO     | CYCLE #11
+2025-12-03 20:26:01 | INFO     | ======================================================================
+2025-12-03 20:26:01 | INFO     | Detected: 13 floating names
+2025-12-03 20:26:01 | DEBUG    |   Name #3: Cached, skipping
+2025-12-03 20:26:01 | DEBUG    |   Name #7: Cached, skipping
+2025-12-03 20:26:01 | DEBUG    |   Name #9: Cached, skipping
+2025-12-03 20:26:01 | DEBUG    |   Name #10: Cached, skipping
+2025-12-03 20:26:01 | DEBUG    |   Name #13: Cached, skipping
+2025-12-03 20:26:01 | INFO     | → Valid targets (after cache): 8
+2025-12-03 20:26:01 | INFO     | → Target priority (closest to farthest):
+2025-12-03 20:26:01 | INFO     |    #1: Distance=30px from center
+2025-12-03 20:26:01 | INFO     |    #2: Distance=186px from center
+2025-12-03 20:26:01 | INFO     |    #3: Distance=220px from center
+2025-12-03 20:26:01 | INFO     |    #4: Distance=270px from center
+2025-12-03 20:26:01 | INFO     |    #5: Distance=354px from center
+2025-12-03 20:26:01 | INFO     | 
+  Verifying target #1 (D=30px)...
+2025-12-03 20:26:01 | DEBUG    |     Clicking (961, 540)
+2025-12-03 20:26:01 | DEBUG    |     ✗ Filtered PET (no class)
+2025-12-03 20:26:01 | INFO     |     ✗ No valid nameplate or is a pet
+2025-12-03 20:26:01 | INFO     | 
+  Verifying target #2 (D=186px)...
+2025-12-03 20:26:01 | DEBUG    |     Clicking (838, 430)
+2025-12-03 20:26:02 | DEBUG    |     ✗ Filtered PET (no class)
+2025-12-03 20:26:02 | INFO     |     ✗ No valid nameplate or is a pet
+2025-12-03 20:26:02 | INFO     | 
+  Verifying target #3 (D=220px)...
+2025-12-03 20:26:02 | DEBUG    |     Clicking (1000, 353)
+2025-12-03 20:26:02 | DEBUG    |     ✗ Filtered PET (no class)
+2025-12-03 20:26:02 | INFO     |     ✗ No valid nameplate or is a pet
+2025-12-03 20:26:03 | INFO     | 
+⏸️  PAUSED - Press CapsLock to resume
+
+2025-12-03 20:26:36 | INFO     | 
+
+⛔ Bot stopped by user
+2025-12-03 20:26:36 | INFO     | 
+======================================================================
+2025-12-03 20:26:36 | INFO     | FINAL STATISTICS
+2025-12-03 20:26:36 | INFO     | ======================================================================
+2025-12-03 20:26:36 | INFO     | Total Cycles: 11
+2025-12-03 20:26:36 | INFO     | Total Clicks: 33
+2025-12-03 20:26:36 | INFO     | Verified Mobs: 0
+2025-12-03 20:26:36 | INFO     | Filtered Pets: 33
+2025-12-03 20:26:36 | INFO     | Total Kills: 0
+2025-12-03 20:26:36 | INFO     | Early Stops: 0 (stopped rotation early due to death)
+2025-12-03 20:26:36 | INFO     | Skills Used: 0
+2025-12-03 20:26:36 | INFO     | N/A
+2025-12-03 20:26:36 | INFO     | Uptime: 51s (0m 51s)
+2025-12-03 20:26:36 | INFO     | Cache Hit Rate: 24.0%
+2025-12-03 20:26:36 | INFO     | ======================================================================

@@ -1,6 +1,10 @@
 """
 MOB HUNTER v3.0 - FINAL OPTIMIZED VERSION
-Center-out targeting + Binary health detection + Pet filtering via nameplate
+Center-out targeting + Binary health detection + Pet filtering via classification
+
+Pet Detection Logic:
+- Has classification (General/Champion/Giant/Unique) = MOB
+- No classification = PET (100% filtered out)
 """
 
 import cv2
@@ -64,12 +68,13 @@ class Config:
     POSITION_PROXIMITY = 35
     
     # Priority system (only used for tie-breaking at same distance)
+    # Valid classifications: General, Champion, Giant, Unique
+    # No classification = Pet (filtered out)
     CLASS_PRIORITIES = {
-        'Unique': 1,
-        'Champion': 2,
-        'Giant': 3,
-        'General': 4,
-        'Elite': 5,
+        'Unique': 1,    # Red color
+        'Champion': 2,  # Purple color
+        'Giant': 3,     # Yellow/Gold color
+        'General': 4,   # No special color but has classification
     }
     
     # Combat rotation
@@ -362,23 +367,27 @@ class NameplateReader:
         """
         Detect mob class by color patterns in nameplate
         Returns class name or None if no class (pet)
+
+        SIMPLE LOGIC:
+        - Has classification (General/Champion/Giant/Unique) = MOB
+        - No classification = PET (100%)
         """
         # Convert to HSV
         hsv = cv2.cvtColor(nameplate, cv2.COLOR_BGR2HSV)
-        
-        # Check for golden/yellow colors (elite/unique)
+
+        # Check for golden/yellow colors (Giant)
         yellow_lower = np.array([20, 100, 100])
         yellow_upper = np.array([30, 255, 255])
         yellow_mask = cv2.inRange(hsv, yellow_lower, yellow_upper)
         yellow_pixels = cv2.countNonZero(yellow_mask)
-        
-        # Check for purple colors (champion)
+
+        # Check for purple colors (Champion)
         purple_lower = np.array([130, 100, 100])
         purple_upper = np.array([160, 255, 255])
         purple_mask = cv2.inRange(hsv, purple_lower, purple_upper)
         purple_pixels = cv2.countNonZero(purple_mask)
-        
-        # Check for red colors (boss/unique)
+
+        # Check for red colors (Unique)
         red_lower1 = np.array([0, 100, 100])
         red_upper1 = np.array([10, 255, 255])
         red_lower2 = np.array([170, 100, 100])
@@ -386,23 +395,29 @@ class NameplateReader:
         red_mask1 = cv2.inRange(hsv, red_lower1, red_upper1)
         red_mask2 = cv2.inRange(hsv, red_lower2, red_upper2)
         red_pixels = cv2.countNonZero(red_mask1) + cv2.countNonZero(red_mask2)
-        
-        # Classify based on color
-        # If no significant colored pixels, it's likely a pet (no class icon)
-        total_class_pixels = yellow_pixels + purple_pixels
-        
-        if total_class_pixels < 30:
-            # Not enough colored pixels = no class icon = pet
-            return None
-        
-        if yellow_pixels > 50:
-            return 'Elite'
-        elif purple_pixels > 50:
-            return 'Champion'
-        elif red_pixels > 100:
+
+        # CLASSIFICATION LOGIC:
+        # If ANY classification color is detected = MOB
+        # If NO classification color detected = PET
+
+        # Check for any classification indicator
+        has_yellow = yellow_pixels > 50
+        has_purple = purple_pixels > 50
+        has_red = red_pixels > 100
+
+        # If no classification colors detected = PET
+        if not has_yellow and not has_purple and not has_red:
+            return None  # No classification = PET
+
+        # Has classification = MOB, determine which type
+        if has_red:
             return 'Unique'
+        elif has_purple:
+            return 'Champion'
+        elif has_yellow:
+            return 'Giant'
         else:
-            return 'General'  # Default for mobs with class
+            return 'General'  # Has some color but below thresholds
     
     def is_mob_alive(self, nameplate=None):
         """

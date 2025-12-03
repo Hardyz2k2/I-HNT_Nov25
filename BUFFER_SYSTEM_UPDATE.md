@@ -32,7 +32,7 @@ Added an **automatic buffing system** that runs at startup and repeats every 2 m
 
 ## Configuration
 
-### **Location:** [mob_hunter.py:87-97](mob_hunter.py#L87-L97)
+### **Location:** [mob_hunter.py:84-97](mob_hunter.py#L84-L97)
 
 ```python
 # Buffer rotation settings
@@ -75,7 +75,7 @@ BUFFER_ENABLED = False
 
 ## BufferSystem Class
 
-### **Location:** [mob_hunter.py:476-543](mob_hunter.py#L476-L543)
+### **Location:** [mob_hunter.py:470-533](mob_hunter.py#L470-L533)
 
 ### **Key Methods:**
 
@@ -104,19 +104,19 @@ BUFFER_ENABLED = False
 
 ## Integration Points
 
-### **1. Bot Initialization** ([mob_hunter.py:855](mob_hunter.py#L855))
+### **1. Bot Initialization** ([mob_hunter.py:841](mob_hunter.py#L841))
 ```python
 self.buffer = BufferSystem(self.logger)
 ```
 
-### **2. Startup Sequence** ([mob_hunter.py:872-874](mob_hunter.py#L872-L874))
+### **2. Startup Sequence** ([mob_hunter.py:860-861](mob_hunter.py#L860-L861))
 ```python
 # Run initial buffer sequence
 self.logger.info("\nRunning INITIAL buffer sequence...")
 self.buffer.run_buffer_sequence()
 ```
 
-### **3. Resume from Pause** ([mob_hunter.py:887-890](mob_hunter.py#L887-L890))
+### **3. Resume from Pause** ([mob_hunter.py:874-877](mob_hunter.py#L874-L877))
 ```python
 self.logger.info("\n▶️  RESUMED - Running buffer sequence...\n")
 # Reset buffer timer and run sequence on resume
@@ -124,7 +124,7 @@ self.buffer.reset_timer()
 self.buffer.run_buffer_sequence()
 ```
 
-### **4. Periodic Check** ([mob_hunter.py:902-904](mob_hunter.py#L902-L904))
+### **4. Periodic Check** ([mob_hunter.py:898-900](mob_hunter.py#L898-L900))
 ```python
 # Check if buffer needs to run
 if self.buffer.should_run_buffer():

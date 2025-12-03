@@ -21,17 +21,56 @@ import ctypes
 import win32gui
 import win32con
 import win32api
+from pynput import keyboard
 
 # Disable PyAutoGUI fail-safe
 pyautogui.FAILSAFE = False
 
-# CapsLock detection for Windows
-VK_CAPITAL = 0x14
-user32 = ctypes.windll.user32
+# Global keyboard state flags (thread-safe)
+_capslock_toggled = False
+_overlay_toggled = False
+_keyboard_lock = threading.Lock()
 
-def is_capslock_on():
-    """Check if CapsLock is currently on"""
-    return bool(user32.GetKeyState(VK_CAPITAL) & 0x0001)
+def _on_key_press(key):
+    """Global keyboard listener callback for key presses"""
+    global _capslock_toggled, _overlay_toggled
+
+    try:
+        # Check for CapsLock
+        if key == keyboard.Key.caps_lock:
+            with _keyboard_lock:
+                _capslock_toggled = True
+        # Check for 'O' key
+        elif hasattr(key, 'char') and key.char and key.char.lower() == 'o':
+            with _keyboard_lock:
+                _overlay_toggled = True
+    except AttributeError:
+        pass
+
+def check_capslock_toggle():
+    """Check if CapsLock was pressed and reset flag"""
+    global _capslock_toggled
+    with _keyboard_lock:
+        if _capslock_toggled:
+            _capslock_toggled = False
+            return True
+        return False
+
+def check_overlay_toggle():
+    """Check if 'O' key was pressed and reset flag"""
+    global _overlay_toggled
+    with _keyboard_lock:
+        if _overlay_toggled:
+            _overlay_toggled = False
+            return True
+        return False
+
+def start_keyboard_listener():
+    """Start global keyboard listener in background thread"""
+    listener = keyboard.Listener(on_press=_on_key_press)
+    listener.daemon = True
+    listener.start()
+    return listener
 
 # ============================================================================
 # CONFIGURATION
@@ -620,6 +659,7 @@ class OverlayWindow:
     def __init__(self, logger):
         self.logger = logger
         self.running = False
+        self.visible = True  # Overlay visibility (can be toggled with Tab key)
         self.current_frame = None
         self.detections = []
         self.stats = {}
@@ -647,6 +687,14 @@ class OverlayWindow:
         self.current_frame = frame.copy() if frame is not None else None
         self.detections = detections
         self.stats = stats
+
+    def toggle_visibility(self):
+        """Toggle overlay visibility"""
+        self.visible = not self.visible
+        if self.visible:
+            self.logger.info("👁️  Overlay: VISIBLE")
+        else:
+            self.logger.info("🙈 Overlay: HIDDEN")
 
     def make_click_through(self):
         """Make the window transparent and click-through using Windows API"""
@@ -718,74 +766,70 @@ class OverlayWindow:
                     # Same dimensions as screen for perfect alignment
                     display = np.zeros((Config.SCREEN_HEIGHT, Config.SCREEN_WIDTH, 3), dtype=np.uint8)
 
-                    # Draw screen center crosshair
-                    center_x = Config.SCREEN_WIDTH // 2
-                    center_y = Config.SCREEN_HEIGHT // 2
-                    cv2.line(display, (center_x - 30, center_y), (center_x + 30, center_y), (0, 255, 255), 2)
-                    cv2.line(display, (center_x, center_y - 30), (center_x, center_y + 30), (0, 255, 255), 2)
-                    cv2.circle(display, (center_x, center_y), 100, (0, 255, 255), 1)
+                    # Only draw elements if overlay is visible
+                    if self.visible:
+                        # Draw screen center crosshair
+                        center_x = Config.SCREEN_WIDTH // 2
+                        center_y = Config.SCREEN_HEIGHT // 2
+                        cv2.line(display, (center_x - 30, center_y), (center_x + 30, center_y), (0, 255, 255), 2)
+                        cv2.line(display, (center_x, center_y - 30), (center_x, center_y + 30), (0, 255, 255), 2)
+                        cv2.circle(display, (center_x, center_y), 100, (0, 255, 255), 1)
 
-                    # Draw detections with distance indicators
-                    for i, det in enumerate(self.detections, 1):
-                        x, y, w, h = det['region']
-                        center = det['center']
-                        distance = det.get('distance_from_center', 0)
+                        # Draw detections with distance indicators
+                        for i, det in enumerate(self.detections, 1):
+                            x, y, w, h = det['region']
+                            center = det['center']
+                            distance = det.get('distance_from_center', 0)
 
-                        # Color based on distance (green = close, red = far)
-                        color_intensity = min(255, int(distance / 3))
-                        color = (0, 255 - color_intensity, color_intensity)
+                            # Color based on distance (green = close, red = far)
+                            color_intensity = min(255, int(distance / 3))
+                            color = (0, 255 - color_intensity, color_intensity)
 
-                        # Draw box around detected name
-                        cv2.rectangle(display, (x, y), (x+w, y+h), color, 2)
+                            # Draw box around detected name
+                            cv2.rectangle(display, (x, y), (x+w, y+h), color, 2)
 
-                        # Draw center dot
-                        cv2.circle(display, center, 5, (0, 0, 255), -1)
+                            # Draw center dot
+                            cv2.circle(display, center, 5, (0, 0, 255), -1)
 
-                        # Draw line from detection to screen center
-                        cv2.line(display, center, (center_x, center_y), (100, 100, 100), 1)
+                            # Draw line from detection to screen center
+                            cv2.line(display, center, (center_x, center_y), (100, 100, 100), 1)
 
-                        # Draw distance label with background for readability
-                        dist_text = f"#{i} D:{int(distance)}"
-                        (text_width, text_height), baseline = cv2.getTextSize(dist_text, cv2.FONT_HERSHEY_SIMPLEX, 0.4, 1)
+                            # Draw distance label with background for readability
+                            dist_text = f"#{i} D:{int(distance)}"
+                            (text_width, text_height), baseline = cv2.getTextSize(dist_text, cv2.FONT_HERSHEY_SIMPLEX, 0.4, 1)
 
-                        # Draw dark background rectangle behind text
-                        padding = 2
-                        cv2.rectangle(display,
-                                    (x - padding, y - text_height - 8 - padding),
-                                    (x + text_width + padding, y - 5 + padding),
-                                    (50, 50, 50), -1)  # Dark gray background
+                            # Draw dark background rectangle behind text
+                            padding = 2
+                            cv2.rectangle(display,
+                                        (x - padding, y - text_height - 8 - padding),
+                                        (x + text_width + padding, y - 5 + padding),
+                                        (50, 50, 50), -1)  # Dark gray background
 
-                        # Colored text
-                        cv2.putText(display, dist_text, (x, y-5),
-                                   cv2.FONT_HERSHEY_SIMPLEX, 0.4, color, 1)
+                            # Colored text
+                            cv2.putText(display, dist_text, (x, y-5),
+                                       cv2.FONT_HERSHEY_SIMPLEX, 0.4, color, 1)
 
-                    # Draw stats in top-left corner
-                    y_pos = 30
-                    for key, value in self.stats.items():
-                        text = f"{key}: {value}"
-                        # Color based on status
-                        if key == 'Status' and 'PAUSED' in str(value):
-                            text_color = (0, 165, 255)  # Orange for paused
-                        else:
-                            text_color = (0, 255, 0)  # Green for normal
+                        # Draw stats in top-left corner (smaller, green only, not bold)
+                        y_pos = 25
+                        for key, value in self.stats.items():
+                            text = f"{key}: {value}"
+                            # Green color only (no orange for paused)
+                            text_color = (0, 255, 0)
 
-                        # Get text size for background rectangle
-                        (text_width, text_height), baseline = cv2.getTextSize(text, cv2.FONT_HERSHEY_SIMPLEX, 0.6, 2)
+                            # Get text size for background rectangle (smaller font: 0.45 instead of 0.6)
+                            (text_width, text_height), _ = cv2.getTextSize(text, cv2.FONT_HERSHEY_SIMPLEX, 0.45, 1)
 
-                        # Draw dark background rectangle behind text for readability
-                        padding = 5
-                        cv2.rectangle(display,
-                                    (5, y_pos - text_height - padding),
-                                    (15 + text_width, y_pos + padding),
-                                    (50, 50, 50), -1)  # Dark gray background
+                            # Draw dark background rectangle behind text for readability
+                            padding = 4
+                            cv2.rectangle(display,
+                                        (5, y_pos - text_height - padding),
+                                        (10 + text_width, y_pos + padding),
+                                        (50, 50, 50), -1)  # Dark gray background
 
-                        # White outline for better visibility
-                        cv2.putText(display, text, (12, y_pos + 2),
-                                   cv2.FONT_HERSHEY_SIMPLEX, 0.6, (255, 255, 255), 4)
-                        # Colored text
-                        cv2.putText(display, text, (10, y_pos),
-                                   cv2.FONT_HERSHEY_SIMPLEX, 0.6, text_color, 2)
-                        y_pos += 30
+                            # Green text only (no white outline, not bold - thickness 1)
+                            cv2.putText(display, text, (8, y_pos),
+                                       cv2.FONT_HERSHEY_SIMPLEX, 0.45, text_color, 1)
+                            y_pos += 22
 
                     # Draw large PAUSED overlay if paused
                     if 'Status' in self.stats and 'PAUSED' in str(self.stats.get('Status', '')):
@@ -859,12 +903,15 @@ class MobHunter:
         self.running = True
         self.paused = False
         self.start_time = time.time()
-        self.last_capslock_state = False
-    
+
+        # Start global keyboard listener
+        self.keyboard_listener = start_keyboard_listener()
+
     def run(self):
         """Main loop with buffer system and pause/resume"""
         self.logger.info("\n🚀 Bot started! Press Ctrl+C to stop.\n")
-        self.logger.info("💡 Controls: CapsLock = Pause/Resume\n")
+        self.logger.info("💡 Controls: CapsLock = Pause/Resume | O = Toggle Overlay\n")
+        self.logger.info("⌨️  Global keyboard listener active (works in any window)\n")
 
         # Start overlay
         self.overlay.start()
@@ -875,11 +922,8 @@ class MobHunter:
 
         try:
             while self.running:
-                # Check CapsLock for pause/resume
-                caps_state = is_capslock_on()
-
-                # Toggle pause on CapsLock press (edge detection)
-                if caps_state and not self.last_capslock_state:
+                # Check for CapsLock toggle (global keyboard listener)
+                if check_capslock_toggle():
                     self.paused = not self.paused
                     if self.paused:
                         self.logger.info("\n⏸️  PAUSED - Press CapsLock to resume\n")
@@ -889,7 +933,10 @@ class MobHunter:
                         self.buffer.reset_timer()
                         self.buffer.run_buffer_sequence()
 
-                self.last_capslock_state = caps_state
+                # Check for 'O' key toggle (global keyboard listener)
+                if check_overlay_toggle():
+                    self.overlay.toggle_visibility()
+                    time.sleep(0.1)  # Small debounce delay
 
                 # Skip cycle if paused, but update overlay
                 if self.paused:
@@ -1081,15 +1128,18 @@ Controls:
 Waiting for CapsLock to start...
 """)
 
+    # Start keyboard listener
+    print("Starting global keyboard listener...")
+    listener = start_keyboard_listener()
+    time.sleep(0.5)
+
     # Wait for CapsLock to be pressed to start
     print("Press CapsLock to start the bot...")
-    while not is_capslock_on():
+    while True:
+        if check_capslock_toggle():
+            break
         time.sleep(0.1)
-    
-    # Wait for CapsLock to be released
-    while is_capslock_on():
-        time.sleep(0.1)
-    
+
     print("Bot starting...\n")
     time.sleep(0.5)
 

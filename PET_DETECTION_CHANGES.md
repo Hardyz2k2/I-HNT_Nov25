@@ -80,9 +80,9 @@ if not has_yellow and not has_purple and not has_red:
 ## Code Locations
 
 ### Modified Files:
-- `mob_hunter.py:361-415` - `detect_class_by_color()` method
+- `mob_hunter.py:386-440` - `detect_class_by_color()` method
 - `mob_hunter.py:1-8` - File header documentation
-- `mob_hunter.py:66-74` - Config CLASS_PRIORITIES comment
+- `mob_hunter.py:70-78` - Config CLASS_PRIORITIES comment
 
 ---
 

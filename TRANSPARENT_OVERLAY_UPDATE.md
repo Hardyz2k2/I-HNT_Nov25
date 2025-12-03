@@ -172,7 +172,7 @@ new_ex_style = (
 
 ### **Modified Files:**
 - `mob_hunter.py:21-23` - Added win32 imports
-- `mob_hunter.py:536-746` - Complete OverlayWindow class rewrite
+- `mob_hunter.py:602-817` - Complete OverlayWindow class rewrite
 
 ### **New Methods:**
 - `make_click_through()` - Apply Windows API transparency

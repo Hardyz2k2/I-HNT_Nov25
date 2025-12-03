@@ -1,0 +1,76 @@
+2025-12-03 21:55:29 | INFO     | ======================================================================
+2025-12-03 21:55:29 | INFO     | MOB HUNTER v3.0 - CENTER-OUT + BINARY HEALTH
+2025-12-03 21:55:29 | INFO     | ======================================================================
+2025-12-03 21:55:29 | INFO     | Log directory: logs/session_20251203_215529
+2025-12-03 21:55:29 | INFO     | Screen: 1920x1080
+2025-12-03 21:55:29 | INFO     | Strategy: Attack closest to center first
+2025-12-03 21:55:29 | INFO     | Health: Binary (ALIVE/DEAD) detection
+2025-12-03 21:55:29 | INFO     | Pet Filter: Via nameplate class detection
+2025-12-03 21:55:29 | INFO     | ======================================================================
+2025-12-03 21:55:29 | INFO     | 
+🚀 Bot started! Press Ctrl+C to stop.
+
+2025-12-03 21:55:29 | INFO     | 💡 Controls: CapsLock = Pause/Resume | Tab = Toggle Overlay
+
+2025-12-03 21:55:29 | INFO     | 🖥️  Click-through overlay starting...
+2025-12-03 21:55:29 | INFO     | 
+Running INITIAL buffer sequence...
+2025-12-03 21:55:29 | INFO     | 
+============================================================
+2025-12-03 21:55:29 | INFO     | RUNNING BUFFER SEQUENCE
+2025-12-03 21:55:29 | INFO     | ============================================================
+2025-12-03 21:55:29 | INFO     |   [1/6] Pressing: F2
+2025-12-03 21:55:29 | INFO     |   [2/6] Pressing: 1
+2025-12-03 21:55:29 | INFO     |   [3/6] Pressing: 2
+2025-12-03 21:55:29 | INFO     |       Waiting 1.0s...
+2025-12-03 21:55:29 | INFO     | ✅ Overlay is now CLICK-THROUGH and transparent
+2025-12-03 21:55:30 | INFO     |   [4/6] Pressing: 3
+2025-12-03 21:55:30 | INFO     |       Waiting 1.0s...
+2025-12-03 21:55:31 | INFO     |   [5/6] Pressing: 4
+2025-12-03 21:55:31 | INFO     |       Waiting 1.0s...
+2025-12-03 21:55:32 | INFO     |   [6/6] Pressing: F1
+2025-12-03 21:55:33 | INFO     | ============================================================
+2025-12-03 21:55:33 | INFO     | Buffer sequence complete (Total: 1)
+2025-12-03 21:55:33 | INFO     | Next buffer in 120s (2m)
+2025-12-03 21:55:33 | INFO     | ============================================================
+
+2025-12-03 21:55:33 | INFO     | 
+⏸️  PAUSED - Press CapsLock to resume
+
+2025-12-03 21:55:44 | INFO     | 🙈 Overlay: HIDDEN
+2025-12-03 21:55:45 | INFO     | 👁️  Overlay: VISIBLE
+2025-12-03 21:55:49 | INFO     | 🙈 Overlay: HIDDEN
+2025-12-03 21:55:52 | INFO     | 👁️  Overlay: VISIBLE
+2025-12-03 21:55:59 | INFO     | 
+▶️  RESUMED - Running buffer sequence...
+
+2025-12-03 21:55:59 | INFO     | Buffer timer reset - will run on next cycle
+2025-12-03 21:55:59 | INFO     | 
+============================================================
+2025-12-03 21:55:59 | INFO     | RUNNING BUFFER SEQUENCE
+2025-12-03 21:55:59 | INFO     | ============================================================
+2025-12-03 21:55:59 | INFO     |   [1/6] Pressing: F2
+2025-12-03 21:55:59 | INFO     |   [2/6] Pressing: 1
+2025-12-03 21:55:59 | INFO     |   [3/6] Pressing: 2
+2025-12-03 21:55:59 | INFO     |       Waiting 1.0s...
+2025-12-03 21:56:00 | INFO     |   [4/6] Pressing: 3
+2025-12-03 21:56:00 | INFO     |       Waiting 1.0s...
+2025-12-03 21:56:01 | INFO     | 
+
+⛔ Bot stopped by user
+2025-12-03 21:56:01 | INFO     | 
+======================================================================
+2025-12-03 21:56:01 | INFO     | FINAL STATISTICS
+2025-12-03 21:56:01 | INFO     | ======================================================================
+2025-12-03 21:56:01 | INFO     | Total Cycles: 0
+2025-12-03 21:56:01 | INFO     | Total Clicks: 0
+2025-12-03 21:56:01 | INFO     | Verified Mobs: 0
+2025-12-03 21:56:01 | INFO     | Filtered Pets: 0
+2025-12-03 21:56:01 | INFO     | Total Kills: 0
+2025-12-03 21:56:01 | INFO     | Buffer Sequences: 1
+2025-12-03 21:56:01 | INFO     | Early Stops: 0 (stopped rotation early due to death)
+2025-12-03 21:56:01 | INFO     | Skills Used: 0
+2025-12-03 21:56:01 | INFO     | N/A
+2025-12-03 21:56:01 | INFO     | Uptime: 32s (0m 32s)
+2025-12-03 21:56:01 | INFO     | Cache Hit Rate: 0.0%
+2025-12-03 21:56:01 | INFO     | ======================================================================

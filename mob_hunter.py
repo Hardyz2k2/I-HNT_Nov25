@@ -83,11 +83,23 @@ class Config:
     # Combat rotation
     SKILL_KEYS = ['1', '2', '3', '4']
     SKILL_ANIMATION_TIME = 0.6  # Time for skill animation
-    
+
+    # Buffer rotation settings
+    BUFFER_ENABLED = True
+    BUFFER_INTERVAL = 120  # Seconds (2 minutes)
+    BUFFER_SEQUENCE = [
+        ('F2', 0),      # (key, delay_after_in_seconds)
+        ('1', 0),
+        ('2', 1.0),
+        ('3', 1.0),
+        ('4', 1.0),
+        ('F1', 0),
+    ]
+
     # Overlay settings
     SHOW_OVERLAY = True
     OVERLAY_UPDATE_FPS = 10
-    
+
     # Debug
     DEBUG_MODE = True
     SAVE_SCREENSHOTS = False
@@ -462,6 +474,75 @@ class NameplateReader:
 
 
 # ============================================================================
+# BUFFER SYSTEM
+# ============================================================================
+
+class BufferSystem:
+    """Handle buff rotation on timer"""
+
+    def __init__(self, logger):
+        self.logger = logger
+        self.last_buffer_time = 0
+        self.total_buffs = 0
+
+    def should_run_buffer(self):
+        """Check if it's time to run buffer rotation"""
+        if not Config.BUFFER_ENABLED:
+            return False
+
+        current_time = time.time()
+        elapsed = current_time - self.last_buffer_time
+
+        # Run if never run before OR if interval has passed
+        return self.last_buffer_time == 0 or elapsed >= Config.BUFFER_INTERVAL
+
+    def run_buffer_sequence(self):
+        """Execute the buffer rotation"""
+        try:
+            self.logger.info(f"\n{'='*60}")
+            self.logger.info("RUNNING BUFFER SEQUENCE")
+            self.logger.info(f"{'='*60}")
+
+            for i, (key, delay) in enumerate(Config.BUFFER_SEQUENCE, 1):
+                self.logger.info(f"  [{i}/{len(Config.BUFFER_SEQUENCE)}] Pressing: {key}")
+                pyautogui.press(key)
+
+                if delay > 0:
+                    self.logger.info(f"      Waiting {delay}s...")
+                    time.sleep(delay)
+                else:
+                    time.sleep(0.1)  # Small delay between instant presses
+
+            self.last_buffer_time = time.time()
+            self.total_buffs += 1
+
+            self.logger.info(f"{'='*60}")
+            self.logger.info(f"Buffer sequence complete (Total: {self.total_buffs})")
+            self.logger.info(f"Next buffer in {Config.BUFFER_INTERVAL}s ({Config.BUFFER_INTERVAL//60}m)")
+            self.logger.info(f"{'='*60}\n")
+
+            return True
+
+        except Exception as e:
+            self.logger.error(f"Buffer sequence error: {e}")
+            return False
+
+    def get_time_until_next(self):
+        """Get seconds until next buffer"""
+        if self.last_buffer_time == 0:
+            return 0
+
+        elapsed = time.time() - self.last_buffer_time
+        remaining = Config.BUFFER_INTERVAL - elapsed
+        return max(0, remaining)
+
+    def reset_timer(self):
+        """Reset buffer timer (used when resuming from pause)"""
+        self.last_buffer_time = 0
+        self.logger.info("Buffer timer reset - will run on next cycle")
+
+
+# ============================================================================
 # COMBAT SYSTEM WITH HEALTH MONITORING
 # ============================================================================
 
@@ -771,8 +852,9 @@ class MobHunter:
         self.cache = PositionCache(self.logger)
         self.nameplate_reader = NameplateReader(self.logger, self.screen_capture)
         self.combat = CombatSystem(self.logger, self.nameplate_reader)
+        self.buffer = BufferSystem(self.logger)
         self.overlay = OverlayWindow(self.logger)
-        
+
         self.cycle = 0
         self.running = True
         self.paused = False
@@ -780,28 +862,35 @@ class MobHunter:
         self.last_capslock_state = False
     
     def run(self):
-        """Main loop"""
+        """Main loop with buffer system and pause/resume"""
         self.logger.info("\n🚀 Bot started! Press Ctrl+C to stop.\n")
         self.logger.info("💡 Controls: CapsLock = Pause/Resume\n")
-        
+
         # Start overlay
         self.overlay.start()
-        
+
+        # Run initial buffer sequence
+        self.logger.info("\nRunning INITIAL buffer sequence...")
+        self.buffer.run_buffer_sequence()
+
         try:
             while self.running:
                 # Check CapsLock for pause/resume
                 caps_state = is_capslock_on()
-                
+
                 # Toggle pause on CapsLock press (edge detection)
                 if caps_state and not self.last_capslock_state:
                     self.paused = not self.paused
                     if self.paused:
                         self.logger.info("\n⏸️  PAUSED - Press CapsLock to resume\n")
                     else:
-                        self.logger.info("\n▶️  RESUMED - Press CapsLock to pause\n")
-                
+                        self.logger.info("\n▶️  RESUMED - Running buffer sequence...\n")
+                        # Reset buffer timer and run sequence on resume
+                        self.buffer.reset_timer()
+                        self.buffer.run_buffer_sequence()
+
                 self.last_capslock_state = caps_state
-                
+
                 # Skip cycle if paused, but update overlay
                 if self.paused:
                     # Update overlay with paused state
@@ -809,9 +898,15 @@ class MobHunter:
                     self.update_overlay(screenshot, [], 0, 0)
                     time.sleep(0.1)  # Short sleep when paused
                     continue
-                
+
+                # Check if buffer needs to run
+                if self.buffer.should_run_buffer():
+                    self.buffer.run_buffer_sequence()
+
+                # Run detection cycle
                 self.cycle += 1
                 self.run_cycle()
+
                 time.sleep(Config.CYCLE_DELAY)
                 
         except KeyboardInterrupt:
@@ -933,6 +1028,7 @@ class MobHunter:
             'Kills': self.combat.total_kills,
             'Early_Stops': self.combat.early_stops,
             'Cache': f"{len(self.cache.cache)}",
+            'Next_Buffer': f"{int(self.buffer.get_time_until_next())}s",
             'Uptime': f"{int(time.time() - self.start_time)}s"
         }
         self.overlay.update(screenshot, detections, stats)
@@ -950,6 +1046,7 @@ class MobHunter:
         self.logger.info(f"Verified Mobs: {self.nameplate_reader.verified_mobs}")
         self.logger.info(f"Filtered Pets: {self.nameplate_reader.filtered_pets}")
         self.logger.info(f"Total Kills: {self.combat.total_kills}")
+        self.logger.info(f"Buffer Sequences: {self.buffer.total_buffs}")
         self.logger.info(f"Early Stops: {self.combat.early_stops} (stopped rotation early due to death)")
         self.logger.info(f"Skills Used: {self.combat.skills_used}")
         self.logger.info(f"Avg Skills/Kill: {self.combat.skills_used/self.combat.total_kills:.1f}" if self.combat.total_kills > 0 else "N/A")

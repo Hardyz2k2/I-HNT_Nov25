@@ -139,9 +139,20 @@ class Config:
     SHOW_OVERLAY = True
     OVERLAY_UPDATE_FPS = 10
 
-    # Debug
-    DEBUG_MODE = True
-    SAVE_SCREENSHOTS = False
+    # Death detection settings
+    DEATH_CHECK_ENABLED = True  # Set to False to disable death detection
+    DEATH_POPUP_REGION = (760, 350, 400, 180)  # (x, y, w, h) - center area where popup appears
+    DEATH_REVIVE_DELAY = 2.0  # Seconds to wait before reviving
+    DEATH_COOLDOWN = 10.0  # Seconds cooldown after revive (prevents repeated detection)
+
+    # Debug & Logging
+    DEBUG_MODE = True  # Enable debug logging
+
+    # Screenshot settings (selective capture for debugging)
+    SAVE_DEATH_SCREENSHOTS = True      # Capture screenshot when death detected
+    SAVE_ERROR_SCREENSHOTS = True      # Capture screenshot on errors
+    SAVE_PERIODIC_SCREENSHOTS = False  # Periodic screenshots (every N cycles)
+    PERIODIC_SCREENSHOT_INTERVAL = 50  # Save every 50 cycles if enabled
 
 
 # ============================================================================
@@ -582,6 +593,145 @@ class BufferSystem:
 
 
 # ============================================================================
+# DEATH DETECTION AND AUTO-REVIVE
+# ============================================================================
+
+class DeathDetector:
+    """Detect player death and handle auto-revive"""
+
+    def __init__(self, logger):
+        self.logger = logger
+        self.death_count = 0
+        self.last_death_time = 0
+
+    def is_player_dead(self, screenshot):
+        """
+        Check if death popup is visible
+
+        Detection method:
+        - Extract death popup region (center screen)
+        - Look for "Confirmation window" popup
+        - Detect golden border and dark background
+        - Check for text pattern
+
+        Returns True if death popup detected
+        """
+        if not Config.DEATH_CHECK_ENABLED:
+            return False
+
+        try:
+            # Extract death popup region
+            x, y, w, h = Config.DEATH_POPUP_REGION
+            popup_region = screenshot[y:y+h, x:x+w]
+
+            # Convert to HSV for better color detection
+            hsv = cv2.cvtColor(popup_region, cv2.COLOR_BGR2HSV)
+            gray = cv2.cvtColor(popup_region, cv2.COLOR_BGR2GRAY)
+
+            # Method 1: Detect golden/yellow border (around the image in popup)
+            # Golden color range in HSV
+            gold_lower = np.array([15, 100, 100])
+            gold_upper = np.array([35, 255, 255])
+            gold_mask = cv2.inRange(hsv, gold_lower, gold_upper)
+            gold_pixels = cv2.countNonZero(gold_mask)
+
+            # Method 2: Detect dark gray/black popup background
+            dark_mask = (gray < 60).astype(np.uint8) * 255
+            dark_pixels = cv2.countNonZero(dark_mask)
+
+            # Method 3: Detect the brown popup frame/border
+            brown_lower = np.array([5, 30, 40])
+            brown_upper = np.array([25, 200, 120])
+            brown_mask = cv2.inRange(hsv, brown_lower, brown_upper)
+            brown_pixels = cv2.countNonZero(brown_mask)
+
+            # Method 4: Check for white/light text (the text "the character is now paralyzed")
+            white_mask = (gray > 200).astype(np.uint8) * 255
+            white_pixels = cv2.countNonZero(white_mask)
+
+            # Death popup characteristics (STRICT thresholds to avoid false positives):
+            # - Has golden border around image (>800 pixels - strict)
+            # - Has dark background (>10000 pixels - strict)
+            # - Has brown frame (>4000 pixels - strict)
+            # - Has white text (>600 pixels - strict)
+            has_gold_border = gold_pixels > 800
+            has_dark_bg = dark_pixels > 10000
+            has_brown_frame = brown_pixels > 4000
+            has_white_text = white_pixels > 600
+
+            # Debug logging
+            if Config.DEBUG_MODE:
+                self.logger.debug(f"Death detection: Gold={gold_pixels}, Dark={dark_pixels}, Brown={brown_pixels}, White={white_pixels}")
+
+            # STRICT detection: Require at least 3 out of 4 indicators + cooldown
+            indicators = [has_gold_border, has_dark_bg, has_brown_frame, has_white_text]
+            true_count = sum(indicators)
+
+            # Check cooldown - don't detect death if we just revived
+            time_since_last_death = time.time() - self.last_death_time if self.last_death_time > 0 else 999
+            in_cooldown = time_since_last_death < Config.DEATH_COOLDOWN
+
+            if true_count >= 3 and not in_cooldown:
+                self.logger.warning("💀 DEATH DETECTED - Player is dead!")
+                self.logger.warning(f"   Indicators: Gold={has_gold_border}, Dark={has_dark_bg}, Brown={has_brown_frame}, Text={has_white_text}")
+                return True
+            elif true_count >= 3 and in_cooldown:
+                self.logger.debug(f"Death popup detected but in cooldown ({time_since_last_death:.1f}s since last death)")
+
+            return False
+
+        except Exception as e:
+            self.logger.error(f"Death detection error: {e}")
+            return False
+
+    def handle_death(self):
+        """
+        Execute revive sequence
+
+        Sequence:
+        1. Wait 2 seconds for popup to stabilize
+        2. Press F4 (open revive menu)
+        3. Wait 0.5s
+        4. Press 0 (select resurrect option)
+        5. Wait for respawn
+        """
+        try:
+            self.death_count += 1
+            self.last_death_time = time.time()
+
+            self.logger.info("\n" + "="*70)
+            self.logger.info("💀 DEATH HANDLER ACTIVATED")
+            self.logger.info("="*70)
+            self.logger.info(f"Death #{self.death_count}")
+            self.logger.info(f"Waiting {Config.DEATH_REVIVE_DELAY}s before reviving...")
+
+            # Wait for popup to stabilize
+            time.sleep(Config.DEATH_REVIVE_DELAY)
+
+            # Press F4 to open revive menu
+            self.logger.info("Pressing F4 (open revive menu)...")
+            pyautogui.press('f4')
+            time.sleep(0.5)
+
+            # Press 0 to resurrect at specified point
+            self.logger.info("Pressing 0 (resurrect at specified point)...")
+            pyautogui.press('0')
+
+            # Wait for respawn animation
+            self.logger.info("Waiting for respawn (3s)...")
+            time.sleep(3.0)
+
+            self.logger.info("✅ Revive sequence completed!")
+            self.logger.info("="*70 + "\n")
+
+            return True
+
+        except Exception as e:
+            self.logger.error(f"Death handler error: {e}")
+            return False
+
+
+# ============================================================================
 # COMBAT SYSTEM WITH HEALTH MONITORING
 # ============================================================================
 
@@ -897,6 +1047,7 @@ class MobHunter:
         self.nameplate_reader = NameplateReader(self.logger, self.screen_capture)
         self.combat = CombatSystem(self.logger, self.nameplate_reader)
         self.buffer = BufferSystem(self.logger)
+        self.death_detector = DeathDetector(self.logger)
         self.overlay = OverlayWindow(self.logger)
 
         self.cycle = 0
@@ -907,11 +1058,52 @@ class MobHunter:
         # Start global keyboard listener
         self.keyboard_listener = start_keyboard_listener()
 
+        # Screenshot counter
+        self.screenshot_counter = 0
+
+    def save_screenshot(self, screenshot, event_type, extra_info=""):
+        """
+        Save screenshot with meaningful filename
+
+        Args:
+            screenshot: The image to save
+            event_type: Type of event (death, error, cycle, etc.)
+            extra_info: Additional context for filename
+        """
+        try:
+            self.screenshot_counter += 1
+            timestamp = datetime.now().strftime("%H%M%S")
+
+            # Create filename with context
+            if extra_info:
+                filename = f"{self.screenshot_counter:04d}_{timestamp}_{event_type}_{extra_info}.png"
+            else:
+                filename = f"{self.screenshot_counter:04d}_{timestamp}_{event_type}.png"
+
+            filepath = f"{self.log_dir}/screenshots/{filename}"
+            cv2.imwrite(filepath, screenshot)
+            self.logger.info(f"📸 Screenshot saved: {filename}")
+
+        except Exception as e:
+            self.logger.error(f"Failed to save screenshot: {e}")
+
     def run(self):
         """Main loop with buffer system and pause/resume"""
         self.logger.info("\n🚀 Bot started! Press Ctrl+C to stop.\n")
         self.logger.info("💡 Controls: CapsLock = Pause/Resume | O = Toggle Overlay\n")
         self.logger.info("⌨️  Global keyboard listener active (works in any window)\n")
+
+        # Log configuration
+        self.logger.info("📋 Configuration:")
+        self.logger.info(f"   Death Detection: {'✅ Enabled' if Config.DEATH_CHECK_ENABLED else '❌ Disabled'}")
+        self.logger.info(f"   Death Screenshots: {'✅ Enabled' if Config.SAVE_DEATH_SCREENSHOTS else '❌ Disabled'}")
+        self.logger.info(f"   Error Screenshots: {'✅ Enabled' if Config.SAVE_ERROR_SCREENSHOTS else '❌ Disabled'}")
+        self.logger.info(f"   Periodic Screenshots: {'✅ Enabled' if Config.SAVE_PERIODIC_SCREENSHOTS else '❌ Disabled'}")
+        if Config.SAVE_PERIODIC_SCREENSHOTS:
+            self.logger.info(f"   Screenshot Interval: Every {Config.PERIODIC_SCREENSHOT_INTERVAL} cycles")
+        self.logger.info(f"   Buffer Interval: {Config.BUFFER_INTERVAL}s")
+        self.logger.info(f"   Overlay: {'✅ Enabled' if Config.SHOW_OVERLAY else '❌ Disabled'}")
+        self.logger.info("")
 
         # Start overlay
         self.overlay.start()
@@ -961,6 +1153,14 @@ class MobHunter:
         except Exception as e:
             self.logger.error(f"\n💥 FATAL ERROR: {e}")
             self.logger.error(traceback.format_exc())
+
+            # Save error screenshot if possible
+            if Config.SAVE_ERROR_SCREENSHOTS:
+                try:
+                    error_screenshot = self.screen_capture.capture()
+                    self.save_screenshot(error_screenshot, "ERROR", "fatal_error")
+                except:
+                    pass  # Don't crash while trying to save error screenshot
         finally:
             self.overlay.stop()
             self.print_statistics()
@@ -971,10 +1171,30 @@ class MobHunter:
             self.logger.info(f"\n{'='*70}")
             self.logger.info(f"CYCLE #{self.cycle}")
             self.logger.info(f"{'='*70}")
-            
+
             # Capture
             screenshot = self.screen_capture.capture()
-            
+
+            # Check for death FIRST (highest priority)
+            if self.death_detector.is_player_dead(screenshot):
+                self.logger.warning("⚠️  Player is dead - pausing hunting")
+
+                # Save death screenshot
+                if Config.SAVE_DEATH_SCREENSHOTS:
+                    self.save_screenshot(screenshot, "DEATH", f"death_{self.death_detector.death_count + 1}")
+
+                # Handle death and revive
+                if self.death_detector.handle_death():
+                    self.logger.info("🔄 Running buffer sequence after revive...")
+                    # Run buffer sequence after revival
+                    self.buffer.run_buffer_sequence()
+                    self.logger.info("✅ Ready to resume hunting!")
+                else:
+                    self.logger.error("❌ Revive failed - skipping cycle")
+
+                # Skip this cycle after death handling
+                return
+
             # Detect all floating names
             detections = self.detector.find_floating_names(screenshot)
             self.logger.info(f"Detected: {len(detections)} floating names")
@@ -1051,14 +1271,22 @@ class MobHunter:
             
             # Update overlay
             self.update_overlay(screenshot, detections, len(valid_targets), len(confirmed_mobs))
-            
-            # Save screenshot occasionally
-            if Config.SAVE_SCREENSHOTS and self.cycle % 10 == 0:
-                cv2.imwrite(f"{self.log_dir}/screenshots/cycle_{self.cycle:04d}.png", screenshot)
-            
+
+            # Save periodic screenshots for debugging
+            if Config.SAVE_PERIODIC_SCREENSHOTS and self.cycle % Config.PERIODIC_SCREENSHOT_INTERVAL == 0:
+                self.save_screenshot(screenshot, "CYCLE", f"cycle_{self.cycle}")
+
         except Exception as e:
-            self.logger.error(f"Cycle error: {e}")
+            self.logger.error(f"❌ CYCLE ERROR: {e}")
+            self.logger.error(f"Cycle #{self.cycle} failed")
             self.logger.error(traceback.format_exc())
+
+            # Save error screenshot
+            if Config.SAVE_ERROR_SCREENSHOTS:
+                try:
+                    self.save_screenshot(screenshot, "ERROR", f"cycle_{self.cycle}_error")
+                except:
+                    pass
     
     def update_overlay(self, screenshot, detections, valid_count, confirmed_count):
         """Update overlay with current stats"""
@@ -1073,6 +1301,7 @@ class MobHunter:
             'Mobs': self.nameplate_reader.verified_mobs,
             'Pets': self.nameplate_reader.filtered_pets,
             'Kills': self.combat.total_kills,
+            'Deaths': self.death_detector.death_count,
             'Early_Stops': self.combat.early_stops,
             'Cache': f"{len(self.cache.cache)}",
             'Next_Buffer': f"{int(self.buffer.get_time_until_next())}s",
@@ -1081,24 +1310,59 @@ class MobHunter:
         self.overlay.update(screenshot, detections, stats)
     
     def print_statistics(self):
-        """Print final statistics"""
+        """Print final statistics with enhanced metrics"""
         uptime = int(time.time() - self.start_time)
         cache_stats = self.cache.get_stats()
-        
+
         self.logger.info("\n" + "="*70)
-        self.logger.info("FINAL STATISTICS")
+        self.logger.info("📊 FINAL STATISTICS")
         self.logger.info("="*70)
-        self.logger.info(f"Total Cycles: {self.cycle}")
-        self.logger.info(f"Total Clicks: {self.nameplate_reader.click_count}")
-        self.logger.info(f"Verified Mobs: {self.nameplate_reader.verified_mobs}")
-        self.logger.info(f"Filtered Pets: {self.nameplate_reader.filtered_pets}")
-        self.logger.info(f"Total Kills: {self.combat.total_kills}")
-        self.logger.info(f"Buffer Sequences: {self.buffer.total_buffs}")
-        self.logger.info(f"Early Stops: {self.combat.early_stops} (stopped rotation early due to death)")
-        self.logger.info(f"Skills Used: {self.combat.skills_used}")
-        self.logger.info(f"Avg Skills/Kill: {self.combat.skills_used/self.combat.total_kills:.1f}" if self.combat.total_kills > 0 else "N/A")
-        self.logger.info(f"Uptime: {uptime}s ({uptime//60}m {uptime%60}s)")
-        self.logger.info(f"Cache Hit Rate: {cache_stats['hit_rate']:.1f}%")
+
+        # Session Info
+        self.logger.info(f"📁 Log Directory: {self.log_dir}")
+        self.logger.info(f"⏱️  Uptime: {uptime}s ({uptime//60}m {uptime%60}s)")
+        self.logger.info(f"🔄 Total Cycles: {self.cycle}")
+        self.logger.info(f"📸 Screenshots Saved: {self.screenshot_counter}")
+        self.logger.info("")
+
+        # Detection Stats
+        self.logger.info("🔍 Detection:")
+        self.logger.info(f"   Total Clicks: {self.nameplate_reader.click_count}")
+        self.logger.info(f"   Verified Mobs: {self.nameplate_reader.verified_mobs}")
+        self.logger.info(f"   Filtered Pets: {self.nameplate_reader.filtered_pets}")
+        pet_rate = (self.nameplate_reader.filtered_pets / self.nameplate_reader.click_count * 100) if self.nameplate_reader.click_count > 0 else 0
+        self.logger.info(f"   Pet Filter Rate: {pet_rate:.1f}%")
+        self.logger.info("")
+
+        # Combat Stats
+        self.logger.info("⚔️  Combat:")
+        self.logger.info(f"   Total Kills: {self.combat.total_kills}")
+        self.logger.info(f"   Deaths: {self.death_detector.death_count}")
+        self.logger.info(f"   Early Stops: {self.combat.early_stops}")
+        self.logger.info(f"   Skills Used: {self.combat.skills_used}")
+        avg_skills = self.combat.skills_used / self.combat.total_kills if self.combat.total_kills > 0 else 0
+        self.logger.info(f"   Avg Skills/Kill: {avg_skills:.1f}")
+        kills_per_hour = (self.combat.total_kills / uptime * 3600) if uptime > 0 else 0
+        self.logger.info(f"   Kills/Hour: {kills_per_hour:.1f}")
+        self.logger.info("")
+
+        # System Stats
+        self.logger.info("⚙️  System:")
+        self.logger.info(f"   Buffer Sequences: {self.buffer.total_buffs}")
+        self.logger.info(f"   Cache Hit Rate: {cache_stats['hit_rate']:.1f}%")
+        self.logger.info(f"   Cache Size: {len(self.cache.cache)} entries")
+        self.logger.info("")
+
+        # Efficiency Metrics
+        if self.cycle > 0:
+            avg_cycle_time = uptime / self.cycle
+            self.logger.info("📈 Efficiency:")
+            self.logger.info(f"   Avg Cycle Time: {avg_cycle_time:.2f}s")
+            clicks_per_cycle = self.nameplate_reader.click_count / self.cycle
+            self.logger.info(f"   Avg Clicks/Cycle: {clicks_per_cycle:.1f}")
+            kills_per_cycle = self.combat.total_kills / self.cycle
+            self.logger.info(f"   Avg Kills/Cycle: {kills_per_cycle:.2f}")
+
         self.logger.info("="*70)
 
 

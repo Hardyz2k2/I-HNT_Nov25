@@ -13,7 +13,7 @@ import time
 import logging
 import os
 from datetime import datetime
-from mss import mss
+import dxcam
 import pyautogui
 import threading
 import traceback
@@ -195,16 +195,36 @@ def setup_logger():
 # ============================================================================
 
 class ScreenCapture:
-    """Fast screen capture"""
-    
+    """Real-time screen capture using DXcam (Desktop Duplication API)"""
+
     def __init__(self):
-        self.sct = mss()
-    
+        # Create DXcam camera for primary monitor
+        self.camera = dxcam.create()
+
+        # Convert Config.SCREEN_REGION to DXcam region format (left, top, right, bottom)
+        x, y, w, h = Config.SCREEN_REGION['left'], Config.SCREEN_REGION['top'], \
+                     Config.SCREEN_REGION['width'], Config.SCREEN_REGION['height']
+        self.region = (x, y, x + w, y + h)
+
+        # Start continuous capture for minimal latency (~1-5ms per frame)
+        self.camera.start(region=self.region, target_fps=60)
+
     def capture(self):
-        """Capture and return BGR image"""
-        screenshot = self.sct.grab(Config.SCREEN_REGION)
-        img = np.array(screenshot)
-        return cv2.cvtColor(img, cv2.COLOR_BGRA2BGR)
+        """Capture and return BGR image (real-time with ~1-5ms latency)"""
+        # Grab latest frame from video stream
+        frame = self.camera.get_latest_frame()
+
+        if frame is None:
+            # Fallback: grab single frame if stream not ready
+            frame = self.camera.grab(region=self.region)
+
+        # DXcam returns BGR format by default (no conversion needed)
+        return frame
+
+    def stop(self):
+        """Stop continuous capture"""
+        if self.camera:
+            self.camera.stop()
 
 
 # ============================================================================
@@ -1163,6 +1183,7 @@ class MobHunter:
                     pass  # Don't crash while trying to save error screenshot
         finally:
             self.overlay.stop()
+            self.screen_capture.stop()
             self.print_statistics()
     
     def run_cycle(self):

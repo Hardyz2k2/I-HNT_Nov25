@@ -218,7 +218,10 @@ class ScreenCapture:
             # Fallback: grab single frame if stream not ready
             frame = self.camera.grab(region=self.region)
 
-        # DXcam returns BGR format by default (no conversion needed)
+        # DXcam returns RGB format - convert to BGR for OpenCV
+        if frame is not None:
+            frame = cv2.cvtColor(frame, cv2.COLOR_RGB2BGR)
+
         return frame
 
     def stop(self):

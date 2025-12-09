@@ -1054,6 +1054,7 @@ class MobHunter:
         self.running = True
         self.paused = False
         self.start_time = time.time()
+        self.just_resumed = False  # Track if just resumed (skip death detection)
 
         # Start global keyboard listener
         self.keyboard_listener = start_keyboard_listener()
@@ -1124,6 +1125,11 @@ class MobHunter:
                         # Reset buffer timer and run sequence on resume
                         self.buffer.reset_timer()
                         self.buffer.run_buffer_sequence()
+                        # Set flag to skip death detection on next cycle
+                        self.just_resumed = True
+                        # Update overlay immediately to clear PAUSED text
+                        screenshot = self.screen_capture.capture()
+                        self.update_overlay(screenshot, [], 0, 0)
 
                 # Check for 'O' key toggle (global keyboard listener)
                 if check_overlay_toggle():
@@ -1175,25 +1181,30 @@ class MobHunter:
             # Capture
             screenshot = self.screen_capture.capture()
 
-            # Check for death FIRST (highest priority)
-            if self.death_detector.is_player_dead(screenshot):
-                self.logger.warning("⚠️  Player is dead - pausing hunting")
+            # Skip death detection if just resumed (avoid false positive from buff effects)
+            if self.just_resumed:
+                self.logger.debug("Skipping death detection (just resumed)")
+                self.just_resumed = False  # Reset flag
+            else:
+                # Check for death FIRST (highest priority)
+                if self.death_detector.is_player_dead(screenshot):
+                    self.logger.warning("⚠️  Player is dead - pausing hunting")
 
-                # Save death screenshot
-                if Config.SAVE_DEATH_SCREENSHOTS:
-                    self.save_screenshot(screenshot, "DEATH", f"death_{self.death_detector.death_count + 1}")
+                    # Save death screenshot
+                    if Config.SAVE_DEATH_SCREENSHOTS:
+                        self.save_screenshot(screenshot, "DEATH", f"death_{self.death_detector.death_count + 1}")
 
-                # Handle death and revive
-                if self.death_detector.handle_death():
-                    self.logger.info("🔄 Running buffer sequence after revive...")
-                    # Run buffer sequence after revival
-                    self.buffer.run_buffer_sequence()
-                    self.logger.info("✅ Ready to resume hunting!")
-                else:
-                    self.logger.error("❌ Revive failed - skipping cycle")
+                    # Handle death and revive
+                    if self.death_detector.handle_death():
+                        self.logger.info("🔄 Running buffer sequence after revive...")
+                        # Run buffer sequence after revival
+                        self.buffer.run_buffer_sequence()
+                        self.logger.info("✅ Ready to resume hunting!")
+                    else:
+                        self.logger.error("❌ Revive failed - skipping cycle")
 
-                # Skip this cycle after death handling
-                return
+                    # Skip this cycle after death handling
+                    return
 
             # Detect all floating names
             detections = self.detector.find_floating_names(screenshot)

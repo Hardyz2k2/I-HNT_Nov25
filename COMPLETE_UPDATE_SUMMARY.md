@@ -13,23 +13,7 @@ This document summarizes **ALL improvements** made to the MOB HUNTER bot during 
 
 ## Features Implemented
 
-### ✅ **1. Real-Time Screen Capture**
-**Problem:** Overlay boxes lag behind floating names (outdated positions)
-**Solution:** Replaced mss with DXcam for real-time GPU-accelerated capture
-
-**Details:**
-- 50x faster capture: 1-5ms vs 50-100ms
-- 60 FPS continuous video stream instead of periodic screenshots
-- Hardware-accelerated using Desktop Duplication API (DXGI)
-- Reduced CPU usage by ~5%
-- Overlay now updates in real-time with zero lag
-- See: [REALTIME_CAPTURE_UPDATE.md](REALTIME_CAPTURE_UPDATE.md)
-
-**Code Location:** [mob_hunter.py:197-227](mob_hunter.py#L197-L227)
-
----
-
-### ✅ **2. Fixed Global Hotkeys**
+### ✅ **1. Fixed Global Hotkeys**
 **Problem:** CapsLock and Tab keys didn't work when game window had focus
 **Solution:** Implemented pynput global keyboard listener
 
@@ -44,7 +28,7 @@ This document summarizes **ALL improvements** made to the MOB HUNTER bot during 
 
 ---
 
-### ✅ **3. Death Detection & Auto-Revive**
+### ✅ **2. Death Detection & Auto-Revive**
 **Problem:** Player dies and bot continues trying to hunt
 **Solution:** Automatic death popup detection with F4→0 revival sequence
 
@@ -60,7 +44,7 @@ This document summarizes **ALL improvements** made to the MOB HUNTER bot during 
 
 ---
 
-### ✅ **4. Fixed False Death Detection**
+### ✅ **3. Fixed False Death Detection**
 **Problem:** False positives and repeated detection after revive
 **Solution:** Stricter thresholds + 10-second cooldown system
 
@@ -76,7 +60,7 @@ This document summarizes **ALL improvements** made to the MOB HUNTER bot during 
 
 ---
 
-### ✅ **5. Improved Logging System**
+### ✅ **4. Improved Logging System**
 **Problem:** Basic logging, screenshots folder empty or full of useless images
 **Solution:** Enhanced statistics + selective screenshot capture
 
@@ -620,20 +604,18 @@ PERIODIC_SCREENSHOT_INTERVAL = 25  # Every 25 cycles
 
 **All requested features have been successfully implemented:**
 
-1. ✅ **Real-Time Screen Capture** - DXcam 60 FPS video stream (50x faster than mss)
-2. ✅ **Global Hotkeys** - CapsLock and 'O' key work regardless of window focus
-3. ✅ **Death Detection** - Automatic detection with 4 visual indicators
-4. ✅ **Auto-Revive** - F4→0 sequence with buffer restart
-5. ✅ **False Positive Prevention** - Strict thresholds + cooldown system
-6. ✅ **Enhanced Logging** - Categorized statistics with efficiency metrics
-7. ✅ **Selective Screenshots** - Event-based capture (deaths, errors)
+1. ✅ **Global Hotkeys** - CapsLock and 'O' key work regardless of window focus
+2. ✅ **Death Detection** - Automatic detection with 4 visual indicators
+3. ✅ **Auto-Revive** - F4→0 sequence with buffer restart
+4. ✅ **False Positive Prevention** - Strict thresholds + cooldown system
+5. ✅ **Enhanced Logging** - Categorized statistics with efficiency metrics
+6. ✅ **Selective Screenshots** - Event-based capture (deaths, errors)
 
-**The MOB HUNTER bot is now fully functional with real-time overlay, automatic recovery from death, global hotkey control, and comprehensive logging!** 🎮⚔️💀⚡✅
+**The MOB HUNTER bot is now fully functional with automatic recovery from death, global hotkey control, and comprehensive logging!** 🎮⚔️💀✅
 
 ---
 
 **For detailed information on each feature, see:**
-- [REALTIME_CAPTURE_UPDATE.md](REALTIME_CAPTURE_UPDATE.md)
 - [KEYBOARD_FIX_UPDATE.md](KEYBOARD_FIX_UPDATE.md)
 - [DEATH_DETECTION_UPDATE.md](DEATH_DETECTION_UPDATE.md)
 - [DEATH_DETECTION_FIX.md](DEATH_DETECTION_FIX.md)

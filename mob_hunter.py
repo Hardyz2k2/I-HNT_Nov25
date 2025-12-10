@@ -1364,10 +1364,13 @@ class MobHunter:
             if is_stuck:
                 # Execute recovery action
                 if self.stuck_detector.recover_from_stuck(scenario):
-                    self.logger.info("✅ Stuck recovery completed - resuming hunting")
-                    return  # Skip this cycle
+                    self.logger.info("✅ Stuck recovery completed - continuing with detection")
+                    # Don't return - continue with detection to check new location
+                    # Capture new screenshot after movement
+                    screenshot = self.screen_capture.capture()
                 else:
                     self.logger.error("❌ Stuck recovery failed")
+                    return  # Skip cycle if recovery failed
 
             # Detect all floating names
             detections = self.detector.find_floating_names(screenshot)

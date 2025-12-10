@@ -741,21 +741,27 @@ class StuckDetector:
     def __init__(self, logger):
         self.logger = logger
         self.last_action_time = time.time()
+        self.last_kill_time = time.time()  # Track last kill separately
         self.target_selected = False
         self.stuck_recoveries = 0
-        self.no_target_duration = 5.0  # Seconds without target before stuck
+        self.no_target_duration = 7.0  # Seconds since last kill before stuck (increased from 5.0)
         self.with_target_duration = 3.0  # Seconds with target but no progress
 
     def reset_timer(self):
         """Reset the action timer (called when progress is made)"""
         self.last_action_time = time.time()
 
+    def on_kill(self):
+        """Called when a mob is killed - resets the no-target timer"""
+        self.last_kill_time = time.time()
+        self.logger.debug(f"Stuck detector: Kill recorded, timer reset")
+
     def set_target_status(self, has_target):
         """Update whether a target is currently selected"""
         old_status = self.target_selected
         self.target_selected = has_target
 
-        # If status changed, reset timer
+        # If status changed, reset timer (only for Scenario 2)
         if old_status != has_target:
             self.reset_timer()
 
@@ -765,15 +771,19 @@ class StuckDetector:
 
         Returns:
             (is_stuck, scenario_type) where scenario_type is:
-            - 1: No target selected for too long
-            - 2: Target selected but stuck
+            - 1: No target selected for 7+ seconds since last kill
+            - 2: Target selected but stuck for 3+ seconds
             - None: Not stuck
         """
+        # Scenario 1: Use time since last kill
+        time_since_kill = time.time() - self.last_kill_time
+
+        # Scenario 2: Use time since last action
         elapsed = time.time() - self.last_action_time
 
-        # Scenario 1: No target selected for 5+ seconds
-        if not self.target_selected and elapsed >= self.no_target_duration:
-            self.logger.warning(f"⚠️  STUCK DETECTED (Scenario 1): No target for {elapsed:.1f}s")
+        # Scenario 1: No target selected for 7+ seconds since last kill
+        if not self.target_selected and time_since_kill >= self.no_target_duration:
+            self.logger.warning(f"⚠️  STUCK DETECTED (Scenario 1): No target for {time_since_kill:.1f}s since last kill")
             return True, 1
 
         # Scenario 2: Target selected but stuck for 3+ seconds
@@ -787,12 +797,12 @@ class StuckDetector:
         """
         Execute recovery action based on scenario
 
-        Scenario 1: No target selected
-        - Right-click and drag horizontally for 2 seconds
+        Scenario 1: No target selected (7s since last kill)
+        - Right-click and drag horizontally for 2 seconds (camera rotation)
 
-        Scenario 2: Target selected but stuck
-        - Right-click hold for 2 seconds
-        - One left-click at random location
+        Scenario 2: Target selected but stuck (3s no progress)
+        - Right-click hold for 2 seconds (character movement)
+        - One left-click at random location (doesn't need to be on a mob)
         """
         try:
             self.stuck_recoveries += 1
@@ -1430,6 +1440,8 @@ class MobHunter:
                     # Combat successful - reset stuck timer (progress made)
                     self.stuck_detector.reset_timer()
                     self.stuck_detector.set_target_status(False)
+                    # Record kill for Scenario 1 timer
+                    self.stuck_detector.on_kill()
             
             # Update overlay
             self.update_overlay(screenshot, detections, len(valid_targets), len(confirmed_mobs))

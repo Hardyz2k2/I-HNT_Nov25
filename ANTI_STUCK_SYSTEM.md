@@ -10,9 +10,9 @@
 Implements an intelligent anti-stuck system that detects when the character is stuck against walls or obstacles and automatically recovers using two different strategies.
 
 **Key Features:**
-- ✅ **Scenario 1:** No target for 5+ seconds → Camera rotation
+- ✅ **Scenario 1:** No target for 7+ seconds since last kill → Camera rotation
 - ✅ **Scenario 2:** Target selected but stuck 3+ seconds → Character movement
-- ✅ **Automatic timer tracking** with progress detection
+- ✅ **Automatic timer tracking** with kill-based reset
 - ✅ **Statistics tracking** for stuck recoveries
 - ✅ **Integrated into overlay** and final statistics
 
@@ -26,7 +26,7 @@ The character can get stuck in two main scenarios:
 
 ### **Scenario 1: Stuck Against Wall, No Target Selected**
 - Character is against a wall
-- No monsters selected for 5+ seconds
+- No monsters selected for 7+ seconds **since last kill**
 - Character can't move forward to find targets
 - **Solution:** Rotate camera to look around
 
@@ -49,10 +49,11 @@ class StuckDetector:
     def __init__(self, logger):
         self.logger = logger
         self.last_action_time = time.time()
+        self.last_kill_time = time.time()  # Track last kill separately
         self.target_selected = False
         self.stuck_recoveries = 0
-        self.no_target_duration = 5.0  # Seconds without target
-        self.with_target_duration = 3.0  # Seconds with target but stuck
+        self.no_target_duration = 7.0  # Seconds since last kill before stuck
+        self.with_target_duration = 3.0  # Seconds with target but no progress
 ```
 
 ---
@@ -64,15 +65,16 @@ class StuckDetector:
 The stuck detector tracks time since last progress:
 
 **Progress is defined as:**
-- Combat successfully completed
-- Target selection changed (selected → deselected or vice versa)
-- Mob was attacked
+- Combat successfully completed → **Resets kill timer (Scenario 1)**
+- Target selection changed → Resets action timer (Scenario 2)
+- Mob was killed → Records kill time
 
 **Timer Resets When:**
 ```python
-# 1. Combat completes
+# 1. Combat completes and mob killed
 if self.combat.engage(info):
-    self.stuck_detector.reset_timer()
+    self.stuck_detector.reset_timer()  # Scenario 2 timer
+    self.stuck_detector.on_kill()      # Scenario 1 timer (NEW)
 
 # 2. Target status changes
 self.stuck_detector.set_target_status(has_target)
@@ -93,15 +95,19 @@ def is_stuck(self):
 
     Returns:
         (is_stuck, scenario_type) where scenario_type is:
-        - 1: No target selected for too long
-        - 2: Target selected but stuck
+        - 1: No target selected for 7+ seconds since last kill
+        - 2: Target selected but stuck for 3+ seconds
         - None: Not stuck
     """
+    # Scenario 1: Use time since last kill
+    time_since_kill = time.time() - self.last_kill_time
+
+    # Scenario 2: Use time since last action
     elapsed = time.time() - self.last_action_time
 
-    # Scenario 1: No target selected for 5+ seconds
-    if not self.target_selected and elapsed >= self.no_target_duration:
-        self.logger.warning(f"⚠️  STUCK DETECTED (Scenario 1): No target for {elapsed:.1f}s")
+    # Scenario 1: No target selected for 7+ seconds since last kill
+    if not self.target_selected and time_since_kill >= self.no_target_duration:
+        self.logger.warning(f"⚠️  STUCK DETECTED (Scenario 1): No target for {time_since_kill:.1f}s since last kill")
         return True, 1
 
     # Scenario 2: Target selected but stuck for 3+ seconds
@@ -118,7 +124,7 @@ def is_stuck(self):
 
 ### **Scenario 1: Camera Rotation** ([mob_hunter.py:806-830](mob_hunter.py#L806-L830))
 
-**When:** No target selected for 5+ seconds
+**When:** No target selected for 7+ seconds since last kill
 
 **Action:**
 1. Press and hold right mouse button
@@ -163,6 +169,7 @@ pyautogui.mouseUp(button='right')
 - Character moves away from wall
 - Random movement creates new position
 - Can try attacking target from different angle
+- **Note:** Random click doesn't need to be on a mob - anywhere is fine
 
 ```python
 # Press and hold right mouse button for 2 seconds
@@ -235,13 +242,14 @@ if self.combat.engage(info):
 ### **Timing Thresholds:**
 
 ```python
-self.no_target_duration = 5.0  # Scenario 1 threshold
+self.no_target_duration = 7.0  # Scenario 1 threshold (since last kill)
 self.with_target_duration = 3.0  # Scenario 2 threshold
 ```
 
 **Adjustable:**
-- Increase thresholds if getting false positives
-- Decrease thresholds for faster recovery
+- Increase `no_target_duration` if triggering too early after kills
+- Decrease for faster stuck detection
+- `with_target_duration` controls Scenario 2 sensitivity
 
 ### **Recovery Actions:**
 
@@ -326,24 +334,27 @@ Action: Right-click drag (horizontal movement)
 ### **Scenario 1 Example:**
 
 ```
-Cycle #45: No floating names found
-  → stuck_detector.set_target_status(False)
-  → Timer: 0.0s
+Cycle #40: Combat successful, mob killed
+  → stuck_detector.on_kill()
+  → Kill timer: 0.0s
 
-Cycle #46: No floating names found
-  → Timer: 2.1s
+Cycle #41: No floating names found
+  → Kill timer: 2.1s
 
-Cycle #47: No floating names found
-  → Timer: 4.2s
+Cycle #42: No floating names found
+  → Kill timer: 4.2s
 
-Cycle #48: No floating names found
-  → Timer: 6.3s > 5.0s threshold
-  → ⚠️ STUCK DETECTED (Scenario 1)
+Cycle #43: No floating names found
+  → Kill timer: 6.3s
+
+Cycle #44: No floating names found
+  → Kill timer: 8.4s > 7.0s threshold
+  → ⚠️ STUCK DETECTED (Scenario 1): No target for 8.4s since last kill
   → 🔧 ANTI-STUCK RECOVERY
   → Right-click drag (camera rotation)
   → ✓ Recovery completed
 
-Cycle #49: Detected 3 floating names
+Cycle #45: Detected 3 floating names
   → Hunting resumes normally
 ```
 
@@ -404,11 +415,11 @@ Cycle #26: Character moved, can now reach mob
 
 ### **Too Many Scenario 1 Triggers:**
 
-**Problem:** Stuck recovery triggering too often when no targets
+**Problem:** Stuck recovery triggering too soon after killing mobs
 
 **Solution:** Increase threshold
 ```python
-self.no_target_duration = 10.0  # From 5.0 to 10.0
+self.no_target_duration = 10.0  # From 7.0 to 10.0
 ```
 
 ---
@@ -430,8 +441,8 @@ self.with_target_duration = 5.0  # From 3.0 to 5.0
 
 **Solution:** Decrease thresholds
 ```python
-self.no_target_duration = 3.0  # Faster response
-self.with_target_duration = 2.0  # Faster response
+self.no_target_duration = 5.0  # Faster response (from 7.0)
+self.with_target_duration = 2.0  # Faster response (from 3.0)
 ```
 
 ---
@@ -459,14 +470,16 @@ self.with_target_duration = 2.0  # Faster response
 ### **Timer Management:**
 
 **State Tracking:**
-- `last_action_time` - Timestamp of last progress
+- `last_action_time` - Timestamp of last action (Scenario 2 timer)
+- `last_kill_time` - Timestamp of last kill (Scenario 1 timer)
 - `target_selected` - Boolean flag for current target status
 - `stuck_recoveries` - Counter for statistics
 
 **Methods:**
-- `reset_timer()` - Resets to current time (progress made)
-- `set_target_status(bool)` - Updates target status, resets if changed
-- `is_stuck()` - Checks elapsed time against thresholds
+- `reset_timer()` - Resets action timer (Scenario 2)
+- `on_kill()` - Resets kill timer (Scenario 1)
+- `set_target_status(bool)` - Updates target status, resets action timer if changed
+- `is_stuck()` - Checks both timers against thresholds
 - `recover_from_stuck(scenario)` - Executes recovery action
 
 ---
@@ -508,10 +521,15 @@ self.with_target_duration = 2.0  # Faster response
 
 The anti-stuck system provides **automatic recovery** from common stuck situations in Silkroad Online:
 
-1. ✅ **Scenario 1:** No targets (5s) → Camera rotation
+1. ✅ **Scenario 1:** No targets (7s since last kill) → Camera rotation
 2. ✅ **Scenario 2:** Target but stuck (3s) → Character movement
-3. ✅ **Smart timer tracking** with progress detection
+3. ✅ **Smart timer tracking** with kill-based reset
 4. ✅ **Statistics and logging** for monitoring
 5. ✅ **Configurable thresholds** for tuning
+
+**Improvements:**
+- Timer now starts from **last kill** (more accurate)
+- Increased threshold to **7 seconds** (less false positives)
+- Random click doesn't need to target a mob
 
 **The bot can now recover from stuck situations automatically and continue hunting without manual intervention!** 🔧✅

@@ -1427,20 +1427,23 @@ class MobHunter:
                 if info is None:
                     self.logger.info(f"    ✗ No valid nameplate or is a pet")
                     continue
-                
+
                 if info.get('is_pet'):
                     self.logger.info(f"    ✗ Filtered: PET (no class icon)")
                     continue
-                
+
                 if not info.get('class'):
                     self.logger.info(f"    ✗ No class detected")
                     continue
-                
+
                 # Check if alive
                 if not info.get('is_alive'):
                     self.logger.info(f"    ✗ Mob already DEAD")
+                    # Mark as target selected even for dead/unreachable mobs
+                    # This allows Scenario 2 to trigger if repeatedly clicking same unreachable mob
+                    self.stuck_detector.set_target_status(True)
                     continue
-                
+
                 # Valid mob!
                 self.logger.info(f"    ✓ {info['class']} | Status: ALIVE")
                 confirmed_mobs.append(info)
@@ -1455,6 +1458,11 @@ class MobHunter:
                     self.stuck_detector.set_target_status(False)
                     # Record kill for Scenario 1 timer
                     self.stuck_detector.on_kill()
+                else:
+                    # Combat failed - mob might be unreachable (stuck scenario)
+                    # Keep target_selected=True so Scenario 2 can trigger
+                    self.logger.debug(f"    Combat failed - mob may be unreachable")
+                    pass
             
             # Update overlay
             self.update_overlay(screenshot, detections, len(valid_targets), len(confirmed_mobs))

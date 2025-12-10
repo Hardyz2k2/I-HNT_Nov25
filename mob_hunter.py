@@ -732,6 +732,138 @@ class DeathDetector:
 
 
 # ============================================================================
+# ANTI-STUCK SYSTEM
+# ============================================================================
+
+class StuckDetector:
+    """Detect and recover from stuck situations"""
+
+    def __init__(self, logger):
+        self.logger = logger
+        self.last_action_time = time.time()
+        self.target_selected = False
+        self.stuck_recoveries = 0
+        self.no_target_duration = 5.0  # Seconds without target before stuck
+        self.with_target_duration = 3.0  # Seconds with target but no progress
+
+    def reset_timer(self):
+        """Reset the action timer (called when progress is made)"""
+        self.last_action_time = time.time()
+
+    def set_target_status(self, has_target):
+        """Update whether a target is currently selected"""
+        old_status = self.target_selected
+        self.target_selected = has_target
+
+        # If status changed, reset timer
+        if old_status != has_target:
+            self.reset_timer()
+
+    def is_stuck(self):
+        """
+        Check if character is stuck
+
+        Returns:
+            (is_stuck, scenario_type) where scenario_type is:
+            - 1: No target selected for too long
+            - 2: Target selected but stuck
+            - None: Not stuck
+        """
+        elapsed = time.time() - self.last_action_time
+
+        # Scenario 1: No target selected for 5+ seconds
+        if not self.target_selected and elapsed >= self.no_target_duration:
+            self.logger.warning(f"⚠️  STUCK DETECTED (Scenario 1): No target for {elapsed:.1f}s")
+            return True, 1
+
+        # Scenario 2: Target selected but stuck for 3+ seconds
+        if self.target_selected and elapsed >= self.with_target_duration:
+            self.logger.warning(f"⚠️  STUCK DETECTED (Scenario 2): Target selected but stuck for {elapsed:.1f}s")
+            return True, 2
+
+        return False, None
+
+    def recover_from_stuck(self, scenario):
+        """
+        Execute recovery action based on scenario
+
+        Scenario 1: No target selected
+        - Right-click and drag horizontally for 2 seconds
+
+        Scenario 2: Target selected but stuck
+        - Right-click hold for 2 seconds
+        - One left-click at random location
+        """
+        try:
+            self.stuck_recoveries += 1
+
+            self.logger.info("\n" + "="*70)
+            self.logger.info("🔧 ANTI-STUCK RECOVERY ACTIVATED")
+            self.logger.info("="*70)
+            self.logger.info(f"Scenario: {scenario}")
+            self.logger.info(f"Total recoveries: {self.stuck_recoveries}")
+
+            if scenario == 1:
+                # Scenario 1: Right-click and drag horizontally
+                self.logger.info("Action: Right-click drag (horizontal movement)")
+
+                # Get center of screen for starting point
+                center_x = Config.SCREEN_WIDTH // 2
+                center_y = Config.SCREEN_HEIGHT // 2
+
+                # Press right mouse button
+                pyautogui.mouseDown(button='right')
+
+                # Drag horizontally (left to right) over 2 seconds
+                drag_distance = 300  # pixels
+                steps = 20
+                step_delay = 2.0 / steps
+
+                for i in range(steps):
+                    offset = int((drag_distance / steps) * i)
+                    pyautogui.moveTo(center_x - drag_distance//2 + offset, center_y)
+                    time.sleep(step_delay)
+
+                # Release right mouse button
+                pyautogui.mouseUp(button='right')
+
+                self.logger.info("✓ Horizontal drag completed")
+
+            elif scenario == 2:
+                # Scenario 2: Right-click hold + random left-click
+                self.logger.info("Action: Right-click hold + random left-click")
+
+                # Press and hold right mouse button for 2 seconds
+                pyautogui.mouseDown(button='right')
+                self.logger.info("  Holding right-click for 2s...")
+                time.sleep(2.0)
+                pyautogui.mouseUp(button='right')
+
+                # Random left-click location (avoid edges)
+                import random
+                margin = 100
+                random_x = random.randint(margin, Config.SCREEN_WIDTH - margin)
+                random_y = random.randint(margin, Config.SCREEN_HEIGHT - margin)
+
+                self.logger.info(f"  Left-clicking random location: ({random_x}, {random_y})")
+                pyautogui.click(random_x, random_y)
+
+                self.logger.info("✓ Recovery sequence completed")
+
+            self.logger.info("="*70 + "\n")
+
+            # Reset timer after recovery
+            self.reset_timer()
+            self.target_selected = False
+
+            return True
+
+        except Exception as e:
+            self.logger.error(f"Stuck recovery error: {e}")
+            return False
+
+
+# ============================================================================
 # COMBAT SYSTEM WITH HEALTH MONITORING
 # ============================================================================
 
@@ -1048,6 +1180,7 @@ class MobHunter:
         self.combat = CombatSystem(self.logger, self.nameplate_reader)
         self.buffer = BufferSystem(self.logger)
         self.death_detector = DeathDetector(self.logger)
+        self.stuck_detector = StuckDetector(self.logger)
         self.overlay = OverlayWindow(self.logger)
 
         self.cycle = 0
@@ -1206,12 +1339,24 @@ class MobHunter:
                     # Skip this cycle after death handling
                     return
 
+            # Check for stuck condition
+            is_stuck, scenario = self.stuck_detector.is_stuck()
+            if is_stuck:
+                # Execute recovery action
+                if self.stuck_detector.recover_from_stuck(scenario):
+                    self.logger.info("✅ Stuck recovery completed - resuming hunting")
+                    return  # Skip this cycle
+                else:
+                    self.logger.error("❌ Stuck recovery failed")
+
             # Detect all floating names
             detections = self.detector.find_floating_names(screenshot)
             self.logger.info(f"Detected: {len(detections)} floating names")
             
             if not detections:
                 self.logger.info("→ No floating names found")
+                # Update stuck detector: no targets available
+                self.stuck_detector.set_target_status(False)
                 # Update overlay even with no detections
                 self.update_overlay(screenshot, [], 0, 0)
                 return
@@ -1276,9 +1421,15 @@ class MobHunter:
                 # Valid mob!
                 self.logger.info(f"    ✓ {info['class']} | Status: ALIVE")
                 confirmed_mobs.append(info)
-                
+
+                # Update stuck detector: target selected
+                self.stuck_detector.set_target_status(True)
+
                 # Attack immediately (closest first strategy)
-                self.combat.engage(info)
+                if self.combat.engage(info):
+                    # Combat successful - reset stuck timer (progress made)
+                    self.stuck_detector.reset_timer()
+                    self.stuck_detector.set_target_status(False)
             
             # Update overlay
             self.update_overlay(screenshot, detections, len(valid_targets), len(confirmed_mobs))
@@ -1313,6 +1464,7 @@ class MobHunter:
             'Pets': self.nameplate_reader.filtered_pets,
             'Kills': self.combat.total_kills,
             'Deaths': self.death_detector.death_count,
+            'Stuck_Recoveries': self.stuck_detector.stuck_recoveries,
             'Early_Stops': self.combat.early_stops,
             'Cache': f"{len(self.cache.cache)}",
             'Next_Buffer': f"{int(self.buffer.get_time_until_next())}s",
@@ -1360,6 +1512,7 @@ class MobHunter:
         # System Stats
         self.logger.info("⚙️  System:")
         self.logger.info(f"   Buffer Sequences: {self.buffer.total_buffs}")
+        self.logger.info(f"   Stuck Recoveries: {self.stuck_detector.stuck_recoveries}")
         self.logger.info(f"   Cache Hit Rate: {cache_stats['hit_rate']:.1f}%")
         self.logger.info(f"   Cache Size: {len(self.cache.cache)} entries")
         self.logger.info("")

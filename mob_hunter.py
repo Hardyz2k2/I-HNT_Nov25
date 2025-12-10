@@ -603,6 +603,7 @@ class DeathDetector:
         self.logger = logger
         self.death_count = 0
         self.last_death_time = 0
+        self.buffer_system = None  # Will be set by MobHunter
 
     def is_player_dead(self, screenshot):
         """
@@ -669,14 +670,23 @@ class DeathDetector:
 
             # Check cooldown - don't detect death if we just revived
             time_since_last_death = time.time() - self.last_death_time if self.last_death_time > 0 else 999
-            in_cooldown = time_since_last_death < Config.DEATH_COOLDOWN
+            in_death_cooldown = time_since_last_death < Config.DEATH_COOLDOWN
 
-            if true_count >= 3 and not in_cooldown:
+            # Check buffer cooldown - don't detect death right after buffer (buff effects can trigger false positive)
+            in_buffer_cooldown = False
+            if self.buffer_system and self.buffer_system.last_buffer_time > 0:
+                time_since_buffer = time.time() - self.buffer_system.last_buffer_time
+                in_buffer_cooldown = time_since_buffer < 5.0  # Skip death detection for 5 seconds after buffer
+
+            if true_count >= 3 and not in_death_cooldown and not in_buffer_cooldown:
                 self.logger.warning("💀 DEATH DETECTED - Player is dead!")
                 self.logger.warning(f"   Indicators: Gold={has_gold_border}, Dark={has_dark_bg}, Brown={has_brown_frame}, Text={has_white_text}")
                 return True
-            elif true_count >= 3 and in_cooldown:
-                self.logger.debug(f"Death popup detected but in cooldown ({time_since_last_death:.1f}s since last death)")
+            elif true_count >= 3 and in_death_cooldown:
+                self.logger.debug(f"Death popup detected but in death cooldown ({time_since_last_death:.1f}s since last death)")
+            elif true_count >= 3 and in_buffer_cooldown:
+                time_since_buffer = time.time() - self.buffer_system.last_buffer_time
+                self.logger.debug(f"Death popup detected but in buffer cooldown ({time_since_buffer:.1f}s since buffer)")
 
             return False
 
@@ -1190,6 +1200,7 @@ class MobHunter:
         self.combat = CombatSystem(self.logger, self.nameplate_reader)
         self.buffer = BufferSystem(self.logger)
         self.death_detector = DeathDetector(self.logger)
+        self.death_detector.buffer_system = self.buffer  # Link buffer system for cooldown checking
         self.stuck_detector = StuckDetector(self.logger)
         self.overlay = OverlayWindow(self.logger)
 

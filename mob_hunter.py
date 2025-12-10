@@ -808,11 +808,12 @@ class StuckDetector:
         Execute recovery action based on scenario
 
         Scenario 1: No target selected (7s since last kill)
-        - Right-click and drag horizontally for 2 seconds (camera rotation)
+        - Right-click hold for 1 second (changes camera angle)
+        - Left-click random location (moves character to new position)
 
         Scenario 2: Target selected but stuck (3s no progress)
         - Right-click hold for 2 seconds (character movement)
-        - One left-click at random location (doesn't need to be on a mob)
+        - Left-click random location (moves character away from obstacle)
         """
         try:
             self.stuck_recoveries += 1
@@ -824,30 +825,28 @@ class StuckDetector:
             self.logger.info(f"Total recoveries: {self.stuck_recoveries}")
 
             if scenario == 1:
-                # Scenario 1: Right-click and drag horizontally
-                self.logger.info("Action: Right-click drag (horizontal movement)")
+                # Scenario 1: Right-click hold (1s) + random left-click (move character)
+                self.logger.info("Action: Right-click hold (1s) + random left-click")
 
-                # Get center of screen for starting point
-                center_x = Config.SCREEN_WIDTH // 2
-                center_y = Config.SCREEN_HEIGHT // 2
-
-                # Press right mouse button
+                # Press and hold right mouse button for 1 second (changes camera angle)
                 pyautogui.mouseDown(button='right')
-
-                # Drag horizontally (left to right) over 2 seconds
-                drag_distance = 300  # pixels
-                steps = 20
-                step_delay = 2.0 / steps
-
-                for i in range(steps):
-                    offset = int((drag_distance / steps) * i)
-                    pyautogui.moveTo(center_x - drag_distance//2 + offset, center_y)
-                    time.sleep(step_delay)
-
-                # Release right mouse button
+                self.logger.info("  Holding right-click for 1s...")
+                time.sleep(1.0)
                 pyautogui.mouseUp(button='right')
 
-                self.logger.info("✓ Horizontal drag completed")
+                # Random left-click location to move character (avoid edges)
+                import random
+                margin = 100
+                random_x = random.randint(margin, Config.SCREEN_WIDTH - margin)
+                random_y = random.randint(margin, Config.SCREEN_HEIGHT - margin)
+
+                self.logger.info(f"  Left-clicking random location: ({random_x}, {random_y})")
+                pyautogui.click(random_x, random_y)
+
+                # Wait for character to start moving
+                time.sleep(2.0)
+
+                self.logger.info("✓ Camera rotation + character movement completed")
 
             elif scenario == 2:
                 # Scenario 2: Right-click hold + random left-click

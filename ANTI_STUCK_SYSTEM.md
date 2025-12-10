@@ -10,7 +10,7 @@
 Implements an intelligent anti-stuck system that detects when the character is stuck against walls or obstacles and automatically recovers using two different strategies.
 
 **Key Features:**
-- ✅ **Scenario 1:** No target for 7+ seconds since last kill → Camera rotation
+- ✅ **Scenario 1:** No target for 7+ seconds since last kill → Camera angle change + Character movement
 - ✅ **Scenario 2:** Target selected but stuck 3+ seconds → Character movement
 - ✅ **Automatic timer tracking** with kill-based reset
 - ✅ **Statistics tracking** for stuck recoveries
@@ -25,10 +25,10 @@ Implements an intelligent anti-stuck system that detects when the character is s
 The character can get stuck in two main scenarios:
 
 ### **Scenario 1: Stuck Against Wall, No Target Selected**
-- Character is against a wall
+- Character is against a wall or in empty area
 - No monsters selected for 7+ seconds **since last kill**
-- Character can't move forward to find targets
-- **Solution:** Rotate camera to look around
+- Character can't find targets in current location
+- **Solution:** Change camera angle (1s) + Move to random location
 
 ### **Scenario 2: Stuck Against Wall, Target Selected**
 - Character is against a wall
@@ -122,36 +122,37 @@ def is_stuck(self):
 
 ## Recovery Actions
 
-### **Scenario 1: Camera Rotation** ([mob_hunter.py:806-830](mob_hunter.py#L806-L830))
+### **Scenario 1: Camera Angle Change + Character Movement** ([mob_hunter.py:826-848](mob_hunter.py#L826-L848))
 
 **When:** No target selected for 7+ seconds since last kill
 
 **Action:**
-1. Press and hold right mouse button
-2. Drag horizontally (left to right) over 2 seconds
-3. Release right mouse button
+1. Press and hold right mouse button for 1 second
+2. Release right mouse button (camera angle changed)
+3. Left-click at random location on screen
+4. Wait 2 seconds for character to start moving
 
 **Effect:**
-- Rotates camera view
-- Character looks around for new targets
-- Can see monsters that were off-screen
+- Changes camera viewing angle
+- Character moves to new random location
+- Explores different area to find mobs
+- Avoids staying stuck in same position
 
 ```python
-# Press right mouse button
+# Press and hold right mouse button for 1 second (changes camera angle)
 pyautogui.mouseDown(button='right')
-
-# Drag horizontally (left to right) over 2 seconds
-drag_distance = 300  # pixels
-steps = 20
-step_delay = 2.0 / steps
-
-for i in range(steps):
-    offset = int((drag_distance / steps) * i)
-    pyautogui.moveTo(center_x - drag_distance//2 + offset, center_y)
-    time.sleep(step_delay)
-
-# Release right mouse button
+time.sleep(1.0)
 pyautogui.mouseUp(button='right')
+
+# Random left-click to move character
+import random
+margin = 100
+random_x = random.randint(margin, Config.SCREEN_WIDTH - margin)
+random_y = random.randint(margin, Config.SCREEN_HEIGHT - margin)
+pyautogui.click(random_x, random_y)
+
+# Wait for character to start moving
+time.sleep(2.0)
 ```
 
 ---
@@ -255,9 +256,9 @@ self.with_target_duration = 3.0  # Scenario 2 threshold
 
 **Scenario 1 Settings:**
 ```python
-drag_distance = 300  # pixels to drag
-steps = 20  # smoothness of drag
-step_delay = 2.0 / steps  # total time = 2 seconds
+right_click_duration = 1.0  # seconds to hold right-click (camera angle)
+movement_wait = 2.0  # seconds to wait for character movement
+margin = 100  # pixels from screen edge for random click
 ```
 
 **Scenario 2 Settings:**
@@ -351,10 +352,13 @@ Cycle #44: No floating names found
   → Kill timer: 8.4s > 7.0s threshold
   → ⚠️ STUCK DETECTED (Scenario 1): No target for 8.4s since last kill
   → 🔧 ANTI-STUCK RECOVERY
-  → Right-click drag (camera rotation)
+  → Right-click hold 1s (camera angle change)
+  → Left-click random location (character moves)
+  → Wait 2s for movement
   → ✓ Recovery completed
 
-Cycle #45: Detected 3 floating names
+Cycle #45: Character in new location
+  → Detected 3 floating names
   → Hunting resumes normally
 ```
 
@@ -452,9 +456,11 @@ self.with_target_duration = 2.0  # Faster response (from 3.0)
 **Problem:** Stuck recovery executes but character still stuck
 
 **Solutions:**
-1. **Scenario 1:** Increase drag distance
+1. **Scenario 1:** Increase right-click duration or movement wait time
    ```python
-   drag_distance = 500  # From 300 to 500
+   time.sleep(2.0)  # Right-click from 1.0 to 2.0
+   time.sleep(3.0)  # Movement wait from 2.0 to 3.0
+   margin = 200  # Random click range from 100 to 200
    ```
 
 2. **Scenario 2:** Increase hold time or random click range
@@ -521,15 +527,18 @@ self.with_target_duration = 2.0  # Faster response (from 3.0)
 
 The anti-stuck system provides **automatic recovery** from common stuck situations in Silkroad Online:
 
-1. ✅ **Scenario 1:** No targets (7s since last kill) → Camera rotation
+1. ✅ **Scenario 1:** No targets (7s since last kill) → Camera angle change + Character movement
 2. ✅ **Scenario 2:** Target but stuck (3s) → Character movement
 3. ✅ **Smart timer tracking** with kill-based reset
 4. ✅ **Statistics and logging** for monitoring
 5. ✅ **Configurable thresholds** for tuning
 
-**Improvements:**
-- Timer now starts from **last kill** (more accurate)
-- Increased threshold to **7 seconds** (less false positives)
-- Random click doesn't need to target a mob
+**Latest Improvements:**
+- **Scenario 1 now MOVES character** instead of just rotating camera
+- Right-click hold 1s (changes angle) + random left-click (moves position)
+- Character explores new locations to find mobs
+- Prevents getting stuck in same spot repeatedly
+- Timer starts from **last kill** (more accurate)
+- Threshold **7 seconds** (prevents false positives)
 
-**The bot can now recover from stuck situations automatically and continue hunting without manual intervention!** 🔧✅
+**The bot can now recover from stuck situations by moving to new locations and continue hunting without manual intervention!** 🔧✅

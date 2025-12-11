@@ -1244,6 +1244,42 @@ class OverlayWindow:
                         cv2.line(display, (center_x, center_y - 30), (center_x, center_y + 30), (0, 255, 255), 2)
                         cv2.circle(display, (center_x, center_y), 100, (0, 255, 255), 1)
 
+                        # Draw player health bar region (top-left nameplate)
+                        player_hb_x, player_hb_y, player_hb_w, player_hb_h = Config.PLAYER_HEALTH_BAR_REGION
+                        cv2.rectangle(display,
+                                    (player_hb_x, player_hb_y),
+                                    (player_hb_x + player_hb_w, player_hb_y + player_hb_h),
+                                    (0, 255, 0), 2)  # Green outline for player
+                        cv2.putText(display, "PLAYER HP", (player_hb_x, player_hb_y - 5),
+                                   cv2.FONT_HERSHEY_SIMPLEX, 0.4, (0, 255, 0), 1)
+
+                        # Draw mob health bar region (within nameplate at top-center)
+                        # Nameplate region
+                        nameplate_x, nameplate_y, nameplate_w, nameplate_h = Config.NAMEPLATE_REGION
+                        cv2.rectangle(display,
+                                    (nameplate_x, nameplate_y),
+                                    (nameplate_x + nameplate_w, nameplate_y + nameplate_h),
+                                    (100, 100, 100), 1)  # Gray outline for full nameplate
+
+                        # Health bar sub-region within nameplate
+                        # Using the coordinates from get_health_pixels()
+                        health_bar_y_start = 55
+                        health_bar_y_end = 67
+                        health_bar_x_start = 100
+                        health_bar_x_end = 500
+
+                        mob_hb_x = nameplate_x + health_bar_x_start
+                        mob_hb_y = nameplate_y + health_bar_y_start
+                        mob_hb_w = health_bar_x_end - health_bar_x_start
+                        mob_hb_h = health_bar_y_end - health_bar_y_start
+
+                        cv2.rectangle(display,
+                                    (mob_hb_x, mob_hb_y),
+                                    (mob_hb_x + mob_hb_w, mob_hb_y + mob_hb_h),
+                                    (0, 255, 255), 2)  # Cyan outline for mob health bar
+                        cv2.putText(display, "MOB HP", (mob_hb_x, mob_hb_y - 5),
+                                   cv2.FONT_HERSHEY_SIMPLEX, 0.4, (0, 255, 255), 1)
+
                         # Draw detections with distance indicators
                         for i, det in enumerate(self.detections, 1):
                             x, y, w, h = det['region']

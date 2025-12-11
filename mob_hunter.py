@@ -750,7 +750,7 @@ class StuckDetector:
         self.consecutive_recoveries = 0  # Track recoveries since last kill
         self.in_recovery_mode = False  # Flag to indicate we're actively trying to unstuck
         self.no_target_duration = 7.0  # Seconds since last kill before stuck (increased from 5.0)
-        self.with_target_duration = 3.0  # Seconds with target but no progress
+        self.with_target_duration = 5.0  # Seconds with target but no progress (no kill)
         self.recovery_retry_delay = 2.0  # Seconds between recovery attempts
 
     def reset_timer(self):
@@ -758,8 +758,9 @@ class StuckDetector:
         self.last_action_time = time.time()
 
     def on_kill(self):
-        """Called when a mob is killed - resets the no-target timer and clears recovery mode"""
+        """Called when a mob is killed - resets timers and clears recovery mode"""
         self.last_kill_time = time.time()
+        self.last_action_time = time.time()  # Reset action timer on kill (progress made)
 
         # Log if we were in recovery mode
         if self.consecutive_recoveries > 0:
@@ -769,7 +770,7 @@ class StuckDetector:
         self.consecutive_recoveries = 0
         self.in_recovery_mode = False
 
-        self.logger.debug(f"Stuck detector: Kill recorded, timer reset")
+        self.logger.debug(f"Stuck detector: Kill recorded, timers reset")
 
     def set_target_status(self, has_target):
         """Update whether a target is currently selected"""
@@ -787,7 +788,7 @@ class StuckDetector:
         Returns:
             (is_stuck, scenario_type) where scenario_type is:
             - 1: No target selected for 7+ seconds since last kill
-            - 2: Target selected but stuck for 3+ seconds
+            - 2: Target selected but stuck for 5+ seconds (no kill)
             - None: Not stuck
         """
         # If in recovery mode, continue recovery until kill
@@ -811,9 +812,9 @@ class StuckDetector:
             self.in_recovery_mode = True
             return True, 1
 
-        # Scenario 2: Target selected but stuck for 3+ seconds
+        # Scenario 2: Target selected but stuck for 5+ seconds (no kill)
         if self.target_selected and elapsed >= self.with_target_duration:
-            self.logger.warning(f"⚠️  STUCK DETECTED (Scenario 2): Target selected but stuck for {elapsed:.1f}s")
+            self.logger.warning(f"⚠️  STUCK DETECTED (Scenario 2): Target selected but no kill for {elapsed:.1f}s")
             self.in_recovery_mode = True
             return True, 2
 
@@ -832,7 +833,7 @@ class StuckDetector:
         - 50% chance of camera angle change between steps
         - Movement distance escalates with consecutive attempts
 
-        Scenario 2: Target selected but stuck (3s no progress)
+        Scenario 2: Target selected but stuck (5s no kill)
         - Turn around (1.3-2.5s random rotation)
         - Move forward (escalated distance based on attempts)
         - Camera angle change (random ±400px)

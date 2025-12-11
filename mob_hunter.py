@@ -153,8 +153,8 @@ class Config:
     # Screenshot settings (selective capture for debugging)
     SAVE_DEATH_SCREENSHOTS = True      # Capture screenshot when death detected
     SAVE_ERROR_SCREENSHOTS = True      # Capture screenshot on errors
-    SAVE_PERIODIC_SCREENSHOTS = False  # Periodic screenshots (every N cycles)
-    PERIODIC_SCREENSHOT_INTERVAL = 50  # Save every 50 cycles if enabled
+    SAVE_PERIODIC_SCREENSHOTS = True   # Periodic screenshots (every N cycles) - ENABLED FOR DEBUGGING
+    PERIODIC_SCREENSHOT_INTERVAL = 3   # Save every 3 cycles for debugging
 
 
 # ============================================================================
@@ -500,13 +500,13 @@ class NameplateReader:
 
             # Extract ONLY the health bar sub-region within nameplate
             # Nameplate is 600x100, health bar is approximately at:
-            # - Y offset: 70-82 pixels from top (row where health bar is)
-            # - X offset: 50-550 pixels (horizontal span of health bar)
+            # - Y offset: 55-67 pixels from top (row where health bar is)
+            # - X offset: 100-500 pixels (horizontal span of health bar)
             # This isolates the health bar and excludes class icons, name text, borders
-            health_bar_y_start = 70
-            health_bar_y_end = 82
-            health_bar_x_start = 50
-            health_bar_x_end = 550
+            health_bar_y_start = 55
+            health_bar_y_end = 67
+            health_bar_x_start = 100
+            health_bar_x_end = 500
 
             health_bar = nameplate[health_bar_y_start:health_bar_y_end,
                                    health_bar_x_start:health_bar_x_end]

@@ -1406,6 +1406,24 @@ class MobHunter:
         # Start overlay
         self.overlay.start()
 
+        # Check if player is dead BEFORE initial buffer
+        self.logger.info("\n🔍 Checking initial player status...")
+        initial_screenshot = self.screen_capture.capture()
+        if self.death_detector.is_player_dead(initial_screenshot):
+            self.logger.warning("⚠️  Player is dead at startup - reviving first...")
+
+            # Save death screenshot
+            if Config.SAVE_DEATH_SCREENSHOTS:
+                self.save_screenshot(initial_screenshot, "DEATH", f"startup_death")
+
+            # Handle death and revive
+            if self.death_detector.handle_death():
+                self.logger.info("✅ Player revived successfully!")
+            else:
+                self.logger.error("❌ Revive failed at startup")
+        else:
+            self.logger.info("✅ Player is alive - starting bot...")
+
         # Run initial buffer sequence
         self.logger.info("\nRunning INITIAL buffer sequence...")
         self.buffer.run_buffer_sequence()

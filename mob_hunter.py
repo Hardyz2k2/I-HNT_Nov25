@@ -785,7 +785,7 @@ class StuckDetector:
         self.consecutive_recoveries = 0  # Track recoveries since last kill
         self.in_recovery_mode = False  # Flag to indicate we're actively trying to unstuck
         self.no_target_duration = 7.0  # Seconds since last kill before stuck (increased from 5.0)
-        self.with_target_duration = 5.0  # Seconds with target but no progress (no kill)
+        self.with_target_duration = 20.0  # Seconds with target but no progress (increased from 5s to give bot time to try multiple mobs)
         self.recovery_retry_delay = 2.0  # Seconds between recovery attempts
 
     def reset_timer(self):
@@ -847,7 +847,7 @@ class StuckDetector:
             self.in_recovery_mode = True
             return True, 1
 
-        # Scenario 2: Target selected but stuck for 5+ seconds (no kill)
+        # Scenario 2: Target selected but stuck for 20+ seconds (no kill)
         if self.target_selected and elapsed >= self.with_target_duration:
             self.logger.warning(f"⚠️  STUCK DETECTED (Scenario 2): Target selected but no kill for {elapsed:.1f}s")
             self.in_recovery_mode = True
@@ -868,7 +868,7 @@ class StuckDetector:
         - 50% chance of camera angle change between steps
         - Movement distance escalates with consecutive attempts
 
-        Scenario 2: Target selected but stuck (5s no kill)
+        Scenario 2: Target selected but stuck (20s no kill)
         - Turn around (1.3-2.5s random rotation)
         - Move forward (escalated distance based on attempts)
         - Camera angle change (random ±400px)
@@ -1693,10 +1693,11 @@ class MobHunter:
                     # Record kill for Scenario 1 timer
                     self.stuck_detector.on_kill()
                 else:
-                    # Combat failed - mob might be unreachable (stuck scenario)
-                    # Keep target_selected=True so Scenario 2 can trigger
-                    self.logger.debug(f"    Combat failed - mob may be unreachable")
-                    pass
+                    # Combat failed - mob might be unreachable
+                    # Reset action timer to give next mob a fresh chance
+                    # Only trigger stuck if we fail on ALL mobs for 20+ seconds
+                    self.stuck_detector.reset_timer()
+                    self.logger.debug(f"    Combat failed - trying next mob (timer reset)")
             
             # Update overlay
             self.update_overlay(screenshot, detections, len(valid_targets), len(confirmed_mobs))

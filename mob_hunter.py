@@ -615,6 +615,7 @@ class DeathDetector:
         self.death_count = 0
         self.last_death_time = 0
         self.buffer_system = None  # Will be set by MobHunter
+        self.stuck_detector = None  # Will be set by MobHunter
 
     def is_player_dead(self, screenshot):
         """
@@ -720,11 +721,21 @@ class DeathDetector:
             self.logger.info("Pressing 0 (resurrect at specified point)...")
             pyautogui.press('0')
 
-            # Wait for respawn animation
-            self.logger.info("Waiting for respawn (3s)...")
-            time.sleep(3.0)
+            # Wait for respawn animation (increased from 3s to 5s for reliability)
+            self.logger.info("Waiting for respawn (5s)...")
+            time.sleep(5.0)
 
             self.logger.info("✅ Revive sequence completed!")
+
+            # Reset stuck detector timers to prevent false stuck detection after revive
+            if self.stuck_detector:
+                self.stuck_detector.reset_timer()
+                self.stuck_detector.last_kill_time = time.time()
+                self.stuck_detector.target_selected = False
+                self.stuck_detector.consecutive_recoveries = 0
+                self.stuck_detector.in_recovery_mode = False
+                self.logger.info("🔄 Stuck detector timers reset after revive")
+
             self.logger.info("="*70 + "\n")
 
             return True
@@ -1345,6 +1356,7 @@ class MobHunter:
         self.death_detector = DeathDetector(self.logger)
         self.death_detector.buffer_system = self.buffer  # Link buffer system for cooldown checking
         self.stuck_detector = StuckDetector(self.logger)
+        self.death_detector.stuck_detector = self.stuck_detector  # Link stuck detector for timer reset
         self.overlay = OverlayWindow(self.logger)
 
         self.cycle = 0

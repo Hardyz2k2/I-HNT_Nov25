@@ -1,0 +1,102 @@
+2025-12-11 20:58:22 | INFO     | ======================================================================
+2025-12-11 20:58:22 | INFO     | MOB HUNTER v3.0 - CENTER-OUT + BINARY HEALTH
+2025-12-11 20:58:22 | INFO     | ======================================================================
+2025-12-11 20:58:22 | INFO     | Log directory: logs/session_20251211_205822
+2025-12-11 20:58:22 | INFO     | Screen: 1920x1080
+2025-12-11 20:58:22 | INFO     | Strategy: Attack closest to center first
+2025-12-11 20:58:22 | INFO     | Health: Binary (ALIVE/DEAD) detection
+2025-12-11 20:58:22 | INFO     | Pet Filter: Via nameplate class detection
+2025-12-11 20:58:22 | INFO     | ======================================================================
+2025-12-11 20:58:22 | INFO     | 
+🚀 Bot started! Press Ctrl+C to stop.
+
+2025-12-11 20:58:22 | INFO     | 💡 Controls: CapsLock = Pause/Resume | O = Toggle Overlay
+
+2025-12-11 20:58:22 | INFO     | ⌨️  Global keyboard listener active (works in any window)
+
+2025-12-11 20:58:22 | INFO     | 📋 Configuration:
+2025-12-11 20:58:22 | INFO     |    Death Detection: ✅ Enabled
+2025-12-11 20:58:22 | INFO     |    Death Screenshots: ✅ Enabled
+2025-12-11 20:58:22 | INFO     |    Error Screenshots: ✅ Enabled
+2025-12-11 20:58:22 | INFO     |    Periodic Screenshots: ❌ Disabled
+2025-12-11 20:58:22 | INFO     |    Buffer Interval: 120s
+2025-12-11 20:58:22 | INFO     |    Overlay: ✅ Enabled
+2025-12-11 20:58:22 | INFO     | 
+2025-12-11 20:58:22 | INFO     | 🖥️  Click-through overlay starting...
+2025-12-11 20:58:22 | INFO     | 
+🔍 Checking initial player status...
+2025-12-11 20:58:22 | DEBUG    | Player health bar: 0 red pixels
+2025-12-11 20:58:22 | WARNING  | 💀 DEATH DETECTED - Player health bar empty!
+2025-12-11 20:58:22 | WARNING  |    Health bar red pixels: 0 (threshold: 50)
+2025-12-11 20:58:22 | WARNING  | ⚠️  Player is dead at startup - reviving first...
+2025-12-11 20:58:22 | INFO     | 📸 Screenshot saved: 0001_205822_DEATH_startup_death.png
+2025-12-11 20:58:22 | INFO     | 
+======================================================================
+2025-12-11 20:58:22 | INFO     | 💀 DEATH HANDLER ACTIVATED
+2025-12-11 20:58:22 | INFO     | ======================================================================
+2025-12-11 20:58:22 | INFO     | Death #1
+2025-12-11 20:58:22 | INFO     | Waiting 2.0s before reviving...
+2025-12-11 20:58:23 | INFO     | ✅ Overlay is now CLICK-THROUGH and transparent
+2025-12-11 20:58:24 | INFO     | Pressing F4 (open revive menu)...
+2025-12-11 20:58:25 | INFO     | Pressing 0 (resurrect at specified point)...
+2025-12-11 20:58:25 | INFO     | Waiting for respawn (3s)...
+2025-12-11 20:58:28 | INFO     | ✅ Revive sequence completed!
+2025-12-11 20:58:28 | INFO     | ======================================================================
+
+2025-12-11 20:58:28 | INFO     | ✅ Player revived successfully!
+2025-12-11 20:58:28 | INFO     | 
+Running INITIAL buffer sequence...
+2025-12-11 20:58:28 | INFO     | 
+============================================================
+2025-12-11 20:58:28 | INFO     | RUNNING BUFFER SEQUENCE
+2025-12-11 20:58:28 | INFO     | ============================================================
+2025-12-11 20:58:28 | INFO     |   [1/6] Pressing: F2
+2025-12-11 20:58:28 | INFO     |   [2/6] Pressing: 1
+2025-12-11 20:58:28 | INFO     |   [3/6] Pressing: 2
+2025-12-11 20:58:29 | INFO     |       Waiting 1.0s...
+2025-12-11 20:58:30 | INFO     |   [4/6] Pressing: 3
+2025-12-11 20:58:30 | INFO     |       Waiting 1.0s...
+2025-12-11 20:58:31 | INFO     |   [5/6] Pressing: 4
+2025-12-11 20:58:31 | INFO     |       Waiting 1.0s...
+2025-12-11 20:58:32 | INFO     |   [6/6] Pressing: F1
+2025-12-11 20:58:32 | INFO     | ============================================================
+2025-12-11 20:58:32 | INFO     | Buffer sequence complete (Total: 1)
+2025-12-11 20:58:32 | INFO     | Next buffer in 120s (2m)
+2025-12-11 20:58:32 | INFO     | ============================================================
+
+2025-12-11 20:58:32 | INFO     | 
+⏸️  PAUSED - Press CapsLock to resume
+
+2025-12-11 20:59:26 | INFO     | 
+
+⛔ Bot stopped by user
+2025-12-11 20:59:26 | INFO     | 
+======================================================================
+2025-12-11 20:59:26 | INFO     | 📊 FINAL STATISTICS
+2025-12-11 20:59:26 | INFO     | ======================================================================
+2025-12-11 20:59:26 | INFO     | 📁 Log Directory: logs/session_20251211_205822
+2025-12-11 20:59:26 | INFO     | ⏱️  Uptime: 64s (1m 4s)
+2025-12-11 20:59:26 | INFO     | 🔄 Total Cycles: 0
+2025-12-11 20:59:26 | INFO     | 📸 Screenshots Saved: 1
+2025-12-11 20:59:26 | INFO     | 
+2025-12-11 20:59:26 | INFO     | 🔍 Detection:
+2025-12-11 20:59:26 | INFO     |    Total Clicks: 0
+2025-12-11 20:59:26 | INFO     |    Verified Mobs: 0
+2025-12-11 20:59:26 | INFO     |    Filtered Pets: 0
+2025-12-11 20:59:26 | INFO     |    Pet Filter Rate: 0.0%
+2025-12-11 20:59:26 | INFO     | 
+2025-12-11 20:59:26 | INFO     | ⚔️  Combat:
+2025-12-11 20:59:26 | INFO     |    Total Kills: 0
+2025-12-11 20:59:26 | INFO     |    Deaths: 1
+2025-12-11 20:59:26 | INFO     |    Early Stops: 0
+2025-12-11 20:59:26 | INFO     |    Skills Used: 0
+2025-12-11 20:59:26 | INFO     |    Avg Skills/Kill: 0.0
+2025-12-11 20:59:26 | INFO     |    Kills/Hour: 0.0
+2025-12-11 20:59:26 | INFO     | 
+2025-12-11 20:59:26 | INFO     | ⚙️  System:
+2025-12-11 20:59:26 | INFO     |    Buffer Sequences: 1
+2025-12-11 20:59:26 | INFO     |    Stuck Recoveries: 0
+2025-12-11 20:59:26 | INFO     |    Cache Hit Rate: 0.0%
+2025-12-11 20:59:26 | INFO     |    Cache Size: 0 entries
+2025-12-11 20:59:26 | INFO     | 
+2025-12-11 20:59:26 | INFO     | ======================================================================

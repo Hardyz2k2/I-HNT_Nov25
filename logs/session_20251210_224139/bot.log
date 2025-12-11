@@ -1,0 +1,271 @@
+2025-12-10 22:41:39 | INFO     | ======================================================================
+2025-12-10 22:41:39 | INFO     | MOB HUNTER v3.0 - CENTER-OUT + BINARY HEALTH
+2025-12-10 22:41:39 | INFO     | ======================================================================
+2025-12-10 22:41:39 | INFO     | Log directory: logs/session_20251210_224139
+2025-12-10 22:41:39 | INFO     | Screen: 1920x1080
+2025-12-10 22:41:39 | INFO     | Strategy: Attack closest to center first
+2025-12-10 22:41:39 | INFO     | Health: Binary (ALIVE/DEAD) detection
+2025-12-10 22:41:39 | INFO     | Pet Filter: Via nameplate class detection
+2025-12-10 22:41:39 | INFO     | ======================================================================
+2025-12-10 22:41:39 | INFO     | 
+🚀 Bot started! Press Ctrl+C to stop.
+
+2025-12-10 22:41:39 | INFO     | 💡 Controls: CapsLock = Pause/Resume | O = Toggle Overlay
+
+2025-12-10 22:41:39 | INFO     | ⌨️  Global keyboard listener active (works in any window)
+
+2025-12-10 22:41:39 | INFO     | 📋 Configuration:
+2025-12-10 22:41:39 | INFO     |    Death Detection: ✅ Enabled
+2025-12-10 22:41:39 | INFO     |    Death Screenshots: ✅ Enabled
+2025-12-10 22:41:39 | INFO     |    Error Screenshots: ✅ Enabled
+2025-12-10 22:41:39 | INFO     |    Periodic Screenshots: ❌ Disabled
+2025-12-10 22:41:39 | INFO     |    Buffer Interval: 120s
+2025-12-10 22:41:39 | INFO     |    Overlay: ✅ Enabled
+2025-12-10 22:41:39 | INFO     | 
+2025-12-10 22:41:39 | INFO     | 🖥️  Click-through overlay starting...
+2025-12-10 22:41:39 | INFO     | 
+Running INITIAL buffer sequence...
+2025-12-10 22:41:39 | INFO     | 
+============================================================
+2025-12-10 22:41:39 | INFO     | RUNNING BUFFER SEQUENCE
+2025-12-10 22:41:39 | INFO     | ============================================================
+2025-12-10 22:41:39 | INFO     |   [1/6] Pressing: F2
+2025-12-10 22:41:40 | INFO     |   [2/6] Pressing: 1
+2025-12-10 22:41:40 | INFO     |   [3/6] Pressing: 2
+2025-12-10 22:41:40 | INFO     |       Waiting 1.0s...
+2025-12-10 22:41:40 | INFO     | ✅ Overlay is now CLICK-THROUGH and transparent
+2025-12-10 22:41:41 | INFO     |   [4/6] Pressing: 3
+2025-12-10 22:41:41 | INFO     |       Waiting 1.0s...
+2025-12-10 22:41:42 | INFO     |   [5/6] Pressing: 4
+2025-12-10 22:41:42 | INFO     |       Waiting 1.0s...
+2025-12-10 22:41:43 | INFO     |   [6/6] Pressing: F1
+2025-12-10 22:41:43 | INFO     | ============================================================
+2025-12-10 22:41:43 | INFO     | Buffer sequence complete (Total: 1)
+2025-12-10 22:41:43 | INFO     | Next buffer in 120s (2m)
+2025-12-10 22:41:43 | INFO     | ============================================================
+
+2025-12-10 22:41:43 | INFO     | 
+======================================================================
+2025-12-10 22:41:43 | INFO     | CYCLE #1
+2025-12-10 22:41:43 | INFO     | ======================================================================
+2025-12-10 22:41:43 | DEBUG    | Death detection: Gold=1990, Dark=54630, Brown=3125, White=955
+2025-12-10 22:41:43 | WARNING  | 💀 DEATH DETECTED - Player is dead!
+2025-12-10 22:41:43 | WARNING  |    Indicators: Gold=True, Dark=True, Brown=False, Text=True
+2025-12-10 22:41:43 | WARNING  | ⚠️  Player is dead - pausing hunting
+2025-12-10 22:41:43 | INFO     | 📸 Screenshot saved: 0001_224143_DEATH_death_1.png
+2025-12-10 22:41:43 | INFO     | 
+======================================================================
+2025-12-10 22:41:43 | INFO     | 💀 DEATH HANDLER ACTIVATED
+2025-12-10 22:41:43 | INFO     | ======================================================================
+2025-12-10 22:41:43 | INFO     | Death #1
+2025-12-10 22:41:43 | INFO     | Waiting 2.0s before reviving...
+2025-12-10 22:41:45 | INFO     | Pressing F4 (open revive menu)...
+2025-12-10 22:41:46 | INFO     | Pressing 0 (resurrect at specified point)...
+2025-12-10 22:41:46 | INFO     | Waiting for respawn (3s)...
+2025-12-10 22:41:49 | INFO     | ✅ Revive sequence completed!
+2025-12-10 22:41:49 | INFO     | ======================================================================
+
+2025-12-10 22:41:49 | INFO     | 🔄 Running buffer sequence after revive...
+2025-12-10 22:41:49 | INFO     | 
+============================================================
+2025-12-10 22:41:49 | INFO     | RUNNING BUFFER SEQUENCE
+2025-12-10 22:41:49 | INFO     | ============================================================
+2025-12-10 22:41:49 | INFO     |   [1/6] Pressing: F2
+2025-12-10 22:41:49 | INFO     |   [2/6] Pressing: 1
+2025-12-10 22:41:50 | INFO     |   [3/6] Pressing: 2
+2025-12-10 22:41:50 | INFO     |       Waiting 1.0s...
+2025-12-10 22:41:51 | INFO     |   [4/6] Pressing: 3
+2025-12-10 22:41:51 | INFO     |       Waiting 1.0s...
+2025-12-10 22:41:52 | INFO     |   [5/6] Pressing: 4
+2025-12-10 22:41:52 | INFO     |       Waiting 1.0s...
+2025-12-10 22:41:53 | INFO     |   [6/6] Pressing: F1
+2025-12-10 22:41:53 | INFO     | ============================================================
+2025-12-10 22:41:53 | INFO     | Buffer sequence complete (Total: 2)
+2025-12-10 22:41:53 | INFO     | Next buffer in 120s (2m)
+2025-12-10 22:41:53 | INFO     | ============================================================
+
+2025-12-10 22:41:53 | INFO     | ✅ Ready to resume hunting!
+2025-12-10 22:41:53 | INFO     | 
+======================================================================
+2025-12-10 22:41:53 | INFO     | CYCLE #2
+2025-12-10 22:41:53 | INFO     | ======================================================================
+2025-12-10 22:41:53 | DEBUG    | Death detection: Gold=1831, Dark=52688, Brown=3566, White=1654
+2025-12-10 22:41:53 | WARNING  | 💀 DEATH DETECTED - Player is dead!
+2025-12-10 22:41:53 | WARNING  |    Indicators: Gold=True, Dark=True, Brown=False, Text=True
+2025-12-10 22:41:53 | WARNING  | ⚠️  Player is dead - pausing hunting
+2025-12-10 22:41:54 | INFO     | 📸 Screenshot saved: 0002_224153_DEATH_death_2.png
+2025-12-10 22:41:54 | INFO     | 
+======================================================================
+2025-12-10 22:41:54 | INFO     | 💀 DEATH HANDLER ACTIVATED
+2025-12-10 22:41:54 | INFO     | ======================================================================
+2025-12-10 22:41:54 | INFO     | Death #2
+2025-12-10 22:41:54 | INFO     | Waiting 2.0s before reviving...
+2025-12-10 22:41:56 | INFO     | Pressing F4 (open revive menu)...
+2025-12-10 22:41:56 | INFO     | Pressing 0 (resurrect at specified point)...
+2025-12-10 22:41:56 | INFO     | Waiting for respawn (3s)...
+2025-12-10 22:41:59 | INFO     | ✅ Revive sequence completed!
+2025-12-10 22:41:59 | INFO     | ======================================================================
+
+2025-12-10 22:41:59 | INFO     | 🔄 Running buffer sequence after revive...
+2025-12-10 22:41:59 | INFO     | 
+============================================================
+2025-12-10 22:41:59 | INFO     | RUNNING BUFFER SEQUENCE
+2025-12-10 22:41:59 | INFO     | ============================================================
+2025-12-10 22:41:59 | INFO     |   [1/6] Pressing: F2
+2025-12-10 22:41:59 | INFO     |   [2/6] Pressing: 1
+2025-12-10 22:42:00 | INFO     |   [3/6] Pressing: 2
+2025-12-10 22:42:00 | INFO     |       Waiting 1.0s...
+2025-12-10 22:42:01 | INFO     |   [4/6] Pressing: 3
+2025-12-10 22:42:01 | INFO     |       Waiting 1.0s...
+2025-12-10 22:42:02 | INFO     |   [5/6] Pressing: 4
+2025-12-10 22:42:02 | INFO     |       Waiting 1.0s...
+2025-12-10 22:42:03 | INFO     |   [6/6] Pressing: F1
+2025-12-10 22:42:03 | INFO     | ============================================================
+2025-12-10 22:42:03 | INFO     | Buffer sequence complete (Total: 3)
+2025-12-10 22:42:03 | INFO     | Next buffer in 120s (2m)
+2025-12-10 22:42:03 | INFO     | ============================================================
+
+2025-12-10 22:42:03 | INFO     | ✅ Ready to resume hunting!
+2025-12-10 22:42:04 | INFO     | 
+======================================================================
+2025-12-10 22:42:04 | INFO     | CYCLE #3
+2025-12-10 22:42:04 | INFO     | ======================================================================
+2025-12-10 22:42:04 | DEBUG    | Death detection: Gold=428, Dark=71217, Brown=0, White=490
+2025-12-10 22:42:04 | WARNING  | ⚠️  STUCK DETECTED (Scenario 1): No target for 24.2s since last kill
+2025-12-10 22:42:04 | INFO     | 
+======================================================================
+2025-12-10 22:42:04 | INFO     | 🔧 ANTI-STUCK RECOVERY ACTIVATED
+2025-12-10 22:42:04 | INFO     | ======================================================================
+2025-12-10 22:42:04 | INFO     | Scenario: 1
+2025-12-10 22:42:04 | INFO     | Total recoveries: 1
+2025-12-10 22:42:04 | INFO     | Action: Right-click drag (horizontal movement)
+2025-12-10 22:42:08 | INFO     | ✓ Horizontal drag completed
+2025-12-10 22:42:08 | INFO     | ======================================================================
+
+2025-12-10 22:42:08 | INFO     | ✅ Stuck recovery completed - resuming hunting
+2025-12-10 22:42:08 | INFO     | 
+======================================================================
+2025-12-10 22:42:08 | INFO     | CYCLE #4
+2025-12-10 22:42:08 | INFO     | ======================================================================
+2025-12-10 22:42:08 | DEBUG    | Death detection: Gold=428, Dark=71301, Brown=0, White=490
+2025-12-10 22:42:08 | WARNING  | ⚠️  STUCK DETECTED (Scenario 1): No target for 28.9s since last kill
+2025-12-10 22:42:08 | INFO     | 
+======================================================================
+2025-12-10 22:42:08 | INFO     | 🔧 ANTI-STUCK RECOVERY ACTIVATED
+2025-12-10 22:42:08 | INFO     | ======================================================================
+2025-12-10 22:42:08 | INFO     | Scenario: 1
+2025-12-10 22:42:08 | INFO     | Total recoveries: 2
+2025-12-10 22:42:08 | INFO     | Action: Right-click drag (horizontal movement)
+2025-12-10 22:42:13 | INFO     | ✓ Horizontal drag completed
+2025-12-10 22:42:13 | INFO     | ======================================================================
+
+2025-12-10 22:42:13 | INFO     | ✅ Stuck recovery completed - resuming hunting
+2025-12-10 22:42:13 | INFO     | 
+======================================================================
+2025-12-10 22:42:13 | INFO     | CYCLE #5
+2025-12-10 22:42:13 | INFO     | ======================================================================
+2025-12-10 22:42:13 | DEBUG    | Death detection: Gold=428, Dark=71082, Brown=0, White=490
+2025-12-10 22:42:13 | WARNING  | ⚠️  STUCK DETECTED (Scenario 1): No target for 33.6s since last kill
+2025-12-10 22:42:13 | INFO     | 
+======================================================================
+2025-12-10 22:42:13 | INFO     | 🔧 ANTI-STUCK RECOVERY ACTIVATED
+2025-12-10 22:42:13 | INFO     | ======================================================================
+2025-12-10 22:42:13 | INFO     | Scenario: 1
+2025-12-10 22:42:13 | INFO     | Total recoveries: 3
+2025-12-10 22:42:13 | INFO     | Action: Right-click drag (horizontal movement)
+2025-12-10 22:42:17 | INFO     | ✓ Horizontal drag completed
+2025-12-10 22:42:17 | INFO     | ======================================================================
+
+2025-12-10 22:42:17 | INFO     | ✅ Stuck recovery completed - resuming hunting
+2025-12-10 22:42:18 | INFO     | 
+⏸️  PAUSED - Press CapsLock to resume
+
+2025-12-10 22:42:19 | INFO     | 
+▶️  RESUMED - Running buffer sequence...
+
+2025-12-10 22:42:19 | INFO     | Buffer timer reset - will run on next cycle
+2025-12-10 22:42:19 | INFO     | 
+============================================================
+2025-12-10 22:42:19 | INFO     | RUNNING BUFFER SEQUENCE
+2025-12-10 22:42:19 | INFO     | ============================================================
+2025-12-10 22:42:19 | INFO     |   [1/6] Pressing: F2
+2025-12-10 22:42:19 | INFO     |   [2/6] Pressing: 1
+2025-12-10 22:42:19 | INFO     |   [3/6] Pressing: 2
+2025-12-10 22:42:19 | INFO     |       Waiting 1.0s...
+2025-12-10 22:42:20 | INFO     |   [4/6] Pressing: 3
+2025-12-10 22:42:20 | INFO     |       Waiting 1.0s...
+2025-12-10 22:42:21 | INFO     |   [5/6] Pressing: 4
+2025-12-10 22:42:21 | INFO     |       Waiting 1.0s...
+2025-12-10 22:42:22 | INFO     |   [6/6] Pressing: F1
+2025-12-10 22:42:23 | INFO     | ============================================================
+2025-12-10 22:42:23 | INFO     | Buffer sequence complete (Total: 4)
+2025-12-10 22:42:23 | INFO     | Next buffer in 120s (2m)
+2025-12-10 22:42:23 | INFO     | ============================================================
+
+2025-12-10 22:42:23 | INFO     | 
+======================================================================
+2025-12-10 22:42:23 | INFO     | CYCLE #6
+2025-12-10 22:42:23 | INFO     | ======================================================================
+2025-12-10 22:42:23 | DEBUG    | Skipping death detection (just resumed)
+2025-12-10 22:42:23 | WARNING  | ⚠️  STUCK DETECTED (Scenario 1): No target for 43.2s since last kill
+2025-12-10 22:42:23 | INFO     | 
+======================================================================
+2025-12-10 22:42:23 | INFO     | 🔧 ANTI-STUCK RECOVERY ACTIVATED
+2025-12-10 22:42:23 | INFO     | ======================================================================
+2025-12-10 22:42:23 | INFO     | Scenario: 1
+2025-12-10 22:42:23 | INFO     | Total recoveries: 4
+2025-12-10 22:42:23 | INFO     | Action: Right-click drag (horizontal movement)
+2025-12-10 22:42:27 | INFO     | ✓ Horizontal drag completed
+2025-12-10 22:42:27 | INFO     | ======================================================================
+
+2025-12-10 22:42:27 | INFO     | ✅ Stuck recovery completed - resuming hunting
+2025-12-10 22:42:27 | INFO     | 
+======================================================================
+2025-12-10 22:42:27 | INFO     | CYCLE #7
+2025-12-10 22:42:27 | INFO     | ======================================================================
+2025-12-10 22:42:27 | DEBUG    | Death detection: Gold=381, Dark=66402, Brown=206, White=699
+2025-12-10 22:42:27 | WARNING  | ⚠️  STUCK DETECTED (Scenario 1): No target for 47.9s since last kill
+2025-12-10 22:42:27 | INFO     | 
+======================================================================
+2025-12-10 22:42:27 | INFO     | 🔧 ANTI-STUCK RECOVERY ACTIVATED
+2025-12-10 22:42:27 | INFO     | ======================================================================
+2025-12-10 22:42:27 | INFO     | Scenario: 1
+2025-12-10 22:42:27 | INFO     | Total recoveries: 5
+2025-12-10 22:42:27 | INFO     | Action: Right-click drag (horizontal movement)
+2025-12-10 22:42:30 | INFO     | 
+
+⛔ Bot stopped by user
+2025-12-10 22:42:30 | INFO     | 
+======================================================================
+2025-12-10 22:42:30 | INFO     | 📊 FINAL STATISTICS
+2025-12-10 22:42:30 | INFO     | ======================================================================
+2025-12-10 22:42:30 | INFO     | 📁 Log Directory: logs/session_20251210_224139
+2025-12-10 22:42:30 | INFO     | ⏱️  Uptime: 50s (0m 50s)
+2025-12-10 22:42:30 | INFO     | 🔄 Total Cycles: 7
+2025-12-10 22:42:30 | INFO     | 📸 Screenshots Saved: 2
+2025-12-10 22:42:30 | INFO     | 
+2025-12-10 22:42:30 | INFO     | 🔍 Detection:
+2025-12-10 22:42:30 | INFO     |    Total Clicks: 0
+2025-12-10 22:42:30 | INFO     |    Verified Mobs: 0
+2025-12-10 22:42:30 | INFO     |    Filtered Pets: 0
+2025-12-10 22:42:30 | INFO     |    Pet Filter Rate: 0.0%
+2025-12-10 22:42:30 | INFO     | 
+2025-12-10 22:42:30 | INFO     | ⚔️  Combat:
+2025-12-10 22:42:30 | INFO     |    Total Kills: 0
+2025-12-10 22:42:30 | INFO     |    Deaths: 2
+2025-12-10 22:42:30 | INFO     |    Early Stops: 0
+2025-12-10 22:42:30 | INFO     |    Skills Used: 0
+2025-12-10 22:42:30 | INFO     |    Avg Skills/Kill: 0.0
+2025-12-10 22:42:30 | INFO     |    Kills/Hour: 0.0
+2025-12-10 22:42:30 | INFO     | 
+2025-12-10 22:42:30 | INFO     | ⚙️  System:
+2025-12-10 22:42:30 | INFO     |    Buffer Sequences: 4
+2025-12-10 22:42:30 | INFO     |    Stuck Recoveries: 5
+2025-12-10 22:42:30 | INFO     |    Cache Hit Rate: 0.0%
+2025-12-10 22:42:30 | INFO     |    Cache Size: 0 entries
+2025-12-10 22:42:30 | INFO     | 
+2025-12-10 22:42:30 | INFO     | 📈 Efficiency:
+2025-12-10 22:42:30 | INFO     |    Avg Cycle Time: 7.14s
+2025-12-10 22:42:30 | INFO     |    Avg Clicks/Cycle: 0.0
+2025-12-10 22:42:30 | INFO     |    Avg Kills/Cycle: 0.00
+2025-12-10 22:42:30 | INFO     | ======================================================================

@@ -1,0 +1,507 @@
+2025-12-11 15:02:14 | INFO     | ======================================================================
+2025-12-11 15:02:14 | INFO     | MOB HUNTER v3.0 - CENTER-OUT + BINARY HEALTH
+2025-12-11 15:02:14 | INFO     | ======================================================================
+2025-12-11 15:02:14 | INFO     | Log directory: logs/session_20251211_150214
+2025-12-11 15:02:14 | INFO     | Screen: 1920x1080
+2025-12-11 15:02:14 | INFO     | Strategy: Attack closest to center first
+2025-12-11 15:02:14 | INFO     | Health: Binary (ALIVE/DEAD) detection
+2025-12-11 15:02:14 | INFO     | Pet Filter: Via nameplate class detection
+2025-12-11 15:02:14 | INFO     | ======================================================================
+2025-12-11 15:02:14 | INFO     | 
+🚀 Bot started! Press Ctrl+C to stop.
+
+2025-12-11 15:02:14 | INFO     | 💡 Controls: CapsLock = Pause/Resume | O = Toggle Overlay
+
+2025-12-11 15:02:14 | INFO     | ⌨️  Global keyboard listener active (works in any window)
+
+2025-12-11 15:02:14 | INFO     | 📋 Configuration:
+2025-12-11 15:02:14 | INFO     |    Death Detection: ✅ Enabled
+2025-12-11 15:02:14 | INFO     |    Death Screenshots: ✅ Enabled
+2025-12-11 15:02:14 | INFO     |    Error Screenshots: ✅ Enabled
+2025-12-11 15:02:14 | INFO     |    Periodic Screenshots: ❌ Disabled
+2025-12-11 15:02:14 | INFO     |    Buffer Interval: 120s
+2025-12-11 15:02:14 | INFO     |    Overlay: ✅ Enabled
+2025-12-11 15:02:14 | INFO     | 
+2025-12-11 15:02:14 | INFO     | 🖥️  Click-through overlay starting...
+2025-12-11 15:02:14 | INFO     | 
+Running INITIAL buffer sequence...
+2025-12-11 15:02:14 | INFO     | 
+============================================================
+2025-12-11 15:02:14 | INFO     | RUNNING BUFFER SEQUENCE
+2025-12-11 15:02:14 | INFO     | ============================================================
+2025-12-11 15:02:14 | INFO     |   [1/6] Pressing: F2
+2025-12-11 15:02:14 | INFO     |   [2/6] Pressing: 1
+2025-12-11 15:02:14 | INFO     |   [3/6] Pressing: 2
+2025-12-11 15:02:14 | INFO     |       Waiting 1.0s...
+2025-12-11 15:02:14 | INFO     | ✅ Overlay is now CLICK-THROUGH and transparent
+2025-12-11 15:02:15 | INFO     |   [4/6] Pressing: 3
+2025-12-11 15:02:15 | INFO     |       Waiting 1.0s...
+2025-12-11 15:02:16 | INFO     |   [5/6] Pressing: 4
+2025-12-11 15:02:16 | INFO     |       Waiting 1.0s...
+2025-12-11 15:02:17 | INFO     |   [6/6] Pressing: F1
+2025-12-11 15:02:18 | INFO     | ============================================================
+2025-12-11 15:02:18 | INFO     | Buffer sequence complete (Total: 1)
+2025-12-11 15:02:18 | INFO     | Next buffer in 120s (2m)
+2025-12-11 15:02:18 | INFO     | ============================================================
+
+2025-12-11 15:02:18 | INFO     | 
+======================================================================
+2025-12-11 15:02:18 | INFO     | CYCLE #1
+2025-12-11 15:02:18 | INFO     | ======================================================================
+2025-12-11 15:02:18 | DEBUG    | Player health bar: 495 red pixels
+2025-12-11 15:02:18 | INFO     | Detected: 8 floating names
+2025-12-11 15:02:18 | INFO     | → Valid targets (after cache): 8
+2025-12-11 15:02:18 | INFO     | → Target priority (closest to farthest):
+2025-12-11 15:02:18 | INFO     |    #1: Distance=402px from center
+2025-12-11 15:02:18 | INFO     |    #2: Distance=403px from center
+2025-12-11 15:02:18 | INFO     |    #3: Distance=406px from center
+2025-12-11 15:02:18 | INFO     |    #4: Distance=409px from center
+2025-12-11 15:02:18 | INFO     |    #5: Distance=410px from center
+2025-12-11 15:02:18 | INFO     | 
+  Verifying target #1 (D=402px)...
+2025-12-11 15:02:18 | DEBUG    |     Clicking (939, 169)
+2025-12-11 15:02:18 | DEBUG    |     ✗ Filtered PET (no class)
+2025-12-11 15:02:18 | INFO     |     ✗ No valid nameplate or is a pet
+2025-12-11 15:02:18 | INFO     | 
+  Verifying target #2 (D=403px)...
+2025-12-11 15:02:18 | DEBUG    |     Clicking (1244, 283)
+2025-12-11 15:02:18 | DEBUG    |     Health check: 649 red pixels -> ALIVE
+2025-12-11 15:02:18 | DEBUG    |     ✓ Verified MOB in 1 attempts
+2025-12-11 15:02:18 | INFO     |     ✓ Unique | Status: ALIVE
+2025-12-11 15:02:18 | INFO     | 
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2025-12-11 15:02:18 | INFO     | ⚔️  ENGAGING: Unique
+2025-12-11 15:02:18 | INFO     | >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2025-12-11 15:02:18 | DEBUG    |     Initial health: 649 red pixels
+2025-12-11 15:02:18 | INFO     |   → Skill 1: 1
+2025-12-11 15:02:20 | DEBUG    |     Health check: 649 red pixels -> ALIVE
+2025-12-11 15:02:20 | INFO     |   → Skill 2: 2
+2025-12-11 15:02:21 | DEBUG    |     Health check: 649 red pixels -> ALIVE
+2025-12-11 15:02:21 | INFO     |   → Skill 3: 3
+2025-12-11 15:02:22 | DEBUG    |     Health check: 348 red pixels -> ALIVE
+2025-12-11 15:02:22 | INFO     |   → Skill 4: 4
+2025-12-11 15:02:23 | DEBUG    |     Health check: 348 red pixels -> ALIVE
+2025-12-11 15:02:23 | DEBUG    |     Health change: 649 → 348 (Δ=301)
+2025-12-11 15:02:23 | INFO     |   ℹ️  Rotation complete (health decreased: 301 pixels)
+2025-12-11 15:02:23 | INFO     | <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+2025-12-11 15:02:23 | INFO     | 💀 Total kills: 1
+2025-12-11 15:02:23 | INFO     | <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+2025-12-11 15:02:23 | DEBUG    | Stuck detector: Kill recorded, timer reset
+2025-12-11 15:02:23 | INFO     | 
+  Verifying target #3 (D=406px)...
+2025-12-11 15:02:23 | DEBUG    |     Clicking (1012, 167)
+2025-12-11 15:02:23 | DEBUG    |     Health check: 348 red pixels -> ALIVE
+2025-12-11 15:02:23 | DEBUG    |     ✓ Verified MOB in 1 attempts
+2025-12-11 15:02:23 | INFO     |     ✓ Unique | Status: ALIVE
+2025-12-11 15:02:23 | INFO     | 
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2025-12-11 15:02:23 | INFO     | ⚔️  ENGAGING: Unique
+2025-12-11 15:02:23 | INFO     | >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2025-12-11 15:02:23 | DEBUG    |     Initial health: 348 red pixels
+2025-12-11 15:02:23 | INFO     |   → Skill 1: 1
+2025-12-11 15:02:24 | INFO     |   ✓ Mob DEAD after skill 1!
+2025-12-11 15:02:24 | INFO     | <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+2025-12-11 15:02:24 | INFO     | 💀 Total kills: 2 | Skills saved: 3
+2025-12-11 15:02:24 | INFO     | <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+2025-12-11 15:02:24 | DEBUG    | Stuck detector: Kill recorded, timer reset
+2025-12-11 15:02:25 | INFO     | 
+======================================================================
+2025-12-11 15:02:25 | INFO     | CYCLE #2
+2025-12-11 15:02:25 | INFO     | ======================================================================
+2025-12-11 15:02:25 | DEBUG    | Player health bar: 495 red pixels
+2025-12-11 15:02:25 | INFO     | Detected: 14 floating names
+2025-12-11 15:02:25 | DEBUG    |   Name #11: Cached, skipping
+2025-12-11 15:02:25 | INFO     | → Valid targets (after cache): 13
+2025-12-11 15:02:25 | INFO     | → Target priority (closest to farthest):
+2025-12-11 15:02:25 | INFO     |    #1: Distance=60px from center
+2025-12-11 15:02:25 | INFO     |    #2: Distance=247px from center
+2025-12-11 15:02:25 | INFO     |    #3: Distance=344px from center
+2025-12-11 15:02:25 | INFO     |    #4: Distance=363px from center
+2025-12-11 15:02:25 | INFO     |    #5: Distance=373px from center
+2025-12-11 15:02:25 | INFO     | 
+  Verifying target #1 (D=60px)...
+2025-12-11 15:02:25 | DEBUG    |     Clicking (974, 633)
+2025-12-11 15:02:25 | DEBUG    |     Health check: 31 red pixels -> DEAD
+2025-12-11 15:02:25 | DEBUG    |     ✓ Verified MOB in 1 attempts
+2025-12-11 15:02:25 | INFO     |     ✗ Mob already DEAD
+2025-12-11 15:02:25 | INFO     | 
+  Verifying target #2 (D=247px)...
+2025-12-11 15:02:25 | DEBUG    |     Clicking (787, 393)
+2025-12-11 15:02:26 | DEBUG    |     Health check: 31 red pixels -> DEAD
+2025-12-11 15:02:26 | DEBUG    |     ✓ Verified MOB in 1 attempts
+2025-12-11 15:02:26 | INFO     |     ✗ Mob already DEAD
+2025-12-11 15:02:26 | INFO     | 
+  Verifying target #3 (D=344px)...
+2025-12-11 15:02:26 | DEBUG    |     Clicking (1092, 889)
+2025-12-11 15:02:26 | DEBUG    |     Health check: 29 red pixels -> DEAD
+2025-12-11 15:02:26 | DEBUG    |     ✓ Verified MOB in 1 attempts
+2025-12-11 15:02:26 | INFO     |     ✗ Mob already DEAD
+2025-12-11 15:02:27 | INFO     | 
+======================================================================
+2025-12-11 15:02:27 | INFO     | CYCLE #3
+2025-12-11 15:02:27 | INFO     | ======================================================================
+2025-12-11 15:02:27 | DEBUG    | Player health bar: 495 red pixels
+2025-12-11 15:02:27 | INFO     | Detected: 6 floating names
+2025-12-11 15:02:27 | INFO     | → Valid targets (after cache): 6
+2025-12-11 15:02:27 | INFO     | → Target priority (closest to farthest):
+2025-12-11 15:02:27 | INFO     |    #1: Distance=42px from center
+2025-12-11 15:02:27 | INFO     |    #2: Distance=293px from center
+2025-12-11 15:02:27 | INFO     |    #3: Distance=327px from center
+2025-12-11 15:02:27 | INFO     |    #4: Distance=332px from center
+2025-12-11 15:02:27 | INFO     |    #5: Distance=581px from center
+2025-12-11 15:02:27 | INFO     | 
+  Verifying target #1 (D=42px)...
+2025-12-11 15:02:27 | DEBUG    |     Clicking (960, 528)
+2025-12-11 15:02:27 | DEBUG    |     Health check: 29 red pixels -> DEAD
+2025-12-11 15:02:27 | DEBUG    |     ✓ Verified MOB in 1 attempts
+2025-12-11 15:02:27 | INFO     |     ✗ Mob already DEAD
+2025-12-11 15:02:27 | INFO     | 
+  Verifying target #2 (D=293px)...
+2025-12-11 15:02:27 | DEBUG    |     Clicking (1235, 467)
+2025-12-11 15:02:27 | DEBUG    |     Health check: 29 red pixels -> DEAD
+2025-12-11 15:02:27 | DEBUG    |     ✓ Verified MOB in 1 attempts
+2025-12-11 15:02:27 | INFO     |     ✗ Mob already DEAD
+2025-12-11 15:02:27 | INFO     | 
+  Verifying target #3 (D=327px)...
+2025-12-11 15:02:27 | DEBUG    |     Clicking (712, 356)
+2025-12-11 15:02:28 | DEBUG    |     Health check: 29 red pixels -> DEAD
+2025-12-11 15:02:28 | DEBUG    |     ✓ Verified MOB in 1 attempts
+2025-12-11 15:02:28 | INFO     |     ✗ Mob already DEAD
+2025-12-11 15:02:28 | INFO     | 
+======================================================================
+2025-12-11 15:02:28 | INFO     | CYCLE #4
+2025-12-11 15:02:28 | INFO     | ======================================================================
+2025-12-11 15:02:28 | DEBUG    | Player health bar: 500 red pixels
+2025-12-11 15:02:28 | INFO     | Detected: 11 floating names
+2025-12-11 15:02:28 | DEBUG    |   Name #9: Cached, skipping
+2025-12-11 15:02:28 | DEBUG    |   Name #10: Cached, skipping
+2025-12-11 15:02:28 | INFO     | → Valid targets (after cache): 9
+2025-12-11 15:02:28 | INFO     | → Target priority (closest to farthest):
+2025-12-11 15:02:28 | INFO     |    #1: Distance=61px from center
+2025-12-11 15:02:28 | INFO     |    #2: Distance=373px from center
+2025-12-11 15:02:28 | INFO     |    #3: Distance=379px from center
+2025-12-11 15:02:28 | INFO     |    #4: Distance=388px from center
+2025-12-11 15:02:28 | INFO     |    #5: Distance=402px from center
+2025-12-11 15:02:28 | INFO     | 
+  Verifying target #1 (D=61px)...
+2025-12-11 15:02:28 | DEBUG    |     Clicking (942, 632)
+2025-12-11 15:02:29 | DEBUG    |     ✗ Filtered PET (no class)
+2025-12-11 15:02:29 | INFO     |     ✗ No valid nameplate or is a pet
+2025-12-11 15:02:29 | INFO     | 
+  Verifying target #2 (D=373px)...
+2025-12-11 15:02:29 | DEBUG    |     Clicking (937, 197)
+2025-12-11 15:02:29 | DEBUG    |     Health check: 654 red pixels -> ALIVE
+2025-12-11 15:02:29 | DEBUG    |     ✓ Verified MOB in 1 attempts
+2025-12-11 15:02:29 | INFO     |     ✓ Unique | Status: ALIVE
+2025-12-11 15:02:29 | INFO     | 
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2025-12-11 15:02:29 | INFO     | ⚔️  ENGAGING: Unique
+2025-12-11 15:02:29 | INFO     | >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2025-12-11 15:02:29 | DEBUG    |     Initial health: 655 red pixels
+2025-12-11 15:02:29 | INFO     |   → Skill 1: 1
+2025-12-11 15:02:30 | DEBUG    |     Health check: 656 red pixels -> ALIVE
+2025-12-11 15:02:30 | INFO     |   → Skill 2: 2
+2025-12-11 15:02:31 | DEBUG    |     Health check: 665 red pixels -> ALIVE
+2025-12-11 15:02:31 | INFO     |   → Skill 3: 3
+2025-12-11 15:02:32 | DEBUG    |     Health check: 674 red pixels -> ALIVE
+2025-12-11 15:02:32 | INFO     |   → Skill 4: 4
+2025-12-11 15:02:34 | DEBUG    |     Health check: 778 red pixels -> ALIVE
+2025-12-11 15:02:34 | DEBUG    |     Health change: 655 → 778 (Δ=-123)
+2025-12-11 15:02:34 | INFO     |   ℹ️  Rotation complete (health decreased: 123 pixels)
+2025-12-11 15:02:34 | INFO     | <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+2025-12-11 15:02:34 | INFO     | 💀 Total kills: 3
+2025-12-11 15:02:34 | INFO     | <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+2025-12-11 15:02:34 | DEBUG    | Stuck detector: Kill recorded, timer reset
+2025-12-11 15:02:34 | INFO     | 
+  Verifying target #3 (D=379px)...
+2025-12-11 15:02:34 | DEBUG    |     Clicking (888, 197)
+2025-12-11 15:02:34 | DEBUG    |     Health check: 660 red pixels -> ALIVE
+2025-12-11 15:02:34 | DEBUG    |     ✓ Verified MOB in 1 attempts
+2025-12-11 15:02:34 | INFO     |     ✓ Unique | Status: ALIVE
+2025-12-11 15:02:34 | INFO     | 
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2025-12-11 15:02:34 | INFO     | ⚔️  ENGAGING: Unique
+2025-12-11 15:02:34 | INFO     | >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2025-12-11 15:02:34 | DEBUG    |     Initial health: 659 red pixels
+2025-12-11 15:02:34 | INFO     |   → Skill 1: 1
+2025-12-11 15:02:35 | DEBUG    |     Health check: 309 red pixels -> ALIVE
+2025-12-11 15:02:35 | INFO     |   → Skill 2: 2
+2025-12-11 15:02:36 | DEBUG    |     Health check: 309 red pixels -> ALIVE
+2025-12-11 15:02:36 | INFO     |   → Skill 3: 3
+2025-12-11 15:02:37 | INFO     |   ✓ Mob DEAD after skill 3!
+2025-12-11 15:02:37 | INFO     | <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+2025-12-11 15:02:37 | INFO     | 💀 Total kills: 4 | Skills saved: 1
+2025-12-11 15:02:37 | INFO     | <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+2025-12-11 15:02:37 | DEBUG    | Stuck detector: Kill recorded, timer reset
+2025-12-11 15:02:38 | INFO     | 
+======================================================================
+2025-12-11 15:02:38 | INFO     | CYCLE #5
+2025-12-11 15:02:38 | INFO     | ======================================================================
+2025-12-11 15:02:38 | DEBUG    | Player health bar: 255 red pixels
+2025-12-11 15:02:38 | INFO     | Detected: 10 floating names
+2025-12-11 15:02:38 | INFO     | → Valid targets (after cache): 10
+2025-12-11 15:02:38 | INFO     | → Target priority (closest to farthest):
+2025-12-11 15:02:38 | INFO     |    #1: Distance=15px from center
+2025-12-11 15:02:38 | INFO     |    #2: Distance=20px from center
+2025-12-11 15:02:38 | INFO     |    #3: Distance=125px from center
+2025-12-11 15:02:38 | INFO     |    #4: Distance=190px from center
+2025-12-11 15:02:38 | INFO     |    #5: Distance=230px from center
+2025-12-11 15:02:38 | INFO     | 
+  Verifying target #1 (D=15px)...
+2025-12-11 15:02:38 | DEBUG    |     Clicking (960, 598)
+2025-12-11 15:02:38 | DEBUG    |     Health check: 39 red pixels -> DEAD
+2025-12-11 15:02:38 | DEBUG    |     ✓ Verified MOB in 1 attempts
+2025-12-11 15:02:38 | INFO     |     ✗ Mob already DEAD
+2025-12-11 15:02:38 | INFO     | 
+  Verifying target #2 (D=20px)...
+2025-12-11 15:02:38 | DEBUG    |     Clicking (960, 557)
+2025-12-11 15:02:39 | DEBUG    |     Health check: 39 red pixels -> DEAD
+2025-12-11 15:02:39 | DEBUG    |     ✓ Verified MOB in 1 attempts
+2025-12-11 15:02:39 | INFO     |     ✗ Mob already DEAD
+2025-12-11 15:02:39 | INFO     | 
+  Verifying target #3 (D=125px)...
+2025-12-11 15:02:39 | DEBUG    |     Clicking (973, 445)
+2025-12-11 15:02:39 | DEBUG    |     Health check: 649 red pixels -> ALIVE
+2025-12-11 15:02:39 | DEBUG    |     ✓ Verified MOB in 1 attempts
+2025-12-11 15:02:39 | INFO     |     ✓ Unique | Status: ALIVE
+2025-12-11 15:02:39 | INFO     | 
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2025-12-11 15:02:39 | INFO     | ⚔️  ENGAGING: Unique
+2025-12-11 15:02:39 | INFO     | >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2025-12-11 15:02:39 | DEBUG    |     Initial health: 649 red pixels
+2025-12-11 15:02:39 | INFO     |   → Skill 1: 1
+2025-12-11 15:02:40 | DEBUG    |     Health check: 651 red pixels -> ALIVE
+2025-12-11 15:02:40 | INFO     |   → Skill 2: 2
+2025-12-11 15:02:41 | DEBUG    |     Health check: 649 red pixels -> ALIVE
+2025-12-11 15:02:41 | INFO     |   → Skill 3: 3
+2025-12-11 15:02:42 | DEBUG    |     Health check: 649 red pixels -> ALIVE
+2025-12-11 15:02:42 | INFO     |   → Skill 4: 4
+2025-12-11 15:02:44 | DEBUG    |     Health check: 649 red pixels -> ALIVE
+2025-12-11 15:02:44 | DEBUG    |     Health change: 649 → 649 (Δ=0)
+2025-12-11 15:02:44 | WARNING  |   ⚠️  Health barely changed (649 → 649, 0.3%) - NOT hitting mob!
+2025-12-11 15:02:44 | WARNING  |   Character may be stuck or mob unreachable
+2025-12-11 15:02:44 | INFO     | <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+2025-12-11 15:02:44 | DEBUG    |     Combat failed - mob may be unreachable
+2025-12-11 15:02:44 | INFO     | 
+======================================================================
+2025-12-11 15:02:44 | INFO     | CYCLE #6
+2025-12-11 15:02:44 | INFO     | ======================================================================
+2025-12-11 15:02:44 | DEBUG    | Player health bar: 0 red pixels
+2025-12-11 15:02:44 | WARNING  | 💀 DEATH DETECTED - Player health bar empty!
+2025-12-11 15:02:44 | WARNING  |    Health bar red pixels: 0 (threshold: 50)
+2025-12-11 15:02:44 | WARNING  | ⚠️  Player is dead - pausing hunting
+2025-12-11 15:02:44 | INFO     | 📸 Screenshot saved: 0001_150244_DEATH_death_1.png
+2025-12-11 15:02:44 | INFO     | 
+======================================================================
+2025-12-11 15:02:44 | INFO     | 💀 DEATH HANDLER ACTIVATED
+2025-12-11 15:02:44 | INFO     | ======================================================================
+2025-12-11 15:02:44 | INFO     | Death #1
+2025-12-11 15:02:44 | INFO     | Waiting 2.0s before reviving...
+2025-12-11 15:02:46 | INFO     | Pressing F4 (open revive menu)...
+2025-12-11 15:02:47 | INFO     | Pressing 0 (resurrect at specified point)...
+2025-12-11 15:02:47 | INFO     | Waiting for respawn (3s)...
+2025-12-11 15:02:50 | INFO     | ✅ Revive sequence completed!
+2025-12-11 15:02:50 | INFO     | ======================================================================
+
+2025-12-11 15:02:50 | INFO     | 🔄 Running buffer sequence after revive...
+2025-12-11 15:02:50 | INFO     | 
+============================================================
+2025-12-11 15:02:50 | INFO     | RUNNING BUFFER SEQUENCE
+2025-12-11 15:02:50 | INFO     | ============================================================
+2025-12-11 15:02:50 | INFO     |   [1/6] Pressing: F2
+2025-12-11 15:02:50 | INFO     |   [2/6] Pressing: 1
+2025-12-11 15:02:50 | INFO     |   [3/6] Pressing: 2
+2025-12-11 15:02:50 | INFO     |       Waiting 1.0s...
+2025-12-11 15:02:51 | INFO     |   [4/6] Pressing: 3
+2025-12-11 15:02:51 | INFO     |       Waiting 1.0s...
+2025-12-11 15:02:52 | INFO     |   [5/6] Pressing: 4
+2025-12-11 15:02:53 | INFO     |       Waiting 1.0s...
+2025-12-11 15:02:54 | INFO     |   [6/6] Pressing: F1
+2025-12-11 15:02:54 | INFO     | ============================================================
+2025-12-11 15:02:54 | INFO     | Buffer sequence complete (Total: 2)
+2025-12-11 15:02:54 | INFO     | Next buffer in 120s (2m)
+2025-12-11 15:02:54 | INFO     | ============================================================
+
+2025-12-11 15:02:54 | INFO     | ✅ Ready to resume hunting!
+2025-12-11 15:02:54 | INFO     | 
+======================================================================
+2025-12-11 15:02:54 | INFO     | CYCLE #7
+2025-12-11 15:02:54 | INFO     | ======================================================================
+2025-12-11 15:02:54 | DEBUG    | Player health bar: 495 red pixels
+2025-12-11 15:02:54 | WARNING  | ⚠️  STUCK DETECTED (Scenario 2): Target selected but stuck for 15.9s
+2025-12-11 15:02:54 | INFO     | 
+======================================================================
+2025-12-11 15:02:54 | INFO     | 🔧 ANTI-STUCK RECOVERY ACTIVATED
+2025-12-11 15:02:54 | INFO     | ======================================================================
+2025-12-11 15:02:54 | INFO     | Scenario: 2
+2025-12-11 15:02:54 | INFO     | Consecutive attempts: 1
+2025-12-11 15:02:54 | INFO     | Total recoveries: 1
+2025-12-11 15:02:54 | INFO     | Action: Aggressive escape + random exploration
+2025-12-11 15:02:54 | INFO     |   Step 1: Turning right (1.4s)...
+2025-12-11 15:02:56 | INFO     |   Step 2: Moving forward (2.5s)...
+2025-12-11 15:02:59 | INFO     |   Step 3: Changing camera angle (-157px)...
+2025-12-11 15:03:00 | INFO     |   Steps 4+: 2 additional random movements...
+2025-12-11 15:03:00 | INFO     |     Extra 1: Rotate left (0.3s) + Forward (2.9s)
+2025-12-11 15:03:04 | INFO     |     Extra 2: Rotate left (0.4s) + Forward (2.9s)
+2025-12-11 15:03:08 | INFO     | ✓ Aggressive escape complete - should be in completely new area
+2025-12-11 15:03:08 | INFO     | ======================================================================
+
+2025-12-11 15:03:08 | INFO     | ✅ Stuck recovery completed - continuing with detection
+2025-12-11 15:03:08 | INFO     | Detected: 19 floating names
+2025-12-11 15:03:08 | DEBUG    |   Name #4: Cached, skipping
+2025-12-11 15:03:08 | INFO     | → Valid targets (after cache): 18
+2025-12-11 15:03:08 | INFO     | → Target priority (closest to farthest):
+2025-12-11 15:03:08 | INFO     |    #1: Distance=5px from center
+2025-12-11 15:03:08 | INFO     |    #2: Distance=50px from center
+2025-12-11 15:03:08 | INFO     |    #3: Distance=56px from center
+2025-12-11 15:03:08 | INFO     |    #4: Distance=70px from center
+2025-12-11 15:03:08 | INFO     |    #5: Distance=87px from center
+2025-12-11 15:03:08 | INFO     | 
+  Verifying target #1 (D=5px)...
+2025-12-11 15:03:08 | DEBUG    |     Clicking (961, 576)
+2025-12-11 15:03:09 | DEBUG    |     Health check: 653 red pixels -> ALIVE
+2025-12-11 15:03:09 | DEBUG    |     ✓ Verified MOB in 1 attempts
+2025-12-11 15:03:09 | INFO     |     ✓ Unique | Status: ALIVE
+2025-12-11 15:03:09 | INFO     | 
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2025-12-11 15:03:09 | INFO     | ⚔️  ENGAGING: Unique
+2025-12-11 15:03:09 | INFO     | >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2025-12-11 15:03:09 | DEBUG    |     Initial health: 654 red pixels
+2025-12-11 15:03:09 | INFO     |   → Skill 1: 1
+2025-12-11 15:03:10 | DEBUG    |     Health check: 653 red pixels -> ALIVE
+2025-12-11 15:03:10 | INFO     |   → Skill 2: 2
+2025-12-11 15:03:11 | DEBUG    |     Health check: 653 red pixels -> ALIVE
+2025-12-11 15:03:11 | INFO     |   → Skill 3: 3
+2025-12-11 15:03:12 | DEBUG    |     Health check: 654 red pixels -> ALIVE
+2025-12-11 15:03:12 | INFO     |   → Skill 4: 4
+2025-12-11 15:03:13 | DEBUG    |     Health check: 655 red pixels -> ALIVE
+2025-12-11 15:03:13 | DEBUG    |     Health change: 654 → 655 (Δ=-1)
+2025-12-11 15:03:13 | WARNING  |   ⚠️  Health barely changed (654 → 655, 0.3%) - NOT hitting mob!
+2025-12-11 15:03:13 | WARNING  |   Character may be stuck or mob unreachable
+2025-12-11 15:03:13 | INFO     | <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+2025-12-11 15:03:13 | DEBUG    |     Combat failed - mob may be unreachable
+2025-12-11 15:03:13 | INFO     | 
+  Verifying target #2 (D=50px)...
+2025-12-11 15:03:13 | DEBUG    |     Clicking (966, 620)
+2025-12-11 15:03:13 | DEBUG    |     Health check: 660 red pixels -> ALIVE
+2025-12-11 15:03:13 | DEBUG    |     ✓ Verified MOB in 1 attempts
+2025-12-11 15:03:13 | INFO     |     ✓ Unique | Status: ALIVE
+2025-12-11 15:03:13 | INFO     | 
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2025-12-11 15:03:13 | INFO     | ⚔️  ENGAGING: Unique
+2025-12-11 15:03:13 | INFO     | >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2025-12-11 15:03:14 | DEBUG    |     Initial health: 657 red pixels
+2025-12-11 15:03:14 | INFO     |   → Skill 1: 1
+2025-12-11 15:03:15 | DEBUG    |     Health check: 655 red pixels -> ALIVE
+2025-12-11 15:03:15 | INFO     |   → Skill 2: 2
+2025-12-11 15:03:16 | DEBUG    |     Health check: 655 red pixels -> ALIVE
+2025-12-11 15:03:16 | INFO     |   → Skill 3: 3
+2025-12-11 15:03:17 | DEBUG    |     Health check: 655 red pixels -> ALIVE
+2025-12-11 15:03:17 | INFO     |   → Skill 4: 4
+2025-12-11 15:03:18 | DEBUG    |     Health check: 653 red pixels -> ALIVE
+2025-12-11 15:03:18 | DEBUG    |     Health change: 657 → 653 (Δ=4)
+2025-12-11 15:03:18 | WARNING  |   ⚠️  Health barely changed (657 → 653, 0.6%) - NOT hitting mob!
+2025-12-11 15:03:18 | WARNING  |   Character may be stuck or mob unreachable
+2025-12-11 15:03:18 | INFO     | <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+2025-12-11 15:03:18 | DEBUG    |     Combat failed - mob may be unreachable
+2025-12-11 15:03:18 | INFO     | 
+  Verifying target #3 (D=56px)...
+2025-12-11 15:03:18 | DEBUG    |     Clicking (968, 514)
+2025-12-11 15:03:18 | DEBUG    |     Health check: 653 red pixels -> ALIVE
+2025-12-11 15:03:18 | DEBUG    |     ✓ Verified MOB in 1 attempts
+2025-12-11 15:03:18 | INFO     |     ✓ Unique | Status: ALIVE
+2025-12-11 15:03:18 | INFO     | 
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2025-12-11 15:03:18 | INFO     | ⚔️  ENGAGING: Unique
+2025-12-11 15:03:18 | INFO     | >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2025-12-11 15:03:18 | DEBUG    |     Initial health: 652 red pixels
+2025-12-11 15:03:18 | INFO     |   → Skill 1: 1
+2025-12-11 15:03:20 | DEBUG    |     Health check: 651 red pixels -> ALIVE
+2025-12-11 15:03:20 | INFO     |   → Skill 2: 2
+2025-12-11 15:03:21 | DEBUG    |     Health check: 655 red pixels -> ALIVE
+2025-12-11 15:03:21 | INFO     |   → Skill 3: 3
+2025-12-11 15:03:22 | DEBUG    |     Health check: 652 red pixels -> ALIVE
+2025-12-11 15:03:22 | INFO     |   → Skill 4: 4
+2025-12-11 15:03:23 | DEBUG    |     Health check: 649 red pixels -> ALIVE
+2025-12-11 15:03:23 | DEBUG    |     Health change: 652 → 649 (Δ=3)
+2025-12-11 15:03:23 | WARNING  |   ⚠️  Health barely changed (652 → 649, 0.9%) - NOT hitting mob!
+2025-12-11 15:03:23 | WARNING  |   Character may be stuck or mob unreachable
+2025-12-11 15:03:23 | INFO     | <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+2025-12-11 15:03:23 | DEBUG    |     Combat failed - mob may be unreachable
+2025-12-11 15:03:23 | INFO     | 
+======================================================================
+2025-12-11 15:03:23 | INFO     | CYCLE #8
+2025-12-11 15:03:23 | INFO     | ======================================================================
+2025-12-11 15:03:23 | DEBUG    | Player health bar: 0 red pixels
+2025-12-11 15:03:23 | WARNING  | 💀 DEATH DETECTED - Player health bar empty!
+2025-12-11 15:03:23 | WARNING  |    Health bar red pixels: 0 (threshold: 50)
+2025-12-11 15:03:23 | WARNING  | ⚠️  Player is dead - pausing hunting
+2025-12-11 15:03:24 | INFO     | 📸 Screenshot saved: 0002_150323_DEATH_death_2.png
+2025-12-11 15:03:24 | INFO     | 
+======================================================================
+2025-12-11 15:03:24 | INFO     | 💀 DEATH HANDLER ACTIVATED
+2025-12-11 15:03:24 | INFO     | ======================================================================
+2025-12-11 15:03:24 | INFO     | Death #2
+2025-12-11 15:03:24 | INFO     | Waiting 2.0s before reviving...
+2025-12-11 15:03:26 | INFO     | Pressing F4 (open revive menu)...
+2025-12-11 15:03:26 | INFO     | Pressing 0 (resurrect at specified point)...
+2025-12-11 15:03:26 | INFO     | Waiting for respawn (3s)...
+2025-12-11 15:03:29 | INFO     | ✅ Revive sequence completed!
+2025-12-11 15:03:29 | INFO     | ======================================================================
+
+2025-12-11 15:03:29 | INFO     | 🔄 Running buffer sequence after revive...
+2025-12-11 15:03:29 | INFO     | 
+============================================================
+2025-12-11 15:03:29 | INFO     | RUNNING BUFFER SEQUENCE
+2025-12-11 15:03:29 | INFO     | ============================================================
+2025-12-11 15:03:29 | INFO     |   [1/6] Pressing: F2
+2025-12-11 15:03:29 | INFO     |   [2/6] Pressing: 1
+2025-12-11 15:03:30 | INFO     |   [3/6] Pressing: 2
+2025-12-11 15:03:30 | INFO     |       Waiting 1.0s...
+2025-12-11 15:03:31 | INFO     |   [4/6] Pressing: 3
+2025-12-11 15:03:31 | INFO     |       Waiting 1.0s...
+2025-12-11 15:03:32 | INFO     | 
+
+⛔ Bot stopped by user
+2025-12-11 15:03:32 | INFO     | 
+======================================================================
+2025-12-11 15:03:32 | INFO     | 📊 FINAL STATISTICS
+2025-12-11 15:03:32 | INFO     | ======================================================================
+2025-12-11 15:03:32 | INFO     | 📁 Log Directory: logs/session_20251211_150214
+2025-12-11 15:03:32 | INFO     | ⏱️  Uptime: 78s (1m 18s)
+2025-12-11 15:03:32 | INFO     | 🔄 Total Cycles: 8
+2025-12-11 15:03:32 | INFO     | 📸 Screenshots Saved: 2
+2025-12-11 15:03:32 | INFO     | 
+2025-12-11 15:03:32 | INFO     | 🔍 Detection:
+2025-12-11 15:03:32 | INFO     |    Total Clicks: 18
+2025-12-11 15:03:32 | INFO     |    Verified Mobs: 16
+2025-12-11 15:03:32 | INFO     |    Filtered Pets: 2
+2025-12-11 15:03:32 | INFO     |    Pet Filter Rate: 11.1%
+2025-12-11 15:03:32 | INFO     | 
+2025-12-11 15:03:32 | INFO     | ⚔️  Combat:
+2025-12-11 15:03:32 | INFO     |    Total Kills: 4
+2025-12-11 15:03:32 | INFO     |    Deaths: 2
+2025-12-11 15:03:32 | INFO     |    Early Stops: 2
+2025-12-11 15:03:32 | INFO     |    Skills Used: 28
+2025-12-11 15:03:32 | INFO     |    Avg Skills/Kill: 7.0
+2025-12-11 15:03:32 | INFO     |    Kills/Hour: 184.6
+2025-12-11 15:03:32 | INFO     | 
+2025-12-11 15:03:32 | INFO     | ⚙️  System:
+2025-12-11 15:03:32 | INFO     |    Buffer Sequences: 2
+2025-12-11 15:03:32 | INFO     |    Stuck Recoveries: 1
+2025-12-11 15:03:32 | INFO     |    Cache Hit Rate: 5.9%
+2025-12-11 15:03:32 | INFO     |    Cache Size: 18 entries
+2025-12-11 15:03:32 | INFO     | 
+2025-12-11 15:03:32 | INFO     | 📈 Efficiency:
+2025-12-11 15:03:32 | INFO     |    Avg Cycle Time: 9.75s
+2025-12-11 15:03:32 | INFO     |    Avg Clicks/Cycle: 2.2
+2025-12-11 15:03:32 | INFO     |    Avg Kills/Cycle: 0.50
+2025-12-11 15:03:32 | INFO     | ======================================================================

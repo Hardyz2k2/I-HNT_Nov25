@@ -1,0 +1,788 @@
+2025-12-08 23:58:13 | INFO     | ======================================================================
+2025-12-08 23:58:13 | INFO     | MOB HUNTER v3.0 - CENTER-OUT + BINARY HEALTH
+2025-12-08 23:58:13 | INFO     | ======================================================================
+2025-12-08 23:58:13 | INFO     | Log directory: logs/session_20251208_235813
+2025-12-08 23:58:13 | INFO     | Screen: 1920x1080
+2025-12-08 23:58:13 | INFO     | Strategy: Attack closest to center first
+2025-12-08 23:58:13 | INFO     | Health: Binary (ALIVE/DEAD) detection
+2025-12-08 23:58:13 | INFO     | Pet Filter: Via nameplate class detection
+2025-12-08 23:58:13 | INFO     | ======================================================================
+2025-12-08 23:58:14 | INFO     | 
+🚀 Bot started! Press Ctrl+C to stop.
+
+2025-12-08 23:58:14 | INFO     | 💡 Controls: CapsLock = Pause/Resume | O = Toggle Overlay
+
+2025-12-08 23:58:14 | INFO     | ⌨️  Global keyboard listener active (works in any window)
+
+2025-12-08 23:58:14 | INFO     | 📋 Configuration:
+2025-12-08 23:58:14 | INFO     |    Death Detection: ✅ Enabled
+2025-12-08 23:58:14 | INFO     |    Death Screenshots: ✅ Enabled
+2025-12-08 23:58:14 | INFO     |    Error Screenshots: ✅ Enabled
+2025-12-08 23:58:14 | INFO     |    Periodic Screenshots: ❌ Disabled
+2025-12-08 23:58:14 | INFO     |    Buffer Interval: 120s
+2025-12-08 23:58:14 | INFO     |    Overlay: ✅ Enabled
+2025-12-08 23:58:14 | INFO     | 
+2025-12-08 23:58:14 | INFO     | 🖥️  Click-through overlay starting...
+2025-12-08 23:58:14 | INFO     | 
+Running INITIAL buffer sequence...
+2025-12-08 23:58:14 | INFO     | 
+============================================================
+2025-12-08 23:58:14 | INFO     | RUNNING BUFFER SEQUENCE
+2025-12-08 23:58:14 | INFO     | ============================================================
+2025-12-08 23:58:14 | INFO     |   [1/6] Pressing: F2
+2025-12-08 23:58:14 | INFO     |   [2/6] Pressing: 1
+2025-12-08 23:58:14 | INFO     |   [3/6] Pressing: 2
+2025-12-08 23:58:14 | INFO     |       Waiting 1.0s...
+2025-12-08 23:58:14 | INFO     | ✅ Overlay is now CLICK-THROUGH and transparent
+2025-12-08 23:58:15 | INFO     |   [4/6] Pressing: 3
+2025-12-08 23:58:15 | INFO     |       Waiting 1.0s...
+2025-12-08 23:58:16 | INFO     |   [5/6] Pressing: 4
+2025-12-08 23:58:16 | INFO     |       Waiting 1.0s...
+2025-12-08 23:58:17 | INFO     |   [6/6] Pressing: F1
+2025-12-08 23:58:17 | INFO     | ============================================================
+2025-12-08 23:58:17 | INFO     | Buffer sequence complete (Total: 1)
+2025-12-08 23:58:17 | INFO     | Next buffer in 120s (2m)
+2025-12-08 23:58:17 | INFO     | ============================================================
+
+2025-12-08 23:58:17 | INFO     | 
+======================================================================
+2025-12-08 23:58:17 | INFO     | CYCLE #1
+2025-12-08 23:58:17 | INFO     | ======================================================================
+2025-12-08 23:58:17 | DEBUG    | Death detection: Gold=389, Dark=25797, Brown=1, White=394
+2025-12-08 23:58:17 | INFO     | Detected: 0 floating names
+2025-12-08 23:58:17 | INFO     | → No floating names found
+2025-12-08 23:58:18 | INFO     | 
+======================================================================
+2025-12-08 23:58:18 | INFO     | CYCLE #2
+2025-12-08 23:58:18 | INFO     | ======================================================================
+2025-12-08 23:58:18 | DEBUG    | Death detection: Gold=364, Dark=25546, Brown=0, White=517
+2025-12-08 23:58:18 | INFO     | Detected: 6 floating names
+2025-12-08 23:58:18 | INFO     | → Valid targets (after cache): 6
+2025-12-08 23:58:18 | INFO     | → Target priority (closest to farthest):
+2025-12-08 23:58:18 | INFO     |    #1: Distance=372px from center
+2025-12-08 23:58:18 | INFO     |    #2: Distance=374px from center
+2025-12-08 23:58:18 | INFO     |    #3: Distance=383px from center
+2025-12-08 23:58:18 | INFO     |    #4: Distance=383px from center
+2025-12-08 23:58:18 | INFO     |    #5: Distance=396px from center
+2025-12-08 23:58:18 | INFO     | 
+  Verifying target #1 (D=372px)...
+2025-12-08 23:58:18 | DEBUG    |     Clicking (987, 199)
+2025-12-08 23:58:18 | DEBUG    |     Health check: 649 red pixels -> ALIVE
+2025-12-08 23:58:18 | DEBUG    |     ✓ Verified MOB in 1 attempts
+2025-12-08 23:58:18 | INFO     |     ✓ Unique | Status: ALIVE
+2025-12-08 23:58:18 | INFO     | 
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2025-12-08 23:58:18 | INFO     | ⚔️  ENGAGING: Unique
+2025-12-08 23:58:18 | INFO     | >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2025-12-08 23:58:18 | DEBUG    |     Health check: 649 red pixels -> ALIVE
+2025-12-08 23:58:18 | INFO     |   → Skill 1: 1
+2025-12-08 23:58:19 | DEBUG    |     Health check: 649 red pixels -> ALIVE
+2025-12-08 23:58:19 | INFO     |   → Skill 2: 2
+2025-12-08 23:58:20 | DEBUG    |     Health check: 649 red pixels -> ALIVE
+2025-12-08 23:58:20 | INFO     |   → Skill 3: 3
+2025-12-08 23:58:22 | DEBUG    |     Health check: 477 red pixels -> ALIVE
+2025-12-08 23:58:22 | INFO     |   → Skill 4: 4
+2025-12-08 23:58:23 | DEBUG    |     Health check: 273 red pixels -> ALIVE
+2025-12-08 23:58:23 | INFO     |   ℹ️  Rotation complete (mob status unknown)
+2025-12-08 23:58:23 | INFO     | <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+2025-12-08 23:58:23 | INFO     | 💀 Total kills: 1
+2025-12-08 23:58:23 | INFO     | <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+2025-12-08 23:58:23 | INFO     | 
+  Verifying target #2 (D=374px)...
+2025-12-08 23:58:23 | DEBUG    |     Clicking (920, 199)
+2025-12-08 23:58:23 | DEBUG    |     Health check: 649 red pixels -> ALIVE
+2025-12-08 23:58:23 | DEBUG    |     ✓ Verified MOB in 1 attempts
+2025-12-08 23:58:23 | INFO     |     ✓ Unique | Status: ALIVE
+2025-12-08 23:58:23 | INFO     | 
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2025-12-08 23:58:23 | INFO     | ⚔️  ENGAGING: Unique
+2025-12-08 23:58:23 | INFO     | >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2025-12-08 23:58:23 | DEBUG    |     Health check: 649 red pixels -> ALIVE
+2025-12-08 23:58:23 | INFO     |   → Skill 1: 1
+2025-12-08 23:58:24 | DEBUG    |     Health check: 649 red pixels -> ALIVE
+2025-12-08 23:58:24 | INFO     |   → Skill 2: 2
+2025-12-08 23:58:25 | DEBUG    |     Health check: 649 red pixels -> ALIVE
+2025-12-08 23:58:25 | INFO     |   → Skill 3: 3
+2025-12-08 23:58:26 | DEBUG    |     Health check: 649 red pixels -> ALIVE
+2025-12-08 23:58:26 | INFO     |   → Skill 4: 4
+2025-12-08 23:58:27 | DEBUG    |     Health check: 372 red pixels -> ALIVE
+2025-12-08 23:58:27 | INFO     |   ℹ️  Rotation complete (mob status unknown)
+2025-12-08 23:58:27 | INFO     | <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+2025-12-08 23:58:27 | INFO     | 💀 Total kills: 2
+2025-12-08 23:58:27 | INFO     | <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+2025-12-08 23:58:27 | INFO     | 
+  Verifying target #3 (D=383px)...
+2025-12-08 23:58:27 | DEBUG    |     Clicking (873, 197)
+2025-12-08 23:58:28 | DEBUG    |     Health check: 201 red pixels -> ALIVE
+2025-12-08 23:58:28 | DEBUG    |     ✓ Verified MOB in 1 attempts
+2025-12-08 23:58:28 | INFO     |     ✓ Unique | Status: ALIVE
+2025-12-08 23:58:28 | INFO     | 
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2025-12-08 23:58:28 | INFO     | ⚔️  ENGAGING: Unique
+2025-12-08 23:58:28 | INFO     | >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2025-12-08 23:58:28 | DEBUG    |     Health check: 201 red pixels -> ALIVE
+2025-12-08 23:58:28 | INFO     |   → Skill 1: 1
+2025-12-08 23:58:29 | DEBUG    |     Health check: 201 red pixels -> ALIVE
+2025-12-08 23:58:29 | INFO     |   → Skill 2: 2
+2025-12-08 23:58:30 | DEBUG    |     Health check: 201 red pixels -> ALIVE
+2025-12-08 23:58:30 | INFO     |   → Skill 3: 3
+2025-12-08 23:58:31 | DEBUG    |     Health check: 201 red pixels -> ALIVE
+2025-12-08 23:58:31 | INFO     |   → Skill 4: 4
+2025-12-08 23:58:32 | DEBUG    |     Health check: 114 red pixels -> ALIVE
+2025-12-08 23:58:32 | INFO     |   ℹ️  Rotation complete (mob status unknown)
+2025-12-08 23:58:32 | INFO     | <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+2025-12-08 23:58:32 | INFO     | 💀 Total kills: 3
+2025-12-08 23:58:32 | INFO     | <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+2025-12-08 23:58:33 | INFO     | 
+======================================================================
+2025-12-08 23:58:33 | INFO     | CYCLE #3
+2025-12-08 23:58:33 | INFO     | ======================================================================
+2025-12-08 23:58:33 | DEBUG    | Death detection: Gold=377, Dark=49331, Brown=17, White=529
+2025-12-08 23:58:33 | INFO     | Detected: 7 floating names
+2025-12-08 23:58:33 | DEBUG    |   Name #5: Cached, skipping
+2025-12-08 23:58:33 | INFO     | → Valid targets (after cache): 6
+2025-12-08 23:58:33 | INFO     | → Target priority (closest to farthest):
+2025-12-08 23:58:33 | INFO     |    #1: Distance=14px from center
+2025-12-08 23:58:33 | INFO     |    #2: Distance=24px from center
+2025-12-08 23:58:33 | INFO     |    #3: Distance=111px from center
+2025-12-08 23:58:33 | INFO     |    #4: Distance=147px from center
+2025-12-08 23:58:33 | INFO     |    #5: Distance=254px from center
+2025-12-08 23:58:33 | INFO     | 
+  Verifying target #1 (D=14px)...
+2025-12-08 23:58:33 | DEBUG    |     Clicking (960, 597)
+2025-12-08 23:58:33 | DEBUG    |     Health check: 29 red pixels -> DEAD
+2025-12-08 23:58:33 | DEBUG    |     ✓ Verified MOB in 1 attempts
+2025-12-08 23:58:33 | INFO     |     ✗ Mob already DEAD
+2025-12-08 23:58:33 | INFO     | 
+  Verifying target #2 (D=24px)...
+2025-12-08 23:58:33 | DEBUG    |     Clicking (945, 559)
+2025-12-08 23:58:33 | DEBUG    |     Health check: 29 red pixels -> DEAD
+2025-12-08 23:58:33 | DEBUG    |     ✓ Verified MOB in 1 attempts
+2025-12-08 23:58:33 | INFO     |     ✗ Mob already DEAD
+2025-12-08 23:58:33 | INFO     | 
+  Verifying target #3 (D=111px)...
+2025-12-08 23:58:33 | DEBUG    |     Clicking (1057, 628)
+2025-12-08 23:58:34 | DEBUG    |     Health check: 0 red pixels -> DEAD
+2025-12-08 23:58:34 | DEBUG    |     ✓ Verified MOB in 1 attempts
+2025-12-08 23:58:34 | INFO     |     ✗ Mob already DEAD
+2025-12-08 23:58:34 | INFO     | 
+======================================================================
+2025-12-08 23:58:34 | INFO     | CYCLE #4
+2025-12-08 23:58:34 | INFO     | ======================================================================
+2025-12-08 23:58:34 | DEBUG    | Death detection: Gold=301, Dark=47547, Brown=7, White=473
+2025-12-08 23:58:34 | INFO     | Detected: 7 floating names
+2025-12-08 23:58:34 | DEBUG    |   Name #2: Cached, skipping
+2025-12-08 23:58:34 | INFO     | → Valid targets (after cache): 6
+2025-12-08 23:58:34 | INFO     | → Target priority (closest to farthest):
+2025-12-08 23:58:34 | INFO     |    #1: Distance=38px from center
+2025-12-08 23:58:34 | INFO     |    #2: Distance=71px from center
+2025-12-08 23:58:34 | INFO     |    #3: Distance=373px from center
+2025-12-08 23:58:34 | INFO     |    #4: Distance=379px from center
+2025-12-08 23:58:34 | INFO     |    #5: Distance=383px from center
+2025-12-08 23:58:34 | INFO     | 
+  Verifying target #1 (D=38px)...
+2025-12-08 23:58:34 | DEBUG    |     Clicking (986, 542)
+2025-12-08 23:58:35 | DEBUG    |     Health check: 0 red pixels -> DEAD
+2025-12-08 23:58:35 | DEBUG    |     ✓ Verified MOB in 1 attempts
+2025-12-08 23:58:35 | INFO     |     ✗ Mob already DEAD
+2025-12-08 23:58:35 | INFO     | 
+  Verifying target #2 (D=71px)...
+2025-12-08 23:58:35 | DEBUG    |     Clicking (1021, 608)
+2025-12-08 23:58:35 | DEBUG    |     Health check: 0 red pixels -> DEAD
+2025-12-08 23:58:35 | DEBUG    |     ✓ Verified MOB in 1 attempts
+2025-12-08 23:58:35 | INFO     |     ✗ Mob already DEAD
+2025-12-08 23:58:35 | INFO     | 
+  Verifying target #3 (D=373px)...
+2025-12-08 23:58:35 | DEBUG    |     Clicking (937, 197)
+2025-12-08 23:58:35 | DEBUG    |     Health check: 0 red pixels -> DEAD
+2025-12-08 23:58:35 | DEBUG    |     ✓ Verified MOB in 1 attempts
+2025-12-08 23:58:35 | INFO     |     ✗ Mob already DEAD
+2025-12-08 23:58:36 | INFO     | 
+======================================================================
+2025-12-08 23:58:36 | INFO     | CYCLE #5
+2025-12-08 23:58:36 | INFO     | ======================================================================
+2025-12-08 23:58:36 | DEBUG    | Death detection: Gold=355, Dark=48405, Brown=25, White=539
+2025-12-08 23:58:36 | INFO     | Detected: 4 floating names
+2025-12-08 23:58:36 | DEBUG    |   Name #1: Cached, skipping
+2025-12-08 23:58:36 | INFO     | → Valid targets (after cache): 3
+2025-12-08 23:58:36 | INFO     | → Target priority (closest to farthest):
+2025-12-08 23:58:36 | INFO     |    #1: Distance=52px from center
+2025-12-08 23:58:36 | INFO     |    #2: Distance=73px from center
+2025-12-08 23:58:36 | INFO     |    #3: Distance=271px from center
+2025-12-08 23:58:36 | INFO     | 
+  Verifying target #1 (D=52px)...
+2025-12-08 23:58:36 | DEBUG    |     Clicking (911, 551)
+2025-12-08 23:58:36 | DEBUG    |     Health check: 0 red pixels -> DEAD
+2025-12-08 23:58:36 | DEBUG    |     ✓ Verified MOB in 1 attempts
+2025-12-08 23:58:36 | INFO     |     ✗ Mob already DEAD
+2025-12-08 23:58:36 | INFO     | 
+  Verifying target #2 (D=73px)...
+2025-12-08 23:58:36 | DEBUG    |     Clicking (991, 637)
+2025-12-08 23:58:36 | DEBUG    |     Health check: 0 red pixels -> DEAD
+2025-12-08 23:58:36 | DEBUG    |     ✓ Verified MOB in 1 attempts
+2025-12-08 23:58:36 | INFO     |     ✗ Mob already DEAD
+2025-12-08 23:58:36 | INFO     | 
+  Verifying target #3 (D=271px)...
+2025-12-08 23:58:36 | DEBUG    |     Clicking (1167, 395)
+2025-12-08 23:58:37 | DEBUG    |     Health check: 708 red pixels -> ALIVE
+2025-12-08 23:58:37 | DEBUG    |     ✓ Verified MOB in 1 attempts
+2025-12-08 23:58:37 | INFO     |     ✓ Unique | Status: ALIVE
+2025-12-08 23:58:37 | INFO     | 
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2025-12-08 23:58:37 | INFO     | ⚔️  ENGAGING: Unique
+2025-12-08 23:58:37 | INFO     | >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2025-12-08 23:58:37 | DEBUG    |     Health check: 708 red pixels -> ALIVE
+2025-12-08 23:58:37 | INFO     |   → Skill 1: 1
+2025-12-08 23:58:38 | DEBUG    |     Health check: 708 red pixels -> ALIVE
+2025-12-08 23:58:38 | INFO     |   → Skill 2: 2
+2025-12-08 23:58:39 | DEBUG    |     Health check: 708 red pixels -> ALIVE
+2025-12-08 23:58:39 | INFO     |   → Skill 3: 3
+2025-12-08 23:58:40 | DEBUG    |     Health check: 708 red pixels -> ALIVE
+2025-12-08 23:58:40 | INFO     |   → Skill 4: 4
+2025-12-08 23:58:41 | DEBUG    |     Health check: 708 red pixels -> ALIVE
+2025-12-08 23:58:41 | INFO     |   ℹ️  Rotation complete (mob status unknown)
+2025-12-08 23:58:41 | INFO     | <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+2025-12-08 23:58:41 | INFO     | 💀 Total kills: 4
+2025-12-08 23:58:41 | INFO     | <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+2025-12-08 23:58:42 | INFO     | 
+======================================================================
+2025-12-08 23:58:42 | INFO     | CYCLE #6
+2025-12-08 23:58:42 | INFO     | ======================================================================
+2025-12-08 23:58:42 | DEBUG    | Death detection: Gold=563, Dark=35980, Brown=0, White=744
+2025-12-08 23:58:42 | INFO     | Detected: 4 floating names
+2025-12-08 23:58:42 | DEBUG    |   Name #4: Cached, skipping
+2025-12-08 23:58:42 | INFO     | → Valid targets (after cache): 3
+2025-12-08 23:58:42 | INFO     | → Target priority (closest to farthest):
+2025-12-08 23:58:42 | INFO     |    #1: Distance=160px from center
+2025-12-08 23:58:42 | INFO     |    #2: Distance=302px from center
+2025-12-08 23:58:42 | INFO     |    #3: Distance=323px from center
+2025-12-08 23:58:42 | INFO     | 
+  Verifying target #1 (D=160px)...
+2025-12-08 23:58:42 | DEBUG    |     Clicking (830, 476)
+2025-12-08 23:58:42 | DEBUG    |     Health check: 0 red pixels -> DEAD
+2025-12-08 23:58:42 | DEBUG    |     ✓ Verified MOB in 1 attempts
+2025-12-08 23:58:42 | INFO     |     ✗ Mob already DEAD
+2025-12-08 23:58:42 | INFO     | 
+  Verifying target #2 (D=302px)...
+2025-12-08 23:58:42 | DEBUG    |     Clicking (1112, 308)
+2025-12-08 23:58:42 | DEBUG    |     Health check: 708 red pixels -> ALIVE
+2025-12-08 23:58:42 | DEBUG    |     ✓ Verified MOB in 1 attempts
+2025-12-08 23:58:42 | INFO     |     ✓ Unique | Status: ALIVE
+2025-12-08 23:58:42 | INFO     | 
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2025-12-08 23:58:42 | INFO     | ⚔️  ENGAGING: Unique
+2025-12-08 23:58:42 | INFO     | >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2025-12-08 23:58:42 | DEBUG    |     Health check: 708 red pixels -> ALIVE
+2025-12-08 23:58:42 | INFO     |   → Skill 1: 1
+2025-12-08 23:58:43 | DEBUG    |     Health check: 708 red pixels -> ALIVE
+2025-12-08 23:58:43 | INFO     |   → Skill 2: 2
+2025-12-08 23:58:45 | DEBUG    |     Health check: 708 red pixels -> ALIVE
+2025-12-08 23:58:45 | INFO     |   → Skill 3: 3
+2025-12-08 23:58:46 | DEBUG    |     Health check: 626 red pixels -> ALIVE
+2025-12-08 23:58:46 | INFO     |   → Skill 4: 4
+2025-12-08 23:58:47 | DEBUG    |     Health check: 518 red pixels -> ALIVE
+2025-12-08 23:58:47 | INFO     |   ℹ️  Rotation complete (mob status unknown)
+2025-12-08 23:58:47 | INFO     | <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+2025-12-08 23:58:47 | INFO     | 💀 Total kills: 5
+2025-12-08 23:58:47 | INFO     | <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+2025-12-08 23:58:47 | INFO     | 
+  Verifying target #3 (D=323px)...
+2025-12-08 23:58:47 | DEBUG    |     Clicking (1149, 308)
+2025-12-08 23:58:47 | DEBUG    |     Health check: 518 red pixels -> ALIVE
+2025-12-08 23:58:47 | DEBUG    |     ✓ Verified MOB in 1 attempts
+2025-12-08 23:58:47 | INFO     |     ✓ Unique | Status: ALIVE
+2025-12-08 23:58:47 | INFO     | 
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2025-12-08 23:58:47 | INFO     | ⚔️  ENGAGING: Unique
+2025-12-08 23:58:47 | INFO     | >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2025-12-08 23:58:47 | DEBUG    |     Health check: 518 red pixels -> ALIVE
+2025-12-08 23:58:47 | INFO     |   → Skill 1: 1
+2025-12-08 23:58:48 | DEBUG    |     Health check: 518 red pixels -> ALIVE
+2025-12-08 23:58:48 | INFO     |   → Skill 2: 2
+2025-12-08 23:58:49 | DEBUG    |     Health check: 473 red pixels -> ALIVE
+2025-12-08 23:58:49 | INFO     |   → Skill 3: 3
+2025-12-08 23:58:50 | DEBUG    |     Health check: 422 red pixels -> ALIVE
+2025-12-08 23:58:50 | INFO     |   → Skill 4: 4
+2025-12-08 23:58:52 | DEBUG    |     Health check: 290 red pixels -> ALIVE
+2025-12-08 23:58:52 | INFO     |   ℹ️  Rotation complete (mob status unknown)
+2025-12-08 23:58:52 | INFO     | <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+2025-12-08 23:58:52 | INFO     | 💀 Total kills: 6
+2025-12-08 23:58:52 | INFO     | <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+2025-12-08 23:58:52 | INFO     | 
+======================================================================
+2025-12-08 23:58:52 | INFO     | CYCLE #7
+2025-12-08 23:58:52 | INFO     | ======================================================================
+2025-12-08 23:58:52 | DEBUG    | Death detection: Gold=425, Dark=69153, Brown=0, White=546
+2025-12-08 23:58:52 | INFO     | Detected: 14 floating names
+2025-12-08 23:58:52 | DEBUG    |   Name #8: Cached, skipping
+2025-12-08 23:58:52 | DEBUG    |   Name #12: Cached, skipping
+2025-12-08 23:58:52 | INFO     | → Valid targets (after cache): 12
+2025-12-08 23:58:52 | INFO     | → Target priority (closest to farthest):
+2025-12-08 23:58:52 | INFO     |    #1: Distance=58px from center
+2025-12-08 23:58:52 | INFO     |    #2: Distance=65px from center
+2025-12-08 23:58:52 | INFO     |    #3: Distance=372px from center
+2025-12-08 23:58:52 | INFO     |    #4: Distance=375px from center
+2025-12-08 23:58:52 | INFO     |    #5: Distance=384px from center
+2025-12-08 23:58:52 | INFO     | 
+  Verifying target #1 (D=58px)...
+2025-12-08 23:58:52 | DEBUG    |     Clicking (905, 549)
+2025-12-08 23:58:52 | DEBUG    |     Health check: 290 red pixels -> ALIVE
+2025-12-08 23:58:52 | DEBUG    |     ✓ Verified MOB in 1 attempts
+2025-12-08 23:58:52 | INFO     |     ✓ Unique | Status: ALIVE
+2025-12-08 23:58:52 | INFO     | 
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2025-12-08 23:58:52 | INFO     | ⚔️  ENGAGING: Unique
+2025-12-08 23:58:52 | INFO     | >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2025-12-08 23:58:52 | DEBUG    |     Health check: 290 red pixels -> ALIVE
+2025-12-08 23:58:52 | INFO     |   → Skill 1: 1
+2025-12-08 23:58:53 | DEBUG    |     Health check: 128 red pixels -> ALIVE
+2025-12-08 23:58:53 | INFO     |   → Skill 2: 2
+2025-12-08 23:58:55 | DEBUG    |     Health check: 88 red pixels -> ALIVE
+2025-12-08 23:58:55 | INFO     |   → Skill 3: 3
+2025-12-08 23:58:56 | DEBUG    |     Health check: 88 red pixels -> ALIVE
+2025-12-08 23:58:56 | INFO     |   → Skill 4: 4
+2025-12-08 23:58:57 | DEBUG    |     Health check: 88 red pixels -> ALIVE
+2025-12-08 23:58:57 | INFO     |   ℹ️  Rotation complete (mob status unknown)
+2025-12-08 23:58:57 | INFO     | <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+2025-12-08 23:58:57 | INFO     | 💀 Total kills: 7
+2025-12-08 23:58:57 | INFO     | <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+2025-12-08 23:58:57 | INFO     | 
+  Verifying target #2 (D=65px)...
+2025-12-08 23:58:57 | DEBUG    |     Clicking (944, 633)
+2025-12-08 23:58:57 | DEBUG    |     Health check: 0 red pixels -> DEAD
+2025-12-08 23:58:57 | DEBUG    |     ✓ Verified MOB in 1 attempts
+2025-12-08 23:58:57 | INFO     |     ✗ Mob already DEAD
+2025-12-08 23:58:57 | INFO     | 
+  Verifying target #3 (D=372px)...
+2025-12-08 23:58:57 | DEBUG    |     Clicking (966, 199)
+2025-12-08 23:58:58 | DEBUG    |     Health check: 0 red pixels -> DEAD
+2025-12-08 23:58:58 | DEBUG    |     ✓ Verified MOB in 1 attempts
+2025-12-08 23:58:58 | INFO     |     ✗ Mob already DEAD
+2025-12-08 23:58:58 | INFO     | 
+======================================================================
+2025-12-08 23:58:58 | INFO     | CYCLE #8
+2025-12-08 23:58:58 | INFO     | ======================================================================
+2025-12-08 23:58:58 | DEBUG    | Death detection: Gold=320, Dark=68953, Brown=0, White=426
+2025-12-08 23:58:58 | INFO     | Detected: 9 floating names
+2025-12-08 23:58:58 | DEBUG    |   Name #4: Cached, skipping
+2025-12-08 23:58:58 | DEBUG    |   Name #6: Cached, skipping
+2025-12-08 23:58:58 | INFO     | → Valid targets (after cache): 7
+2025-12-08 23:58:58 | INFO     | → Target priority (closest to farthest):
+2025-12-08 23:58:58 | INFO     |    #1: Distance=13px from center
+2025-12-08 23:58:58 | INFO     |    #2: Distance=96px from center
+2025-12-08 23:58:58 | INFO     |    #3: Distance=117px from center
+2025-12-08 23:58:58 | INFO     |    #4: Distance=122px from center
+2025-12-08 23:58:58 | INFO     |    #5: Distance=149px from center
+2025-12-08 23:58:58 | INFO     | 
+  Verifying target #1 (D=13px)...
+2025-12-08 23:58:58 | DEBUG    |     Clicking (960, 596)
+2025-12-08 23:58:58 | DEBUG    |     Health check: 0 red pixels -> DEAD
+2025-12-08 23:58:58 | DEBUG    |     ✓ Verified MOB in 1 attempts
+2025-12-08 23:58:58 | INFO     |     ✗ Mob already DEAD
+2025-12-08 23:58:58 | INFO     | 
+  Verifying target #2 (D=96px)...
+2025-12-08 23:58:58 | DEBUG    |     Clicking (974, 475)
+2025-12-08 23:58:59 | DEBUG    |     Health check: 0 red pixels -> DEAD
+2025-12-08 23:58:59 | DEBUG    |     ✓ Verified MOB in 1 attempts
+2025-12-08 23:58:59 | INFO     |     ✗ Mob already DEAD
+2025-12-08 23:58:59 | INFO     | 
+  Verifying target #3 (D=117px)...
+2025-12-08 23:58:59 | DEBUG    |     Clicking (959, 688)
+2025-12-08 23:58:59 | DEBUG    |     Health check: 0 red pixels -> DEAD
+2025-12-08 23:58:59 | DEBUG    |     ✓ Verified MOB in 1 attempts
+2025-12-08 23:58:59 | INFO     |     ✗ Mob already DEAD
+2025-12-08 23:58:59 | INFO     | 
+======================================================================
+2025-12-08 23:58:59 | INFO     | CYCLE #9
+2025-12-08 23:58:59 | INFO     | ======================================================================
+2025-12-08 23:58:59 | DEBUG    | Death detection: Gold=387, Dark=69985, Brown=0, White=434
+2025-12-08 23:58:59 | INFO     | Detected: 10 floating names
+2025-12-08 23:58:59 | DEBUG    |   Name #2: Cached, skipping
+2025-12-08 23:58:59 | DEBUG    |   Name #4: Cached, skipping
+2025-12-08 23:58:59 | DEBUG    |   Name #5: Cached, skipping
+2025-12-08 23:58:59 | INFO     | → Valid targets (after cache): 7
+2025-12-08 23:58:59 | INFO     | → Target priority (closest to farthest):
+2025-12-08 23:58:59 | INFO     |    #1: Distance=58px from center
+2025-12-08 23:58:59 | INFO     |    #2: Distance=67px from center
+2025-12-08 23:58:59 | INFO     |    #3: Distance=373px from center
+2025-12-08 23:58:59 | INFO     |    #4: Distance=379px from center
+2025-12-08 23:58:59 | INFO     |    #5: Distance=385px from center
+2025-12-08 23:58:59 | INFO     | 
+  Verifying target #1 (D=58px)...
+2025-12-08 23:58:59 | DEBUG    |     Clicking (914, 606)
+2025-12-08 23:59:00 | DEBUG    |     Health check: 0 red pixels -> DEAD
+2025-12-08 23:59:00 | DEBUG    |     ✓ Verified MOB in 1 attempts
+2025-12-08 23:59:00 | INFO     |     ✗ Mob already DEAD
+2025-12-08 23:59:00 | INFO     | 
+  Verifying target #2 (D=67px)...
+2025-12-08 23:59:00 | DEBUG    |     Clicking (953, 503)
+2025-12-08 23:59:00 | DEBUG    |     Health check: 0 red pixels -> DEAD
+2025-12-08 23:59:00 | DEBUG    |     ✓ Verified MOB in 1 attempts
+2025-12-08 23:59:00 | INFO     |     ✗ Mob already DEAD
+2025-12-08 23:59:00 | INFO     | 
+  Verifying target #3 (D=373px)...
+2025-12-08 23:59:00 | DEBUG    |     Clicking (937, 197)
+2025-12-08 23:59:01 | DEBUG    |     Health check: 0 red pixels -> DEAD
+2025-12-08 23:59:01 | DEBUG    |     ✓ Verified MOB in 1 attempts
+2025-12-08 23:59:01 | INFO     |     ✗ Mob already DEAD
+2025-12-08 23:59:01 | INFO     | 
+======================================================================
+2025-12-08 23:59:01 | INFO     | CYCLE #10
+2025-12-08 23:59:01 | INFO     | ======================================================================
+2025-12-08 23:59:01 | DEBUG    | Death detection: Gold=369, Dark=69383, Brown=0, White=331
+2025-12-08 23:59:01 | INFO     | Detected: 5 floating names
+2025-12-08 23:59:01 | DEBUG    |   Name #3: Cached, skipping
+2025-12-08 23:59:01 | DEBUG    |   Name #4: Cached, skipping
+2025-12-08 23:59:01 | INFO     | → Valid targets (after cache): 3
+2025-12-08 23:59:01 | INFO     | → Target priority (closest to farthest):
+2025-12-08 23:59:01 | INFO     |    #1: Distance=16px from center
+2025-12-08 23:59:01 | INFO     |    #2: Distance=65px from center
+2025-12-08 23:59:01 | INFO     |    #3: Distance=162px from center
+2025-12-08 23:59:01 | INFO     | 
+  Verifying target #1 (D=16px)...
+2025-12-08 23:59:01 | DEBUG    |     Clicking (976, 574)
+2025-12-08 23:59:01 | DEBUG    |     Health check: 0 red pixels -> DEAD
+2025-12-08 23:59:01 | DEBUG    |     ✓ Verified MOB in 1 attempts
+2025-12-08 23:59:01 | INFO     |     ✗ Mob already DEAD
+2025-12-08 23:59:01 | INFO     | 
+  Verifying target #2 (D=65px)...
+2025-12-08 23:59:01 | DEBUG    |     Clicking (1011, 611)
+2025-12-08 23:59:02 | DEBUG    |     Health check: 0 red pixels -> DEAD
+2025-12-08 23:59:02 | DEBUG    |     ✓ Verified MOB in 1 attempts
+2025-12-08 23:59:02 | INFO     |     ✗ Mob already DEAD
+2025-12-08 23:59:02 | INFO     | 
+  Verifying target #3 (D=162px)...
+2025-12-08 23:59:02 | DEBUG    |     Clicking (973, 732)
+2025-12-08 23:59:02 | DEBUG    |     Health check: 0 red pixels -> DEAD
+2025-12-08 23:59:02 | DEBUG    |     ✓ Verified MOB in 1 attempts
+2025-12-08 23:59:02 | INFO     |     ✗ Mob already DEAD
+2025-12-08 23:59:02 | INFO     | 
+======================================================================
+2025-12-08 23:59:02 | INFO     | CYCLE #11
+2025-12-08 23:59:02 | INFO     | ======================================================================
+2025-12-08 23:59:02 | DEBUG    | Death detection: Gold=669, Dark=70349, Brown=0, White=730
+2025-12-08 23:59:02 | INFO     | Detected: 3 floating names
+2025-12-08 23:59:02 | DEBUG    |   Name #2: Cached, skipping
+2025-12-08 23:59:02 | DEBUG    |   Name #3: Cached, skipping
+2025-12-08 23:59:02 | INFO     | → Valid targets (after cache): 1
+2025-12-08 23:59:02 | INFO     | → Target priority (closest to farthest):
+2025-12-08 23:59:02 | INFO     |    #1: Distance=132px from center
+2025-12-08 23:59:02 | INFO     | 
+  Verifying target #1 (D=132px)...
+2025-12-08 23:59:02 | DEBUG    |     Clicking (951, 438)
+2025-12-08 23:59:03 | DEBUG    |     Health check: 0 red pixels -> DEAD
+2025-12-08 23:59:03 | DEBUG    |     ✓ Verified MOB in 1 attempts
+2025-12-08 23:59:03 | INFO     |     ✗ Mob already DEAD
+2025-12-08 23:59:03 | INFO     | 
+======================================================================
+2025-12-08 23:59:03 | INFO     | CYCLE #12
+2025-12-08 23:59:03 | INFO     | ======================================================================
+2025-12-08 23:59:03 | DEBUG    | Death detection: Gold=618, Dark=68728, Brown=0, White=706
+2025-12-08 23:59:03 | INFO     | Detected: 0 floating names
+2025-12-08 23:59:03 | INFO     | → No floating names found
+2025-12-08 23:59:04 | INFO     | 
+======================================================================
+2025-12-08 23:59:04 | INFO     | CYCLE #13
+2025-12-08 23:59:04 | INFO     | ======================================================================
+2025-12-08 23:59:04 | DEBUG    | Death detection: Gold=398, Dark=71032, Brown=0, White=591
+2025-12-08 23:59:04 | INFO     | Detected: 0 floating names
+2025-12-08 23:59:04 | INFO     | → No floating names found
+2025-12-08 23:59:04 | INFO     | 
+======================================================================
+2025-12-08 23:59:04 | INFO     | CYCLE #14
+2025-12-08 23:59:04 | INFO     | ======================================================================
+2025-12-08 23:59:04 | DEBUG    | Death detection: Gold=428, Dark=70927, Brown=0, White=590
+2025-12-08 23:59:04 | INFO     | Detected: 0 floating names
+2025-12-08 23:59:04 | INFO     | → No floating names found
+2025-12-08 23:59:04 | INFO     | 
+======================================================================
+2025-12-08 23:59:04 | INFO     | CYCLE #15
+2025-12-08 23:59:04 | INFO     | ======================================================================
+2025-12-08 23:59:04 | DEBUG    | Death detection: Gold=428, Dark=70923, Brown=0, White=590
+2025-12-08 23:59:04 | INFO     | Detected: 0 floating names
+2025-12-08 23:59:04 | INFO     | → No floating names found
+2025-12-08 23:59:05 | INFO     | 
+======================================================================
+2025-12-08 23:59:05 | INFO     | CYCLE #16
+2025-12-08 23:59:05 | INFO     | ======================================================================
+2025-12-08 23:59:05 | DEBUG    | Death detection: Gold=428, Dark=70938, Brown=0, White=590
+2025-12-08 23:59:05 | INFO     | Detected: 0 floating names
+2025-12-08 23:59:05 | INFO     | → No floating names found
+2025-12-08 23:59:05 | INFO     | 
+======================================================================
+2025-12-08 23:59:05 | INFO     | CYCLE #17
+2025-12-08 23:59:05 | INFO     | ======================================================================
+2025-12-08 23:59:05 | DEBUG    | Death detection: Gold=428, Dark=70933, Brown=0, White=590
+2025-12-08 23:59:05 | INFO     | Detected: 0 floating names
+2025-12-08 23:59:05 | INFO     | → No floating names found
+2025-12-08 23:59:06 | INFO     | 
+======================================================================
+2025-12-08 23:59:06 | INFO     | CYCLE #18
+2025-12-08 23:59:06 | INFO     | ======================================================================
+2025-12-08 23:59:06 | DEBUG    | Death detection: Gold=428, Dark=70924, Brown=0, White=590
+2025-12-08 23:59:06 | INFO     | Detected: 0 floating names
+2025-12-08 23:59:06 | INFO     | → No floating names found
+2025-12-08 23:59:06 | INFO     | 
+======================================================================
+2025-12-08 23:59:06 | INFO     | CYCLE #19
+2025-12-08 23:59:06 | INFO     | ======================================================================
+2025-12-08 23:59:06 | DEBUG    | Death detection: Gold=428, Dark=70928, Brown=0, White=590
+2025-12-08 23:59:06 | INFO     | Detected: 0 floating names
+2025-12-08 23:59:06 | INFO     | → No floating names found
+2025-12-08 23:59:07 | INFO     | 
+======================================================================
+2025-12-08 23:59:07 | INFO     | CYCLE #20
+2025-12-08 23:59:07 | INFO     | ======================================================================
+2025-12-08 23:59:07 | DEBUG    | Death detection: Gold=428, Dark=70926, Brown=0, White=590
+2025-12-08 23:59:07 | INFO     | Detected: 0 floating names
+2025-12-08 23:59:07 | INFO     | → No floating names found
+2025-12-08 23:59:07 | INFO     | 
+======================================================================
+2025-12-08 23:59:07 | INFO     | CYCLE #21
+2025-12-08 23:59:07 | INFO     | ======================================================================
+2025-12-08 23:59:07 | DEBUG    | Death detection: Gold=428, Dark=70928, Brown=0, White=590
+2025-12-08 23:59:07 | INFO     | Detected: 0 floating names
+2025-12-08 23:59:07 | INFO     | → No floating names found
+2025-12-08 23:59:07 | INFO     | 
+======================================================================
+2025-12-08 23:59:07 | INFO     | CYCLE #22
+2025-12-08 23:59:07 | INFO     | ======================================================================
+2025-12-08 23:59:07 | DEBUG    | Death detection: Gold=428, Dark=70920, Brown=0, White=590
+2025-12-08 23:59:07 | INFO     | Detected: 0 floating names
+2025-12-08 23:59:07 | INFO     | → No floating names found
+2025-12-08 23:59:08 | INFO     | 
+======================================================================
+2025-12-08 23:59:08 | INFO     | CYCLE #23
+2025-12-08 23:59:08 | INFO     | ======================================================================
+2025-12-08 23:59:08 | DEBUG    | Death detection: Gold=428, Dark=70939, Brown=0, White=590
+2025-12-08 23:59:08 | INFO     | Detected: 0 floating names
+2025-12-08 23:59:08 | INFO     | → No floating names found
+2025-12-08 23:59:08 | INFO     | 
+======================================================================
+2025-12-08 23:59:08 | INFO     | CYCLE #24
+2025-12-08 23:59:08 | INFO     | ======================================================================
+2025-12-08 23:59:08 | DEBUG    | Death detection: Gold=428, Dark=70934, Brown=0, White=590
+2025-12-08 23:59:08 | INFO     | Detected: 0 floating names
+2025-12-08 23:59:08 | INFO     | → No floating names found
+2025-12-08 23:59:09 | INFO     | 
+======================================================================
+2025-12-08 23:59:09 | INFO     | CYCLE #25
+2025-12-08 23:59:09 | INFO     | ======================================================================
+2025-12-08 23:59:09 | DEBUG    | Death detection: Gold=428, Dark=70924, Brown=0, White=590
+2025-12-08 23:59:09 | INFO     | Detected: 0 floating names
+2025-12-08 23:59:09 | INFO     | → No floating names found
+2025-12-08 23:59:09 | INFO     | 
+======================================================================
+2025-12-08 23:59:09 | INFO     | CYCLE #26
+2025-12-08 23:59:09 | INFO     | ======================================================================
+2025-12-08 23:59:09 | DEBUG    | Death detection: Gold=428, Dark=70924, Brown=0, White=590
+2025-12-08 23:59:09 | INFO     | Detected: 0 floating names
+2025-12-08 23:59:09 | INFO     | → No floating names found
+2025-12-08 23:59:10 | INFO     | 
+======================================================================
+2025-12-08 23:59:10 | INFO     | CYCLE #27
+2025-12-08 23:59:10 | INFO     | ======================================================================
+2025-12-08 23:59:10 | DEBUG    | Death detection: Gold=428, Dark=70948, Brown=0, White=590
+2025-12-08 23:59:10 | INFO     | Detected: 0 floating names
+2025-12-08 23:59:10 | INFO     | → No floating names found
+2025-12-08 23:59:10 | INFO     | 
+======================================================================
+2025-12-08 23:59:10 | INFO     | CYCLE #28
+2025-12-08 23:59:10 | INFO     | ======================================================================
+2025-12-08 23:59:10 | DEBUG    | Death detection: Gold=428, Dark=70973, Brown=0, White=590
+2025-12-08 23:59:10 | INFO     | Detected: 0 floating names
+2025-12-08 23:59:10 | INFO     | → No floating names found
+2025-12-08 23:59:10 | INFO     | 
+======================================================================
+2025-12-08 23:59:10 | INFO     | CYCLE #29
+2025-12-08 23:59:10 | INFO     | ======================================================================
+2025-12-08 23:59:10 | DEBUG    | Death detection: Gold=428, Dark=70985, Brown=0, White=590
+2025-12-08 23:59:10 | INFO     | Detected: 6 floating names
+2025-12-08 23:59:10 | INFO     | → Valid targets (after cache): 6
+2025-12-08 23:59:10 | INFO     | → Target priority (closest to farthest):
+2025-12-08 23:59:10 | INFO     |    #1: Distance=372px from center
+2025-12-08 23:59:10 | INFO     |    #2: Distance=374px from center
+2025-12-08 23:59:10 | INFO     |    #3: Distance=378px from center
+2025-12-08 23:59:10 | INFO     |    #4: Distance=383px from center
+2025-12-08 23:59:10 | INFO     |    #5: Distance=390px from center
+2025-12-08 23:59:10 | INFO     | 
+  Verifying target #1 (D=372px)...
+2025-12-08 23:59:10 | DEBUG    |     Clicking (940, 199)
+2025-12-08 23:59:11 | DEBUG    |     Health check: 0 red pixels -> DEAD
+2025-12-08 23:59:11 | DEBUG    |     ✓ Verified MOB in 1 attempts
+2025-12-08 23:59:11 | INFO     |     ✗ Mob already DEAD
+2025-12-08 23:59:11 | INFO     | 
+  Verifying target #2 (D=374px)...
+2025-12-08 23:59:11 | DEBUG    |     Clicking (997, 197)
+2025-12-08 23:59:11 | DEBUG    |     Health check: 0 red pixels -> DEAD
+2025-12-08 23:59:11 | DEBUG    |     ✓ Verified MOB in 1 attempts
+2025-12-08 23:59:11 | INFO     |     ✗ Mob already DEAD
+2025-12-08 23:59:11 | INFO     | 
+  Verifying target #3 (D=378px)...
+2025-12-08 23:59:11 | DEBUG    |     Clicking (893, 197)
+2025-12-08 23:59:11 | DEBUG    |     Health check: 0 red pixels -> DEAD
+2025-12-08 23:59:11 | DEBUG    |     ✓ Verified MOB in 1 attempts
+2025-12-08 23:59:11 | INFO     |     ✗ Mob already DEAD
+2025-12-08 23:59:12 | INFO     | 
+======================================================================
+2025-12-08 23:59:12 | INFO     | CYCLE #30
+2025-12-08 23:59:12 | INFO     | ======================================================================
+2025-12-08 23:59:12 | DEBUG    | Death detection: Gold=389, Dark=69904, Brown=0, White=445
+2025-12-08 23:59:12 | INFO     | Detected: 3 floating names
+2025-12-08 23:59:12 | DEBUG    |   Name #3: Cached, skipping
+2025-12-08 23:59:12 | INFO     | → Valid targets (after cache): 2
+2025-12-08 23:59:12 | INFO     | → Target priority (closest to farthest):
+2025-12-08 23:59:12 | INFO     |    #1: Distance=25px from center
+2025-12-08 23:59:12 | INFO     |    #2: Distance=106px from center
+2025-12-08 23:59:12 | INFO     | 
+  Verifying target #1 (D=25px)...
+2025-12-08 23:59:12 | DEBUG    |     Clicking (944, 557)
+2025-12-08 23:59:12 | DEBUG    |     Health check: 0 red pixels -> DEAD
+2025-12-08 23:59:12 | DEBUG    |     ✓ Verified MOB in 1 attempts
+2025-12-08 23:59:12 | INFO     |     ✗ Mob already DEAD
+2025-12-08 23:59:12 | INFO     | 
+  Verifying target #2 (D=106px)...
+2025-12-08 23:59:12 | DEBUG    |     Clicking (972, 676)
+2025-12-08 23:59:13 | DEBUG    |     Health check: 0 red pixels -> DEAD
+2025-12-08 23:59:13 | DEBUG    |     ✓ Verified MOB in 1 attempts
+2025-12-08 23:59:13 | INFO     |     ✗ Mob already DEAD
+2025-12-08 23:59:13 | INFO     | 
+======================================================================
+2025-12-08 23:59:13 | INFO     | CYCLE #31
+2025-12-08 23:59:13 | INFO     | ======================================================================
+2025-12-08 23:59:13 | DEBUG    | Death detection: Gold=572, Dark=70166, Brown=0, White=792
+2025-12-08 23:59:13 | INFO     | Detected: 9 floating names
+2025-12-08 23:59:13 | DEBUG    |   Name #8: Cached, skipping
+2025-12-08 23:59:13 | DEBUG    |   Name #9: Cached, skipping
+2025-12-08 23:59:13 | INFO     | → Valid targets (after cache): 7
+2025-12-08 23:59:13 | INFO     | → Target priority (closest to farthest):
+2025-12-08 23:59:13 | INFO     |    #1: Distance=74px from center
+2025-12-08 23:59:13 | INFO     |    #2: Distance=372px from center
+2025-12-08 23:59:13 | INFO     |    #3: Distance=374px from center
+2025-12-08 23:59:13 | INFO     |    #4: Distance=378px from center
+2025-12-08 23:59:13 | INFO     |    #5: Distance=383px from center
+2025-12-08 23:59:13 | INFO     | 
+  Verifying target #1 (D=74px)...
+2025-12-08 23:59:13 | DEBUG    |     Clicking (977, 497)
+2025-12-08 23:59:13 | DEBUG    |     Health check: 0 red pixels -> DEAD
+2025-12-08 23:59:13 | DEBUG    |     ✓ Verified MOB in 1 attempts
+2025-12-08 23:59:13 | INFO     |     ✗ Mob already DEAD
+2025-12-08 23:59:13 | INFO     | 
+  Verifying target #2 (D=372px)...
+2025-12-08 23:59:13 | DEBUG    |     Clicking (940, 199)
+2025-12-08 23:59:14 | DEBUG    |     Health check: 0 red pixels -> DEAD
+2025-12-08 23:59:14 | DEBUG    |     ✓ Verified MOB in 1 attempts
+2025-12-08 23:59:14 | INFO     |     ✗ Mob already DEAD
+2025-12-08 23:59:14 | INFO     | 
+  Verifying target #3 (D=374px)...
+2025-12-08 23:59:14 | DEBUG    |     Clicking (997, 197)
+2025-12-08 23:59:14 | DEBUG    |     Health check: 0 red pixels -> DEAD
+2025-12-08 23:59:14 | DEBUG    |     ✓ Verified MOB in 1 attempts
+2025-12-08 23:59:14 | INFO     |     ✗ Mob already DEAD
+2025-12-08 23:59:14 | INFO     | 
+======================================================================
+2025-12-08 23:59:14 | INFO     | CYCLE #32
+2025-12-08 23:59:14 | INFO     | ======================================================================
+2025-12-08 23:59:14 | DEBUG    | Death detection: Gold=275, Dark=68675, Brown=0, White=392
+2025-12-08 23:59:15 | INFO     | Detected: 3 floating names
+2025-12-08 23:59:15 | INFO     | → Valid targets (after cache): 3
+2025-12-08 23:59:15 | INFO     | → Target priority (closest to farthest):
+2025-12-08 23:59:15 | INFO     |    #1: Distance=24px from center
+2025-12-08 23:59:15 | INFO     |    #2: Distance=71px from center
+2025-12-08 23:59:15 | INFO     |    #3: Distance=120px from center
+2025-12-08 23:59:15 | INFO     | 
+  Verifying target #1 (D=24px)...
+2025-12-08 23:59:15 | DEBUG    |     Clicking (945, 555)
+2025-12-08 23:59:15 | DEBUG    |     Health check: 0 red pixels -> DEAD
+2025-12-08 23:59:15 | DEBUG    |     ✓ Verified MOB in 1 attempts
+2025-12-08 23:59:15 | INFO     |     ✗ Mob already DEAD
+2025-12-08 23:59:15 | INFO     | 
+  Verifying target #2 (D=71px)...
+2025-12-08 23:59:15 | DEBUG    |     Clicking (992, 634)
+2025-12-08 23:59:15 | DEBUG    |     Health check: 0 red pixels -> DEAD
+2025-12-08 23:59:15 | DEBUG    |     ✓ Verified MOB in 1 attempts
+2025-12-08 23:59:15 | INFO     |     ✗ Mob already DEAD
+2025-12-08 23:59:15 | INFO     | 
+  Verifying target #3 (D=120px)...
+2025-12-08 23:59:15 | DEBUG    |     Clicking (972, 691)
+2025-12-08 23:59:16 | DEBUG    |     Health check: 0 red pixels -> DEAD
+2025-12-08 23:59:16 | DEBUG    |     ✓ Verified MOB in 1 attempts
+2025-12-08 23:59:16 | INFO     |     ✗ Mob already DEAD
+2025-12-08 23:59:16 | INFO     | 
+======================================================================
+2025-12-08 23:59:16 | INFO     | CYCLE #33
+2025-12-08 23:59:16 | INFO     | ======================================================================
+2025-12-08 23:59:16 | DEBUG    | Death detection: Gold=560, Dark=69845, Brown=0, White=762
+2025-12-08 23:59:16 | INFO     | Detected: 9 floating names
+2025-12-08 23:59:16 | DEBUG    |   Name #3: Cached, skipping
+2025-12-08 23:59:16 | INFO     | → Valid targets (after cache): 8
+2025-12-08 23:59:16 | INFO     | → Target priority (closest to farthest):
+2025-12-08 23:59:16 | INFO     |    #1: Distance=71px from center
+2025-12-08 23:59:16 | INFO     |    #2: Distance=128px from center
+2025-12-08 23:59:16 | INFO     |    #3: Distance=372px from center
+2025-12-08 23:59:16 | INFO     |    #4: Distance=374px from center
+2025-12-08 23:59:16 | INFO     |    #5: Distance=378px from center
+2025-12-08 23:59:16 | INFO     | 
+  Verifying target #1 (D=71px)...
+2025-12-08 23:59:16 | DEBUG    |     Clicking (947, 500)
+2025-12-08 23:59:16 | DEBUG    |     Health check: 0 red pixels -> DEAD
+2025-12-08 23:59:16 | DEBUG    |     ✓ Verified MOB in 1 attempts
+2025-12-08 23:59:16 | INFO     |     ✗ Mob already DEAD
+2025-12-08 23:59:16 | INFO     | 
+  Verifying target #2 (D=128px)...
+2025-12-08 23:59:16 | DEBUG    |     Clicking (969, 442)
+2025-12-08 23:59:17 | DEBUG    |     Health check: 0 red pixels -> DEAD
+2025-12-08 23:59:17 | DEBUG    |     ✓ Verified MOB in 1 attempts
+2025-12-08 23:59:17 | INFO     |     ✗ Mob already DEAD
+2025-12-08 23:59:17 | INFO     | 
+  Verifying target #3 (D=372px)...
+2025-12-08 23:59:17 | DEBUG    |     Clicking (940, 199)
+2025-12-08 23:59:17 | DEBUG    |     Health check: 0 red pixels -> DEAD
+2025-12-08 23:59:17 | DEBUG    |     ✓ Verified MOB in 1 attempts
+2025-12-08 23:59:17 | INFO     |     ✗ Mob already DEAD
+2025-12-08 23:59:17 | INFO     | 
+⏸️  PAUSED - Press CapsLock to resume
+
+2025-12-08 23:59:35 | INFO     | 
+
+⛔ Bot stopped by user
+2025-12-08 23:59:35 | INFO     | 
+======================================================================
+2025-12-08 23:59:35 | INFO     | 📊 FINAL STATISTICS
+2025-12-08 23:59:35 | INFO     | ======================================================================
+2025-12-08 23:59:35 | INFO     | 📁 Log Directory: logs/session_20251208_235813
+2025-12-08 23:59:35 | INFO     | ⏱️  Uptime: 81s (1m 21s)
+2025-12-08 23:59:35 | INFO     | 🔄 Total Cycles: 33
+2025-12-08 23:59:35 | INFO     | 📸 Screenshots Saved: 0
+2025-12-08 23:59:35 | INFO     | 
+2025-12-08 23:59:35 | INFO     | 🔍 Detection:
+2025-12-08 23:59:35 | INFO     |    Total Clicks: 42
+2025-12-08 23:59:35 | INFO     |    Verified Mobs: 42
+2025-12-08 23:59:35 | INFO     |    Filtered Pets: 0
+2025-12-08 23:59:35 | INFO     |    Pet Filter Rate: 0.0%
+2025-12-08 23:59:35 | INFO     | 
+2025-12-08 23:59:35 | INFO     | ⚔️  Combat:
+2025-12-08 23:59:35 | INFO     |    Total Kills: 7
+2025-12-08 23:59:35 | INFO     |    Deaths: 0
+2025-12-08 23:59:35 | INFO     |    Early Stops: 0
+2025-12-08 23:59:35 | INFO     |    Skills Used: 28
+2025-12-08 23:59:35 | INFO     |    Avg Skills/Kill: 4.0
+2025-12-08 23:59:35 | INFO     |    Kills/Hour: 311.1
+2025-12-08 23:59:35 | INFO     | 
+2025-12-08 23:59:35 | INFO     | ⚙️  System:
+2025-12-08 23:59:35 | INFO     |    Buffer Sequences: 1
+2025-12-08 23:59:35 | INFO     |    Cache Hit Rate: 19.2%
+2025-12-08 23:59:35 | INFO     |    Cache Size: 11 entries
+2025-12-08 23:59:35 | INFO     | 
+2025-12-08 23:59:35 | INFO     | 📈 Efficiency:
+2025-12-08 23:59:35 | INFO     |    Avg Cycle Time: 2.45s
+2025-12-08 23:59:35 | INFO     |    Avg Clicks/Cycle: 1.3
+2025-12-08 23:59:35 | INFO     |    Avg Kills/Cycle: 0.21
+2025-12-08 23:59:35 | INFO     | ======================================================================

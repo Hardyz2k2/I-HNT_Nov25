@@ -99,6 +99,7 @@ class Config:
     
     # Combat settings
     RED_PIXEL_THRESHOLD = 50   # Pixels needed to consider mob "alive"
+    HEALTH_CHANGE_THRESHOLD = 50  # Minimum health decrease to confirm hitting mob (anti-stuck)
     MAX_TARGETS_PER_CYCLE = 3  # Max verifications per cycle
     CYCLE_DELAY = 0.4          # Seconds between cycles
     NAMEPLATE_TIMEOUT = 1.0    # Nameplate wait time
@@ -141,9 +142,10 @@ class Config:
 
     # Death detection settings
     DEATH_CHECK_ENABLED = True  # Set to False to disable death detection
-    DEATH_POPUP_REGION = (760, 350, 400, 180)  # (x, y, w, h) - center area where popup appears
+    PLAYER_HEALTH_BAR_REGION = (67, 36, 88, 8)  # (x, y, w, h) - Player health bar in top-left nameplate
     DEATH_REVIVE_DELAY = 2.0  # Seconds to wait before reviving
     DEATH_COOLDOWN = 10.0  # Seconds cooldown after revive (prevents repeated detection)
+    MIN_HEALTH_RED_PIXELS = 50  # Minimum red pixels to consider player alive
 
     # Debug & Logging
     DEBUG_MODE = True  # Enable debug logging
@@ -484,10 +486,10 @@ class NameplateReader:
         else:
             return 'General'  # Has some color but below thresholds
     
-    def is_mob_alive(self, nameplate=None):
+    def get_health_pixels(self, nameplate=None):
         """
-        Binary health detection: ALIVE or DEAD
-        Returns True if red pixels exist (alive), False otherwise (dead)
+        Get the actual red pixel count from health bar
+        Returns the number of red pixels (0 if error)
         """
         try:
             # If no nameplate provided, capture it
@@ -495,32 +497,41 @@ class NameplateReader:
                 screenshot = self.screen_capture.capture()
                 x, y, w, h = Config.NAMEPLATE_REGION
                 nameplate = screenshot[y:y+h, x:x+w]
-            
+
             # Convert to HSV
             hsv = cv2.cvtColor(nameplate, cv2.COLOR_BGR2HSV)
-            
+
             # Red health bar detection
             red_lower1 = np.array([0, 150, 100])
             red_upper1 = np.array([10, 255, 255])
             red_lower2 = np.array([170, 150, 100])
             red_upper2 = np.array([180, 255, 255])
-            
+
             mask1 = cv2.inRange(hsv, red_lower1, red_upper1)
             mask2 = cv2.inRange(hsv, red_lower2, red_upper2)
             red_mask = cv2.bitwise_or(mask1, mask2)
-            
+
             red_pixels = cv2.countNonZero(red_mask)
-            
-            # Binary decision: more than threshold = ALIVE
-            is_alive = red_pixels > Config.RED_PIXEL_THRESHOLD
-            
-            self.logger.debug(f"    Health check: {red_pixels} red pixels -> {'ALIVE' if is_alive else 'DEAD'}")
-            
-            return is_alive
-            
+
+            return red_pixels
+
         except Exception as e:
-            self.logger.error(f"Health check error: {e}")
-            return True  # Assume alive on error to be safe
+            self.logger.error(f"Health pixel count error: {e}")
+            return 0
+
+    def is_mob_alive(self, nameplate=None):
+        """
+        Binary health detection: ALIVE or DEAD
+        Returns True if red pixels exist (alive), False otherwise (dead)
+        """
+        red_pixels = self.get_health_pixels(nameplate)
+
+        # Binary decision: more than threshold = ALIVE
+        is_alive = red_pixels > Config.RED_PIXEL_THRESHOLD
+
+        self.logger.debug(f"    Health check: {red_pixels} red pixels -> {'ALIVE' if is_alive else 'DEAD'}")
+
+        return is_alive
 
 
 # ============================================================================
@@ -607,66 +618,45 @@ class DeathDetector:
 
     def is_player_dead(self, screenshot):
         """
-        Check if death popup is visible
+        Check if player is dead by examining health bar in top-left nameplate
 
         Detection method:
-        - Extract death popup region (center screen)
-        - Look for "Confirmation window" popup
-        - Detect golden border and dark background
-        - Check for text pattern
+        - Extract player health bar region (top-left corner of screen)
+        - Count RED pixels in health bar
+        - If red pixels < threshold → Player is DEAD (no health)
+        - If red pixels >= threshold → Player is ALIVE
 
-        Returns True if death popup detected
+        Returns True if player is dead
         """
         if not Config.DEATH_CHECK_ENABLED:
             return False
 
         try:
-            # Extract death popup region
-            x, y, w, h = Config.DEATH_POPUP_REGION
-            popup_region = screenshot[y:y+h, x:x+w]
+            # Extract player health bar region from top-left nameplate
+            x, y, w, h = Config.PLAYER_HEALTH_BAR_REGION
+            health_bar = screenshot[y:y+h, x:x+w]
 
-            # Convert to HSV for better color detection
-            hsv = cv2.cvtColor(popup_region, cv2.COLOR_BGR2HSV)
-            gray = cv2.cvtColor(popup_region, cv2.COLOR_BGR2GRAY)
+            # Convert to HSV for better red color detection
+            hsv = cv2.cvtColor(health_bar, cv2.COLOR_BGR2HSV)
 
-            # Method 1: Detect golden/yellow border (around the image in popup)
-            # Golden color range in HSV
-            gold_lower = np.array([15, 100, 100])
-            gold_upper = np.array([35, 255, 255])
-            gold_mask = cv2.inRange(hsv, gold_lower, gold_upper)
-            gold_pixels = cv2.countNonZero(gold_mask)
+            # Red color has two ranges in HSV (wraps around at 180)
+            # Range 1: Red hues 0-10
+            red_lower1 = np.array([0, 100, 100])
+            red_upper1 = np.array([10, 255, 255])
+            red_mask1 = cv2.inRange(hsv, red_lower1, red_upper1)
 
-            # Method 2: Detect dark gray/black popup background
-            dark_mask = (gray < 60).astype(np.uint8) * 255
-            dark_pixels = cv2.countNonZero(dark_mask)
+            # Range 2: Red hues 170-180
+            red_lower2 = np.array([170, 100, 100])
+            red_upper2 = np.array([180, 255, 255])
+            red_mask2 = cv2.inRange(hsv, red_lower2, red_upper2)
 
-            # Method 3: Detect the brown popup frame/border
-            brown_lower = np.array([5, 30, 40])
-            brown_upper = np.array([25, 200, 120])
-            brown_mask = cv2.inRange(hsv, brown_lower, brown_upper)
-            brown_pixels = cv2.countNonZero(brown_mask)
-
-            # Method 4: Check for white/light text (the text "the character is now paralyzed")
-            white_mask = (gray > 200).astype(np.uint8) * 255
-            white_pixels = cv2.countNonZero(white_mask)
-
-            # Death popup characteristics (STRICT thresholds to avoid false positives):
-            # - Has golden border around image (>800 pixels - strict)
-            # - Has dark background (>10000 pixels - strict)
-            # - Has brown frame (>4000 pixels - strict)
-            # - Has white text (>600 pixels - strict)
-            has_gold_border = gold_pixels > 800
-            has_dark_bg = dark_pixels > 10000
-            has_brown_frame = brown_pixels > 4000
-            has_white_text = white_pixels > 600
+            # Combine both red ranges
+            red_mask = cv2.bitwise_or(red_mask1, red_mask2)
+            red_pixels = cv2.countNonZero(red_mask)
 
             # Debug logging
             if Config.DEBUG_MODE:
-                self.logger.debug(f"Death detection: Gold={gold_pixels}, Dark={dark_pixels}, Brown={brown_pixels}, White={white_pixels}")
-
-            # STRICT detection: Require at least 3 out of 4 indicators + cooldown
-            indicators = [has_gold_border, has_dark_bg, has_brown_frame, has_white_text]
-            true_count = sum(indicators)
+                self.logger.debug(f"Player health bar: {red_pixels} red pixels")
 
             # Check cooldown - don't detect death if we just revived
             time_since_last_death = time.time() - self.last_death_time if self.last_death_time > 0 else 999
@@ -678,15 +668,18 @@ class DeathDetector:
                 time_since_buffer = time.time() - self.buffer_system.last_buffer_time
                 in_buffer_cooldown = time_since_buffer < 5.0  # Skip death detection for 5 seconds after buffer
 
-            if true_count >= 3 and not in_death_cooldown and not in_buffer_cooldown:
-                self.logger.warning("💀 DEATH DETECTED - Player is dead!")
-                self.logger.warning(f"   Indicators: Gold={has_gold_border}, Dark={has_dark_bg}, Brown={has_brown_frame}, Text={has_white_text}")
+            # Player is DEAD if red pixels < threshold
+            is_dead = red_pixels < Config.MIN_HEALTH_RED_PIXELS
+
+            if is_dead and not in_death_cooldown and not in_buffer_cooldown:
+                self.logger.warning("💀 DEATH DETECTED - Player health bar empty!")
+                self.logger.warning(f"   Health bar red pixels: {red_pixels} (threshold: {Config.MIN_HEALTH_RED_PIXELS})")
                 return True
-            elif true_count >= 3 and in_death_cooldown:
-                self.logger.debug(f"Death popup detected but in death cooldown ({time_since_last_death:.1f}s since last death)")
-            elif true_count >= 3 and in_buffer_cooldown:
+            elif is_dead and in_death_cooldown:
+                self.logger.debug(f"Death detected but in death cooldown ({time_since_last_death:.1f}s since last death)")
+            elif is_dead and in_buffer_cooldown:
                 time_since_buffer = time.time() - self.buffer_system.last_buffer_time
-                self.logger.debug(f"Death popup detected but in buffer cooldown ({time_since_buffer:.1f}s since buffer)")
+                self.logger.debug(f"Death detected but in buffer cooldown ({time_since_buffer:.1f}s since buffer)")
 
             return False
 
@@ -754,16 +747,28 @@ class StuckDetector:
         self.last_kill_time = time.time()  # Track last kill separately
         self.target_selected = False
         self.stuck_recoveries = 0
+        self.consecutive_recoveries = 0  # Track recoveries since last kill
+        self.in_recovery_mode = False  # Flag to indicate we're actively trying to unstuck
         self.no_target_duration = 7.0  # Seconds since last kill before stuck (increased from 5.0)
         self.with_target_duration = 3.0  # Seconds with target but no progress
+        self.recovery_retry_delay = 2.0  # Seconds between recovery attempts
 
     def reset_timer(self):
         """Reset the action timer (called when progress is made)"""
         self.last_action_time = time.time()
 
     def on_kill(self):
-        """Called when a mob is killed - resets the no-target timer"""
+        """Called when a mob is killed - resets the no-target timer and clears recovery mode"""
         self.last_kill_time = time.time()
+
+        # Log if we were in recovery mode
+        if self.consecutive_recoveries > 0:
+            self.logger.info(f"✅ Kill confirmed! Exiting recovery mode after {self.consecutive_recoveries} attempts")
+
+        # Clear recovery state
+        self.consecutive_recoveries = 0
+        self.in_recovery_mode = False
+
         self.logger.debug(f"Stuck detector: Kill recorded, timer reset")
 
     def set_target_status(self, has_target):
@@ -785,6 +790,15 @@ class StuckDetector:
             - 2: Target selected but stuck for 3+ seconds
             - None: Not stuck
         """
+        # If in recovery mode, continue recovery until kill
+        if self.in_recovery_mode:
+            elapsed = time.time() - self.last_action_time
+            if elapsed >= self.recovery_retry_delay:
+                scenario = 1 if not self.target_selected else 2
+                self.logger.warning(f"⚠️  STILL STUCK (Recovery mode, attempt #{self.consecutive_recoveries + 1})")
+                return True, scenario
+            return False, None
+
         # Scenario 1: Use time since last kill
         time_since_kill = time.time() - self.last_kill_time
 
@@ -794,86 +808,171 @@ class StuckDetector:
         # Scenario 1: No target selected for 7+ seconds since last kill
         if not self.target_selected and time_since_kill >= self.no_target_duration:
             self.logger.warning(f"⚠️  STUCK DETECTED (Scenario 1): No target for {time_since_kill:.1f}s since last kill")
+            self.in_recovery_mode = True
             return True, 1
 
         # Scenario 2: Target selected but stuck for 3+ seconds
         if self.target_selected and elapsed >= self.with_target_duration:
             self.logger.warning(f"⚠️  STUCK DETECTED (Scenario 2): Target selected but stuck for {elapsed:.1f}s")
+            self.in_recovery_mode = True
             return True, 2
 
         return False, None
 
     def recover_from_stuck(self, scenario):
         """
-        Execute recovery action based on scenario
+        Execute recovery action with HIGHLY VARIED RANDOM movements
+
+        IMPORTANT: Left/Right arrows only ROTATE character, don't move.
+        To move: rotate to face direction, then press Up arrow.
 
         Scenario 1: No target selected (7s since last kill)
-        - Right-click hold for 1 second (changes camera angle)
-        - Left-click random location (moves character to new position)
+        - Execute 2-4 random movement steps (varies each attempt)
+        - Each step: Random rotation (0.5-2.5s) + Forward movement
+        - 50% chance of camera angle change between steps
+        - Movement distance escalates with consecutive attempts
 
         Scenario 2: Target selected but stuck (3s no progress)
-        - Right-click hold for 2 seconds (character movement)
-        - Left-click random location (moves character away from obstacle)
+        - Turn around (1.3-2.5s random rotation)
+        - Move forward (escalated distance based on attempts)
+        - Camera angle change (random ±400px)
+        - 1-3 additional random movements
+        - Each movement: random direction, rotation, distance
+
+        Progressive Escalation:
+        - Attempt 1: 2.0s base movement
+        - Attempt 2: 2.5s movement
+        - Attempt 3: 3.0s movement
+        - Attempt 4+: 3.5s+ movement (capped at 5x)
+
+        Prevents going back-and-forth in same area by using:
+        - Highly randomized directions and timings
+        - Variable number of steps
+        - Progressive distance increases
+        - Random camera angles
+
+        Recovery continues until a kill is confirmed (on_kill() is called)
         """
         try:
             self.stuck_recoveries += 1
+            self.consecutive_recoveries += 1
 
             self.logger.info("\n" + "="*70)
             self.logger.info("🔧 ANTI-STUCK RECOVERY ACTIVATED")
             self.logger.info("="*70)
             self.logger.info(f"Scenario: {scenario}")
+            self.logger.info(f"Consecutive attempts: {self.consecutive_recoveries}")
             self.logger.info(f"Total recoveries: {self.stuck_recoveries}")
 
+            import random
+
+            # Progressive escalation: increase movement distance and variation based on attempts
+            attempt_multiplier = min(self.consecutive_recoveries, 5)  # Cap at 5x
+            base_move_time = 2.0
+            escalated_move_time = base_move_time + (attempt_multiplier * 0.5)  # Adds 0.5s per attempt
+
             if scenario == 1:
-                # Scenario 1: Right-click hold (1s) + random left-click (move character)
-                self.logger.info("Action: Right-click hold (1s) + random left-click")
+                # Scenario 1: No target - highly varied random movement
+                self.logger.info("Action: Random varied movement to explore new area")
 
-                # Press and hold right mouse button for 1 second (changes camera angle)
-                pyautogui.mouseDown(button='right')
-                self.logger.info("  Holding right-click for 1s...")
-                time.sleep(1.0)
-                pyautogui.mouseUp(button='right')
+                # Randomize number of movement steps (2-4 steps)
+                num_steps = random.randint(2, 4)
+                self.logger.info(f"  Executing {num_steps} random movement steps...")
 
-                # Random left-click location to move character (avoid edges)
-                import random
-                margin = 100
-                random_x = random.randint(margin, Config.SCREEN_WIDTH - margin)
-                random_y = random.randint(margin, Config.SCREEN_HEIGHT - margin)
+                for step in range(num_steps):
+                    # Random rotation direction and amount
+                    direction = random.choice(['left', 'right'])
+                    rotation_time = random.uniform(0.5, 2.5)  # Wide range
 
-                self.logger.info(f"  Left-clicking random location: ({random_x}, {random_y})")
-                pyautogui.click(random_x, random_y)
+                    self.logger.info(f"  Step {step+1}: Rotate {direction} ({rotation_time:.1f}s) + Forward ({escalated_move_time:.1f}s)")
 
-                # Wait for character to start moving
-                time.sleep(2.0)
+                    # Rotate
+                    pyautogui.keyDown(direction)
+                    time.sleep(rotation_time)
+                    pyautogui.keyUp(direction)
+                    time.sleep(0.2)
 
-                self.logger.info("✓ Camera rotation + character movement completed")
+                    # Move forward in that direction
+                    pyautogui.keyDown('up')
+                    time.sleep(escalated_move_time)
+                    pyautogui.keyUp('up')
+                    time.sleep(0.2)
+
+                    # Random camera angle change (50% chance each step)
+                    if random.random() < 0.5:
+                        drag_distance = random.randint(-400, 400)
+                        self.logger.info(f"    Camera angle change ({drag_distance}px)")
+                        start_x = Config.SCREEN_WIDTH // 2
+                        start_y = Config.SCREEN_HEIGHT // 2
+                        pyautogui.moveTo(start_x, start_y)
+                        pyautogui.mouseDown(button='right')
+                        pyautogui.moveTo(start_x + drag_distance, start_y, duration=0.5)
+                        pyautogui.mouseUp(button='right')
+                        time.sleep(0.2)
+
+                self.logger.info(f"✓ Completed {num_steps} varied movements - exploring new area")
 
             elif scenario == 2:
-                # Scenario 2: Right-click hold + random left-click
-                self.logger.info("Action: Right-click hold + random left-click")
+                # Scenario 2: Has target but stuck - aggressive escape pattern
+                self.logger.info("Action: Aggressive escape + random exploration")
 
-                # Press and hold right mouse button for 2 seconds
+                # Step 1: Turn around (escalated rotation for more variety)
+                direction = random.choice(['left', 'right'])
+                rotation_time = random.uniform(1.3, 2.5)  # More variation
+
+                self.logger.info(f"  Step 1: Turning {direction} ({rotation_time:.1f}s)...")
+                pyautogui.keyDown(direction)
+                time.sleep(rotation_time)
+                pyautogui.keyUp(direction)
+                time.sleep(0.2)
+
+                # Step 2: Move forward (escalated distance)
+                self.logger.info(f"  Step 2: Moving forward ({escalated_move_time:.1f}s)...")
+                pyautogui.keyDown('up')
+                time.sleep(escalated_move_time)
+                pyautogui.keyUp('up')
+                time.sleep(0.2)
+
+                # Step 3: Camera angle change
+                drag_distance = random.randint(-400, 400)
+                self.logger.info(f"  Step 3: Changing camera angle ({drag_distance}px)...")
+                start_x = Config.SCREEN_WIDTH // 2
+                start_y = Config.SCREEN_HEIGHT // 2
+                pyautogui.moveTo(start_x, start_y)
                 pyautogui.mouseDown(button='right')
-                self.logger.info("  Holding right-click for 2s...")
-                time.sleep(2.0)
+                pyautogui.moveTo(start_x + drag_distance, start_y, duration=0.5)
                 pyautogui.mouseUp(button='right')
+                time.sleep(0.3)
 
-                # Random left-click location (avoid edges)
-                import random
-                margin = 100
-                random_x = random.randint(margin, Config.SCREEN_WIDTH - margin)
-                random_y = random.randint(margin, Config.SCREEN_HEIGHT - margin)
+                # Steps 4-5: Additional random movements (1-3 more steps)
+                extra_steps = random.randint(1, 3)
+                self.logger.info(f"  Steps 4+: {extra_steps} additional random movements...")
 
-                self.logger.info(f"  Left-clicking random location: ({random_x}, {random_y})")
-                pyautogui.click(random_x, random_y)
+                for i in range(extra_steps):
+                    # Random direction and rotation
+                    rand_direction = random.choice(['left', 'right'])
+                    rand_rotation = random.uniform(0.3, 1.5)
+                    rand_move_time = random.uniform(1.5, 3.0)
 
-                self.logger.info("✓ Recovery sequence completed")
+                    self.logger.info(f"    Extra {i+1}: Rotate {rand_direction} ({rand_rotation:.1f}s) + Forward ({rand_move_time:.1f}s)")
+
+                    pyautogui.keyDown(rand_direction)
+                    time.sleep(rand_rotation)
+                    pyautogui.keyUp(rand_direction)
+                    time.sleep(0.1)
+
+                    pyautogui.keyDown('up')
+                    time.sleep(rand_move_time)
+                    pyautogui.keyUp('up')
+                    time.sleep(0.2)
+
+                self.logger.info(f"✓ Aggressive escape complete - should be in completely new area")
 
             self.logger.info("="*70 + "\n")
 
-            # Reset timer after recovery
+            # DON'T reset timers - only on_kill() should do that
+            # Reset action timer to delay next recovery attempt
             self.reset_timer()
-            self.target_selected = False
 
             return True
 
@@ -899,35 +998,48 @@ class CombatSystem:
     def engage(self, target_info):
         """
         Execute combat rotation with health monitoring
-        Returns True if mob was killed, False otherwise
+        Returns True if mob was killed, False if:
+        - Mob already dead
+        - Health didn't decrease (character stuck, can't reach mob)
         """
         try:
             mob_class = target_info.get('class', 'Unknown')
-            
+
             self.logger.info(f"\n{'>'*60}")
             self.logger.info(f"⚔️  ENGAGING: {mob_class}")
             self.logger.info(f"{'>'*60}")
-            
+
             # Initial health check
-            if not self.nameplate_reader.is_mob_alive():
+            initial_health = self.nameplate_reader.get_health_pixels()
+
+            if initial_health <= Config.RED_PIXEL_THRESHOLD:
                 self.logger.info("✗ Mob already dead, skipping")
                 return False
-            
+
+            self.logger.debug(f"    Initial health: {initial_health} red pixels")
+
+            # Track health changes to detect if we're actually hitting the mob
+            health_history = [initial_health]
+
             # Combat rotation with health checks
             for i, skill_key in enumerate(Config.SKILL_KEYS, 1):
                 # Use skill
                 self.logger.info(f"  → Skill {i}: {skill_key}")
                 pyautogui.press(skill_key)
                 self.skills_used += 1
-                
+
                 # Wait for skill animation
                 time.sleep(Config.SKILL_ANIMATION_TIME)
-                
+
                 # Wait additional time to reach 1 second check interval
                 time.sleep(Config.HEALTH_CHECK_INTERVAL - Config.SKILL_ANIMATION_TIME)
-                
+
+                # Check current health
+                current_health = self.nameplate_reader.get_health_pixels()
+                health_history.append(current_health)
+
                 # Check if mob still alive
-                if not self.nameplate_reader.is_mob_alive():
+                if current_health <= Config.RED_PIXEL_THRESHOLD:
                     self.logger.info(f"  ✓ Mob DEAD after skill {i}!")
                     self.total_kills += 1
                     self.early_stops += 1
@@ -935,16 +1047,47 @@ class CombatSystem:
                     self.logger.info(f"💀 Total kills: {self.total_kills} | Skills saved: {4-i}")
                     self.logger.info(f"{'<'*60}\n")
                     return True
-            
-            # Rotation complete
-            self.logger.info(f"  ℹ️  Rotation complete (mob status unknown)")
+                else:
+                    self.logger.debug(f"    Health check: {current_health} red pixels -> ALIVE")
+
+            # Rotation complete - check if health actually decreased
+            final_health = health_history[-1]
+            max_health = max(health_history)
+            min_health = min(health_history)
+            health_decreased = max_health - min_health
+
+            self.logger.debug(f"    Health change: {initial_health} → {final_health} (Δ={initial_health - final_health})")
+
+            # Calculate percentage of health decreased
+            if initial_health > 0:
+                health_decrease_percentage = (health_decreased / initial_health) * 100
+            else:
+                health_decrease_percentage = 0
+
+            # If health didn't change significantly, we're not hitting the mob (stuck)
+            # Use percentage-based threshold: if health decreased by less than 5% OR less than 5 pixels
+            # This handles both large health bars (649px) and small health bars (98px)
+            MIN_PERCENTAGE_DECREASE = 5.0  # 5% of initial health
+            MIN_ABSOLUTE_DECREASE = 5       # At least 5 pixels
+
+            is_stuck = (health_decrease_percentage < MIN_PERCENTAGE_DECREASE and
+                       health_decreased < Config.HEALTH_CHANGE_THRESHOLD)
+
+            if is_stuck:
+                self.logger.warning(f"  ⚠️  Health barely changed ({initial_health} → {final_health}, {health_decrease_percentage:.1f}%) - NOT hitting mob!")
+                self.logger.warning(f"  Character may be stuck or mob unreachable")
+                self.logger.info(f"{'<'*60}\n")
+                return False  # Combat failed - mob wasn't damaged
+
+            # Health decreased - we're hitting the mob, assume kill
+            self.logger.info(f"  ℹ️  Rotation complete (health decreased: {health_decreased} pixels)")
             self.total_kills += 1
             self.logger.info(f"{'<'*60}")
             self.logger.info(f"💀 Total kills: {self.total_kills}")
             self.logger.info(f"{'<'*60}\n")
-            
+
             return True
-            
+
         except Exception as e:
             self.logger.error(f"Combat error: {e}")
             return False

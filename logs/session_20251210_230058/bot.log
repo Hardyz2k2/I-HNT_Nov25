@@ -1,0 +1,515 @@
+2025-12-10 23:00:58 | INFO     | ======================================================================
+2025-12-10 23:00:58 | INFO     | MOB HUNTER v3.0 - CENTER-OUT + BINARY HEALTH
+2025-12-10 23:00:58 | INFO     | ======================================================================
+2025-12-10 23:00:58 | INFO     | Log directory: logs/session_20251210_230058
+2025-12-10 23:00:58 | INFO     | Screen: 1920x1080
+2025-12-10 23:00:58 | INFO     | Strategy: Attack closest to center first
+2025-12-10 23:00:58 | INFO     | Health: Binary (ALIVE/DEAD) detection
+2025-12-10 23:00:58 | INFO     | Pet Filter: Via nameplate class detection
+2025-12-10 23:00:58 | INFO     | ======================================================================
+2025-12-10 23:00:58 | INFO     | 
+🚀 Bot started! Press Ctrl+C to stop.
+
+2025-12-10 23:00:58 | INFO     | 💡 Controls: CapsLock = Pause/Resume | O = Toggle Overlay
+
+2025-12-10 23:00:58 | INFO     | ⌨️  Global keyboard listener active (works in any window)
+
+2025-12-10 23:00:58 | INFO     | 📋 Configuration:
+2025-12-10 23:00:58 | INFO     |    Death Detection: ✅ Enabled
+2025-12-10 23:00:58 | INFO     |    Death Screenshots: ✅ Enabled
+2025-12-10 23:00:58 | INFO     |    Error Screenshots: ✅ Enabled
+2025-12-10 23:00:58 | INFO     |    Periodic Screenshots: ❌ Disabled
+2025-12-10 23:00:58 | INFO     |    Buffer Interval: 120s
+2025-12-10 23:00:58 | INFO     |    Overlay: ✅ Enabled
+2025-12-10 23:00:58 | INFO     | 
+2025-12-10 23:00:58 | INFO     | 🖥️  Click-through overlay starting...
+2025-12-10 23:00:58 | INFO     | 
+Running INITIAL buffer sequence...
+2025-12-10 23:00:58 | INFO     | 
+============================================================
+2025-12-10 23:00:58 | INFO     | RUNNING BUFFER SEQUENCE
+2025-12-10 23:00:58 | INFO     | ============================================================
+2025-12-10 23:00:58 | INFO     |   [1/6] Pressing: F2
+2025-12-10 23:00:58 | INFO     |   [2/6] Pressing: 1
+2025-12-10 23:00:59 | INFO     |   [3/6] Pressing: 2
+2025-12-10 23:00:59 | INFO     |       Waiting 1.0s...
+2025-12-10 23:00:59 | INFO     | ✅ Overlay is now CLICK-THROUGH and transparent
+2025-12-10 23:01:00 | INFO     |   [4/6] Pressing: 3
+2025-12-10 23:01:00 | INFO     |       Waiting 1.0s...
+2025-12-10 23:01:01 | INFO     |   [5/6] Pressing: 4
+2025-12-10 23:01:01 | INFO     |       Waiting 1.0s...
+2025-12-10 23:01:02 | INFO     |   [6/6] Pressing: F1
+2025-12-10 23:01:02 | INFO     | ============================================================
+2025-12-10 23:01:02 | INFO     | Buffer sequence complete (Total: 1)
+2025-12-10 23:01:02 | INFO     | Next buffer in 120s (2m)
+2025-12-10 23:01:02 | INFO     | ============================================================
+
+2025-12-10 23:01:02 | INFO     | 
+======================================================================
+2025-12-10 23:01:02 | INFO     | CYCLE #1
+2025-12-10 23:01:02 | INFO     | ======================================================================
+2025-12-10 23:01:02 | DEBUG    | Death detection: Gold=501, Dark=70431, Brown=0, White=578
+2025-12-10 23:01:02 | INFO     | Detected: 0 floating names
+2025-12-10 23:01:02 | INFO     | → No floating names found
+2025-12-10 23:01:02 | INFO     | 
+======================================================================
+2025-12-10 23:01:02 | INFO     | CYCLE #2
+2025-12-10 23:01:02 | INFO     | ======================================================================
+2025-12-10 23:01:02 | DEBUG    | Death detection: Gold=501, Dark=70330, Brown=0, White=574
+2025-12-10 23:01:03 | INFO     | Detected: 0 floating names
+2025-12-10 23:01:03 | INFO     | → No floating names found
+2025-12-10 23:01:03 | INFO     | 
+======================================================================
+2025-12-10 23:01:03 | INFO     | CYCLE #3
+2025-12-10 23:01:03 | INFO     | ======================================================================
+2025-12-10 23:01:03 | DEBUG    | Death detection: Gold=501, Dark=69592, Brown=0, White=605
+2025-12-10 23:01:03 | INFO     | Detected: 0 floating names
+2025-12-10 23:01:03 | INFO     | → No floating names found
+2025-12-10 23:01:03 | INFO     | 
+======================================================================
+2025-12-10 23:01:03 | INFO     | CYCLE #4
+2025-12-10 23:01:03 | INFO     | ======================================================================
+2025-12-10 23:01:03 | DEBUG    | Death detection: Gold=501, Dark=69788, Brown=0, White=591
+2025-12-10 23:01:03 | INFO     | Detected: 0 floating names
+2025-12-10 23:01:03 | INFO     | → No floating names found
+2025-12-10 23:01:04 | INFO     | 
+======================================================================
+2025-12-10 23:01:04 | INFO     | CYCLE #5
+2025-12-10 23:01:04 | INFO     | ======================================================================
+2025-12-10 23:01:04 | DEBUG    | Death detection: Gold=501, Dark=70207, Brown=0, White=574
+2025-12-10 23:01:04 | INFO     | Detected: 0 floating names
+2025-12-10 23:01:04 | INFO     | → No floating names found
+2025-12-10 23:01:04 | INFO     | 
+======================================================================
+2025-12-10 23:01:04 | INFO     | CYCLE #6
+2025-12-10 23:01:04 | INFO     | ======================================================================
+2025-12-10 23:01:04 | DEBUG    | Death detection: Gold=501, Dark=69595, Brown=0, White=606
+2025-12-10 23:01:04 | INFO     | Detected: 0 floating names
+2025-12-10 23:01:04 | INFO     | → No floating names found
+2025-12-10 23:01:05 | INFO     | 
+======================================================================
+2025-12-10 23:01:05 | INFO     | CYCLE #7
+2025-12-10 23:01:05 | INFO     | ======================================================================
+2025-12-10 23:01:05 | DEBUG    | Death detection: Gold=501, Dark=69732, Brown=0, White=585
+2025-12-10 23:01:05 | INFO     | Detected: 0 floating names
+2025-12-10 23:01:05 | INFO     | → No floating names found
+2025-12-10 23:01:05 | INFO     | 
+======================================================================
+2025-12-10 23:01:05 | INFO     | CYCLE #8
+2025-12-10 23:01:05 | INFO     | ======================================================================
+2025-12-10 23:01:05 | DEBUG    | Death detection: Gold=501, Dark=69960, Brown=0, White=577
+2025-12-10 23:01:05 | WARNING  | ⚠️  STUCK DETECTED (Scenario 1): No target for 7.1s since last kill
+2025-12-10 23:01:05 | INFO     | 
+======================================================================
+2025-12-10 23:01:05 | INFO     | 🔧 ANTI-STUCK RECOVERY ACTIVATED
+2025-12-10 23:01:05 | INFO     | ======================================================================
+2025-12-10 23:01:05 | INFO     | Scenario: 1
+2025-12-10 23:01:05 | INFO     | Total recoveries: 1
+2025-12-10 23:01:05 | INFO     | Action: Right-click hold (1s) + random left-click
+2025-12-10 23:01:05 | INFO     |   Holding right-click for 1s...
+2025-12-10 23:01:06 | INFO     |   Left-clicking random location: (965, 354)
+2025-12-10 23:01:09 | INFO     | ✓ Camera rotation + character movement completed
+2025-12-10 23:01:09 | INFO     | ======================================================================
+
+2025-12-10 23:01:09 | INFO     | ✅ Stuck recovery completed - resuming hunting
+2025-12-10 23:01:09 | INFO     | 
+======================================================================
+2025-12-10 23:01:09 | INFO     | CYCLE #9
+2025-12-10 23:01:09 | INFO     | ======================================================================
+2025-12-10 23:01:09 | DEBUG    | Death detection: Gold=507, Dark=69733, Brown=0, White=587
+2025-12-10 23:01:09 | WARNING  | ⚠️  STUCK DETECTED (Scenario 1): No target for 10.9s since last kill
+2025-12-10 23:01:09 | INFO     | 
+======================================================================
+2025-12-10 23:01:09 | INFO     | 🔧 ANTI-STUCK RECOVERY ACTIVATED
+2025-12-10 23:01:09 | INFO     | ======================================================================
+2025-12-10 23:01:09 | INFO     | Scenario: 1
+2025-12-10 23:01:09 | INFO     | Total recoveries: 2
+2025-12-10 23:01:09 | INFO     | Action: Right-click hold (1s) + random left-click
+2025-12-10 23:01:09 | INFO     |   Holding right-click for 1s...
+2025-12-10 23:01:10 | INFO     |   Left-clicking random location: (447, 710)
+2025-12-10 23:01:12 | INFO     | ✓ Camera rotation + character movement completed
+2025-12-10 23:01:12 | INFO     | ======================================================================
+
+2025-12-10 23:01:12 | INFO     | ✅ Stuck recovery completed - resuming hunting
+2025-12-10 23:01:13 | INFO     | 
+======================================================================
+2025-12-10 23:01:13 | INFO     | CYCLE #10
+2025-12-10 23:01:13 | INFO     | ======================================================================
+2025-12-10 23:01:13 | DEBUG    | Death detection: Gold=509, Dark=69561, Brown=0, White=896
+2025-12-10 23:01:13 | WARNING  | ⚠️  STUCK DETECTED (Scenario 1): No target for 14.6s since last kill
+2025-12-10 23:01:13 | INFO     | 
+======================================================================
+2025-12-10 23:01:13 | INFO     | 🔧 ANTI-STUCK RECOVERY ACTIVATED
+2025-12-10 23:01:13 | INFO     | ======================================================================
+2025-12-10 23:01:13 | INFO     | Scenario: 1
+2025-12-10 23:01:13 | INFO     | Total recoveries: 3
+2025-12-10 23:01:13 | INFO     | Action: Right-click hold (1s) + random left-click
+2025-12-10 23:01:13 | INFO     |   Holding right-click for 1s...
+2025-12-10 23:01:14 | INFO     |   Left-clicking random location: (255, 149)
+2025-12-10 23:01:16 | INFO     | ✓ Camera rotation + character movement completed
+2025-12-10 23:01:16 | INFO     | ======================================================================
+
+2025-12-10 23:01:16 | INFO     | ✅ Stuck recovery completed - resuming hunting
+2025-12-10 23:01:16 | INFO     | 
+======================================================================
+2025-12-10 23:01:16 | INFO     | CYCLE #11
+2025-12-10 23:01:16 | INFO     | ======================================================================
+2025-12-10 23:01:16 | DEBUG    | Death detection: Gold=506, Dark=69209, Brown=0, White=802
+2025-12-10 23:01:16 | WARNING  | ⚠️  STUCK DETECTED (Scenario 1): No target for 18.3s since last kill
+2025-12-10 23:01:16 | INFO     | 
+======================================================================
+2025-12-10 23:01:16 | INFO     | 🔧 ANTI-STUCK RECOVERY ACTIVATED
+2025-12-10 23:01:16 | INFO     | ======================================================================
+2025-12-10 23:01:16 | INFO     | Scenario: 1
+2025-12-10 23:01:16 | INFO     | Total recoveries: 4
+2025-12-10 23:01:16 | INFO     | Action: Right-click hold (1s) + random left-click
+2025-12-10 23:01:17 | INFO     |   Holding right-click for 1s...
+2025-12-10 23:01:18 | INFO     |   Left-clicking random location: (286, 834)
+2025-12-10 23:01:20 | INFO     | ✓ Camera rotation + character movement completed
+2025-12-10 23:01:20 | INFO     | ======================================================================
+
+2025-12-10 23:01:20 | INFO     | ✅ Stuck recovery completed - resuming hunting
+2025-12-10 23:01:20 | INFO     | 
+======================================================================
+2025-12-10 23:01:20 | INFO     | CYCLE #12
+2025-12-10 23:01:20 | INFO     | ======================================================================
+2025-12-10 23:01:20 | DEBUG    | Death detection: Gold=658, Dark=69425, Brown=0, White=820
+2025-12-10 23:01:20 | WARNING  | ⚠️  STUCK DETECTED (Scenario 1): No target for 22.1s since last kill
+2025-12-10 23:01:20 | INFO     | 
+======================================================================
+2025-12-10 23:01:20 | INFO     | 🔧 ANTI-STUCK RECOVERY ACTIVATED
+2025-12-10 23:01:20 | INFO     | ======================================================================
+2025-12-10 23:01:20 | INFO     | Scenario: 1
+2025-12-10 23:01:20 | INFO     | Total recoveries: 5
+2025-12-10 23:01:20 | INFO     | Action: Right-click hold (1s) + random left-click
+2025-12-10 23:01:20 | INFO     |   Holding right-click for 1s...
+2025-12-10 23:01:21 | INFO     |   Left-clicking random location: (1085, 885)
+2025-12-10 23:01:23 | INFO     | ✓ Camera rotation + character movement completed
+2025-12-10 23:01:23 | INFO     | ======================================================================
+
+2025-12-10 23:01:23 | INFO     | ✅ Stuck recovery completed - resuming hunting
+2025-12-10 23:01:24 | INFO     | 
+======================================================================
+2025-12-10 23:01:24 | INFO     | CYCLE #13
+2025-12-10 23:01:24 | INFO     | ======================================================================
+2025-12-10 23:01:24 | DEBUG    | Death detection: Gold=653, Dark=68955, Brown=0, White=802
+2025-12-10 23:01:24 | WARNING  | ⚠️  STUCK DETECTED (Scenario 1): No target for 25.8s since last kill
+2025-12-10 23:01:24 | INFO     | 
+======================================================================
+2025-12-10 23:01:24 | INFO     | 🔧 ANTI-STUCK RECOVERY ACTIVATED
+2025-12-10 23:01:24 | INFO     | ======================================================================
+2025-12-10 23:01:24 | INFO     | Scenario: 1
+2025-12-10 23:01:24 | INFO     | Total recoveries: 6
+2025-12-10 23:01:24 | INFO     | Action: Right-click hold (1s) + random left-click
+2025-12-10 23:01:24 | INFO     |   Holding right-click for 1s...
+2025-12-10 23:01:25 | INFO     |   Left-clicking random location: (1089, 612)
+2025-12-10 23:01:27 | INFO     | ✓ Camera rotation + character movement completed
+2025-12-10 23:01:27 | INFO     | ======================================================================
+
+2025-12-10 23:01:27 | INFO     | ✅ Stuck recovery completed - resuming hunting
+2025-12-10 23:01:28 | INFO     | 
+======================================================================
+2025-12-10 23:01:28 | INFO     | CYCLE #14
+2025-12-10 23:01:28 | INFO     | ======================================================================
+2025-12-10 23:01:28 | DEBUG    | Death detection: Gold=698, Dark=68559, Brown=26, White=800
+2025-12-10 23:01:28 | WARNING  | ⚠️  STUCK DETECTED (Scenario 1): No target for 29.6s since last kill
+2025-12-10 23:01:28 | INFO     | 
+======================================================================
+2025-12-10 23:01:28 | INFO     | 🔧 ANTI-STUCK RECOVERY ACTIVATED
+2025-12-10 23:01:28 | INFO     | ======================================================================
+2025-12-10 23:01:28 | INFO     | Scenario: 1
+2025-12-10 23:01:28 | INFO     | Total recoveries: 7
+2025-12-10 23:01:28 | INFO     | Action: Right-click hold (1s) + random left-click
+2025-12-10 23:01:28 | INFO     |   Holding right-click for 1s...
+2025-12-10 23:01:29 | INFO     |   Left-clicking random location: (1069, 708)
+2025-12-10 23:01:31 | INFO     | ✓ Camera rotation + character movement completed
+2025-12-10 23:01:31 | INFO     | ======================================================================
+
+2025-12-10 23:01:31 | INFO     | ✅ Stuck recovery completed - resuming hunting
+2025-12-10 23:01:31 | INFO     | 
+======================================================================
+2025-12-10 23:01:31 | INFO     | CYCLE #15
+2025-12-10 23:01:31 | INFO     | ======================================================================
+2025-12-10 23:01:31 | DEBUG    | Death detection: Gold=671, Dark=69090, Brown=0, White=868
+2025-12-10 23:01:31 | WARNING  | ⚠️  STUCK DETECTED (Scenario 1): No target for 33.3s since last kill
+2025-12-10 23:01:31 | INFO     | 
+======================================================================
+2025-12-10 23:01:31 | INFO     | 🔧 ANTI-STUCK RECOVERY ACTIVATED
+2025-12-10 23:01:31 | INFO     | ======================================================================
+2025-12-10 23:01:31 | INFO     | Scenario: 1
+2025-12-10 23:01:31 | INFO     | Total recoveries: 8
+2025-12-10 23:01:31 | INFO     | Action: Right-click hold (1s) + random left-click
+2025-12-10 23:01:32 | INFO     |   Holding right-click for 1s...
+2025-12-10 23:01:33 | INFO     |   Left-clicking random location: (1312, 227)
+2025-12-10 23:01:35 | INFO     | ✓ Camera rotation + character movement completed
+2025-12-10 23:01:35 | INFO     | ======================================================================
+
+2025-12-10 23:01:35 | INFO     | ✅ Stuck recovery completed - resuming hunting
+2025-12-10 23:01:35 | INFO     | 
+======================================================================
+2025-12-10 23:01:35 | INFO     | CYCLE #16
+2025-12-10 23:01:35 | INFO     | ======================================================================
+2025-12-10 23:01:35 | DEBUG    | Death detection: Gold=428, Dark=70538, Brown=0, White=499
+2025-12-10 23:01:35 | WARNING  | ⚠️  STUCK DETECTED (Scenario 1): No target for 37.1s since last kill
+2025-12-10 23:01:35 | INFO     | 
+======================================================================
+2025-12-10 23:01:35 | INFO     | 🔧 ANTI-STUCK RECOVERY ACTIVATED
+2025-12-10 23:01:35 | INFO     | ======================================================================
+2025-12-10 23:01:35 | INFO     | Scenario: 1
+2025-12-10 23:01:35 | INFO     | Total recoveries: 9
+2025-12-10 23:01:35 | INFO     | Action: Right-click hold (1s) + random left-click
+2025-12-10 23:01:35 | INFO     |   Holding right-click for 1s...
+2025-12-10 23:01:36 | INFO     |   Left-clicking random location: (1576, 972)
+2025-12-10 23:01:38 | INFO     | ✓ Camera rotation + character movement completed
+2025-12-10 23:01:38 | INFO     | ======================================================================
+
+2025-12-10 23:01:38 | INFO     | ✅ Stuck recovery completed - resuming hunting
+2025-12-10 23:01:39 | INFO     | 
+======================================================================
+2025-12-10 23:01:39 | INFO     | CYCLE #17
+2025-12-10 23:01:39 | INFO     | ======================================================================
+2025-12-10 23:01:39 | DEBUG    | Death detection: Gold=646, Dark=70122, Brown=0, White=743
+2025-12-10 23:01:39 | WARNING  | ⚠️  STUCK DETECTED (Scenario 1): No target for 40.8s since last kill
+2025-12-10 23:01:39 | INFO     | 
+======================================================================
+2025-12-10 23:01:39 | INFO     | 🔧 ANTI-STUCK RECOVERY ACTIVATED
+2025-12-10 23:01:39 | INFO     | ======================================================================
+2025-12-10 23:01:39 | INFO     | Scenario: 1
+2025-12-10 23:01:39 | INFO     | Total recoveries: 10
+2025-12-10 23:01:39 | INFO     | Action: Right-click hold (1s) + random left-click
+2025-12-10 23:01:39 | INFO     |   Holding right-click for 1s...
+2025-12-10 23:01:40 | INFO     |   Left-clicking random location: (1074, 617)
+2025-12-10 23:01:42 | INFO     | ✓ Camera rotation + character movement completed
+2025-12-10 23:01:42 | INFO     | ======================================================================
+
+2025-12-10 23:01:42 | INFO     | ✅ Stuck recovery completed - resuming hunting
+2025-12-10 23:01:43 | INFO     | 
+======================================================================
+2025-12-10 23:01:43 | INFO     | CYCLE #18
+2025-12-10 23:01:43 | INFO     | ======================================================================
+2025-12-10 23:01:43 | DEBUG    | Death detection: Gold=656, Dark=69622, Brown=17, White=770
+2025-12-10 23:01:43 | WARNING  | ⚠️  STUCK DETECTED (Scenario 1): No target for 44.5s since last kill
+2025-12-10 23:01:43 | INFO     | 
+======================================================================
+2025-12-10 23:01:43 | INFO     | 🔧 ANTI-STUCK RECOVERY ACTIVATED
+2025-12-10 23:01:43 | INFO     | ======================================================================
+2025-12-10 23:01:43 | INFO     | Scenario: 1
+2025-12-10 23:01:43 | INFO     | Total recoveries: 11
+2025-12-10 23:01:43 | INFO     | Action: Right-click hold (1s) + random left-click
+2025-12-10 23:01:43 | INFO     |   Holding right-click for 1s...
+2025-12-10 23:01:44 | INFO     |   Left-clicking random location: (218, 632)
+2025-12-10 23:01:46 | INFO     | ✓ Camera rotation + character movement completed
+2025-12-10 23:01:46 | INFO     | ======================================================================
+
+2025-12-10 23:01:46 | INFO     | ✅ Stuck recovery completed - resuming hunting
+2025-12-10 23:01:46 | INFO     | 
+======================================================================
+2025-12-10 23:01:46 | INFO     | CYCLE #19
+2025-12-10 23:01:46 | INFO     | ======================================================================
+2025-12-10 23:01:46 | DEBUG    | Death detection: Gold=494, Dark=69761, Brown=3, White=822
+2025-12-10 23:01:46 | WARNING  | ⚠️  STUCK DETECTED (Scenario 1): No target for 48.3s since last kill
+2025-12-10 23:01:46 | INFO     | 
+======================================================================
+2025-12-10 23:01:46 | INFO     | 🔧 ANTI-STUCK RECOVERY ACTIVATED
+2025-12-10 23:01:46 | INFO     | ======================================================================
+2025-12-10 23:01:46 | INFO     | Scenario: 1
+2025-12-10 23:01:46 | INFO     | Total recoveries: 12
+2025-12-10 23:01:46 | INFO     | Action: Right-click hold (1s) + random left-click
+2025-12-10 23:01:46 | INFO     |   Holding right-click for 1s...
+2025-12-10 23:01:48 | INFO     |   Left-clicking random location: (890, 919)
+2025-12-10 23:01:50 | INFO     | ✓ Camera rotation + character movement completed
+2025-12-10 23:01:50 | INFO     | ======================================================================
+
+2025-12-10 23:01:50 | INFO     | ✅ Stuck recovery completed - resuming hunting
+2025-12-10 23:01:50 | INFO     | 
+======================================================================
+2025-12-10 23:01:50 | INFO     | CYCLE #20
+2025-12-10 23:01:50 | INFO     | ======================================================================
+2025-12-10 23:01:50 | DEBUG    | Death detection: Gold=494, Dark=70626, Brown=14, White=644
+2025-12-10 23:01:50 | WARNING  | ⚠️  STUCK DETECTED (Scenario 1): No target for 52.0s since last kill
+2025-12-10 23:01:50 | INFO     | 
+======================================================================
+2025-12-10 23:01:50 | INFO     | 🔧 ANTI-STUCK RECOVERY ACTIVATED
+2025-12-10 23:01:50 | INFO     | ======================================================================
+2025-12-10 23:01:50 | INFO     | Scenario: 1
+2025-12-10 23:01:50 | INFO     | Total recoveries: 13
+2025-12-10 23:01:50 | INFO     | Action: Right-click hold (1s) + random left-click
+2025-12-10 23:01:50 | INFO     |   Holding right-click for 1s...
+2025-12-10 23:01:51 | INFO     |   Left-clicking random location: (310, 176)
+2025-12-10 23:01:53 | INFO     | ✓ Camera rotation + character movement completed
+2025-12-10 23:01:53 | INFO     | ======================================================================
+
+2025-12-10 23:01:53 | INFO     | ✅ Stuck recovery completed - resuming hunting
+2025-12-10 23:01:54 | INFO     | 
+======================================================================
+2025-12-10 23:01:54 | INFO     | CYCLE #21
+2025-12-10 23:01:54 | INFO     | ======================================================================
+2025-12-10 23:01:54 | DEBUG    | Death detection: Gold=428, Dark=69644, Brown=0, White=490
+2025-12-10 23:01:54 | WARNING  | ⚠️  STUCK DETECTED (Scenario 1): No target for 55.7s since last kill
+2025-12-10 23:01:54 | INFO     | 
+======================================================================
+2025-12-10 23:01:54 | INFO     | 🔧 ANTI-STUCK RECOVERY ACTIVATED
+2025-12-10 23:01:54 | INFO     | ======================================================================
+2025-12-10 23:01:54 | INFO     | Scenario: 1
+2025-12-10 23:01:54 | INFO     | Total recoveries: 14
+2025-12-10 23:01:54 | INFO     | Action: Right-click hold (1s) + random left-click
+2025-12-10 23:01:54 | INFO     |   Holding right-click for 1s...
+2025-12-10 23:01:55 | INFO     |   Left-clicking random location: (1722, 214)
+2025-12-10 23:01:57 | INFO     | ✓ Camera rotation + character movement completed
+2025-12-10 23:01:57 | INFO     | ======================================================================
+
+2025-12-10 23:01:57 | INFO     | ✅ Stuck recovery completed - resuming hunting
+2025-12-10 23:01:58 | INFO     | 
+======================================================================
+2025-12-10 23:01:58 | INFO     | CYCLE #22
+2025-12-10 23:01:58 | INFO     | ======================================================================
+2025-12-10 23:01:58 | DEBUG    | Death detection: Gold=428, Dark=67580, Brown=0, White=490
+2025-12-10 23:01:58 | WARNING  | ⚠️  STUCK DETECTED (Scenario 1): No target for 59.5s since last kill
+2025-12-10 23:01:58 | INFO     | 
+======================================================================
+2025-12-10 23:01:58 | INFO     | 🔧 ANTI-STUCK RECOVERY ACTIVATED
+2025-12-10 23:01:58 | INFO     | ======================================================================
+2025-12-10 23:01:58 | INFO     | Scenario: 1
+2025-12-10 23:01:58 | INFO     | Total recoveries: 15
+2025-12-10 23:01:58 | INFO     | Action: Right-click hold (1s) + random left-click
+2025-12-10 23:01:58 | INFO     |   Holding right-click for 1s...
+2025-12-10 23:01:59 | INFO     |   Left-clicking random location: (620, 397)
+2025-12-10 23:02:01 | INFO     | ✓ Camera rotation + character movement completed
+2025-12-10 23:02:01 | INFO     | ======================================================================
+
+2025-12-10 23:02:01 | INFO     | ✅ Stuck recovery completed - resuming hunting
+2025-12-10 23:02:01 | INFO     | 
+======================================================================
+2025-12-10 23:02:01 | INFO     | CYCLE #23
+2025-12-10 23:02:01 | INFO     | ======================================================================
+2025-12-10 23:02:01 | DEBUG    | Death detection: Gold=711, Dark=61614, Brown=19, White=847
+2025-12-10 23:02:01 | WARNING  | ⚠️  STUCK DETECTED (Scenario 1): No target for 63.2s since last kill
+2025-12-10 23:02:01 | INFO     | 
+======================================================================
+2025-12-10 23:02:01 | INFO     | 🔧 ANTI-STUCK RECOVERY ACTIVATED
+2025-12-10 23:02:01 | INFO     | ======================================================================
+2025-12-10 23:02:01 | INFO     | Scenario: 1
+2025-12-10 23:02:01 | INFO     | Total recoveries: 16
+2025-12-10 23:02:01 | INFO     | Action: Right-click hold (1s) + random left-click
+2025-12-10 23:02:01 | INFO     |   Holding right-click for 1s...
+2025-12-10 23:02:03 | INFO     |   Left-clicking random location: (111, 464)
+2025-12-10 23:02:05 | INFO     | ✓ Camera rotation + character movement completed
+2025-12-10 23:02:05 | INFO     | ======================================================================
+
+2025-12-10 23:02:05 | INFO     | ✅ Stuck recovery completed - resuming hunting
+2025-12-10 23:02:05 | INFO     | 
+======================================================================
+2025-12-10 23:02:05 | INFO     | CYCLE #24
+2025-12-10 23:02:05 | INFO     | ======================================================================
+2025-12-10 23:02:05 | DEBUG    | Death detection: Gold=622, Dark=68999, Brown=2, White=663
+2025-12-10 23:02:05 | WARNING  | ⚠️  STUCK DETECTED (Scenario 1): No target for 66.9s since last kill
+2025-12-10 23:02:05 | INFO     | 
+======================================================================
+2025-12-10 23:02:05 | INFO     | 🔧 ANTI-STUCK RECOVERY ACTIVATED
+2025-12-10 23:02:05 | INFO     | ======================================================================
+2025-12-10 23:02:05 | INFO     | Scenario: 1
+2025-12-10 23:02:05 | INFO     | Total recoveries: 17
+2025-12-10 23:02:05 | INFO     | Action: Right-click hold (1s) + random left-click
+2025-12-10 23:02:05 | INFO     |   Holding right-click for 1s...
+2025-12-10 23:02:06 | INFO     |   Left-clicking random location: (1479, 847)
+2025-12-10 23:02:08 | INFO     | ✓ Camera rotation + character movement completed
+2025-12-10 23:02:08 | INFO     | ======================================================================
+
+2025-12-10 23:02:08 | INFO     | ✅ Stuck recovery completed - resuming hunting
+2025-12-10 23:02:09 | INFO     | 
+======================================================================
+2025-12-10 23:02:09 | INFO     | CYCLE #25
+2025-12-10 23:02:09 | INFO     | ======================================================================
+2025-12-10 23:02:09 | DEBUG    | Death detection: Gold=620, Dark=56729, Brown=1, White=1605
+2025-12-10 23:02:09 | WARNING  | ⚠️  STUCK DETECTED (Scenario 1): No target for 70.7s since last kill
+2025-12-10 23:02:09 | INFO     | 
+======================================================================
+2025-12-10 23:02:09 | INFO     | 🔧 ANTI-STUCK RECOVERY ACTIVATED
+2025-12-10 23:02:09 | INFO     | ======================================================================
+2025-12-10 23:02:09 | INFO     | Scenario: 1
+2025-12-10 23:02:09 | INFO     | Total recoveries: 18
+2025-12-10 23:02:09 | INFO     | Action: Right-click hold (1s) + random left-click
+2025-12-10 23:02:09 | INFO     |   Holding right-click for 1s...
+2025-12-10 23:02:10 | INFO     |   Left-clicking random location: (378, 896)
+2025-12-10 23:02:12 | INFO     | ✓ Camera rotation + character movement completed
+2025-12-10 23:02:12 | INFO     | ======================================================================
+
+2025-12-10 23:02:12 | INFO     | ✅ Stuck recovery completed - resuming hunting
+2025-12-10 23:02:12 | INFO     | 
+======================================================================
+2025-12-10 23:02:12 | INFO     | CYCLE #26
+2025-12-10 23:02:12 | INFO     | ======================================================================
+2025-12-10 23:02:13 | DEBUG    | Death detection: Gold=622, Dark=69380, Brown=3, White=760
+2025-12-10 23:02:13 | WARNING  | ⚠️  STUCK DETECTED (Scenario 1): No target for 74.4s since last kill
+2025-12-10 23:02:13 | INFO     | 
+======================================================================
+2025-12-10 23:02:13 | INFO     | 🔧 ANTI-STUCK RECOVERY ACTIVATED
+2025-12-10 23:02:13 | INFO     | ======================================================================
+2025-12-10 23:02:13 | INFO     | Scenario: 1
+2025-12-10 23:02:13 | INFO     | Total recoveries: 19
+2025-12-10 23:02:13 | INFO     | Action: Right-click hold (1s) + random left-click
+2025-12-10 23:02:13 | INFO     |   Holding right-click for 1s...
+2025-12-10 23:02:14 | INFO     |   Left-clicking random location: (1597, 928)
+2025-12-10 23:02:16 | INFO     | ✓ Camera rotation + character movement completed
+2025-12-10 23:02:16 | INFO     | ======================================================================
+
+2025-12-10 23:02:16 | INFO     | ✅ Stuck recovery completed - resuming hunting
+2025-12-10 23:02:16 | INFO     | 
+======================================================================
+2025-12-10 23:02:16 | INFO     | CYCLE #27
+2025-12-10 23:02:16 | INFO     | ======================================================================
+2025-12-10 23:02:16 | DEBUG    | Death detection: Gold=603, Dark=65912, Brown=36, White=588
+2025-12-10 23:02:16 | WARNING  | ⚠️  STUCK DETECTED (Scenario 1): No target for 78.2s since last kill
+2025-12-10 23:02:16 | INFO     | 
+======================================================================
+2025-12-10 23:02:16 | INFO     | 🔧 ANTI-STUCK RECOVERY ACTIVATED
+2025-12-10 23:02:16 | INFO     | ======================================================================
+2025-12-10 23:02:16 | INFO     | Scenario: 1
+2025-12-10 23:02:16 | INFO     | Total recoveries: 20
+2025-12-10 23:02:16 | INFO     | Action: Right-click hold (1s) + random left-click
+2025-12-10 23:02:16 | INFO     |   Holding right-click for 1s...
+2025-12-10 23:02:17 | INFO     |   Left-clicking random location: (1703, 665)
+2025-12-10 23:02:20 | INFO     | ✓ Camera rotation + character movement completed
+2025-12-10 23:02:20 | INFO     | ======================================================================
+
+2025-12-10 23:02:20 | INFO     | ✅ Stuck recovery completed - resuming hunting
+2025-12-10 23:02:20 | INFO     | 
+⏸️  PAUSED - Press CapsLock to resume
+
+2025-12-10 23:02:22 | INFO     | 
+
+⛔ Bot stopped by user
+2025-12-10 23:02:22 | INFO     | 
+======================================================================
+2025-12-10 23:02:22 | INFO     | 📊 FINAL STATISTICS
+2025-12-10 23:02:22 | INFO     | ======================================================================
+2025-12-10 23:02:22 | INFO     | 📁 Log Directory: logs/session_20251210_230058
+2025-12-10 23:02:22 | INFO     | ⏱️  Uptime: 84s (1m 24s)
+2025-12-10 23:02:22 | INFO     | 🔄 Total Cycles: 27
+2025-12-10 23:02:22 | INFO     | 📸 Screenshots Saved: 0
+2025-12-10 23:02:22 | INFO     | 
+2025-12-10 23:02:22 | INFO     | 🔍 Detection:
+2025-12-10 23:02:22 | INFO     |    Total Clicks: 0
+2025-12-10 23:02:22 | INFO     |    Verified Mobs: 0
+2025-12-10 23:02:22 | INFO     |    Filtered Pets: 0
+2025-12-10 23:02:22 | INFO     |    Pet Filter Rate: 0.0%
+2025-12-10 23:02:22 | INFO     | 
+2025-12-10 23:02:22 | INFO     | ⚔️  Combat:
+2025-12-10 23:02:22 | INFO     |    Total Kills: 0
+2025-12-10 23:02:22 | INFO     |    Deaths: 0
+2025-12-10 23:02:22 | INFO     |    Early Stops: 0
+2025-12-10 23:02:22 | INFO     |    Skills Used: 0
+2025-12-10 23:02:22 | INFO     |    Avg Skills/Kill: 0.0
+2025-12-10 23:02:22 | INFO     |    Kills/Hour: 0.0
+2025-12-10 23:02:22 | INFO     | 
+2025-12-10 23:02:22 | INFO     | ⚙️  System:
+2025-12-10 23:02:22 | INFO     |    Buffer Sequences: 1
+2025-12-10 23:02:22 | INFO     |    Stuck Recoveries: 20
+2025-12-10 23:02:22 | INFO     |    Cache Hit Rate: 0.0%
+2025-12-10 23:02:22 | INFO     |    Cache Size: 0 entries
+2025-12-10 23:02:22 | INFO     | 
+2025-12-10 23:02:22 | INFO     | 📈 Efficiency:
+2025-12-10 23:02:22 | INFO     |    Avg Cycle Time: 3.11s
+2025-12-10 23:02:22 | INFO     |    Avg Clicks/Cycle: 0.0
+2025-12-10 23:02:22 | INFO     |    Avg Kills/Cycle: 0.00
+2025-12-10 23:02:22 | INFO     | ======================================================================

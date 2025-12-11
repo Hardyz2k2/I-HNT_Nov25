@@ -1,0 +1,349 @@
+2025-12-11 14:04:17 | INFO     | ======================================================================
+2025-12-11 14:04:17 | INFO     | MOB HUNTER v3.0 - CENTER-OUT + BINARY HEALTH
+2025-12-11 14:04:17 | INFO     | ======================================================================
+2025-12-11 14:04:17 | INFO     | Log directory: logs/session_20251211_140417
+2025-12-11 14:04:17 | INFO     | Screen: 1920x1080
+2025-12-11 14:04:17 | INFO     | Strategy: Attack closest to center first
+2025-12-11 14:04:17 | INFO     | Health: Binary (ALIVE/DEAD) detection
+2025-12-11 14:04:17 | INFO     | Pet Filter: Via nameplate class detection
+2025-12-11 14:04:17 | INFO     | ======================================================================
+2025-12-11 14:04:17 | INFO     | 
+🚀 Bot started! Press Ctrl+C to stop.
+
+2025-12-11 14:04:17 | INFO     | 💡 Controls: CapsLock = Pause/Resume | O = Toggle Overlay
+
+2025-12-11 14:04:17 | INFO     | ⌨️  Global keyboard listener active (works in any window)
+
+2025-12-11 14:04:17 | INFO     | 📋 Configuration:
+2025-12-11 14:04:17 | INFO     |    Death Detection: ✅ Enabled
+2025-12-11 14:04:17 | INFO     |    Death Screenshots: ✅ Enabled
+2025-12-11 14:04:17 | INFO     |    Error Screenshots: ✅ Enabled
+2025-12-11 14:04:17 | INFO     |    Periodic Screenshots: ❌ Disabled
+2025-12-11 14:04:17 | INFO     |    Buffer Interval: 120s
+2025-12-11 14:04:17 | INFO     |    Overlay: ✅ Enabled
+2025-12-11 14:04:17 | INFO     | 
+2025-12-11 14:04:17 | INFO     | 🖥️  Click-through overlay starting...
+2025-12-11 14:04:17 | INFO     | 
+Running INITIAL buffer sequence...
+2025-12-11 14:04:17 | INFO     | 
+============================================================
+2025-12-11 14:04:17 | INFO     | RUNNING BUFFER SEQUENCE
+2025-12-11 14:04:17 | INFO     | ============================================================
+2025-12-11 14:04:17 | INFO     |   [1/6] Pressing: F2
+2025-12-11 14:04:17 | INFO     |   [2/6] Pressing: 1
+2025-12-11 14:04:17 | INFO     |   [3/6] Pressing: 2
+2025-12-11 14:04:17 | INFO     |       Waiting 1.0s...
+2025-12-11 14:04:17 | INFO     | ✅ Overlay is now CLICK-THROUGH and transparent
+2025-12-11 14:04:18 | INFO     |   [4/6] Pressing: 3
+2025-12-11 14:04:18 | INFO     |       Waiting 1.0s...
+2025-12-11 14:04:19 | INFO     |   [5/6] Pressing: 4
+2025-12-11 14:04:19 | INFO     |       Waiting 1.0s...
+2025-12-11 14:04:20 | INFO     |   [6/6] Pressing: F1
+2025-12-11 14:04:21 | INFO     | ============================================================
+2025-12-11 14:04:21 | INFO     | Buffer sequence complete (Total: 1)
+2025-12-11 14:04:21 | INFO     | Next buffer in 120s (2m)
+2025-12-11 14:04:21 | INFO     | ============================================================
+
+2025-12-11 14:04:21 | INFO     | 
+======================================================================
+2025-12-11 14:04:21 | INFO     | CYCLE #1
+2025-12-11 14:04:21 | INFO     | ======================================================================
+2025-12-11 14:04:21 | DEBUG    | Death detection: Gold=347, Dark=64559, Brown=4, White=547
+2025-12-11 14:04:21 | INFO     | Detected: 0 floating names
+2025-12-11 14:04:21 | INFO     | → No floating names found
+2025-12-11 14:04:21 | INFO     | 
+======================================================================
+2025-12-11 14:04:21 | INFO     | CYCLE #2
+2025-12-11 14:04:21 | INFO     | ======================================================================
+2025-12-11 14:04:21 | DEBUG    | Death detection: Gold=428, Dark=66115, Brown=0, White=554
+2025-12-11 14:04:21 | INFO     | Detected: 0 floating names
+2025-12-11 14:04:21 | INFO     | → No floating names found
+2025-12-11 14:04:21 | INFO     | 
+======================================================================
+2025-12-11 14:04:21 | INFO     | CYCLE #3
+2025-12-11 14:04:21 | INFO     | ======================================================================
+2025-12-11 14:04:22 | DEBUG    | Death detection: Gold=428, Dark=65721, Brown=0, White=551
+2025-12-11 14:04:22 | INFO     | Detected: 0 floating names
+2025-12-11 14:04:22 | INFO     | → No floating names found
+2025-12-11 14:04:22 | INFO     | 
+======================================================================
+2025-12-11 14:04:22 | INFO     | CYCLE #4
+2025-12-11 14:04:22 | INFO     | ======================================================================
+2025-12-11 14:04:22 | DEBUG    | Death detection: Gold=428, Dark=66763, Brown=0, White=403
+2025-12-11 14:04:22 | INFO     | Detected: 0 floating names
+2025-12-11 14:04:22 | INFO     | → No floating names found
+2025-12-11 14:04:22 | INFO     | 
+======================================================================
+2025-12-11 14:04:22 | INFO     | CYCLE #5
+2025-12-11 14:04:22 | INFO     | ======================================================================
+2025-12-11 14:04:22 | DEBUG    | Death detection: Gold=348, Dark=62569, Brown=6, White=593
+2025-12-11 14:04:22 | INFO     | Detected: 0 floating names
+2025-12-11 14:04:22 | INFO     | → No floating names found
+2025-12-11 14:04:23 | INFO     | 
+======================================================================
+2025-12-11 14:04:23 | INFO     | CYCLE #6
+2025-12-11 14:04:23 | INFO     | ======================================================================
+2025-12-11 14:04:23 | DEBUG    | Death detection: Gold=423, Dark=63274, Brown=0, White=958
+2025-12-11 14:04:23 | INFO     | Detected: 0 floating names
+2025-12-11 14:04:23 | INFO     | → No floating names found
+2025-12-11 14:04:23 | INFO     | 
+======================================================================
+2025-12-11 14:04:23 | INFO     | CYCLE #7
+2025-12-11 14:04:23 | INFO     | ======================================================================
+2025-12-11 14:04:23 | DEBUG    | Death detection: Gold=322, Dark=62405, Brown=0, White=739
+2025-12-11 14:04:23 | INFO     | Detected: 0 floating names
+2025-12-11 14:04:23 | INFO     | → No floating names found
+2025-12-11 14:04:24 | INFO     | 
+======================================================================
+2025-12-11 14:04:24 | INFO     | CYCLE #8
+2025-12-11 14:04:24 | INFO     | ======================================================================
+2025-12-11 14:04:24 | DEBUG    | Death detection: Gold=428, Dark=65580, Brown=0, White=553
+2025-12-11 14:04:24 | WARNING  | ⚠️  STUCK DETECTED (Scenario 1): No target for 7.1s since last kill
+2025-12-11 14:04:24 | INFO     | 
+======================================================================
+2025-12-11 14:04:24 | INFO     | 🔧 ANTI-STUCK RECOVERY ACTIVATED
+2025-12-11 14:04:24 | INFO     | ======================================================================
+2025-12-11 14:04:24 | INFO     | Scenario: 1
+2025-12-11 14:04:24 | INFO     | Consecutive attempts: 1
+2025-12-11 14:04:24 | INFO     | Total recoveries: 1
+2025-12-11 14:04:24 | INFO     | Action: Rotate + Move forward + Side movement
+2025-12-11 14:04:24 | INFO     |   Step 1: Rotating left (0.9s)...
+2025-12-11 14:04:25 | INFO     |   Step 2: Moving forward (2.0s)...
+2025-12-11 14:04:27 | INFO     |   Step 3: Moving right (2.0s)...
+2025-12-11 14:04:30 | INFO     | ✓ Moved to new position - will search for mobs
+2025-12-11 14:04:30 | INFO     | ======================================================================
+
+2025-12-11 14:04:30 | INFO     | ✅ Stuck recovery completed - continuing with detection
+2025-12-11 14:04:30 | INFO     | Detected: 2 floating names
+2025-12-11 14:04:30 | INFO     | → Valid targets (after cache): 2
+2025-12-11 14:04:30 | INFO     | → Target priority (closest to farthest):
+2025-12-11 14:04:30 | INFO     |    #1: Distance=353px from center
+2025-12-11 14:04:30 | INFO     |    #2: Distance=368px from center
+2025-12-11 14:04:30 | INFO     | 
+  Verifying target #1 (D=353px)...
+2025-12-11 14:04:30 | DEBUG    |     Clicking (884, 225)
+2025-12-11 14:04:30 | DEBUG    |     Health check: 708 red pixels -> ALIVE
+2025-12-11 14:04:30 | DEBUG    |     ✓ Verified MOB in 1 attempts
+2025-12-11 14:04:30 | INFO     |     ✓ Unique | Status: ALIVE
+2025-12-11 14:04:30 | INFO     | 
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2025-12-11 14:04:30 | INFO     | ⚔️  ENGAGING: Unique
+2025-12-11 14:04:30 | INFO     | >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2025-12-11 14:04:30 | DEBUG    |     Initial health: 708 red pixels
+2025-12-11 14:04:30 | INFO     |   → Skill 1: 1
+2025-12-11 14:04:32 | DEBUG    |     Health check: 708 red pixels -> ALIVE
+2025-12-11 14:04:32 | INFO     |   → Skill 2: 2
+2025-12-11 14:04:33 | DEBUG    |     Health check: 708 red pixels -> ALIVE
+2025-12-11 14:04:33 | INFO     |   → Skill 3: 3
+2025-12-11 14:04:34 | DEBUG    |     Health check: 708 red pixels -> ALIVE
+2025-12-11 14:04:34 | INFO     |   → Skill 4: 4
+2025-12-11 14:04:35 | DEBUG    |     Health check: 708 red pixels -> ALIVE
+2025-12-11 14:04:35 | DEBUG    |     Health change: 708 → 708 (Δ=0)
+2025-12-11 14:04:35 | WARNING  |   ⚠️  Health unchanged (708 → 708) - NOT hitting mob!
+2025-12-11 14:04:35 | WARNING  |   Character may be stuck or mob unreachable
+2025-12-11 14:04:35 | INFO     | <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+2025-12-11 14:04:35 | DEBUG    |     Combat failed - mob may be unreachable
+2025-12-11 14:04:35 | INFO     | 
+  Verifying target #2 (D=368px)...
+2025-12-11 14:04:35 | DEBUG    |     Clicking (830, 225)
+2025-12-11 14:04:35 | DEBUG    |     Health check: 708 red pixels -> ALIVE
+2025-12-11 14:04:35 | DEBUG    |     ✓ Verified MOB in 1 attempts
+2025-12-11 14:04:35 | INFO     |     ✓ Unique | Status: ALIVE
+2025-12-11 14:04:35 | INFO     | 
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2025-12-11 14:04:35 | INFO     | ⚔️  ENGAGING: Unique
+2025-12-11 14:04:35 | INFO     | >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2025-12-11 14:04:35 | DEBUG    |     Initial health: 708 red pixels
+2025-12-11 14:04:35 | INFO     |   → Skill 1: 1
+2025-12-11 14:04:37 | DEBUG    |     Health check: 708 red pixels -> ALIVE
+2025-12-11 14:04:37 | INFO     |   → Skill 2: 2
+2025-12-11 14:04:38 | DEBUG    |     Health check: 708 red pixels -> ALIVE
+2025-12-11 14:04:38 | INFO     |   → Skill 3: 3
+2025-12-11 14:04:39 | DEBUG    |     Health check: 708 red pixels -> ALIVE
+2025-12-11 14:04:39 | INFO     |   → Skill 4: 4
+2025-12-11 14:04:40 | DEBUG    |     Health check: 708 red pixels -> ALIVE
+2025-12-11 14:04:40 | DEBUG    |     Health change: 708 → 708 (Δ=0)
+2025-12-11 14:04:40 | WARNING  |   ⚠️  Health unchanged (708 → 708) - NOT hitting mob!
+2025-12-11 14:04:40 | WARNING  |   Character may be stuck or mob unreachable
+2025-12-11 14:04:40 | INFO     | <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+2025-12-11 14:04:40 | DEBUG    |     Combat failed - mob may be unreachable
+2025-12-11 14:04:40 | INFO     | 
+======================================================================
+2025-12-11 14:04:40 | INFO     | CYCLE #9
+2025-12-11 14:04:40 | INFO     | ======================================================================
+2025-12-11 14:04:40 | DEBUG    | Death detection: Gold=320, Dark=65697, Brown=0, White=1123
+2025-12-11 14:04:40 | WARNING  | ⚠️  STILL STUCK (Recovery mode, attempt #2)
+2025-12-11 14:04:40 | INFO     | 
+======================================================================
+2025-12-11 14:04:40 | INFO     | 🔧 ANTI-STUCK RECOVERY ACTIVATED
+2025-12-11 14:04:40 | INFO     | ======================================================================
+2025-12-11 14:04:40 | INFO     | Scenario: 2
+2025-12-11 14:04:40 | INFO     | Consecutive attempts: 2
+2025-12-11 14:04:40 | INFO     | Total recoveries: 2
+2025-12-11 14:04:40 | INFO     | Action: Turn around + Forward + Sideways movement
+2025-12-11 14:04:40 | INFO     |   Step 1: Turning around right (2.0s)...
+2025-12-11 14:04:43 | INFO     |   Step 2: Moving forward (2.0s)...
+2025-12-11 14:04:45 | INFO     |   Step 3: Moving left (2.0s)...
+2025-12-11 14:04:48 | INFO     | ✓ Moved away - will try to find and engage mobs
+2025-12-11 14:04:48 | INFO     | ======================================================================
+
+2025-12-11 14:04:48 | INFO     | ✅ Stuck recovery completed - continuing with detection
+2025-12-11 14:04:48 | INFO     | Detected: 1 floating names
+2025-12-11 14:04:48 | INFO     | → Valid targets (after cache): 1
+2025-12-11 14:04:48 | INFO     | → Target priority (closest to farthest):
+2025-12-11 14:04:48 | INFO     |    #1: Distance=40px from center
+2025-12-11 14:04:48 | INFO     | 
+  Verifying target #1 (D=40px)...
+2025-12-11 14:04:48 | DEBUG    |     Clicking (960, 530)
+2025-12-11 14:04:48 | DEBUG    |     Health check: 708 red pixels -> ALIVE
+2025-12-11 14:04:48 | DEBUG    |     ✓ Verified MOB in 1 attempts
+2025-12-11 14:04:48 | INFO     |     ✓ Unique | Status: ALIVE
+2025-12-11 14:04:48 | INFO     | 
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2025-12-11 14:04:48 | INFO     | ⚔️  ENGAGING: Unique
+2025-12-11 14:04:48 | INFO     | >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2025-12-11 14:04:48 | DEBUG    |     Initial health: 708 red pixels
+2025-12-11 14:04:48 | INFO     |   → Skill 1: 1
+2025-12-11 14:04:49 | DEBUG    |     Health check: 708 red pixels -> ALIVE
+2025-12-11 14:04:49 | INFO     |   → Skill 2: 2
+2025-12-11 14:04:50 | DEBUG    |     Health check: 708 red pixels -> ALIVE
+2025-12-11 14:04:50 | INFO     |   → Skill 3: 3
+2025-12-11 14:04:52 | DEBUG    |     Health check: 708 red pixels -> ALIVE
+2025-12-11 14:04:52 | INFO     |   → Skill 4: 4
+2025-12-11 14:04:53 | DEBUG    |     Health check: 708 red pixels -> ALIVE
+2025-12-11 14:04:53 | DEBUG    |     Health change: 708 → 708 (Δ=0)
+2025-12-11 14:04:53 | WARNING  |   ⚠️  Health unchanged (708 → 708) - NOT hitting mob!
+2025-12-11 14:04:53 | WARNING  |   Character may be stuck or mob unreachable
+2025-12-11 14:04:53 | INFO     | <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+2025-12-11 14:04:53 | DEBUG    |     Combat failed - mob may be unreachable
+2025-12-11 14:04:53 | INFO     | 
+======================================================================
+2025-12-11 14:04:53 | INFO     | CYCLE #10
+2025-12-11 14:04:53 | INFO     | ======================================================================
+2025-12-11 14:04:53 | DEBUG    | Death detection: Gold=302, Dark=68643, Brown=0, White=416
+2025-12-11 14:04:53 | WARNING  | ⚠️  STILL STUCK (Recovery mode, attempt #3)
+2025-12-11 14:04:53 | INFO     | 
+======================================================================
+2025-12-11 14:04:53 | INFO     | 🔧 ANTI-STUCK RECOVERY ACTIVATED
+2025-12-11 14:04:53 | INFO     | ======================================================================
+2025-12-11 14:04:53 | INFO     | Scenario: 2
+2025-12-11 14:04:53 | INFO     | Consecutive attempts: 3
+2025-12-11 14:04:53 | INFO     | Total recoveries: 3
+2025-12-11 14:04:53 | INFO     | Action: Turn around + Forward + Sideways movement
+2025-12-11 14:04:53 | INFO     |   Step 1: Turning around left (1.8s)...
+2025-12-11 14:04:55 | INFO     |   Step 2: Moving forward (2.0s)...
+2025-12-11 14:04:58 | INFO     |   Step 3: Moving left (2.0s)...
+2025-12-11 14:05:00 | INFO     | ✓ Moved away - will try to find and engage mobs
+2025-12-11 14:05:00 | INFO     | ======================================================================
+
+2025-12-11 14:05:00 | INFO     | ✅ Stuck recovery completed - continuing with detection
+2025-12-11 14:05:00 | INFO     | Detected: 0 floating names
+2025-12-11 14:05:00 | INFO     | → No floating names found
+2025-12-11 14:05:01 | INFO     | 
+======================================================================
+2025-12-11 14:05:01 | INFO     | CYCLE #11
+2025-12-11 14:05:01 | INFO     | ======================================================================
+2025-12-11 14:05:01 | DEBUG    | Death detection: Gold=428, Dark=69137, Brown=0, White=499
+2025-12-11 14:05:01 | INFO     | Detected: 0 floating names
+2025-12-11 14:05:01 | INFO     | → No floating names found
+2025-12-11 14:05:01 | INFO     | 
+======================================================================
+2025-12-11 14:05:01 | INFO     | CYCLE #12
+2025-12-11 14:05:01 | INFO     | ======================================================================
+2025-12-11 14:05:01 | DEBUG    | Death detection: Gold=428, Dark=63998, Brown=0, White=1036
+2025-12-11 14:05:01 | INFO     | Detected: 0 floating names
+2025-12-11 14:05:01 | INFO     | → No floating names found
+2025-12-11 14:05:02 | INFO     | 
+======================================================================
+2025-12-11 14:05:02 | INFO     | CYCLE #13
+2025-12-11 14:05:02 | INFO     | ======================================================================
+2025-12-11 14:05:02 | DEBUG    | Death detection: Gold=339, Dark=66045, Brown=3, White=1005
+2025-12-11 14:05:02 | INFO     | Detected: 0 floating names
+2025-12-11 14:05:02 | INFO     | → No floating names found
+2025-12-11 14:05:02 | INFO     | 
+======================================================================
+2025-12-11 14:05:02 | INFO     | CYCLE #14
+2025-12-11 14:05:02 | INFO     | ======================================================================
+2025-12-11 14:05:02 | DEBUG    | Death detection: Gold=357, Dark=68227, Brown=0, White=499
+2025-12-11 14:05:02 | INFO     | Detected: 0 floating names
+2025-12-11 14:05:02 | INFO     | → No floating names found
+2025-12-11 14:05:03 | INFO     | 
+======================================================================
+2025-12-11 14:05:03 | INFO     | CYCLE #15
+2025-12-11 14:05:03 | INFO     | ======================================================================
+2025-12-11 14:05:03 | DEBUG    | Death detection: Gold=428, Dark=69485, Brown=0, White=499
+2025-12-11 14:05:03 | WARNING  | ⚠️  STILL STUCK (Recovery mode, attempt #4)
+2025-12-11 14:05:03 | INFO     | 
+======================================================================
+2025-12-11 14:05:03 | INFO     | 🔧 ANTI-STUCK RECOVERY ACTIVATED
+2025-12-11 14:05:03 | INFO     | ======================================================================
+2025-12-11 14:05:03 | INFO     | Scenario: 1
+2025-12-11 14:05:03 | INFO     | Consecutive attempts: 4
+2025-12-11 14:05:03 | INFO     | Total recoveries: 4
+2025-12-11 14:05:03 | INFO     | Action: Rotate + Move forward + Side movement
+2025-12-11 14:05:03 | INFO     |   Step 1: Rotating right (1.0s)...
+2025-12-11 14:05:04 | INFO     |   Step 2: Moving forward (2.0s)...
+2025-12-11 14:05:06 | INFO     |   Step 3: Moving left (2.0s)...
+2025-12-11 14:05:09 | INFO     | ✓ Moved to new position - will search for mobs
+2025-12-11 14:05:09 | INFO     | ======================================================================
+
+2025-12-11 14:05:09 | INFO     | ✅ Stuck recovery completed - continuing with detection
+2025-12-11 14:05:09 | INFO     | Detected: 2 floating names
+2025-12-11 14:05:09 | INFO     | → Valid targets (after cache): 2
+2025-12-11 14:05:09 | INFO     | → Target priority (closest to farthest):
+2025-12-11 14:05:09 | INFO     |    #1: Distance=288px from center
+2025-12-11 14:05:09 | INFO     |    #2: Distance=581px from center
+2025-12-11 14:05:09 | INFO     | 
+  Verifying target #1 (D=288px)...
+2025-12-11 14:05:09 | DEBUG    |     Clicking (678, 507)
+2025-12-11 14:05:09 | DEBUG    |     Health check: 708 red pixels -> ALIVE
+2025-12-11 14:05:09 | DEBUG    |     ✓ Verified MOB in 1 attempts
+2025-12-11 14:05:09 | INFO     |     ✓ Unique | Status: ALIVE
+2025-12-11 14:05:09 | INFO     | 
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2025-12-11 14:05:09 | INFO     | ⚔️  ENGAGING: Unique
+2025-12-11 14:05:09 | INFO     | >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2025-12-11 14:05:09 | DEBUG    |     Initial health: 708 red pixels
+2025-12-11 14:05:09 | INFO     |   → Skill 1: 1
+2025-12-11 14:05:10 | DEBUG    |     Health check: 708 red pixels -> ALIVE
+2025-12-11 14:05:10 | INFO     |   → Skill 2: 2
+2025-12-11 14:05:11 | INFO     | 
+
+⛔ Bot stopped by user
+2025-12-11 14:05:11 | INFO     | 
+======================================================================
+2025-12-11 14:05:11 | INFO     | 📊 FINAL STATISTICS
+2025-12-11 14:05:11 | INFO     | ======================================================================
+2025-12-11 14:05:11 | INFO     | 📁 Log Directory: logs/session_20251211_140417
+2025-12-11 14:05:11 | INFO     | ⏱️  Uptime: 54s (0m 54s)
+2025-12-11 14:05:11 | INFO     | 🔄 Total Cycles: 15
+2025-12-11 14:05:11 | INFO     | 📸 Screenshots Saved: 0
+2025-12-11 14:05:11 | INFO     | 
+2025-12-11 14:05:11 | INFO     | 🔍 Detection:
+2025-12-11 14:05:11 | INFO     |    Total Clicks: 4
+2025-12-11 14:05:11 | INFO     |    Verified Mobs: 4
+2025-12-11 14:05:11 | INFO     |    Filtered Pets: 0
+2025-12-11 14:05:11 | INFO     |    Pet Filter Rate: 0.0%
+2025-12-11 14:05:11 | INFO     | 
+2025-12-11 14:05:11 | INFO     | ⚔️  Combat:
+2025-12-11 14:05:11 | INFO     |    Total Kills: 0
+2025-12-11 14:05:11 | INFO     |    Deaths: 0
+2025-12-11 14:05:11 | INFO     |    Early Stops: 0
+2025-12-11 14:05:11 | INFO     |    Skills Used: 14
+2025-12-11 14:05:11 | INFO     |    Avg Skills/Kill: 0.0
+2025-12-11 14:05:11 | INFO     |    Kills/Hour: 0.0
+2025-12-11 14:05:11 | INFO     | 
+2025-12-11 14:05:11 | INFO     | ⚙️  System:
+2025-12-11 14:05:11 | INFO     |    Buffer Sequences: 1
+2025-12-11 14:05:11 | INFO     |    Stuck Recoveries: 4
+2025-12-11 14:05:11 | INFO     |    Cache Hit Rate: 0.0%
+2025-12-11 14:05:11 | INFO     |    Cache Size: 2 entries
+2025-12-11 14:05:11 | INFO     | 
+2025-12-11 14:05:11 | INFO     | 📈 Efficiency:
+2025-12-11 14:05:11 | INFO     |    Avg Cycle Time: 3.60s
+2025-12-11 14:05:11 | INFO     |    Avg Clicks/Cycle: 0.3
+2025-12-11 14:05:11 | INFO     |    Avg Kills/Cycle: 0.00
+2025-12-11 14:05:11 | INFO     | ======================================================================

@@ -500,13 +500,13 @@ class NameplateReader:
 
             # Extract ONLY the health bar sub-region within nameplate
             # Nameplate is 600x100, health bar is approximately at:
-            # - Y offset: 55-67 pixels from top (row where health bar is)
-            # - X offset: 100-500 pixels (horizontal span of health bar)
+            # - Y offset: 30-45 pixels from top (actual health bar location)
+            # - X offset: 80-520 pixels (horizontal span of health bar)
             # This isolates the health bar and excludes class icons, name text, borders
-            health_bar_y_start = 55
-            health_bar_y_end = 67
-            health_bar_x_start = 100
-            health_bar_x_end = 500
+            health_bar_y_start = 30
+            health_bar_y_end = 45
+            health_bar_x_start = 80
+            health_bar_x_end = 520
 
             health_bar = nameplate[health_bar_y_start:health_bar_y_end,
                                    health_bar_x_start:health_bar_x_end]
@@ -514,19 +514,29 @@ class NameplateReader:
             # Convert to HSV
             hsv = cv2.cvtColor(health_bar, cv2.COLOR_BGR2HSV)
 
-            # Red health bar detection (same ranges as before)
+            # MOB HEALTH BARS ARE YELLOW/ORANGE (not red!)
+            # Yellow/Orange range in HSV: H=15-35, S=150-255, V=150-255
+            yellow_lower = np.array([15, 150, 150])
+            yellow_upper = np.array([35, 255, 255])
+
+            # Also check for red (low health)
             red_lower1 = np.array([0, 150, 100])
             red_upper1 = np.array([10, 255, 255])
             red_lower2 = np.array([170, 150, 100])
             red_upper2 = np.array([180, 255, 255])
 
-            mask1 = cv2.inRange(hsv, red_lower1, red_upper1)
-            mask2 = cv2.inRange(hsv, red_lower2, red_upper2)
-            red_mask = cv2.bitwise_or(mask1, mask2)
+            # Create masks for both yellow and red
+            yellow_mask = cv2.inRange(hsv, yellow_lower, yellow_upper)
+            red_mask1 = cv2.inRange(hsv, red_lower1, red_upper1)
+            red_mask2 = cv2.inRange(hsv, red_lower2, red_upper2)
 
-            red_pixels = cv2.countNonZero(red_mask)
+            # Combine all masks (yellow OR red)
+            combined_mask = cv2.bitwise_or(yellow_mask, red_mask1)
+            combined_mask = cv2.bitwise_or(combined_mask, red_mask2)
 
-            return red_pixels
+            health_pixels = cv2.countNonZero(combined_mask)
+
+            return health_pixels
 
         except Exception as e:
             self.logger.error(f"Health pixel count error: {e}")
@@ -535,14 +545,15 @@ class NameplateReader:
     def is_mob_alive(self, nameplate=None):
         """
         Binary health detection: ALIVE or DEAD
-        Returns True if red pixels exist (alive), False otherwise (dead)
+        Returns True if health bar pixels exist (alive), False otherwise (dead)
+        Detects yellow/orange (normal health) or red (low health)
         """
-        red_pixels = self.get_health_pixels(nameplate)
+        health_pixels = self.get_health_pixels(nameplate)
 
         # Binary decision: more than threshold = ALIVE
-        is_alive = red_pixels > Config.RED_PIXEL_THRESHOLD
+        is_alive = health_pixels > Config.RED_PIXEL_THRESHOLD
 
-        self.logger.debug(f"    Health check: {red_pixels} red pixels -> {'ALIVE' if is_alive else 'DEAD'}")
+        self.logger.debug(f"    Health check: {health_pixels} health pixels -> {'ALIVE' if is_alive else 'DEAD'}")
 
         return is_alive
 
@@ -1262,11 +1273,11 @@ class OverlayWindow:
                                     (100, 100, 100), 1)  # Gray outline for full nameplate
 
                         # Health bar sub-region within nameplate
-                        # Using the coordinates from get_health_pixels()
-                        health_bar_y_start = 55
-                        health_bar_y_end = 67
-                        health_bar_x_start = 100
-                        health_bar_x_end = 500
+                        # MUST match coordinates from get_health_pixels()
+                        health_bar_y_start = 30  # Updated to match actual health bar position
+                        health_bar_y_end = 45
+                        health_bar_x_start = 80
+                        health_bar_x_end = 520
 
                         mob_hb_x = nameplate_x + health_bar_x_start
                         mob_hb_y = nameplate_y + health_bar_y_start
@@ -1277,7 +1288,7 @@ class OverlayWindow:
                                     (mob_hb_x, mob_hb_y),
                                     (mob_hb_x + mob_hb_w, mob_hb_y + mob_hb_h),
                                     (0, 255, 255), 2)  # Cyan outline for mob health bar
-                        cv2.putText(display, "MOB HP", (mob_hb_x, mob_hb_y - 5),
+                        cv2.putText(display, "MOB HP (Yellow/Orange)", (mob_hb_x, mob_hb_y - 5),
                                    cv2.FONT_HERSHEY_SIMPLEX, 0.4, (0, 255, 255), 1)
 
                         # Draw detections with distance indicators

@@ -488,7 +488,7 @@ class NameplateReader:
     
     def get_health_pixels(self, nameplate=None):
         """
-        Get the actual red pixel count from health bar
+        Get the actual red pixel count from health bar ONLY (not entire nameplate)
         Returns the number of red pixels (0 if error)
         """
         try:
@@ -498,10 +498,23 @@ class NameplateReader:
                 x, y, w, h = Config.NAMEPLATE_REGION
                 nameplate = screenshot[y:y+h, x:x+w]
 
-            # Convert to HSV
-            hsv = cv2.cvtColor(nameplate, cv2.COLOR_BGR2HSV)
+            # Extract ONLY the health bar sub-region within nameplate
+            # Nameplate is 600x100, health bar is approximately at:
+            # - Y offset: 70-82 pixels from top (row where health bar is)
+            # - X offset: 50-550 pixels (horizontal span of health bar)
+            # This isolates the health bar and excludes class icons, name text, borders
+            health_bar_y_start = 70
+            health_bar_y_end = 82
+            health_bar_x_start = 50
+            health_bar_x_end = 550
 
-            # Red health bar detection
+            health_bar = nameplate[health_bar_y_start:health_bar_y_end,
+                                   health_bar_x_start:health_bar_x_end]
+
+            # Convert to HSV
+            hsv = cv2.cvtColor(health_bar, cv2.COLOR_BGR2HSV)
+
+            # Red health bar detection (same ranges as before)
             red_lower1 = np.array([0, 150, 100])
             red_upper1 = np.array([10, 255, 255])
             red_lower2 = np.array([170, 150, 100])

@@ -12,6 +12,7 @@ import numpy as np
 import time
 import logging
 import os
+import random
 from datetime import datetime
 from mss import mss
 import pyautogui
@@ -151,10 +152,11 @@ class Config:
     DEBUG_MODE = True  # Enable debug logging
 
     # Screenshot settings (selective capture for debugging)
-    SAVE_DEATH_SCREENSHOTS = True      # Capture screenshot when death detected
-    SAVE_ERROR_SCREENSHOTS = True      # Capture screenshot on errors
-    SAVE_PERIODIC_SCREENSHOTS = True   # Periodic screenshots (every N cycles) - ENABLED FOR DEBUGGING
-    PERIODIC_SCREENSHOT_INTERVAL = 3   # Save every 3 cycles for debugging
+    SAVE_DEATH_SCREENSHOTS = True       # Capture screenshot when death detected
+    SAVE_ERROR_SCREENSHOTS = True       # Capture screenshot on errors
+    SAVE_PERIODIC_SCREENSHOTS = True    # Random screenshots for analysis
+    MAX_PERIODIC_SCREENSHOTS = 10       # Maximum random screenshots per session
+    SCREENSHOT_PROBABILITY = 0.15       # 15% chance per cycle (ensures ~10 screenshots in typical 60-70 cycle session)
 
 
 # ============================================================================
@@ -1428,8 +1430,9 @@ class MobHunter:
         # Start global keyboard listener
         self.keyboard_listener = start_keyboard_listener()
 
-        # Screenshot counter
+        # Screenshot counters
         self.screenshot_counter = 0
+        self.periodic_screenshot_count = 0  # Track random periodic screenshots
 
     def save_screenshot(self, screenshot, event_type, extra_info=""):
         """
@@ -1470,7 +1473,7 @@ class MobHunter:
         self.logger.info(f"   Error Screenshots: {'✅ Enabled' if Config.SAVE_ERROR_SCREENSHOTS else '❌ Disabled'}")
         self.logger.info(f"   Periodic Screenshots: {'✅ Enabled' if Config.SAVE_PERIODIC_SCREENSHOTS else '❌ Disabled'}")
         if Config.SAVE_PERIODIC_SCREENSHOTS:
-            self.logger.info(f"   Screenshot Interval: Every {Config.PERIODIC_SCREENSHOT_INTERVAL} cycles")
+            self.logger.info(f"   Screenshot Strategy: Random sampling (max {Config.MAX_PERIODIC_SCREENSHOTS} per session)")
         self.logger.info(f"   Buffer Interval: {Config.BUFFER_INTERVAL}s")
         self.logger.info(f"   Overlay: {'✅ Enabled' if Config.SHOW_OVERLAY else '❌ Disabled'}")
         self.logger.info("")
@@ -1702,9 +1705,13 @@ class MobHunter:
             # Update overlay
             self.update_overlay(screenshot, detections, len(valid_targets), len(confirmed_mobs))
 
-            # Save periodic screenshots for debugging
-            if Config.SAVE_PERIODIC_SCREENSHOTS and self.cycle % Config.PERIODIC_SCREENSHOT_INTERVAL == 0:
-                self.save_screenshot(screenshot, "CYCLE", f"cycle_{self.cycle}")
+            # Save random periodic screenshots for debugging (max 10 per session)
+            if Config.SAVE_PERIODIC_SCREENSHOTS:
+                # Random sampling with probability, but respect max limit
+                if self.periodic_screenshot_count < Config.MAX_PERIODIC_SCREENSHOTS and random.random() < Config.SCREENSHOT_PROBABILITY:
+                    self.save_screenshot(screenshot, "CYCLE", f"cycle_{self.cycle}")
+                    self.periodic_screenshot_count += 1
+                    self.logger.debug(f"📸 Random screenshot captured for cycle #{self.cycle} ({self.periodic_screenshot_count}/{Config.MAX_PERIODIC_SCREENSHOTS})")
 
         except Exception as e:
             self.logger.error(f"❌ CYCLE ERROR: {e}")
